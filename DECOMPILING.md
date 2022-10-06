@@ -8,13 +8,13 @@ Note that the base of ADDRESS is at 0x00100000
 
 STATUS can be 4 things:
 
-- 'O': OK
+- `O`: OK
   - The function is matching
-- 'm': Minor problems
+- `m`: Minor problems
   - The function is mismatching with the same size as the original
-- 'M':  Major problems
+- `M`:  Major problems
   - The function is mismatching with a different size than the original
-- 'U': Undecompiled
+- `U`: Undecompiled
   - The function is not defined
 
 You don't have to input STATUS manually, `Tools/check.py` will automatically rank it for you, so just use 'U' when adding new functions.
