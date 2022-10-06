@@ -3,7 +3,6 @@ import subprocess
 import csv
 import os
 import sys
-import traceback
 
 def fail(msg: str):
     print(msg)
