@@ -47,6 +47,8 @@ def rank_symbol(sym, decomp_sym):
 
 
 def main() -> None:
+    if len(sys.argv) != 2:
+        fail("diff.py <symbol>")
     symbolname = sys.argv[1]
 
     symbol = get_symbol(symbolname)
