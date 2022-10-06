@@ -23,3 +23,5 @@ cmake ..
 ```
 
 Then use `make` to build the project.
+
+See [DECOMPILING.md](DECOMPILING.md) for instructions on how to decompile functions.
