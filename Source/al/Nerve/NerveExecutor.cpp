@@ -1,8 +1,10 @@
+#pragma Otime
+
 #include "al/Nerve/NerveExecutor.h"
 
 namespace al {
 
-#ifdef NON_MATCHING
+#ifdef NON_MATCHING // vtable pointer isnt put after the function
 NerveExecutor::NerveExecutor(const char* name)
     : mNerveKeeper(nullptr)
 {
@@ -17,7 +19,7 @@ NerveKeeper* NerveExecutor::getNerveKeeper() const
 #ifdef NON_MATCHING
 void NerveExecutor::updateNerve()
 {
-    if (mNerveKeeper != nullptr)
+    if (mNerveKeeper)
         mNerveKeeper->update();
 }
 #endif
