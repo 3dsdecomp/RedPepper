@@ -64,9 +64,8 @@ bool ByamlIter::tryGetBoolByKey(bool* out, const char* key) const
 {
     ByamlData data;
 
-    if (getByamlDataByKey(&data, key)) {
+    if (getByamlDataByKey(&data, key))
         return tryConvertBool(out, &data);
-    }
     return false;
 }
 // "
@@ -74,9 +73,8 @@ bool ByamlIter::tryGetIntByKey(int* out, const char* key) const
 {
     ByamlData data;
 
-    if (getByamlDataByKey(&data, key)) {
+    if (getByamlDataByKey(&data, key))
         return tryConvertInt(out, &data);
-    }
     return false;
 }
 // "
@@ -84,13 +82,13 @@ bool ByamlIter::tryGetFloatByKey(float* out, const char* key) const
 {
     ByamlData data;
 
-    if (getByamlDataByKey(&data, key)) {
+    if (getByamlDataByKey(&data, key))
         return tryConvertFloat(out, &data);
-    }
     return false;
 }
 #endif
 
+#pragma inline
 bool ByamlIter::tryConvertBool(bool* out, const ByamlData* data) const
 {
     if (data->getType() == ByamlDataType_Int || data->getType() == ByamlDataType_Bool) {
@@ -100,6 +98,7 @@ bool ByamlIter::tryConvertBool(bool* out, const ByamlData* data) const
     return false;
 }
 
+#pragma inline
 bool ByamlIter::tryConvertInt(int* out, const ByamlData* data) const
 {
     if (data->getType() == ByamlDataType_Int) {
@@ -109,6 +108,7 @@ bool ByamlIter::tryConvertInt(int* out, const ByamlData* data) const
     return false;
 }
 
+#pragma inline
 bool ByamlIter::tryConvertFloat(float* out, const ByamlData* data) const
 {
     if (data->getType() == ByamlDataType_Float) {
