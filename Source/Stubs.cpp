@@ -4,4 +4,6 @@
 STUB(_Znaj)
 STUB(_ZdlPv)
 
+STUB(_ZN16alByamlLocalUtil11verifiByamlEPKh)
+
 #undef STUB
