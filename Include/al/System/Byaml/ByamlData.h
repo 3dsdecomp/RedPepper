@@ -18,15 +18,19 @@ enum ByamlDataType {
     ByamlDataType_Null = 0xFF
 };
 
-struct ByamlData {
-    u32 mValue; // should be a union
+class ByamlData {
+private:
+    union Value {
+        int vInt;
+        float vFloat;
+    } mValue;
     ByamlDataType mType;
 
-    inline ByamlData()
-        : mValue(0)
-        , mType(ByamlDataType_Invalid)
-    {
-    }
+public:
+    ByamlDataType getType() const { return mType; }
+
+    int getIntValue() const { return mValue.vInt; }
+    float getFloatValue() const { return mValue.vFloat; }
 };
 
 } // namespace al
