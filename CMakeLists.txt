@@ -15,7 +15,7 @@ endif()
 
 find_program(ARM_ASM NAMES armasm.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH)
 find_program(ARM_AR NAMES armar.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH)
-find_program(ARM_CC NAMES armcc_4.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH)
+find_program(ARM_CC NAMES armcc.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH)
 # find_program(ARM_FROMELF NAMES fromelf.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH) # not important
 
 set(CMAKE_AR ${ARM_AR})
@@ -32,8 +32,8 @@ __compiler_armcc(ASM)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-add_compile_options(--cpp --cpu=MPCore --arm --apcs=/interwork)
-add_compile_options(--no_rtti_data --no_rtti -Otime)
+add_compile_options(--cpu=MPCore --cpp --arm --apcs=/interwork)
+add_compile_options(--no_rtti_data --no_rtti -Otime --data-reorder)
 
 add_compile_definitions(NON_MATCHING)
 

@@ -5,7 +5,7 @@
 namespace al {
 
 #ifdef NON_MATCHING // vtable pointer isnt put after the function
-NerveExecutor::NerveExecutor(const char* name)
+NerveExecutor::NerveExecutor()
     : mNerveKeeper(nullptr)
 {
 }

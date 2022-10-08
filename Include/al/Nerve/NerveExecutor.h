@@ -8,7 +8,7 @@ class NerveExecutor : public IUseNerve {
     al::NerveKeeper* mNerveKeeper;
 
 public:
-    NerveExecutor(const char* name);
+    NerveExecutor();
 
     virtual NerveKeeper* getNerveKeeper() const;
     virtual ~NerveExecutor() {};
