@@ -26,9 +26,14 @@ ByamlIter::ByamlIter(const u8* data)
 
 int ByamlIter::getSize() const
 {
-    if (mContainerHeader && isTypeContainer())
+    if (isTypeContainer())
         return mContainerHeader->getCount();
     return 0;
+}
+
+bool ByamlIter::isTypeContainer() const
+{
+    return mContainerHeader != nullptr && (mContainerHeader->getType() == ByamlDataType_Array || mContainerHeader->getType() == ByamlDataType_Hash);
 }
 
 } // namespace al

@@ -26,7 +26,7 @@ public:
     bool isValid() const;
     bool isTypeArray() const;
     bool isTypeHash() const;
-    bool isTypeContainer() const { return mContainerHeader->getType() == ByamlDataType_Array || mContainerHeader->getType() == ByamlDataType_Hash; }
+    bool isTypeContainer() const;
 
     int getSize() const;
 
