@@ -41,6 +41,7 @@ void NerveKeeper::update()
 }
 #endif
 
+#pragma no_inline
 void NerveKeeper::setNerve(const Nerve* nerve)
 {
     if (mStep >= 0 && mEndNerve != nullptr)
@@ -49,11 +50,9 @@ void NerveKeeper::setNerve(const Nerve* nerve)
     mStep = -1;
 }
 
-#ifdef NON_MATCHING
 void setNerve(IUseNerve* p, const Nerve* nerve)
 {
     p->getNerveKeeper()->setNerve(nerve);
 }
-#endif
 
 } // namespace al
