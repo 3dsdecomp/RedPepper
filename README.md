@@ -5,10 +5,10 @@ This is a decompilation of the EU version of Super Mario 3D Land.
 ## Progress
 
 <img src ="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/fruityloops1/RedPepper/master/Data/OK.json&style=flat-square"/>
-<img src ="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/fruityloops1/RedPepper/master/Data/NonMatchingMinor.json&style=flat-square"/>
-<img src ="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/fruityloops1/RedPepper/master/Data/NonMatchingMajor.json&style=flat-square"/>
-<img src ="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/fruityloops1/RedPepper/master/Data/NonMatchingDecompiled.json&style=flat-square"/>
-<img src ="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/fruityloops1/RedPepper/master/Data/NotDecompiled.json&style=flat-square"/>
+<img src ="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/fruityloops1/RedPepper/master/Data/NonMatchingMinor.json&style=flat-square"/> <img src ="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/fruityloops1/RedPepper/master/Data/NonMatchingMajor.json&style=flat-square"/>
+
+<img src ="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/fruityloops1/RedPepper/master/Data/NonMatchingDecompiled.json&style=flat-square"/> <img src ="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/fruityloops1/RedPepper/master/Data/NotDecompiled.json&style=flat-square"/>
+
 
 ## Setup
 
