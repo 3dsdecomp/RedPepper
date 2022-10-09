@@ -1,13 +1,14 @@
 from diff import *
+from colorama import Fore
 
 def getRankName(rank: str):
     match rank:
         case 'O':
-            return "OK"
+            return Fore.GREEN + "OK" + Fore.RESET
         case 'm':
-            return "Minor problems"
+            return Fore.YELLOW + "Minor problems" + Fore.RESET
         case 'M':
-            return "Major problems"
+            return Fore.RED + "Major problems" + Fore.RESET
         case 'U':
             return "Undecompiled"
     return '?'
@@ -16,10 +17,12 @@ def getRankName(rank: str):
 def main():
     checkdir = 'Symbols'
     if len(sys.argv) == 2:
-        checkdir = sys.argv[1]
+        checkdir = 'Symbols/' + sys.argv[1]
     print('Checking ' + checkdir + '/')
-    for subdir, dirs, files in os.walk('Symbols'):
+    for subdir, dirs, files in os.walk(checkdir):
         for file in files:
+            if "Unnamed.sym" in file:
+                continue
             filepath = os.path.join(subdir, file)
             syms = read_sym_file(filepath)
             newsyms = []
