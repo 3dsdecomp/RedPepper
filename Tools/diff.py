@@ -41,7 +41,10 @@ def rank_symbol(sym, decomp_sym):
     if "diff_change" in out:
         rank = 'm'
     if "diff_add" in out or "diff_remove" in out:
-        rank = 'M'
+        if out.count('diff_add') == out.count('diff_remove'):
+            rank = 'm'
+        else:
+            rank = 'M'
     
     return rank
 
