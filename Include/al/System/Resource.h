@@ -10,4 +10,6 @@ public:
     void* getPa(const sead::SafeString& name);
 };
 
+Resource* findOrCreateResource(const sead::SafeString&, const char*);
+
 } // namespace al

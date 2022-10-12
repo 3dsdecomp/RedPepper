@@ -1,6 +1,7 @@
 #include "al/Scene/Scene.h"
 #include "Game/Scene/SceneObjFactory.h"
 #include "Game/System/Application.h"
+#include "al/Scene/CreatorClassNameTableHolder.h"
 #include "al/Scene/SceneObjHolder.h"
 
 namespace al {
@@ -49,7 +50,12 @@ void Scene::control()
 {
 }
 
-#ifdef NON_MATCHING
+void Scene::initCreatorClassNameTableHolder()
+{
+    mCCNTHolder = new CreatorClassNameTableHolder();
+}
+
+#ifdef NON_MATCHING // operator new nullptr check
 void Scene::initSceneObjHolder()
 {
     SceneObjHolder* holder = SceneObjFactory::createSceneObjHolder();

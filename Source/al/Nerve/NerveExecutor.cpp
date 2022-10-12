@@ -16,12 +16,10 @@ NerveKeeper* NerveExecutor::getNerveKeeper() const
     return mNerveKeeper;
 }
 
-#ifdef NON_MATCHING
 void NerveExecutor::updateNerve()
 {
     if (mNerveKeeper)
         mNerveKeeper->update();
 }
-#endif
 
 } // namespace al

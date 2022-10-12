@@ -53,10 +53,7 @@ public:                                                                         
         }                                                                                                                                                 \
     };                                                                                                                                                    \
                                                                                                                                                           \
-    static CLASS* instance()                                                                                                                              \
-    {                                                                                                                                                     \
-        return sInstance;                                                                                                                                 \
-    }                                                                                                                                                     \
+    static CLASS* instance();                                                                                                                             \
     static CLASS* createInstance(sead::Heap* heap);                                                                                                       \
     static void deleteInstance();                                                                                                                         \
                                                                                                                                                           \
@@ -91,6 +88,10 @@ protected:                                                                      
         }                                                                                          \
                                                                                                    \
         return CLASS::sInstance;                                                                   \
+    }                                                                                              \
+    CLASS* CLASS::instance()                                                                       \
+    {                                                                                              \
+        return sInstance;                                                                          \
     }
 
 #define SEAD_DELETE_SINGLETON_INSTANCE(CLASS)                                     \

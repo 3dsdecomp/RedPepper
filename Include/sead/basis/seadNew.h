@@ -1,12 +1,12 @@
 #pragma once
 
-#include "sead/basis/seadTypes.h"
-#include "sead/heap/seadHeap.h"
 #include <new>
+#include <sead/basis/seadTypes.h>
+#include <sead/heap/seadHeap.h>
 #include <stddef.h>
 
-void* operator new(size_t size);
-void* operator new[](size_t size);
+void* operator new(size_t size) throw(std::bad_alloc); // need nothrow version to fix nullptr checks
+void* operator new[](size_t size) throw(std::bad_alloc);
 
 void* operator new(size_t size, s32 alignment);
 void* operator new[](size_t size, s32 alignment);

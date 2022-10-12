@@ -2,6 +2,7 @@
 
 #include "al/Audio/AudioKeeper.h"
 #include "al/Nerve/NerveExecutor.h"
+#include "al/Scene/CreatorClassNameTableHolder.h"
 #include "al/System/Resource.h"
 
 namespace al {
@@ -12,7 +13,7 @@ class Scene : public NerveExecutor {
     class LiveActorKit* mLiveActorKit;
     class LayoutKit* mLayoutKit;
     class SceneObjHolder* mSceneObjHolder;
-    class CreatorClassNameTableHolder* mCCNTHolder;
+    CreatorClassNameTableHolder* mCCNTHolder;
     void* _20;
     void* _24;
     void* _28;
@@ -41,6 +42,7 @@ class Scene : public NerveExecutor {
     virtual void gap2() {};
     virtual void gap3() {};
 
+    void initCreatorClassNameTableHolder();
     void initSceneObjHolder();
     // void initPlacement(al::Resource* stageFile, const ActorInitInfo& info, const char* infoIterName);
 };
