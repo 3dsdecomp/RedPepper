@@ -2,6 +2,7 @@
 
 namespace al {
 
+#ifdef NON_MATCHING
 LiveActor::LiveActor(const char* name)
     : mActorName(name)
     , mActorPoseKeeper(nullptr)
@@ -23,6 +24,7 @@ LiveActor::LiveActor(const char* name)
     , mLiveActorFlag(LiveActorFlag())
 {
 }
+#endif
 
 NerveKeeper* LiveActor::getNerveKeeper() const
 {
