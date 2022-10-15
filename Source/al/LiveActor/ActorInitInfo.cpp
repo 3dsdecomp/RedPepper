@@ -23,7 +23,7 @@ void initActorInitInfo(ActorInitInfo* info, const PlacementInfo* placement, cons
     info->_4 = baseInfo._4;
     info->_8 = baseInfo._8;
     info->_10 = baseInfo._10;
-    info->mViewId = alPlacementFunction::getClippingViewId(placement);
+    info->mViewId = alPlacementFunction::getClippingViewId(*placement);
 }
 #endif
 
