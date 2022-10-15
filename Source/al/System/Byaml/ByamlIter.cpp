@@ -27,6 +27,8 @@ ByamlIter::ByamlIter(const u8* data)
     }
 }
 
+bool ByamlIter::isValid() const { return mData != nullptr; }
+
 int ByamlIter::getSize() const
 {
     if (isTypeContainer())
