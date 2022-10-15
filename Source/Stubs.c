@@ -1,5 +1,5 @@
 #define STUB(SYMBOL) \
-    extern "C" void SYMBOL() { }
+    extern void SYMBOL() { }
 
 STUB(_Znaj)
 STUB(_Znwj)
@@ -18,5 +18,7 @@ STUB(_ZN2al20findOrCreateResourceERKN4sead14SafeStringBaseIcEEPKc)
 STUB(_ZN2al8Resource7getBymlERKN4sead14SafeStringBaseIcEE)
 STUB(_ZNK2al9ByamlIter10isExistKeyEPKc)
 STUB(_ZNK2al9ByamlIter15tryGetIterByKeyEPS0_PKc)
+STUB(LMSi_MemCmp)
+STUB(LMSi_AnalyzeMessageBinary)
 
 #undef STUB

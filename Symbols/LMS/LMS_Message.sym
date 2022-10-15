@@ -1,0 +1,4 @@
+LMS_InitMessage,00110b24,164,O
+LMS_GetTextNum,00110a00,28,O
+LMS_CloseMessage,00110e50,32,M
+LMS_GetTextByLabel,001109ac,84,U

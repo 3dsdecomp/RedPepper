@@ -30,12 +30,20 @@ __compiler_armcc(C)
 __compiler_armcc(CXX)
 __compiler_armcc(ASM)
 
-include_directories(${CMAKE_SOURCE_DIR}/include)
+file(GLOB_RECURSE csourcefiles "Source/*.c")
+file(GLOB_RECURSE cxxsourcefiles "Source/*.cpp")
+add_executable(RedPepper ${csourcefiles} ${cxxsourcefiles})
 
-add_compile_options(--cpu=MPCore --cpp --arm --apcs=/interwork)
-add_compile_options(--no_rtti_data --no_rtti -Otime --data-reorder)
+target_compile_options(RedPepper PUBLIC $<$<COMPILE_LANGUAGE:CXX>:
+    --apcs=/interwork --cpu=MPCore --fpmode=fast --signed_chars --cpp --arm
+    --no_rtti_data --no_rtti --no_exceptions -Otime --data-reorder
+    >)
 
-add_compile_definitions(NON_MATCHING)
+target_compile_options(RedPepper PUBLIC $<$<COMPILE_LANGUAGE:C>:
+    --apcs=/interwork --cpu=MPCore --fpmode=fast --signed_chars --c90 --arm
+    -Otime --data-reorder
+    >)
 
-file(GLOB_RECURSE sourcefiles "Source/*.cpp")
-add_executable(RedPepper ${sourcefiles})
+target_compile_definitions(RedPepper PUBLIC NON_MATCHING)
+
+target_include_directories(RedPepper PUBLIC ${CMAKE_SOURCE_DIR}/include)

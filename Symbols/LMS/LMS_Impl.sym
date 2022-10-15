@@ -1,0 +1,4 @@
+LMSi_Malloc,002842e0,12,m
+LMSi_Free,00110e70,12,m
+LMS_SetMemFuncs,002229dc,12,m
+LMSi_SearchBlockByName,00284278,104,m
