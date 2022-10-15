@@ -4,11 +4,11 @@ namespace al {
 
 #ifdef NON_MATCHING
 CameraParamVision::CameraParamVision()
-    : mNearClipDistance(-1)
-    , mFarClipDistance(-1)
-    , mFovyDegree(45)
+    : mFovyDegree(45)
     , mStereovisionDistance(200)
     , mStereovisionDepth(1.0)
+    , mNearClipDistance(-1)
+    , mFarClipDistance(-1)
 {
 }
 #endif
