@@ -1,0 +1,48 @@
+#include "al/LiveActor/LiveActor.h"
+
+namespace al {
+
+LiveActor::LiveActor(const char* name)
+    : mActorName(name)
+    , mActorPoseKeeper(nullptr)
+    , mActorExecuteInfo(nullptr)
+    , mActorActionKeeper(nullptr)
+    , mCollider(nullptr)
+    , mCollisionParts(nullptr)
+    , mModelKeeper(nullptr)
+    , mNerveKeeper(nullptr)
+    , mHitSensorKeeper(nullptr)
+    , mEffectKeeper(nullptr)
+    , mAudioKeeper(nullptr)
+    , _3C(nullptr)
+    , _40(nullptr)
+    , _44(nullptr)
+    , mActorLightKeeper(nullptr)
+    , _4C(nullptr)
+    , mSubActorKeeper(nullptr)
+    , mLiveActorFlag(LiveActorFlag())
+{
+}
+
+NerveKeeper* LiveActor::getNerveKeeper() const
+{
+    return mNerveKeeper;
+}
+
+void LiveActor::init(const ActorInitInfo& info) { }
+void LiveActor::initAfterPlacement() { }
+
+void LiveActor::appear() { makeActorAppeared(); }
+void LiveActor::kill() { makeActorDead(); }
+
+void LiveActor::attackSensor(HitSensor* me, HitSensor* other) { }
+bool LiveActor::receiveMsg(SensorMsg msg, HitSensor* other, HitSensor* me) { return false; }
+
+void LiveActor::draw() { }
+
+EffectKeeper* LiveActor::getEffectKeeper() const { return mEffectKeeper; }
+AudioKeeper* LiveActor::getAudioKeeper() const { return mAudioKeeper; }
+
+void LiveActor::control() { }
+
+} // namespace al

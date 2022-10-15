@@ -1,0 +1,12 @@
+_ZNK2al9LiveActor14getNerveKeeperEv,003375f4,8,O
+_ZN2al9LiveActor4initERKNS_13ActorInitInfoE,001ebf28,4,O
+_ZN2al9LiveActor18initAfterPlacementEv,001ebe64,4,O
+_ZN2al9LiveActor6appearEv,0027ff70,12,O
+_ZN2al9LiveActor4killEv,0027ebf0,12,O
+_ZN2al9LiveActor12attackSensorEPNS_9HitSensorES2_,001ebc60,4,O
+_ZN2al9LiveActor10receiveMsgENS_9SensorMsgEPNS_9HitSensorES3_,001ebc58,8,O
+_ZNK2al9LiveActor15getEffectKeeperEv,00337604,8,O
+_ZThn4_NK2al9LiveActor15getEffectKeeperEv,00376a44,8,O
+_ZNK2al9LiveActor14getAudioKeeperEv,003375fc,8,O
+_ZThn8_NK2al9LiveActor14getAudioKeeperEv,00375f28,8,O
+_ZN2al9LiveActor7controlEv,001ebf2c,4,O
