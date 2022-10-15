@@ -10,11 +10,35 @@ def fail(msg: str):
 
 readelf_data = str(subprocess.check_output(f"{os.environ.get('DEVKITARM')}/bin/arm-none-eabi-readelf Build/RedPepper.axf -sw -W", shell=True)).replace(r'\n', '\n')
 def get_elf_symbol(sym_name: str):
+    stubsStart = -1
+    stubsEnd = -1
+    # find Stubs.c range (horrible)
+    with StringIO(readelf_data) as s:
+        nextIsStart = False
+        nextIsEnd = False
+        startFound = False
+        for line in s:
+            arr = line.split()
+            if "FILE" in line:
+                if nextIsStart:
+                    nextIsEnd = True
+                if "Stubs.c" in line:
+                    nextIsStart = True
+            elif not nextIsEnd and not startFound and nextIsStart:
+                stubsStart = int(arr[1], 16)
+                startFound = True
+            elif nextIsEnd:
+                stubsEnd = int(arr[1], 16)
+                break
     s = StringIO(readelf_data)
     for line in s:
-        if sym_name in line:
+        if "FUNC" in line:
             arr = line.split()
-            return (int(arr[1], 16), int(arr[2]))
+            if sym_name == arr[7]:
+                addr = int(arr[1], 16)
+                if addr >= stubsStart and addr < stubsEnd:
+                    continue
+                return (addr, int(arr[2]))
     return None
 
 def read_sym_file(file: str):
