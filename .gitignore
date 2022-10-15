@@ -1,5 +1,6 @@
 Build/
 __pycache__/
+.cache/
 
 code.bin
 compile_commands.json
