@@ -56,16 +56,13 @@ def main():
 
     print_type("Total Functions", syms_total, Fore.RESET);
     print_type("Decompiled", syms_ok, Fore.GREEN);
+    print_type("Decompiled/Non-matching", syms_ok + syms_major + syms_minor, Fore.CYAN);
     print_type("Non-matching (minor problems)", syms_minor, Fore.YELLOW);
     print_type("Non-matching (major problems)", syms_major, Fore.RED);
-    print_type("Not decompiled", syms_undefined, Fore.RESET);
-    print_type("Non-matching/Not decompiled", syms_undefined + syms_major + syms_minor, Fore.LIGHTRED_EX);
-
     write_type('OK', "Decompiled", syms_ok, "success");
+    write_type('DecompiledNonMatching', "Decompiled/Non-matching", syms_ok + syms_major + syms_minor, "informational");
     write_type('NonMatchingMinor',"Non-matching (minor problems)", syms_minor, "yellow");
     write_type('NonMatchingMajor', "Non-matching (major problems)", syms_major, "critical");
-    write_type('NonMatchingDecompiled', "Non-matching/Not decompiled", syms_undefined + syms_major + syms_minor, "critical");
-    write_type('NotDecompiled', "Not decompiled", syms_undefined, "lightgrey");
 
     if addrs_changed:
         print("Rewriting Unnamed.sym, do not interrupt", end='\r')
