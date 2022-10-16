@@ -1,0 +1,5 @@
+_ZN2nn3svc11ExitProcessEv,00293614,8,O
+_ZN2nn3svc11SleepThreadEy,0028bc4c,8,O
+_ZN2nn3svc16ArbitrateAddressEjjNS_2os15ArbitrationTypeEix,0028bc84,8,O
+_ZN2nn3svc11CloseHandleEj,0010c56c,8,O
+_ZN2nn3svc5BreakENS_3dbg11BreakReasonE,0028ec90,8,O
