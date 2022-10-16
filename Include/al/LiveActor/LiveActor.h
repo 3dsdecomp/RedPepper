@@ -70,7 +70,7 @@ private:
     LiveActorFlag mLiveActorFlag;
 };
 
-void initNerve(LiveActor* actor, const al::Nerve* nerve, int step = 0); // may be al::LiveActor::initNerve
+void initNerve(LiveActor* actor, const Nerve* nerve, int step = 0); // may be al::LiveActor::initNerve
 
 static_assert(sizeof(LiveActor) == 0x60, "");
 

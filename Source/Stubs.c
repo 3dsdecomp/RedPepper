@@ -38,5 +38,14 @@ STUB(_ZN2al9LiveActor4gap2Ev)
 STUB(_ZN2al9LiveActor4gap3Ev)
 STUB(_ZN2al9LiveActor17calcAndSetBaseMtxEv)
 STUB(_ZN2al9LiveActor14updateColliderEv)
+STUB(_ZN2al9initNerveEPNS_9LiveActorEPKNS_5NerveEi)
+
+STUB(_ZN2al24initActorWithArchiveNameEPNS_9LiveActorERKNS_13ActorInitInfoERKN4sead14SafeStringBaseIcEEPKc)
+
+STUB(_ZTVN10__cxxabiv117__class_type_infoE) // why
+STUB(_ZTVN10__cxxabiv120__si_class_type_infoE)
+
+STUB(FUN_0027a1a0)
+STUB(FUN_0027cf20)
 
 #undef STUB
