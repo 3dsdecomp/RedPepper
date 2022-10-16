@@ -6,7 +6,7 @@
 namespace al {
 
 class ActorStateBase : public al::NerveStateBase {
-    LiveActor* mHost;
+    LiveActor* const mHost;
 
 public:
     ActorStateBase(const char* name, LiveActor* host)
