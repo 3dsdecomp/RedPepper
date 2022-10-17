@@ -25,7 +25,9 @@ genLDScript()
 
 os.chdir(getBuildPath())
 
-subprocess.run(f'make -j {multiprocessing.cpu_count()}', shell=True)
+result = subprocess.run(f'make -j {multiprocessing.cpu_count()}', shell=True)
+if result.returncode != 0:
+    exit()
 
 def fromelf():
     status("Generating code.bin")
