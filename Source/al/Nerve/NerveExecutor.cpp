@@ -16,6 +16,11 @@ NerveKeeper* NerveExecutor::getNerveKeeper() const
     return mNerveKeeper;
 }
 
+void NerveExecutor::initNerve(const Nerve* nrv, int step)
+{
+    mNerveKeeper = new NerveKeeper(this, nrv, step);
+}
+
 void NerveExecutor::updateNerve()
 {
     if (mNerveKeeper)

@@ -5,8 +5,8 @@
 #include <sead/heap/seadHeap.h>
 #include <stddef.h>
 
-void* operator new(size_t size) throw(std::bad_alloc); // need nothrow version to fix nullptr checks
-void* operator new[](size_t size) throw(std::bad_alloc);
+void* operator new(std::size_t size, const std::nothrow_t&) throw();
+void* operator new[](std::size_t size, const std::nothrow_t&) throw();
 
 void* operator new(size_t size, s32 alignment);
 void* operator new[](size_t size, s32 alignment);

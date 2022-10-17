@@ -1,8 +1,8 @@
 #define STUB(SYMBOL) \
     extern __attribute__((section("stubs"))) void SYMBOL() { }
 
-STUB(_Znaj)
-STUB(_Znwj)
+STUB(_ZnajRKSt9nothrow_t)
+STUB(_ZnwjRKSt9nothrow_t)
 STUB(_ZdlPv)
 
 STUB(__cxa_pure_virtual)

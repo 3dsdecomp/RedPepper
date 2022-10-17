@@ -9,21 +9,21 @@ class IUseNerve;
 class NerveStateCtrl;
 
 class NerveKeeper {
-public:
-    IUseNerve* mParent;
-
-private:
+    IUseNerve* mHost;
     const Nerve* mEndNerve;
     const Nerve* mNerve;
     int mStep;
     NerveStateCtrl* mStateCtrl;
-    void* unk;
+    void* _14;
 
 public:
+    NerveKeeper(IUseNerve* host, const Nerve* nrv, int maxNerveStates = 0);
+
     const Nerve* getCurrentNerve();
+
     void update();
     void setNerve(const Nerve* nerve);
-    inline int getStep() { return mStep; }
+    inline IUseNerve* getHost() { return mHost; }
 };
 
 class IUseNerve {

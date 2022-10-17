@@ -37,7 +37,7 @@ add_link_options(-T ${CMAKE_CURRENT_BINARY_DIR}/Linker.ld)
 add_executable(RedPepper ${csourcefiles} ${cxxsourcefiles})
 
 target_compile_options(RedPepper PUBLIC $<$<COMPILE_LANGUAGE:CXX>:
-    --apcs=/interwork --cpu=MPCore --fpmode=fast --signed_chars --cpp --arm
+    --apcs=/interwork --cpu=MPCore --fpmode=fast --signed_chars --cpp --arm --force_new_nothrow
     --no_rtti_data --no_rtti --no_exceptions -Otime --data-reorder --split_sections
     >)
 

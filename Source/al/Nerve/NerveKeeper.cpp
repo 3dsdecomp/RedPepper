@@ -4,6 +4,19 @@
 
 namespace al {
 
+NerveKeeper::NerveKeeper(IUseNerve* host, const Nerve* nrv, int maxNerveStates)
+    : mEndNerve(nullptr)
+    , mStep(0)
+    , mStateCtrl(nullptr)
+    , _14(nullptr)
+{
+    mHost = host;
+    mNerve = nrv;
+
+    if (maxNerveStates > 0)
+        mStateCtrl = new NerveStateCtrl(maxNerveStates);
+}
+
 #ifdef NON_MATCHING
 const Nerve* NerveKeeper::getCurrentNerve()
 {

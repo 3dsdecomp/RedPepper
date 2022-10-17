@@ -3,5 +3,5 @@ _ZN2al5Scene6appearEv,0027497c,20,O
 _ZN2al5Scene4killEv,0013e224,12,O
 _ZN2al5Scene8movementEv,0013e2cc,140,M
 _ZN2al5Scene7controlEv,0013e230,4,O
-_ZN2al5Scene31initCreatorClassNameTableHolderEv,00276810,32,M
+_ZN2al5Scene31initCreatorClassNameTableHolderEv,00276810,32,O
 _ZN2al5Scene18initSceneObjHolderEv,001891a8,44,M
