@@ -25,7 +25,8 @@ Camera::Camera(const char* name)
     mRotatorParam = new CameraRotatorParam;
 }
 
-// operator new nullptr check
+#endif
+// asm-differ is saying this doesnt match even tho it does (because of embedded strings in the function)
 void Camera::load(const al::ByamlIter* ticket)
 {
     ticket->tryGetIntByKey(&mInterpoleFrame, "InterpoleFrame");
@@ -38,7 +39,6 @@ void Camera::load(const al::ByamlIter* ticket)
     mDashAngleTunerParam->init(ticket);
     mRotatorParam->init(ticket);
 }
-#endif
 
 void Camera::v1()
 {

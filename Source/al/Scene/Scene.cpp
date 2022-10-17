@@ -55,13 +55,11 @@ void Scene::initCreatorClassNameTableHolder()
     mCCNTHolder = new CreatorClassNameTableHolder();
 }
 
-#ifdef NON_MATCHING // operator new nullptr check
 void Scene::initSceneObjHolder()
 {
     SceneObjHolder* holder = SceneObjFactory::createSceneObjHolder();
     mSceneObjHolder = holder;
     Application::instance()->setSceneObjHolder(holder);
 }
-#endif
 
 } // namespace al

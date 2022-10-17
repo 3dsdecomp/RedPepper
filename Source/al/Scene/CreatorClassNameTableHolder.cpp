@@ -4,7 +4,7 @@
 
 namespace al {
 
-#ifdef NON_MATCHING // vtable loc, operator new nullptr check
+#ifdef NON_MATCHING // vtable loc
 CreatorClassNameTableHolder::CreatorClassNameTableHolder()
     : mArchive(nullptr)
     , mTable(nullptr)
