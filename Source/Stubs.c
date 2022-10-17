@@ -1,5 +1,5 @@
 #define STUB(SYMBOL) \
-    extern void SYMBOL() { }
+    extern __attribute__((section("stubs"))) void SYMBOL() { }
 
 STUB(_Znaj)
 STUB(_Znwj)

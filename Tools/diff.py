@@ -15,34 +15,26 @@ if elf_exists:
 def get_elf_symbol(sym_name: str):
     if not elf_exists:
         fail(f"{getElfPath()} not found")
-    stubsStart = -1
-    stubsEnd = -1
     # find Stubs.c range (horrible)
-    with StringIO(readelf_data) as s:
-        nextIsStart = False
-        nextIsEnd = False
-        startFound = False
+    stubSyms = []
+    with open(f"{getBuildPath()}/RedPepper.map") as f:
+        s = StringIO(f.read())
+        atStubs = False
         for line in s:
-            arr = line.split()
-            if "FILE" in line:
-                if nextIsStart:
-                    nextIsEnd = True
-                if "Stubs.c" in line:
-                    nextIsStart = True
-            elif not nextIsEnd and not startFound and nextIsStart:
-                stubsStart = int(arr[1], 16)
-                startFound = True
-            elif nextIsEnd:
-                stubsEnd = int(arr[1], 16)
-                break
+            if "stubs           " in line:
+                atStubs = True
+            if atStubs:
+                if len(line.split()) == 0:
+                    break
+                stubSyms.append(line.split()[1])
     s = StringIO(readelf_data)
     for line in s:
         if "FUNC" in line:
             arr = line.split()
+            if arr[7] in stubSyms:
+                continue
             if sym_name == arr[7]:
                 addr = int(arr[1], 16)
-                if addr >= stubsStart and addr < stubsEnd:
-                    continue
                 return (addr, int(arr[2]))
     return None
 
@@ -88,7 +80,7 @@ def main() -> None:
 
     if (symbol is None):
         fail("Couldn't find symbol")
-    if (decomp_symbol[1] is None):
+    if (decomp_symbol is None):
         fail("Couldn't find decomp symbol")
 
     subprocess.run(f"Tools/asm-differ/diff.py {symbol[1] - 0x00100000} {decomp_symbol[0] - 0x00100000} {symbol[3]} {decomp_symbol[1]}", shell=True)
