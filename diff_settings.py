@@ -2,7 +2,7 @@ import os
 
 def apply(config, args):
     config["baseimg"] = "code.bin"
-    config["myimg"] = "Build/RedPepper.axf"
+    config["myimg"] = "Build/code.bin"
     config["source_directories"] = ["."]
     config["arch"] = "armel"
     config["arch_objdump"] = "arm"

@@ -32,16 +32,18 @@ __compiler_armcc(ASM)
 
 file(GLOB_RECURSE csourcefiles "Source/*.c")
 file(GLOB_RECURSE cxxsourcefiles "Source/*.cpp")
+
+add_link_options(-T ${CMAKE_CURRENT_BINARY_DIR}/Linker.ld)
 add_executable(RedPepper ${csourcefiles} ${cxxsourcefiles})
 
 target_compile_options(RedPepper PUBLIC $<$<COMPILE_LANGUAGE:CXX>:
     --apcs=/interwork --cpu=MPCore --fpmode=fast --signed_chars --cpp --arm
-    --no_rtti_data --no_rtti --no_exceptions -Otime --data-reorder
+    --no_rtti_data --no_rtti --no_exceptions -Otime --data-reorder --split_sections
     >)
 
 target_compile_options(RedPepper PUBLIC $<$<COMPILE_LANGUAGE:C>:
     --apcs=/interwork --cpu=MPCore --fpmode=fast --signed_chars --c90 --arm
-    -Otime --data-reorder
+    -Otime --data-reorder --split_sections
     >)
 
 target_compile_definitions(RedPepper PUBLIC NON_MATCHING)

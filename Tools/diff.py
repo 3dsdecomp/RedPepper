@@ -3,13 +3,18 @@ import subprocess
 import csv
 import os
 import sys
+from settings import *
 
 def fail(msg: str):
     print(msg)
     sys.exit(1)
 
-readelf_data = str(subprocess.check_output(f"{os.environ.get('DEVKITARM')}/bin/arm-none-eabi-readelf Build/RedPepper.axf -sw -W", shell=True)).replace(r'\n', '\n')
+elf_exists = os.path.exists(getElfPath())
+if elf_exists:
+    readelf_data = str(subprocess.check_output(f"{os.environ.get('DEVKITARM')}/bin/arm-none-eabi-readelf {getElfPath()} -sw -W", shell=True)).replace(r'\n', '\n')
 def get_elf_symbol(sym_name: str):
+    if not elf_exists:
+        fail(f"{getElfPath()} not found")
     stubsStart = -1
     stubsEnd = -1
     # find Stubs.c range (horrible)
@@ -59,7 +64,7 @@ def get_symbol(symbol: str):
     return None
 
 def rank_symbol(sym, decomp_sym):
-    out = str(subprocess.check_output(f"Tools/asm-differ/diff.py --format json {sym[1] - 0x00100000} {decomp_sym[0]} {sym[3]} {decomp_sym[1]}", shell=True))
+    out = str(subprocess.check_output(f"Tools/asm-differ/diff.py --format json {sym[1] - 0x00100000} {decomp_sym[0] - 0x00100000} {sym[3]} {decomp_sym[1]}", shell=True))
 
     rank = 'O'
     if "diff_change" in out:
@@ -86,9 +91,7 @@ def main() -> None:
     if (decomp_symbol[1] is None):
         fail("Couldn't find decomp symbol")
 
-    subprocess.run(f"Tools/asm-differ/diff.py {symbol[1] - 0x00100000} {decomp_symbol[0]} {symbol[3]} {decomp_symbol[1]}", shell=True)
-
-
+    subprocess.run(f"Tools/asm-differ/diff.py {symbol[1] - 0x00100000} {decomp_symbol[0] - 0x00100000} {symbol[3]} {decomp_symbol[1]}", shell=True)
 
 if __name__ == "__main__":
     main()
