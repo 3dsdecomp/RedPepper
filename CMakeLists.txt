@@ -50,4 +50,4 @@ target_compile_options(RedPepper PUBLIC $<$<COMPILE_LANGUAGE:C>:
 
 target_compile_definitions(RedPepper PUBLIC NON_MATCHING)
 
-target_include_directories(RedPepper PUBLIC ${CMAKE_SOURCE_DIR}/include "/home/fruityloops/.wine/drive_c/Program Files (x86)/ARMCC_Nintendo_4_1/include/")
+target_include_directories(RedPepper PUBLIC ${CMAKE_SOURCE_DIR}/include)
