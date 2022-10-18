@@ -16,7 +16,7 @@ class ActorInitInfo {
 public:
     ActorInitInfo();
 
-    friend void initActorInitInfo(ActorInitInfo* info, const PlacementInfo* placement, const ActorInitInfo& baseInfo);
+    void initViewIdSelf(const PlacementInfo* placement, const ActorInitInfo& base);
 };
 
 void initActorInitInfo(ActorInitInfo* info, const PlacementInfo* placement, const ActorInitInfo& baseInfo);
