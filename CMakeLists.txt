@@ -37,15 +37,17 @@ add_link_options(-T ${CMAKE_CURRENT_BINARY_DIR}/Linker.ld)
 add_executable(RedPepper ${csourcefiles} ${cxxsourcefiles})
 
 target_compile_options(RedPepper PUBLIC $<$<COMPILE_LANGUAGE:CXX>:
-    --apcs=/interwork --cpu=MPCore --fpmode=fast --signed_chars --cpp --arm --force_new_nothrow
+    --apcs=/interwork --cpu=MPCore --fpmode=fast --cpp --arm --force_new_nothrow
+    --signed_chars --multibyte-chars --locale=japanese
     --no_rtti_data --no_rtti --no_exceptions -Otime --data-reorder --split_sections
     >)
 
 target_compile_options(RedPepper PUBLIC $<$<COMPILE_LANGUAGE:C>:
-    --apcs=/interwork --cpu=MPCore --fpmode=fast --signed_chars --c90 --arm
+    --apcs=/interwork --cpu=MPCore --fpmode=fast --c90 --arm
+    --signed_chars --multibyte-chars --locale=japanese
     -Otime --data-reorder --split_sections
     >)
 
 target_compile_definitions(RedPepper PUBLIC NON_MATCHING)
 
-target_include_directories(RedPepper PUBLIC ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(RedPepper PUBLIC ${CMAKE_SOURCE_DIR}/include "/home/fruityloops/.wine/drive_c/Program Files (x86)/ARMCC_Nintendo_4_1/include/")

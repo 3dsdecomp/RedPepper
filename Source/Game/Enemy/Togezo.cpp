@@ -28,7 +28,7 @@ extern "C" void FUN_0027cf20(al::LiveActor* actor, const al::ActorInitInfo& info
 void Togezo::init(const al::ActorInitInfo& info)
 {
     al::initActorWithArchiveName(this, info, "Togezo");
-    FUN_0027a1a0(this, "ç§»å‹•åˆ¶é™");
+    FUN_0027a1a0(this, "ˆÚ“®§ŒÀ");
     FUN_0027cf20(this, info, 1);
     al::initNerve(this, &nrvTogezoWander, 3);
 }

@@ -6,6 +6,7 @@
 namespace al {
 
 class ActorStateBase : public al::NerveStateBase {
+protected:
     LiveActor* const mHost;
 
 public:
