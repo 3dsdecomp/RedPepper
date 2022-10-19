@@ -1,6 +1,5 @@
 #pragma once
 
-#include "al/Audio/AudioKeeper.h"
 #include "al/Effect/EffectKeeper.h"
 #include "al/LiveActor/ActorInitInfo.h"
 #include "al/LiveActor/ActorPoseKeeper.h"
@@ -9,13 +8,16 @@
 #include "al/LiveActor/SensorMsg.h"
 #include "al/LiveActor/SubActorKeeper.h"
 #include "al/Nerve/Nerve.h"
+#include "al/Stage/StageSwitchKeeper.h"
 #include "sead/math/seadMatrix.h"
 #include "types.h"
 
 namespace al {
 
-class LiveActor : public IUseNerve, public IUseEffectKeeper, public IUseAudioKeeper {
+class LiveActor : public IUseNerve, public IUseEffectKeeper, public IUseStageSwitch {
 public:
+    LiveActor(const char* name);
+
     virtual NerveKeeper* getNerveKeeper() const;
 
     virtual void init(const ActorInitInfo& info);
@@ -33,7 +35,7 @@ public:
     virtual bool receiveMsg(SensorMsg msg, HitSensor* other, HitSensor* me);
     virtual sead::Matrix34f* getBaseMtx() const;
     virtual EffectKeeper* getEffectKeeper() const;
-    virtual AudioKeeper* getAudioKeeper() const;
+    virtual void* getUnk() const;
     virtual void gap2();
     virtual void gap3();
     virtual void control();
@@ -41,8 +43,7 @@ public:
     virtual void updateCollider();
 
     inline const char* getName() { return mActorName; }
-
-    LiveActor(const char* name);
+    inline ActorPoseKeeperBase* getActorPoseKeeper() const { return mActorPoseKeeper; }
 
 private:
     int inherit; // ???
@@ -58,8 +59,8 @@ protected:
     NerveKeeper* mNerveKeeper;
     HitSensorKeeper* mHitSensorKeeper;
     EffectKeeper* mEffectKeeper;
-    AudioKeeper* mAudioKeeper;
-    void* _3C;
+    void* _38;
+    StageSwitchKeeper* mStageSwitchKeeper;
     void* _40;
     void* _44;
     class ActorLightKeeper* mActorLightKeeper;

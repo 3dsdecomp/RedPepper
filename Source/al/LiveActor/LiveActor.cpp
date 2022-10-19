@@ -14,8 +14,8 @@ LiveActor::LiveActor(const char* name)
     , mNerveKeeper(nullptr)
     , mHitSensorKeeper(nullptr)
     , mEffectKeeper(nullptr)
-    , mAudioKeeper(nullptr)
-    , _3C(nullptr)
+    , _38(nullptr)
+    , mStageSwitchKeeper(nullptr)
     , _40(nullptr)
     , _44(nullptr)
     , mActorLightKeeper(nullptr)
@@ -43,7 +43,6 @@ bool LiveActor::receiveMsg(SensorMsg msg, HitSensor* other, HitSensor* me) { ret
 void LiveActor::draw() { }
 
 EffectKeeper* LiveActor::getEffectKeeper() const { return mEffectKeeper; }
-AudioKeeper* LiveActor::getAudioKeeper() const { return mAudioKeeper; }
 
 void LiveActor::control() { }
 
