@@ -6,7 +6,8 @@
 namespace al {
 
 enum SensorType {
-    SensorType_Player = 1,
+    SensorType_Eye,
+    SensorType_Player,
     SensorType_Npc,
     SensorType_Ride,
     SensorType_Enemy,
