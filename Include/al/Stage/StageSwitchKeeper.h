@@ -1,13 +1,17 @@
 #pragma once
 
+#include "al/Stage/StageSwitchAccesser.h"
+
 namespace al {
 
 class StageSwitchKeeper {
-    void* mSwitches; // array of something, 5x8 bytes
+    StageSwitchAccesser* mSwitches;
     int mSwitchCount;
 
 public:
     StageSwitchKeeper();
+
+    StageSwitchAccesser* getStageSwitchAccesser(int type);
 };
 
 class IUseStageSwitch {

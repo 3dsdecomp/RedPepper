@@ -15,5 +15,6 @@ _ZN2al9LiveActor10receiveMsgENS_9SensorMsgEPNS_9HitSensorES3_,001ebc58,8,O
 _ZNK2al9LiveActor10getBaseMtxEv,003375dc,24,U
 _ZNK2al9LiveActor15getEffectKeeperEv,00337604,8,O
 _ZThn4_NK2al9LiveActor15getEffectKeeperEv,00376a44,8,O
+_ZThn8_N2al9LiveActor21initStageSwitchKeeperEv,00375e4c,32,O
 _ZN2al9LiveActor7controlEv,001ebf2c,4,O
 _ZN2al9LiveActor14updateColliderEv,001ebcec,168,U

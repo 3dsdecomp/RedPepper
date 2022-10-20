@@ -37,7 +37,7 @@ public:
     virtual EffectKeeper* getEffectKeeper() const;
     virtual void* getUnk() const;
     virtual void gap2();
-    virtual void gap3();
+    virtual void initStageSwitchKeeper();
     virtual void control();
     virtual void calcAndSetBaseMtx();
     virtual void updateCollider();

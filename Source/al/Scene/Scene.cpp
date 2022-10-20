@@ -8,7 +8,7 @@ namespace al {
 
 #ifdef NON_MATCHING
 Scene::Scene(const char* name)
-    : NerveExecutor()
+    : NerveExecutor(name)
     , mAudioKeeper(nullptr)
     , mLiveActorKit(nullptr)
     , mLayoutKit(nullptr)

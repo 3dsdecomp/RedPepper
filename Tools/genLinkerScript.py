@@ -12,7 +12,11 @@ def genLDScript():
             syms += read_sym_file(filepath)
     syms = sorted(syms, key=lambda tup: tup[1])
     for sym in syms:
-        if sym[2] != 'U':
+        if sym[2] == 'm' or sym[2] == 'O':
+            replace_data += "\t\t. = 0x{:08x};\n".format(sym[1] - 0x00100000)
+            replace_data += "\t\t*(i." + sym[0] + ")\n"
+    for sym in syms:
+        if sym[2] == 'M':
             replace_data += "\t\t*(i." + sym[0] + ")\n"
     replace_data += '\t}'
 

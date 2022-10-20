@@ -3,7 +3,6 @@
 LMS_AllocFuncPtr sAllocFuncPtr;
 LMS_FreeFuncPtr sFreeFuncPtr;
 
-#ifdef NON_MATCHING // global offsets stuff
 void* LMSi_Malloc(u32 size)
 {
     return sAllocFuncPtr(size);
@@ -20,6 +19,7 @@ void LMS_SetMemFuncs(LMS_AllocFuncPtr alloc_ptr, LMS_FreeFuncPtr free_ptr)
     sFreeFuncPtr = free_ptr;
 }
 
+#ifdef NON_MATCHING
 s32 LMSi_SearchBlockByName(LMS_Binary* binary, char* blockName)
 {
     u16 index = 0;

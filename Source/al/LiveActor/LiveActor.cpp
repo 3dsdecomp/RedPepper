@@ -44,6 +44,11 @@ void LiveActor::draw() { }
 
 EffectKeeper* LiveActor::getEffectKeeper() const { return mEffectKeeper; }
 
+void LiveActor::initStageSwitchKeeper()
+{
+    mStageSwitchKeeper = new StageSwitchKeeper();
+}
+
 void LiveActor::control() { }
 
 } // namespace al

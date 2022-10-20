@@ -4,7 +4,8 @@ namespace al {
 
 #ifdef NON_MATCHING
 NerveStateBase::NerveStateBase(const char* name)
-    : mIsDead(true)
+    : NerveExecutor(name)
+    , mIsDead(true)
 {
 }
 #endif

@@ -8,8 +8,8 @@ CameraDashAngleTunerParam::CameraDashAngleTunerParam()
     , mZoomOutOffsetMax(200)
 {
 }
+#endif
 
-// ??? string
 void CameraDashAngleTunerParam::init(const ByamlIter* ticket)
 {
     ByamlIter h;
@@ -17,6 +17,5 @@ void CameraDashAngleTunerParam::init(const ByamlIter* ticket)
     h.tryGetFloatByKey(&mAddAngleMax, "AddAngleMax");
     h.tryGetFloatByKey(&mZoomOutOffsetMax, "ZoomOutOffsetMax");
 }
-#endif
 
 } // namespace al

@@ -26,7 +26,7 @@ Camera::Camera(const char* name)
 }
 
 #endif
-// asm-differ is saying this doesnt match even tho it does (because of embedded strings in the function)
+
 void Camera::load(const al::ByamlIter* ticket)
 {
     ticket->tryGetIntByKey(&mInterpoleFrame, "InterpoleFrame");
