@@ -38,7 +38,7 @@ void LiveActor::appear() { makeActorAppeared(); }
 void LiveActor::kill() { makeActorDead(); }
 
 void LiveActor::attackSensor(HitSensor* me, HitSensor* other) { }
-bool LiveActor::receiveMsg(SensorMsg msg, HitSensor* other, HitSensor* me) { return false; }
+bool LiveActor::receiveMsg(u32 msg, HitSensor* other, HitSensor* me) { return false; }
 
 void LiveActor::draw() { }
 

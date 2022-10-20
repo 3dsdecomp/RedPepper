@@ -29,9 +29,10 @@ class HitSensor {
     const char* mName;
     SensorType mSensorType;
     u8 unk[0x20];
+    LiveActor* mHostActor;
 
 public:
-    LiveActor* mHostActor;
+    inline LiveActor* getHost() { return mHostActor; }
 };
 
 bool isSensorName(HitSensor* sensor, const char* name);

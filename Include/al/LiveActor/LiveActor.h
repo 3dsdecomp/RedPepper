@@ -5,7 +5,6 @@
 #include "al/LiveActor/ActorPoseKeeper.h"
 #include "al/LiveActor/HitSensorKeeper.h"
 #include "al/LiveActor/LiveActorFlag.h"
-#include "al/LiveActor/SensorMsg.h"
 #include "al/LiveActor/SubActorKeeper.h"
 #include "al/Nerve/Nerve.h"
 #include "al/Stage/StageSwitchKeeper.h"
@@ -32,7 +31,7 @@ public:
     virtual void startClipped();
     virtual void endClipped();
     virtual void attackSensor(HitSensor* me, HitSensor* other);
-    virtual bool receiveMsg(SensorMsg msg, HitSensor* other, HitSensor* me);
+    virtual bool receiveMsg(u32 msg, HitSensor* other, HitSensor* me);
     virtual sead::Matrix34f* getBaseMtx() const;
     virtual EffectKeeper* getEffectKeeper() const;
     virtual void* getUnk() const;
