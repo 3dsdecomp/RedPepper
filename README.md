@@ -21,14 +21,6 @@ Set the environment variable `DEVKITARM` to the path of devkitARM (the path that
 
 Place the game's code.bin in the root folder of the repository (sha256sum is `e1d7e188ff88467df776c17cec45c44857fadf5b699944baa8cddcae7d939e64`)
 
-Run:
-
-```
-mkdir Build
-cd Build
-cmake ..
-```
-
-Then use `make` to build the project.
+Run `Tools/build.py (verbose/clean)` to build the project.
 
 See [DECOMPILING.md](DECOMPILING.md) for instructions on how to decompile functions.
