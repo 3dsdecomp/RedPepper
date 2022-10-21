@@ -1,19 +1,21 @@
 #pragma once
 
+#include "al/LiveActor/LiveActorKit.h"
 #include "al/Scene/SceneObjHolder.h"
 #include "al/System/SystemKit.h"
 #include "types.h"
 #include <sead/heap/seadDisposer.h>
 
 class Application {
-public:
     SEAD_SINGLETON_DISPOSER(Application)
 
+public:
     u8 unk[0x8];
     al::SystemKit* mSystemKit;
     u8 unk2[0x34];
     al::SceneObjHolder* mSceneObjHolder;
-    u8 unk3[0xc];
+    al::LiveActorKit* mLiveActorKit;
+    u8 unk3[0x8];
 
 public:
     al::SceneObjHolder* getSceneObjHolder() const { return mSceneObjHolder; }

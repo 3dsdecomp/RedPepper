@@ -1,4 +1,5 @@
 #include "al/LiveActor/LiveActor.h"
+#include "al/LiveActor/LiveActorKit.h"
 
 namespace al {
 
@@ -23,6 +24,7 @@ LiveActor::LiveActor(const char* name)
     , mSubActorKeeper(nullptr)
     , mLiveActorFlag(LiveActorFlag())
 {
+    al::getLiveActorKit()->getAllActors()->registerActor(this);
 }
 #endif
 
@@ -43,6 +45,7 @@ bool LiveActor::receiveMsg(u32 msg, HitSensor* other, HitSensor* me) { return fa
 void LiveActor::draw() { }
 
 EffectKeeper* LiveActor::getEffectKeeper() const { return mEffectKeeper; }
+void* LiveActor::getUnknown() const { return _38; }
 
 void LiveActor::initStageSwitchKeeper()
 {

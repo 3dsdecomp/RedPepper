@@ -13,7 +13,12 @@
 
 namespace al {
 
-class LiveActor : public IUseNerve, public IUseEffectKeeper, public IUseStageSwitch {
+class IUseUnknown {
+public:
+    virtual void* getUnknown() const = 0;
+};
+
+class LiveActor : public IUseNerve, public IUseEffectKeeper, public IUseUnknown, public IUseStageSwitch {
 public:
     LiveActor(const char* name);
 
@@ -34,7 +39,7 @@ public:
     virtual bool receiveMsg(u32 msg, HitSensor* other, HitSensor* me);
     virtual sead::Matrix34f* getBaseMtx() const;
     virtual EffectKeeper* getEffectKeeper() const;
-    virtual void* getUnk() const;
+    virtual void* getUnknown() const;
     virtual void gap2();
     virtual void initStageSwitchKeeper();
     virtual void control();
@@ -45,7 +50,6 @@ public:
     inline ActorPoseKeeperBase* getActorPoseKeeper() const { return mActorPoseKeeper; }
 
 private:
-    int inherit; // ???
     const char* mActorName;
 
 protected:
