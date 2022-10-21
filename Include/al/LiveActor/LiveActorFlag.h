@@ -2,6 +2,7 @@
 
 namespace al {
 
+class LiveActor;
 struct LiveActorFlag {
     bool isDead;
     bool isClipped;
@@ -15,5 +16,7 @@ struct LiveActorFlag {
 
     LiveActorFlag();
 };
+
+void offCollide(LiveActor* actor);
 
 } // namespace al

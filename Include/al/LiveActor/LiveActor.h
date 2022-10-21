@@ -48,6 +48,7 @@ public:
 
     inline const char* getName() { return mActorName; }
     inline ActorPoseKeeperBase* getActorPoseKeeper() const { return mActorPoseKeeper; }
+    inline LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
 
 private:
     const char* mActorName;

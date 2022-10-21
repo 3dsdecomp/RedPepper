@@ -82,10 +82,6 @@ protected:
 
     void pushBack(void* ptr)
     {
-        if (isFull()) {
-            SEAD_ASSERT_MSG(false, "list is full.");
-            return;
-        }
         // Simplest insert case, so this is implemented directly without using insert().
         mPtrs[mPtrNum] = ptr;
         ++mPtrNum;
@@ -211,8 +207,8 @@ public:
     T* front() const { return at(0); }
     T* back() const { return at(mPtrNum - 1); }
 
-    void pushBack(T* ptr) { PtrArrayImpl::pushBack(constCast(ptr)); }
-    void pushFront(T* ptr) { PtrArrayImpl::pushFront(constCast(ptr)); }
+    void pushBack(T* ptr) { PtrArrayImpl::pushBack(ptr); }
+    void pushFront(T* ptr) { PtrArrayImpl::pushFront(ptr); }
 
     T* popBack() { return static_cast<T*>(PtrArrayImpl::popBack()); }
     T* popFront() { return static_cast<T*>(PtrArrayImpl::popFront()); }

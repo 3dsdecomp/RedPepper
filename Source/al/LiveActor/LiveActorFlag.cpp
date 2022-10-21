@@ -1,4 +1,4 @@
-#include "al/LiveActor/LiveActorFlag.h"
+#include "al/LiveActor/LiveActor.h"
 
 namespace al {
 
@@ -13,6 +13,11 @@ LiveActorFlag::LiveActorFlag()
     , flag8(false)
     , flag9(false)
 {
+}
+
+void offCollide(LiveActor* actor)
+{
+    actor->getLiveActorFlag().isOffCollide = true;
 }
 
 } // namespace al
