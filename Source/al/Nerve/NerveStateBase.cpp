@@ -2,13 +2,12 @@
 
 namespace al {
 
-#ifdef NON_MATCHING
+#pragma O3
 NerveStateBase::NerveStateBase(const char* name)
     : NerveExecutor(name)
     , mIsDead(true)
 {
 }
-#endif
 
 void NerveStateBase::init()
 {

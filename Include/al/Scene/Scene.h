@@ -7,8 +7,7 @@
 
 namespace al {
 
-class Scene : public NerveExecutor {
-    void* _8;
+class Scene : public NerveExecutor, IUseAudioKeeper {
     AudioKeeper* mAudioKeeper;
     class LiveActorKit* mLiveActorKit;
     class LayoutKit* mLayoutKit;
@@ -35,16 +34,16 @@ class Scene : public NerveExecutor {
     virtual void unk5() {};
     virtual void unk6() {};
     virtual void unk7() {};
-    virtual void gap1() {};
+    virtual AudioKeeper* getAudioKeeper() const; // probably not the right location
     virtual void unk8() {};
     virtual void unk9() {}; // does draw/execute stuff
     virtual void unk10() {};
-    virtual void gap2() {};
-    virtual void gap3() {};
 
     void initCreatorClassNameTableHolder();
     void initSceneObjHolder();
     // void initPlacement(al::Resource* stageFile, const ActorInitInfo& info, const char* infoIterName);
 };
+
+static_assert(sizeof(Scene) == 0x34, "");
 
 } // namespace al

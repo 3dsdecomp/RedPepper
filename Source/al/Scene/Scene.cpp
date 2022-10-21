@@ -6,7 +6,7 @@
 
 namespace al {
 
-#ifdef NON_MATCHING
+#pragma O3
 Scene::Scene(const char* name)
     : NerveExecutor(name)
     , mAudioKeeper(nullptr)
@@ -21,7 +21,6 @@ Scene::Scene(const char* name)
     , mIsAlive(false)
 {
 }
-#endif
 
 void Scene::appear()
 {
@@ -48,6 +47,11 @@ void Scene::movement()
 
 void Scene::control()
 {
+}
+
+AudioKeeper* Scene::getAudioKeeper() const
+{
+    return mAudioKeeper;
 }
 
 void Scene::initCreatorClassNameTableHolder()

@@ -48,6 +48,11 @@ STUB(_ZTVN10__cxxabiv120__si_class_type_infoE)
 STUB(FUN_0027a1a0)
 STUB(FUN_0027cf20)
 
+STUB(_ZN2al15IUseAudioKeeper2v1Ev)
+STUB(_ZN2al15IUseAudioKeeper2v2Ev)
+STUB(_ZN2al15IUseAudioKeeper2v4Ev)
+STUB(_ZN2al15IUseAudioKeeper2v5Ev)
+
 STUB(__aeabi_vec_ctor_nocookie_nodtor) // need to get armlink to work/roguewave stdlib to work with dkp linker
 
 #undef STUB
