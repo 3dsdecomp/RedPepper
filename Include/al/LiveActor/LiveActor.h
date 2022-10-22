@@ -50,6 +50,8 @@ public:
     inline ActorPoseKeeperBase* getActorPoseKeeper() const { return mActorPoseKeeper; }
     inline LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
 
+    void initPoseKeeper(ActorPoseKeeperBase* pPoseKeeper);
+
 private:
     const char* mActorName;
 

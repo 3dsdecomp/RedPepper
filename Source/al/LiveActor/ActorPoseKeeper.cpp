@@ -33,6 +33,7 @@ sead::Quatf* ActorPoseKeeperBase::getQuatPtr() { return nullptr; }
 sead::Vector3f* ActorPoseKeeperBase::getGravityPtr() { return nullptr; }
 
 #ifdef NON_MATCHING
+#pragma no_inline
 ActorPoseKeeperTFSV::ActorPoseKeeperTFSV()
     : ActorPoseKeeperBase()
     , mFront(sead::Vector3f::ez)
@@ -53,6 +54,7 @@ sead::Vector3f* ActorPoseKeeperTFSV::getVelocityPtr() { return &mVelocity; }
 sead::Vector3f* ActorPoseKeeperTFSV::getFrontPtr() { return &mFront; }
 
 #ifdef NON_MATCHING
+#pragma no_inline
 ActorPoseKeeperTFGSV::ActorPoseKeeperTFGSV()
     : ActorPoseKeeperTFSV()
     , mGravity(sead::Vector3f(0, -1, 0))
@@ -67,6 +69,7 @@ const sead::Vector3f& ActorPoseKeeperTFGSV::getGravity() const
 sead::Vector3f* ActorPoseKeeperTFGSV::getGravityPtr() { return &mGravity; }
 
 #ifdef NON_MATCHING
+#pragma no_inline
 ActorPoseKeeperTQSV::ActorPoseKeeperTQSV()
     : ActorPoseKeeperBase()
     , mQuat(sead::Quatf::unit)
@@ -87,6 +90,7 @@ sead::Vector3f* ActorPoseKeeperTQSV::getVelocityPtr() { return &mVelocity; }
 sead::Quatf* ActorPoseKeeperTQSV::getQuatPtr() { return &mQuat; }
 
 #ifdef NON_MATCHING
+#pragma no_inline
 ActorPoseKeeperTRSV::ActorPoseKeeperTRSV()
     : ActorPoseKeeperBase()
     , mRotate(sead::Vector3f(0, 0, 0))
@@ -95,6 +99,25 @@ ActorPoseKeeperTRSV::ActorPoseKeeperTRSV()
 {
 }
 #endif
+
+void initActorPoseTFSV(LiveActor* actor)
+{
+    actor->initPoseKeeper(new ActorPoseKeeperTFSV());
+}
+#ifdef NON_MATCHING
+void initActorPoseTFGSV(LiveActor* actor)
+{
+    actor->initPoseKeeper(new ActorPoseKeeperTFGSV());
+}
+#endif
+void initActorPoseTQSV(LiveActor* actor)
+{
+    actor->initPoseKeeper(new ActorPoseKeeperTQSV());
+}
+void initActorPoseTRSV(LiveActor* actor)
+{
+    actor->initPoseKeeper(new ActorPoseKeeperTRSV());
+}
 
 const sead::Vector3f& ActorPoseKeeperTRSV::getRotate() const
 {

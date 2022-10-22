@@ -18,3 +18,4 @@ _ZThn8_NK2al9LiveActor10getUnknownEv,00376a44,8,O
 _ZThn12_N2al9LiveActor21initStageSwitchKeeperEv,00375e4c,32,O
 _ZN2al9LiveActor7controlEv,001ebf2c,4,O
 _ZN2al9LiveActor14updateColliderEv,001ebcec,168,U
+_ZN2al9LiveActor14initPoseKeeperEPNS_19ActorPoseKeeperBaseE,00244cec,8,O

@@ -54,4 +54,9 @@ void LiveActor::initStageSwitchKeeper()
 
 void LiveActor::control() { }
 
+void LiveActor::initPoseKeeper(ActorPoseKeeperBase* pPoseKeeper)
+{
+    mActorPoseKeeper = pPoseKeeper;
+}
+
 } // namespace al

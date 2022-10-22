@@ -15,7 +15,7 @@ namespace RuntimeTypeInfo {
     public:
         Root() { }
 
-        bool isDerived(const Interface* typeInfo) const override { return typeInfo == this; }
+        virtual bool isDerived(const Interface* typeInfo) const { return typeInfo == this; }
     };
 
     template <typename BaseType>
@@ -23,7 +23,7 @@ namespace RuntimeTypeInfo {
     public:
         Derive() { }
 
-        bool isDerived(const Interface* typeInfo) const override
+        virtual bool isDerived(const Interface* typeInfo) const
         {
             if (this == typeInfo)
                 return true;

@@ -6,10 +6,10 @@ namespace al {
 
 class Resource {
 public:
-    void* getByml(const sead::SafeString& name);
-    void* getPa(const sead::SafeString& name);
+    const u8* getByml(const sead::SafeString& name);
+    const u8* getPa(const sead::SafeString& name);
 };
 
-Resource* findOrCreateResource(const sead::SafeString&, const char*);
+Resource* findOrCreateResource(const sead::SafeString& archive);
 
 } // namespace al

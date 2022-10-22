@@ -9,7 +9,7 @@ CreatorClassNameTableHolder::CreatorClassNameTableHolder()
     : mArchive(nullptr)
     , mTable(nullptr)
 {
-    mArchive = al::findOrCreateResource("SystemData/CreatorClassNameTable", "SystemData/CreatorClassNameTable");
+    mArchive = al::findOrCreateResource("SystemData/CreatorClassNameTable");
     mTable = new ByamlIter(static_cast<const u8*>(mArchive->getByml("CreatorClassNameTable")));
 }
 #endif
