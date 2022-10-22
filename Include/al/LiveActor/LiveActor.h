@@ -1,6 +1,7 @@
 #pragma once
 
 #include "al/Effect/EffectKeeper.h"
+#include "al/LiveActor/ActorActionKeeper.h"
 #include "al/LiveActor/ActorInitInfo.h"
 #include "al/LiveActor/ActorPoseKeeper.h"
 #include "al/LiveActor/HitSensorKeeper.h"
@@ -58,7 +59,7 @@ private:
 protected:
     ActorPoseKeeperBase* mActorPoseKeeper;
     class ActorExecuteInfo* mActorExecuteInfo;
-    class ActorActionKeeper* mActorActionKeeper;
+    ActorActionKeeper* mActorActionKeeper;
     class Collider* mCollider;
     class CollisionParts* mCollisionParts;
     class ModelKeeper* mModelKeeper;

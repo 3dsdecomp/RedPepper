@@ -2,16 +2,15 @@
 
 namespace al {
 
-#ifdef NON_MATCHING
+#pragma O3
 CameraParamVision::CameraParamVision()
-    : mFovyDegree(45)
-    , mStereovisionDistance(200)
-    , mStereovisionDepth(1.0)
-    , mNearClipDistance(-1)
-    , mFarClipDistance(-1)
 {
+    mNearClipDistance = -1.0;
+    mFarClipDistance = -1.0;
+    mFovyDegree = 45.0;
+    mStereovisionDistance = 200.0;
+    mStereovisionDepth = 1.0;
 }
-#endif
 
 bool CameraParamVision::init(const ByamlIter* ticket)
 {

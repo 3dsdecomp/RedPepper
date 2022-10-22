@@ -2,13 +2,12 @@
 
 namespace al {
 
-#ifdef NON_MATCHING
+#pragma O3
 CameraDashAngleTunerParam::CameraDashAngleTunerParam()
     : mAddAngleMax(15)
     , mZoomOutOffsetMax(200)
 {
 }
-#endif
 
 void CameraDashAngleTunerParam::init(const ByamlIter* ticket)
 {
