@@ -1,7 +1,7 @@
 #pragma once
 
+#include "al/Resource/Resource.h"
 #include "al/System/Byaml/ByamlIter.h"
-#include "al/System/Resource.h"
 
 namespace al {
 

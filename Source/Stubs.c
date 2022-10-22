@@ -36,7 +36,6 @@ STUB(_ZN2al9LiveActor8calcAnimEv)
 STUB(_ZN2al9LiveActor12startClippedEv)
 STUB(_ZN2al9LiveActor10endClippedEv)
 STUB(_ZNK2al9LiveActor10getBaseMtxEv)
-STUB(_ZNK2al9LiveActor6getUnkEv)
 STUB(_ZN2al9LiveActor4gap2Ev)
 STUB(_ZN2al9LiveActor17calcAndSetBaseMtxEv)
 STUB(_ZN2al9LiveActor14updateColliderEv)
@@ -76,5 +75,9 @@ STUB(_ZN2al19ActorPoseKeeperTRSV16updatePoseRotateERKN4sead7Vector3IfEE)
 STUB(_ZN2al19ActorPoseKeeperTRSV14updatePoseQuatERKN4sead4QuatIfEE)
 STUB(_ZN2al19ActorPoseKeeperTRSV13updatePoseMtxEPKN4sead8Matrix34IfEE)
 STUB(_ZN2al19ActorPoseKeeperTRSV11calcBaseMtxEPN4sead8Matrix34IfEE)
+
+STUB(_ZN4sead22BufferedSafeStringBaseIcE7formatVEPKcSt9__va_list)
+
+STUB(_ZN2al10FileLoader11loadArchiveERKN4sead14SafeStringBaseIcEEPNS1_10FileDeviceE)
 
 #undef STUB

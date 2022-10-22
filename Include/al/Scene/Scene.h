@@ -3,7 +3,6 @@
 #include "al/Audio/AudioKeeper.h"
 #include "al/Nerve/NerveExecutor.h"
 #include "al/Scene/CreatorClassNameTableHolder.h"
-#include "al/System/Resource.h"
 
 namespace al {
 

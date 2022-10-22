@@ -10,9 +10,10 @@ template <typename T>
 class SafeStringBase {
     virtual void dummy() {};
     virtual void dummy1() {};
-    virtual void assureTerminationImpl_() const {};
 
 public:
+    virtual void assureTerminationImpl_() const {};
+
     SafeStringBase()
         : mStringTop(&cNullChar)
     {
@@ -74,7 +75,7 @@ public:
     /// Copy up to copyLength characters to the beginning of the string, then writes NUL.
     /// @param src  Source string
     /// @param copyLength  Number of characters from src to copy (must not cause a buffer overflow)
-    inline s32 copy(const SafeStringBase<T>& src, s32 copyLength = -1);
+    s32 copy(const SafeStringBase<T>& src, s32 copyLength = -1);
     /// Copy up to copyLength characters to the specified position, then writes NUL if the copy
     /// makes this string longer.
     /// @param at  Start position (-1 for end of string)

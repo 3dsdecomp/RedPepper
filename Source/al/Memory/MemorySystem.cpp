@@ -1,6 +1,6 @@
 #include "al/Memory/MemorySystem.h"
+#include "al/Resource/Resource.h"
 #include "al/System/Byaml/ByamlIter.h"
-#include "al/System/Resource.h"
 #include "al/Util/StringUtil.h"
 
 namespace al {

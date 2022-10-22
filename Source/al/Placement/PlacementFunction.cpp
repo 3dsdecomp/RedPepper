@@ -27,6 +27,20 @@ bool tryGetArg(float* out, const PlacementInfo& info, char* argName, int default
 }
 #endif
 
+static const char sObjectNameKey[] = "name";
+
+#ifdef NON_MATCHING // registers
+bool tryGetObjectName(const char** out, const al::ActorInitInfo& info)
+{
+    return info.mPlacementInfo->tryGetStringByKey(out, sObjectNameKey);
+}
+#endif
+
+bool tryGetObjectName(const char** out, const al::PlacementInfo& info)
+{
+    return info.tryGetStringByKey(out, sObjectNameKey);
+}
+
 } // namespace al
 
 namespace alPlacementFunction {

@@ -1,3 +1,5 @@
 _ZN2al9tryGetArgEPbRKNS_9ByamlIterEPci,00250e20,100,M
 _ZN2al9tryGetArgEPfRKNS_9ByamlIterEPci,00250dc4,92,M
+_ZN2al16tryGetObjectNameEPPKcRKNS_13ActorInitInfoE,00279bb4,20,m
+_ZN2al16tryGetObjectNameEPPKcRKNS_9ByamlIterE,00276bf0,20,O
 _ZN19alPlacementFunction17getClippingViewIdERKN2al9ByamlIterE,0024e638,48,O

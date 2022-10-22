@@ -6,6 +6,7 @@
 namespace al {
 
 class ActorInitInfo {
+public:
     const PlacementInfo* mPlacementInfo;
     void* _4;
     void* _8;
@@ -13,11 +14,14 @@ class ActorInitInfo {
     void* _10;
     int mViewId;
 
-public:
     ActorInitInfo();
 
     void initViewIdSelf(const PlacementInfo* placement, const ActorInitInfo& base);
+
+    friend const PlacementInfo& getPlacementInfo(const ActorInitInfo& info);
 };
+
+inline const PlacementInfo& getPlacementInfo(const ActorInitInfo& info) { return *info.mPlacementInfo; }
 
 void initActorInitInfo(ActorInitInfo* info, const PlacementInfo* placement, const ActorInitInfo& baseInfo);
 
