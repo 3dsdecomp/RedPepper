@@ -14,4 +14,4 @@ This is a decompilation of the EU version of Super Mario 3D Land.
 - [Discord Server](https://discord.gg/wK4ZKa9QXq)
 - [Wiki](https://al.littun.co/decomp)
 
-Visit [the Wiki](https://al.littun.co/decomp) for instructions on how to build and how to contribute to this project.
+Visit [the Wiki](https://al.littun.co/decomp) for instructions on how to build and contribute to this project.
