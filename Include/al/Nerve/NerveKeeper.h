@@ -24,6 +24,7 @@ public:
     void update();
     void setNerve(const Nerve* nerve);
     inline IUseNerve* getHost() { return mHost; }
+    inline int getStep() { return mStep; }
 };
 
 class IUseNerve {
@@ -32,10 +33,5 @@ public:
 };
 
 static_assert(sizeof(NerveKeeper) == 0x18, "");
-
-void setNerve(IUseNerve* p, const Nerve* nerve);
-bool isNerve(const IUseNerve* p, const Nerve* nerve);
-
-bool isFirstStep(const IUseNerve* p);
 
 } // namespace al
