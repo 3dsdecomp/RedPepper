@@ -11,7 +11,11 @@ def fail(msg: str):
 
 elf_exists = os.path.exists(getElfPath())
 if elf_exists:
-    readelf_data = str(subprocess.check_output(f"{os.environ.get('DEVKITARM')}/bin/arm-none-eabi-readelf {getElfPath()} -sw -W", shell=True)).replace(r'\n', '\n')
+    readelf_data = str(subprocess.check_output(f"{os.environ.get('DEVKITARM')}/bin/arm-none-eabi-readelf {getElfPath()} -sw -W", shell=True))
+    if sys.platform == 'win32':
+        readelf_data = readelf_data.replace(r'\r\n', '\n')
+    else:
+        readelf_data = readelf_data.replace(r'\n', '\n')
 def get_elf_symbol(sym_name: str):
     if not elf_exists:
         fail(f"{getElfPath()} not found")
@@ -56,7 +60,7 @@ def get_symbol(symbol: str):
     return None
 
 def rank_symbol(sym, decomp_sym):
-    out = str(subprocess.check_output(f"Tools/asm-differ/diff.py --format json {sym[1] - 0x00100000} {decomp_sym[0] - 0x00100000} {sym[3]} {decomp_sym[1]}", shell=True))
+    out = str(subprocess.check_output(f"\"{sys.executable}\" Tools/asm-differ/diff.py --format json {sym[1] - 0x00100000} {decomp_sym[0] - 0x00100000} {sym[3]} {decomp_sym[1]}", shell=True))
 
     rank = 'O'
     if "diff_change" in out:
@@ -83,7 +87,7 @@ def main() -> None:
     if (decomp_symbol is None):
         fail("Couldn't find decomp symbol")
 
-    subprocess.run(f"Tools/asm-differ/diff.py {symbol[1] - 0x00100000} {decomp_symbol[0] - 0x00100000} {symbol[3]} {decomp_symbol[1]}", shell=True)
+    subprocess.run(f"\"{sys.executable}\" Tools/asm-differ/diff.py {symbol[1] - 0x00100000} {decomp_symbol[0] - 0x00100000} {symbol[3]} {decomp_symbol[1]}", shell=True)
 
 if __name__ == "__main__":
     main()

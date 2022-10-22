@@ -17,7 +17,7 @@ if len(sys.argv) >= 2 and sys.argv[1] == 'clean':
 if not os.path.exists(getBuildPath()):
     os.mkdir(getBuildPath())
     os.chdir(getBuildPath())
-    subprocess.run("cmake ..", shell=True)
+    subprocess.run("cmake .. -G \"Unix Makefiles\"", shell=True)
     os.chdir('..')
 
 status("Generating Linker Script")
