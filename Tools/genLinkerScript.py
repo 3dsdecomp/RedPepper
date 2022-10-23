@@ -2,7 +2,7 @@ from diff import *
 from settings import *
 
 def genLDScript():
-    replace_data = '.text : {\n'
+    matching_data = '\n'
     syms = []
     for subdir, dirs, files in os.walk('Symbols'):
         for file in files:
@@ -12,17 +12,18 @@ def genLDScript():
             syms += read_sym_file(filepath)
     syms = sorted(syms, key=lambda tup: tup[1])
     for sym in syms:
-        if sym[2] == 'm' or sym[2] == 'O':
-            replace_data += "\t\t. = 0x{:08x};\n".format(sym[1] - 0x00100000)
-            replace_data += "\t\t*(i." + sym[0] + ")\n"
-    for sym in syms:
-        if sym[2] == 'M':
-            replace_data += "\t\t*(i." + sym[0] + ")\n"
-    replace_data += '\t}'
+        if (sym[2] == 'm' or sym[2] == 'O') and sym[0]:
+            matching_data += "\t" + sym[0] + " " + "0x{:08x}\n".format(sym[1])
+            matching_data += "\t{\n"
+            if len(sym) == 5 and sym[4] == "gdef":
+                matching_data += "\t\t* (:gdef:" + sym[0] + ")\n"
+            else:
+                matching_data += "\t\t* (i." + sym[0] + ")\n"
+            matching_data += "\t}\n"
 
     with open('Data/Linker.ld', 'r') as template:
         with open(f'{getBuildPath()}/Linker.ld', 'w') as out:
-            out.write(template.read().replace("$$$", replace_data))
+            out.write(template.read().replace("$$$", matching_data))
             
 def main():
     genLDScript()

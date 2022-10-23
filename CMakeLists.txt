@@ -14,6 +14,7 @@ endif()
 find_program(ARM_ASM NAMES armasm.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH)
 find_program(ARM_AR NAMES armar.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH)
 find_program(ARM_CC NAMES armcc.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH)
+find_program(ARM_LINK NAMES armlink.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH)
 # find_program(ARM_FROMELF NAMES fromelf.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH) # not important
 
 macro (set_compilers)
@@ -23,7 +24,7 @@ macro (set_compilers)
     set(CMAKE_C_COMPILER ${ARM_CC})
     set(CMAKE_CXX_COMPILER ${ARM_CC})
     set(CMAKE_ASM_COMPILER ${ARM_ASM})
-    set(CMAKE_LINKER $ENV{DEVKITARM}/bin/arm-none-eabi-ld)
+    set(CMAKE_LINKER ${ARM_LINK})
 endmacro()
 
 if (WIN32)
@@ -45,17 +46,24 @@ __compiler_armcc(ASM)
 file(GLOB_RECURSE csourcefiles "Source/*.c")
 file(GLOB_RECURSE cxxsourcefiles "Source/*.cpp")
 
-add_link_options(-T ${CMAKE_CURRENT_BINARY_DIR}/Linker.ld)
 add_executable(RedPepper ${csourcefiles} ${cxxsourcefiles})
+
+target_link_options(RedPepper PUBLIC
+    --cpu=MPCore --entry=__ctr_start --startup=__ctr_start --library_type=standardlib
+    --ref_cpp_init --scanlib --legacyalign
+    --tailreorder --no_remove --datacompressor=off --arm_only
+    --verbose --mangled --symbols --paged
+    --scatter=${CMAKE_CURRENT_BINARY_DIR}/Linker.ld
+    )
 
 target_compile_options(RedPepper PUBLIC $<$<COMPILE_LANGUAGE:CXX>:
     --apcs=//interwork --cpu=MPCore --fpmode=fast --cpp --arm --force_new_nothrow
-    --signed_chars --multibyte-chars --locale=japanese
+    --signed_chars --multibyte-chars --locale=japanese --no_vfe # workaround, vfe should be enabled
     --no_rtti_data --no_rtti --no_exceptions -Otime --data-reorder --split_sections
     >)
 
 target_compile_options(RedPepper PUBLIC $<$<COMPILE_LANGUAGE:C>:
-    --apcs=//interwork --cpu=MPCore --fpmode=fast --c90 --arm
+    --apcs=//interwork --cpu=MPCore --fpmode=fast --c99 --arm
     --signed_chars --multibyte-chars --locale=japanese
     -Otime --data-reorder --split_sections
     >)

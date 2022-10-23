@@ -54,8 +54,6 @@ STUB(_ZN2al15IUseAudioKeeper2v2Ev)
 STUB(_ZN2al15IUseAudioKeeper2v4Ev)
 STUB(_ZN2al15IUseAudioKeeper2v5Ev)
 
-STUB(__aeabi_vec_ctor_nocookie_nodtor) // need to get armlink to work/roguewave stdlib to work with dkp linker
-
 STUB(_ZN2al11getLanguageEv)
 
 STUB(_ZN4sead22BufferedSafeStringBaseIcE6formatEPKcz)
@@ -79,5 +77,13 @@ STUB(_ZN2al19ActorPoseKeeperTRSV11calcBaseMtxEPN4sead8Matrix34IfEE)
 STUB(_ZN4sead22BufferedSafeStringBaseIcE7formatVEPKcSt9__va_list)
 
 STUB(_ZN2al10FileLoader11loadArchiveERKN4sead14SafeStringBaseIcEEPNS1_10FileDeviceE)
+
+STUB(nninitRegion)
+STUB(nninitLocale)
+STUB(nninitSystem)
+STUB(nninitStartUp)
+STUB(nninitCallStaticInitializers)
+STUB(nninitSetup)
+STUB(nnMain)
 
 #undef STUB

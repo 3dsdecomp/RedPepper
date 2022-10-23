@@ -20,23 +20,16 @@ def get_elf_symbol(sym_name: str):
     if not elf_exists:
         fail(f"{getElfPath()} not found")
     # find Stubs.c range (horrible)
-    stubSyms = []
     with open(f"{getBuildPath()}/RedPepper.map") as f:
         s = StringIO(f.read())
-        atStubs = False
         for line in s:
-            if "stubs           " in line:
-                atStubs = True
-            if atStubs:
-                if len(line.split()) == 0:
-                    break
-                stubSyms.append(line.split()[1])
+            if len(line.split()) == 6 and line.split()[5] == 'Stubs.o(stubs)':
+                if sym_name == line.split()[0]:
+                    return None
     s = StringIO(readelf_data)
     for line in s:
         if "FUNC" in line:
             arr = line.split()
-            if arr[7] in stubSyms:
-                continue
             if sym_name == arr[7]:
                 addr = int(arr[1], 16)
                 return (addr, int(arr[2]))
@@ -47,7 +40,10 @@ def read_sym_file(file: str):
         syms = []
         reader = csv.reader(f, delimiter=',',quotechar='"')
         for row in reader:
-            syms.append((row[0], int(row[1], 16), row[3], row[2]))
+            if len(row) == 5:
+                syms.append((row[0], int(row[1], 16), row[3], row[2], row[4]))
+            else:
+                syms.append((row[0], int(row[1], 16), row[3], row[2], ''))
         return syms
 
 def get_symbol(symbol: str):
