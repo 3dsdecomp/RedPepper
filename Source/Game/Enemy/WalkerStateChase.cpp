@@ -1,17 +1,18 @@
 #include "Game/Enemy/WalkerStateChase.h"
 
-static WalkerStateChaseParam sDefaultParam;
+static WalkerStateChaseParam sDefaultParam(false, false, 2.0, 65, 150, 4.0, 15, "Run", "Wait");
 
-namespace {
+namespace NrvWalkerStateChase {
 
 NERVE_DEF(WalkerStateChase, Start)
 
 } // namespace
 
 #ifdef NON_MATCHING
-WalkerStateChase::WalkerStateChase(al::LiveActor* host, al::LiveActor* walker, WalkerStateParam* walkParam, WalkerStateChaseParam* runParam, bool b)
+#pragma O3
+WalkerStateChase::WalkerStateChase(al::LiveActor* host, sead::Vector3f* frontPtr, const WalkerStateParam* walkParam, const WalkerStateChaseParam* runParam, bool b)
     : ActorStateBase("ÉNÉäÉ{Å[í«Ç¢Ç©ÇØèÛë‘", host)
-    , mWalker(walker)
+    , mFrontPtr(frontPtr)
     , mRunParam(runParam)
     , mWalkParam(walkParam)
     , _1C(b)
@@ -19,7 +20,7 @@ WalkerStateChase::WalkerStateChase(al::LiveActor* host, al::LiveActor* walker, W
 {
     if (runParam == nullptr)
         mRunParam = &sDefaultParam;
-    initNerve(&nrvWalkerStateChaseStart);
+    initNerve(&NrvWalkerStateChase::Start);
 }
 
 void WalkerStateChase::exeStart()

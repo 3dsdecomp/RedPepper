@@ -6,14 +6,14 @@
 #include "al/Nerve/ActorStateBase.h"
 
 class WalkerStateChase : public al::ActorStateBase {
-    al::LiveActor* const mWalker;
-    WalkerStateParam* mWalkParam;
-    WalkerStateChaseParam* mRunParam;
+    sead::Vector3f* mFrontPtr;
+    const WalkerStateParam* mWalkParam;
+    const WalkerStateChaseParam* mRunParam;
     bool _1C;
     void* _20;
 
 public:
-    WalkerStateChase(al::LiveActor* host, al::LiveActor* walker, WalkerStateParam* walkParam, WalkerStateChaseParam* runParam, bool);
+    WalkerStateChase(al::LiveActor* host, sead::Vector3f* frontPtr, const WalkerStateParam* walkParam, const WalkerStateChaseParam* runParam, bool);
 
     void exeStart();
 };

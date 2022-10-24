@@ -19,6 +19,13 @@ NerveStateCtrl::NerveStateCtrl(int capacity)
 }
 #endif
 
+bool NerveStateCtrl::updateCurrentState()
+{
+    if (mCurrentState)
+        return mCurrentState->mState->update();
+    return false;
+}
+
 void NerveStateCtrl::startState(const Nerve* nerve)
 { // horrible
     State* curState;

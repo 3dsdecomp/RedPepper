@@ -129,22 +129,25 @@ void setTrans(LiveActor* actor, const sead::Vector3f& trans);
 void setRotate(LiveActor* actor, const sead::Vector3f& rotate);
 void setScale(LiveActor* actor, const sead::Vector3f& scale);
 void setVelocity(LiveActor* actor, const sead::Vector3f& velocity);
+void setFront(LiveActor* actor, const sead::Vector3f& front);
 void setQuat(LiveActor* actor, const sead::Quatf& quat);
 void setGravity(LiveActor* actor, const sead::Vector3f& gravity);
 
 const sead::Vector3f& getTrans(const LiveActor* actor);
-const sead::Vector3f& setRotate(const LiveActor* actor);
-const sead::Vector3f& setScale(const LiveActor* actor);
-const sead::Vector3f& setVelocity(const LiveActor* actor);
-const sead::Quatf& setQuat(const LiveActor* actor);
-const sead::Vector3f& setGravity(const LiveActor* actor);
+const sead::Vector3f& getRotate(const LiveActor* actor);
+const sead::Vector3f& getScale(const LiveActor* actor);
+const sead::Vector3f& getVelocity(const LiveActor* actor);
+const sead::Vector3f& getFront(const LiveActor* actor);
+const sead::Quatf& getQuat(const LiveActor* actor);
+const sead::Vector3f& getGravity(const LiveActor* actor);
 
 sead::Vector3f* getTransPtr(LiveActor* actor);
-sead::Vector3f* setRotatePtr(LiveActor* actor);
-sead::Vector3f* setScalePtr(LiveActor* actor);
-sead::Vector3f* setVelocityPtr(LiveActor* actor);
-sead::Quatf* setQuatPtr(LiveActor* actor);
-sead::Vector3f* setGravityPtr(LiveActor* actor);
+sead::Vector3f* getRotatePtr(LiveActor* actor);
+sead::Vector3f* getScalePtr(LiveActor* actor);
+sead::Vector3f* getVelocityPtr(LiveActor* actor);
+sead::Vector3f* getFrontPtr(LiveActor* actor);
+sead::Quatf* getQuatPtr(LiveActor* actor);
+sead::Vector3f* getGravityPtr(LiveActor* actor);
 
 void updatePoseRotate(LiveActor* actor, const sead::Vector3f& rotate);
 void updatePoseQuat(LiveActor* actor, const sead::Quatf& quat);

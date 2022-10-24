@@ -1,0 +1,16 @@
+.constdata__ZTV6Togezo,003d3010
+.constdata__ZTVN9NrvTogezo15TogezoNrvWanderE,003bc970
+.constdata__ZTVN9NrvTogezo13TogezoNrvTurnE,003bc980
+.constdata__ZTVN9NrvTogezo15TogezoNrvSearchE,003bc990
+.constdata__ZTVN9NrvTogezo14TogezoNrvChaseE,003bc9a0
+.constdata__ZTVN9NrvTogezo15TogezoNrvAttackE,003bc9b0
+.constdata__ZTVN9NrvTogezo17TogezoNrvBlowDownE,003bc9c0
+i.TogezoNrvWander,003f2464
+i.TogezoNrvTurn,003f2468
+i.TogezoNrvSearch,003f246c
+i.TogezoNrvChase,003f2470
+i.TogezoNrvAttack,003f2474
+i.TogezoNrvBlowDown,003f2478
+i.sTogezoWalkerStateParam,0042fb10
+i.sTogezoWalkerStateWanderParam,0042fb30
+i.sTogezoWalkerStateChaseParam,0042fb9c

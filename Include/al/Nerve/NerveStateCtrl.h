@@ -14,6 +14,7 @@ class NerveStateCtrl {
 public:
     NerveStateCtrl(int capacity);
 
+    bool updateCurrentState();
     void startState(const Nerve* nerve);
     void tryEndCurrentState();
 

@@ -133,6 +133,7 @@ void setTrans(LiveActor* actor, const sead::Vector3f& trans) { *actor->getActorP
 void setRotate(LiveActor* actor, const sead::Vector3f& rotate) { *actor->getActorPoseKeeper()->getRotatePtr() = rotate; }
 void setScale(LiveActor* actor, const sead::Vector3f& scale) { *actor->getActorPoseKeeper()->getScalePtr() = scale; }
 void setVelocity(LiveActor* actor, const sead::Vector3f& velocity) { *actor->getActorPoseKeeper()->getVelocityPtr() = velocity; }
+void setFront(LiveActor* actor, const sead::Vector3f& front) { *actor->getActorPoseKeeper()->getFrontPtr() = front; }
 void setQuat(LiveActor* actor, const sead::Quatf& quat) { *actor->getActorPoseKeeper()->getQuatPtr() = quat; }
 void setGravity(LiveActor* actor, const sead::Vector3f& gravity) { *actor->getActorPoseKeeper()->getGravityPtr() = gravity; }
 
@@ -140,6 +141,7 @@ const sead::Vector3f& getTrans(const LiveActor* actor) { return actor->getActorP
 const sead::Vector3f& getRotate(const LiveActor* actor) { return actor->getActorPoseKeeper()->getRotate(); }
 const sead::Vector3f& getScale(const LiveActor* actor) { return actor->getActorPoseKeeper()->getScale(); }
 const sead::Vector3f& getVelocity(const LiveActor* actor) { return actor->getActorPoseKeeper()->getVelocity(); }
+const sead::Vector3f& getFront(const LiveActor* actor) { return actor->getActorPoseKeeper()->getFront(); }
 const sead::Quatf& getQuat(const LiveActor* actor) { return actor->getActorPoseKeeper()->getQuat(); }
 const sead::Vector3f& getGravity(const LiveActor* actor) { return actor->getActorPoseKeeper()->getGravity(); }
 
@@ -147,6 +149,7 @@ sead::Vector3f* getTransPtr(LiveActor* actor) { return actor->getActorPoseKeeper
 sead::Vector3f* getRotatePtr(LiveActor* actor) { return actor->getActorPoseKeeper()->getRotatePtr(); }
 sead::Vector3f* getScalePtr(LiveActor* actor) { return actor->getActorPoseKeeper()->getScalePtr(); }
 sead::Vector3f* getVelocityPtr(LiveActor* actor) { return actor->getActorPoseKeeper()->getVelocityPtr(); }
+sead::Vector3f* getFrontPtr(LiveActor* actor) { return actor->getActorPoseKeeper()->getFrontPtr(); }
 sead::Quatf* getQuatPtr(LiveActor* actor) { return actor->getActorPoseKeeper()->getQuatPtr(); }
 sead::Vector3f* getGravityPtr(LiveActor* actor) { return actor->getActorPoseKeeper()->getGravityPtr(); }
 

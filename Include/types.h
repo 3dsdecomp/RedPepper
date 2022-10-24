@@ -24,3 +24,4 @@ typedef s32 intptr_t;
 #endif
 
 #define static_assert(COND, MSG) typedef int __static_assert_balls[(COND) ? 1 : -1]
+#define split(S) __attribute__((section("i." #S))) S

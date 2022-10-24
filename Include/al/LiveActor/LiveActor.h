@@ -16,6 +16,8 @@ namespace al {
 
 class IUseUnknown {
 public:
+    virtual void v1() {};
+    virtual void v2() {};
     virtual void* getUnknown() const = 0;
 };
 
@@ -46,6 +48,8 @@ public:
     virtual void control();
     virtual void calcAndSetBaseMtx();
     virtual void updateCollider();
+    virtual void v22();
+    virtual void v23();
 
     inline const char* getName() { return mActorName; }
     inline ActorPoseKeeperBase* getActorPoseKeeper() const { return mActorPoseKeeper; }

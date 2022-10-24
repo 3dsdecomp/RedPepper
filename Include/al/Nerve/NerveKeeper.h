@@ -23,8 +23,9 @@ public:
 
     void update();
     void setNerve(const Nerve* nerve);
-    inline IUseNerve* getHost() { return mHost; }
-    inline int getStep() { return mStep; }
+    NerveStateCtrl* getStateCtrl() { return mStateCtrl; }
+    IUseNerve* getHost() { return mHost; }
+    int getStep() { return mStep; }
 };
 
 class IUseNerve {

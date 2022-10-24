@@ -39,6 +39,8 @@ STUB(_ZNK2al9LiveActor10getBaseMtxEv)
 STUB(_ZN2al9LiveActor4gap2Ev)
 STUB(_ZN2al9LiveActor17calcAndSetBaseMtxEv)
 STUB(_ZN2al9LiveActor14updateColliderEv)
+STUB(_ZN2al9LiveActor3v22Ev)
+STUB(_ZN2al9LiveActor3v23Ev)
 STUB(_ZN2al9initNerveEPNS_9LiveActorEPKNS_5NerveEi)
 
 STUB(_ZN2al24initActorWithArchiveNameEPNS_9LiveActorERKNS_13ActorInitInfoERKN4sead14SafeStringBaseIcEEPKc)
@@ -93,5 +95,22 @@ STUB(_ZN11Application3runEv)
 STUB(_ZN11Application4initEv)
 STUB(_ZN19ApplicationFunction10initializeEv)
 STUB(_ZN2nn3cfg3CTR10InitializeEv)
+
+STUB(_ZN17WalkerStateWanderC1EPN2al9LiveActorEPN4sead7Vector3IfEEPK16WalkerStateParamPK22WalkerStateWanderParam)
+STUB(_ZN18EnemyStateBlowDownC1EPN2al9LiveActorEP23EnemyStateBlowDownParamPKci)
+STUB(_ZN21WalkerStateChaseParamC1EbbfffffPKcS1_)
+STUB(_ZN22WalkerStateWanderParamC1EiifffPKcS1_)
+STUB(_ZN2al14initNerveStateEPNS_9IUseNerveEPNS_14NerveStateBaseEPKNS_5NerveEPKc)
+
+STUB(FUN_00258774)
+STUB(_ZN2al11startActionEPNS_9LiveActorEPKc)
+STUB(_ZN2al11isActionEndEPKNS_9LiveActorE)
+
+STUB(FUN_00279158)
+STUB(FUN_00262988)
+STUB(FUN_00272a9c)
+
+STUB(FUN_0026b6cc)
+STUB(FUN_00259758)
 
 #undef STUB

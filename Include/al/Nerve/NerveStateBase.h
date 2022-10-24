@@ -19,7 +19,4 @@ public:
     inline bool isDead() const { return mIsDead; }
 };
 
-void initNerveState(IUseNerve*, NerveStateBase* state, const Nerve* stateNrv, const char* name);
-bool updateNerveState(IUseNerve*); // returns if nerve state is dead
-
 } // namespace al

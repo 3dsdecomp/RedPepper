@@ -1,8 +1,7 @@
 #include "Game/MapObj/MapObjActor.h"
 
-#ifdef NON_MATCHING
+#pragma O3
 MapObjActor::MapObjActor(const sead::SafeString& name)
     : LiveActor(name.cstr())
 {
 }
-#endif

@@ -43,7 +43,7 @@ def genLDScript():
         const_data += "{\n"
         const_data += "\t" + sym[0] + " " + "0x{:08x}\n".format(sym[1])
         const_data += "\t{\n"
-        const_data += "\t\t* (:gdef:" + sym[0] + ")\n"
+        const_data += "\t\t* (" + sym[0] + ")\n"
         const_data += "\t}\n"
         const_data += "}\n"
 

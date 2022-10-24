@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Game/Player/PlayerActor.h"
 #include "al/LiveActor/LiveActorKit.h"
 #include "al/Scene/SceneObjHolder.h"
 #include "al/System/SystemKit.h"
@@ -15,7 +16,8 @@ public:
     u8 unk2[0x34];
     al::SceneObjHolder* mSceneObjHolder;
     al::LiveActorKit* mLiveActorKit;
-    u8 unk3[0x8];
+    void* _58;
+    PlayerActor* mPlayerActor;
 
 public:
     void init();
