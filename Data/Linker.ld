@@ -1,7 +1,4 @@
-TEXT_SECTION 0x00100000
-{
-    $$$    
-}
+$$$
 
 RO_SECTION 0x003a2000
 {

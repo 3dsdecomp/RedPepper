@@ -11,7 +11,6 @@ namespace sead {
 class HeapMgr {
 public:
     HeapMgr();
-    virtual ~HeapMgr() { }
 
     Heap* getCurrentHeap();
     Heap* findContainHeap(const void* ptr) const;
@@ -19,6 +18,7 @@ public:
 
     static HeapMgr* instance() { return sInstancePtr; }
     static s32 getRootHeapNum() { return sRootHeaps.size(); }
+    static Heap* getRootHeap(int index) { return sRootHeaps[index]; }
 
     // TODO: these should be private
     static HeapMgr sInstance;
@@ -38,8 +38,9 @@ private:
     static IndependentHeaps sIndependentHeaps;
     static CriticalSection sHeapTreeLockCS;
 
-    void*
-        mAllocFailedCallback; // IAllocFailedCallback* = IDelegate1<const AllocFailedCallbackArg*>*
+    void* unk;
+    void* mAllocFailedCallback; // IAllocFailedCallback* = IDelegate1<const AllocFailedCallbackArg*>*
+    u8 unk1;
 };
 
 /// Sets the "current heap" to the specified heap and restores the previous "current heap"

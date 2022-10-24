@@ -15,13 +15,13 @@ namespace svc {
         bx lr
     }
 
-    __asm nn::Result __attribute__((section("i._ZN2nn3svc16ArbitrateAddressEjjNS_2os15ArbitrationTypeEix"))) ArbitrateAddress(nn::Handle arbiter, uintptr_t addr, nn::os::ArbitrationType type, s32 value, s64 ns)
+    __asm nn::Result __attribute__((section("i._ZN2nn3svc16ArbitrateAddressENS_6HandleEjNS_2os15ArbitrationTypeEix"))) ArbitrateAddress(nn::Handle arbiter, uintptr_t addr, nn::os::ArbitrationType type, s32 value, s64 ns)
     {
         svc 0x22
         bx lr
     }
 
-    __asm nn::Result __attribute__((section("i._ZN2nn3svc11CloseHandleEj"))) CloseHandle(nn::Handle handle)
+    __asm nn::Result __attribute__((section("i._ZN2nn3svc11CloseHandleENS_6HandleE"))) CloseHandle(nn::Handle handle)
     {
         svc 0x23
         bx lr

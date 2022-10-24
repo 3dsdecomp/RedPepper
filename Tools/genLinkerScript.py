@@ -13,6 +13,8 @@ def genLDScript():
     syms = sorted(syms, key=lambda tup: tup[1])
     for sym in syms:
         if (sym[2] == 'm' or sym[2] == 'O') and sym[0]:
+            matching_data += sym[0] + " " + "0x{:08x}\n".format(sym[1])
+            matching_data += "{\n"
             matching_data += "\t" + sym[0] + " " + "0x{:08x}\n".format(sym[1])
             matching_data += "\t{\n"
             if len(sym) == 5 and sym[4] == "gdef":
@@ -20,6 +22,7 @@ def genLDScript():
             else:
                 matching_data += "\t\t* (i." + sym[0] + ")\n"
             matching_data += "\t}\n"
+            matching_data += "}\n"
 
     with open('Data/Linker.ld', 'r') as template:
         with open(f'{getBuildPath()}/Linker.ld', 'w') as out:

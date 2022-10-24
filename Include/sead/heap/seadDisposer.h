@@ -54,6 +54,7 @@ public:                                                                         
     };                                                                                                                                                    \
                                                                                                                                                           \
     static CLASS* instance();                                                                                                                             \
+    static CLASS* instanceInline() { return sInstance; }                                                                                                  \
     static CLASS* createInstance(sead::Heap* heap);                                                                                                       \
     static void deleteInstance();                                                                                                                         \
                                                                                                                                                           \

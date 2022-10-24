@@ -17,6 +17,9 @@ struct TaskConstructArg {
     TaskParameter* param;
 };
 
+template <typename T>
+TaskBase* TTaskFactory(const TaskConstructArg&);
+
 typedef TaskBase* (*TaskFactory)(const TaskConstructArg&);
 
 class TaskClassID {

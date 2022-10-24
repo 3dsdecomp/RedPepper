@@ -18,6 +18,9 @@ public:
     u8 unk3[0x8];
 
 public:
+    void init();
+    void run();
+
     al::SceneObjHolder* getSceneObjHolder() const { return mSceneObjHolder; }
     void setSceneObjHolder(al::SceneObjHolder* holder) { mSceneObjHolder = holder; }
 };

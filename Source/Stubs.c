@@ -84,8 +84,14 @@ STUB(nninitSystem)
 STUB(nninitStartUp)
 STUB(nninitCallStaticInitializers)
 STUB(nninitSetup)
-STUB(nnMain)
 
 STUB(_ZN2nn3srv6detail7Service16GetServiceHandleEPNS_6HandleEPKcij)
+
+STUB(FUN_0010073c)
+STUB(FUN_00101414)
+STUB(_ZN11Application3runEv)
+STUB(_ZN11Application4initEv)
+STUB(_ZN19ApplicationFunction10initializeEv)
+STUB(_ZN2nn3cfg3CTR10InitializeEv)
 
 #undef STUB
