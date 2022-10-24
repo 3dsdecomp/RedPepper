@@ -4,6 +4,8 @@
 
 namespace nn {
 
-typedef u32 Handle;
+struct Handle {
+    u32 value;
+};
 
 } // namespace nn

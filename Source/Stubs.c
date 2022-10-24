@@ -86,4 +86,6 @@ STUB(nninitCallStaticInitializers)
 STUB(nninitSetup)
 STUB(nnMain)
 
+STUB(_ZN2nn3srv6detail7Service16GetServiceHandleEPNS_6HandleEPKcij)
+
 #undef STUB
