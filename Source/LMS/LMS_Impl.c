@@ -20,7 +20,7 @@ void LMS_SetMemFuncs(LMS_AllocFuncPtr alloc_ptr, LMS_FreeFuncPtr free_ptr)
 }
 
 #ifdef NON_MATCHING
-s32 LMSi_SearchBlockByName(LMS_Binary* binary, char* blockName)
+s32 LMSi_SearchBlockByName(LMS_Binary* binary, const char* blockName)
 {
     u16 index = 0;
     if (binary->numBlocks > 0) {

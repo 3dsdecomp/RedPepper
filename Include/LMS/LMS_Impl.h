@@ -6,7 +6,7 @@
 extern "C" {
 #endif
 
-_Bool LMSi_MemCmp(void*, void*, u32 size);
+_Bool LMSi_MemCmp(const void*, const void*, u32 size);
 
 typedef void* (*LMS_AllocFuncPtr)(u32 size);
 typedef void (*LMS_FreeFuncPtr)(void* ptr);
@@ -17,7 +17,7 @@ void LMSi_Free(void* ptr);
 void LMS_SetMemFuncs(LMS_AllocFuncPtr alloc_ptr, LMS_FreeFuncPtr free_ptr);
 
 typedef struct LMS_BinaryBlock {
-    void* data;
+    const void* data;
     char type[4];
     u32 size;
     u16 unk;
@@ -38,7 +38,7 @@ typedef struct LMS_Binary {
 } LMS_Binary;
 
 void LMSi_AnalyzeMessageBinary(LMS_Binary* binary, const char* magic);
-s32 LMSi_SearchBlockByName(LMS_Binary* binary, char* blockName);
+s32 LMSi_SearchBlockByName(LMS_Binary* binary, const char* blockName);
 
 #ifdef __cplusplus
 }
