@@ -137,4 +137,12 @@ STUB(_ZN15ProductSequence15exeGameOverRoomEv)
 STUB(_ZN15ProductSequence7exeUnk1Ev)
 STUB(_ZN15ProductSequence8exeStageEv)
 
+STUB(_ZN2al11LayoutActor8calcAnimEv)
+STUB(_ZN2al11LayoutActor8movementEv)
+
+STUB(_ZN2al12EffectKeeper23deleteAndClearEffectAllEv)
+
+STUB(_ZN2al11LayoutActor4unk1Ev)
+STUB(_ZN2al11LayoutActor4unk2Ev)
+
 #undef STUB

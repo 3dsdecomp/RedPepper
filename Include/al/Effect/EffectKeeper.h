@@ -3,6 +3,8 @@
 namespace al {
 
 class EffectKeeper {
+public:
+    void deleteAndClearEffectAll();
 };
 
 class IUseEffectKeeper {
