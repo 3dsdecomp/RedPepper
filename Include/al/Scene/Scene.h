@@ -6,7 +6,7 @@
 
 namespace al {
 
-class Scene : public NerveExecutor, IUseAudioKeeper {
+class Scene : public NerveExecutor, public IUseAudioKeeper {
     AudioKeeper* mAudioKeeper;
     class LiveActorKit* mLiveActorKit;
     class LayoutKit* mLayoutKit;
@@ -19,6 +19,7 @@ class Scene : public NerveExecutor, IUseAudioKeeper {
 
     bool mIsAlive;
 
+public:
     Scene(const char* name);
 
     virtual void appear();

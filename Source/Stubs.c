@@ -113,4 +113,28 @@ STUB(FUN_00272a9c)
 STUB(FUN_0026b6cc)
 STUB(FUN_00259758)
 
+STUB(_ZN2al8SequenceC1EPKc)
+STUB(_ZN2al8Sequence4unk6Ev)
+STUB(_ZN2al8Sequence6updateEv)
+
+STUB(_ZN15ProductSequence6updateEv)
+STUB(_ZNK15ProductSequence12isDisposableEv)
+STUB(FUN_0025ba7c)
+
+STUB(_ZN19StageStartParamBase3gapEv)
+STUB(_ZN19StageStartParamBase4gap2Ev)
+STUB(_ZN19StageStartParamBase7getUnk5Ev)
+STUB(_ZN22ProductStageStartParam6getUnkEv)
+STUB(_ZN22ProductStageStartParam7getUnk2Ev)
+STUB(_ZN22ProductStageStartParam7getUnk3Ev)
+STUB(_ZN22ProductStageStartParam7getUnk4Ev)
+
+STUB(FUN_0025ddd0)
+
+STUB(_ZN15ProductSequence13exeMysteryBoxEv)
+STUB(_ZN15ProductSequence15exeCourseSelectEv)
+STUB(_ZN15ProductSequence15exeGameOverRoomEv)
+STUB(_ZN15ProductSequence7exeUnk1Ev)
+STUB(_ZN15ProductSequence8exeStageEv)
+
 #undef STUB
