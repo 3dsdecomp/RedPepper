@@ -15,7 +15,7 @@ class ProductSequence : public al::Sequence {
     void* _15C;
     class ProductStateTitle* mStateTitle;
     class ProductStateOpening* mStateOpening;
-    ProductStateCourseSelect* mStateCourseSelect;
+    ProductStateTitle* mStateCourseSelect;
     ProductStateStage* mStateStage;
     class ProductStateKinopioHouse* mStateKinopioHouse;
     class ProductStateMysteryBox* mStateMysteryBox;

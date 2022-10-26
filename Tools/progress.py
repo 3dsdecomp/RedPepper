@@ -3,6 +3,15 @@ from diff import *
 from colorama import Fore
 import json
 
+def get_matching_bytes(orig: str, other: str):
+    matching = 0
+    with open(orig, 'rb') as orig_file:
+        with open(other, 'rb') as other_file:
+            while (b := orig_file.read(4)):
+                if other_file.read(4) == b:
+                    matching += 4
+    return matching
+
 def main():
 
     syms_undefined = 0
@@ -10,8 +19,10 @@ def main():
     syms_minor = 0
     syms_ok = 0
     syms_total = 0
+    bytes_ok = get_matching_bytes("code.bin", getBuildPath() + "/code.bin")
     addrs = []
     addrs_changed = False
+    code_bin_size = os.path.getsize('code.bin')
 
     unnamed_syms = read_sym_file('Symbols/Unnamed.sym')
     for sym in unnamed_syms:
@@ -39,14 +50,12 @@ def main():
                     case 'O':
                         syms_ok += 1
 
-    def percentage(amount: int):
-        return (amount / syms_total) * 100;
-    def print_type(name: str, amount: int, number_color: Fore):
-        print(name + ": " + (32 - len(name) - 2 ) * " " + number_color + str(amount) + Fore.RESET + " (" + number_color + "{:.2f}%".format(percentage(amount)) + Fore.RESET + ")")
-    def write_type(rank: str, name: str, amount: int, color: str):
+    def print_type(name: str, amount: str, number_color: Fore):
+        print(name + ": " + (32 - len(name) - 2 ) * " " + number_color + amount + Fore.RESET)
+    def write_type(rank: str, name: str, amount: str, color: str):
         out = {
             "label": name,
-            "message": "{:.2f}%".format(percentage(amount)),
+            "message": amount,
             "color": color,
             "schemaVersion": 1
         }
@@ -54,15 +63,17 @@ def main():
             f.write(json.dumps(out))
 
 
-    print_type("Total Functions", syms_total, Fore.RESET);
-    print_type("Decompiled", syms_ok, Fore.GREEN);
-    print_type("Decompiled/Non-matching", syms_ok + syms_major + syms_minor, Fore.CYAN);
-    print_type("Non-matching (minor problems)", syms_minor, Fore.YELLOW);
-    print_type("Non-matching (major problems)", syms_major, Fore.RED);
-    write_type('OK', "Decompiled", syms_ok, "success");
-    write_type('DecompiledNonMatching', "Decompiled/Non-matching", syms_ok + syms_major + syms_minor, "informational");
-    write_type('NonMatchingMinor',"Non-matching (minor problems)", syms_minor, "yellow");
-    write_type('NonMatchingMajor', "Non-matching (major problems)", syms_major, "critical");
+    bytes_ok_str = "{:.4f}%".format((bytes_ok / code_bin_size) * 100)
+
+    print_type("Total Functions", str(syms_total), Fore.RESET);
+    print_type("Matching", str(syms_ok), Fore.GREEN);
+    print_type("Non-matching", str(syms_ok + syms_major + syms_minor), Fore.YELLOW);
+    print_type("code.bin", bytes_ok_str, Fore.CYAN);
+
+    write_type('Total', "Total Functions", str(syms_total), 'inactive');
+    write_type('OK', "Matching", str(syms_ok), "success");
+    write_type('NonMatching', "Non-matching", str(syms_ok + syms_major + syms_minor), "yellow");
+    write_type('Code', "code.bin", bytes_ok_str, "informational");
 
     if addrs_changed:
         print("Rewriting Unnamed.sym, do not interrupt", end='\r')

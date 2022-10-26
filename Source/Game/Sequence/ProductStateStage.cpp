@@ -6,6 +6,7 @@ public:
     virtual const char* getStageDataName() { return "KoopaLastStage"; }
 };
 
+#ifdef NON_MATCHING
 ProductStateStage::ProductStateStage(ProductSequence* parent, ProductStageStartParam* startParam, const al::LayoutInitInfo& info)
     : HostStateBase(parent, "ステージステート")
     , mStageStartParam(startParam)
@@ -22,6 +23,7 @@ ProductStateStage::ProductStateStage(ProductSequence* parent, ProductStageStartP
 {
     mLastStageStartParam = new KoopaLastStageStartParam();
 }
+#endif
 
 /*void ProductStateStage::init() { }
 void ProductStateStage::appear() { }*/

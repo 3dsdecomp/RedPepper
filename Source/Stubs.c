@@ -145,4 +145,8 @@ STUB(_ZN2al12EffectKeeper23deleteAndClearEffectAllEv)
 STUB(_ZN2al11LayoutActor4unk1Ev)
 STUB(_ZN2al11LayoutActor4unk2Ev)
 
+STUB(_ZN19WindowConfirmSingleC1EPKcRKN2al14LayoutInitInfoE)
+STUB(_ZN19WindowConfirmButtonC1EPKcRKN2al14LayoutInitInfoE)
+STUB(_ZN17ProductStateTitle7exeLoadEv)
+
 #undef STUB
