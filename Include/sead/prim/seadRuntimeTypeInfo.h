@@ -110,13 +110,13 @@ public:                                                                         
         return BASE::checkDerivedRuntimeTypeInfoStatic(typeInfo);                                \
     }                                                                                            \
                                                                                                  \
-    bool checkDerivedRuntimeTypeInfo(const sead::RuntimeTypeInfo::Interface* typeInfo)           \
-        const override                                                                           \
+    virtual bool checkDerivedRuntimeTypeInfo(const sead::RuntimeTypeInfo::Interface* typeInfo)   \
+        const                                                                                    \
     {                                                                                            \
         return checkDerivedRuntimeTypeInfoStatic(typeInfo);                                      \
     }                                                                                            \
                                                                                                  \
-    const sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo() const override                  \
+    virtual const sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo() const                   \
     {                                                                                            \
         return getRuntimeTypeInfoStatic();                                                       \
     }

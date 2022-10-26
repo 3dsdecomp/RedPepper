@@ -46,7 +46,7 @@ public:
     TTreeNode* next() const { return static_cast<TTreeNode*>(mNext); }
     TTreeNode* prev() const { return static_cast<TTreeNode*>(mPrev); }
     TTreeNode* findRoot() { return static_cast<TTreeNode*>(TreeNode::findRoot()); }
-    const TTreeNode* findRoot() const { return static_cast<TTreeNode*>(TreeNode::findRoot()); }
+    const TTreeNode* findRoot() const { return static_cast<const TTreeNode*>(TreeNode::findRoot()); }
     void insertAfterSelf(TTreeNode* node) { TreeNode::insertAfterSelf(node); }
     void insertBeforeSelf(TTreeNode* node) { TreeNode::insertBeforeSelf(node); }
     void pushBackChild(TTreeNode* node) { TreeNode::pushBackChild(node); }

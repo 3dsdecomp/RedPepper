@@ -149,4 +149,9 @@ STUB(_ZN19WindowConfirmSingleC1EPKcRKN2al14LayoutInitInfoE)
 STUB(_ZN19WindowConfirmButtonC1EPKcRKN2al14LayoutInitInfoE)
 STUB(_ZN17ProductStateTitle7exeLoadEv)
 
+STUB(_ZN4sead13ControllerMgr9sInstanceE)
+STUB(FUN_0024edd8)
+STUB(_ZN2al12isPadReleaseEii)
+STUB(_ZN2al9isPadHoldEii)
+
 #undef STUB

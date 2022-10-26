@@ -5,7 +5,7 @@ namespace al {
 
 LiveActorKit* getLiveActorKit()
 {
-    return Application::instance()->mLiveActorKit;
+    return al::getApplication()->mLiveActorKit;
 }
 
 } // namespace al

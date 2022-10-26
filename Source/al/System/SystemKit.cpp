@@ -5,7 +5,7 @@ namespace alProjectInterface {
 
 al::SystemKit* getSystemKit()
 {
-    return Application::instance()->mSystemKit;
+    return al::getApplication()->mSystemKit;
 }
 
 } // namespace alProjectInterface

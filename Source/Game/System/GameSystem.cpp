@@ -33,6 +33,6 @@ extern "C" void nnMain()
     FUN_0010073c();
     ApplicationFunction::initialize();
     Application::createInstance(sead::HeapMgr::getRootHeapNum() != 0 ? sead::HeapMgr::getRootHeap(0) : nullptr);
-    Application::instanceInline()->init();
-    Application::instanceInline()->run();
+    Application::instance()->init();
+    Application::instance()->run();
 }

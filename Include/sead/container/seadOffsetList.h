@@ -232,6 +232,11 @@ public:
         robustIterator begin() const { return mList.robustBegin(); }
         robustIterator end() const { return mList.robustEnd(); }
         const OffsetList& mList;
+
+        RobustRange(const OffsetList& list)
+            : mList(list)
+        {
+        }
     };
     RobustRange robustRange() const
     {

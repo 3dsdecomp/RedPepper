@@ -1,9 +1,10 @@
 #ifndef SEAD_NAMABLE_H_
 #define SEAD_NAMABLE_H_
 
-#include "sead/prim/seadSafeString.h"
+#include <sead/prim/seadSafeString.h>
 
 namespace sead {
+
 class INamable {
 public:
     INamable();

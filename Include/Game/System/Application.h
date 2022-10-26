@@ -28,3 +28,9 @@ public:
 };
 
 static_assert(sizeof(Application) == 0x60, "");
+
+namespace al {
+
+Application* getApplication();
+
+} // namespace al

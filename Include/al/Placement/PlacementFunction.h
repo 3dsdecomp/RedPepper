@@ -5,6 +5,8 @@
 
 namespace al {
 
+bool isPlaced(const ActorInitInfo& info);
+
 bool tryGetArg(bool* out, const PlacementInfo& info, char* argName, int defaultValue = 0);
 bool tryGetArg(float* out, const PlacementInfo& info, char* argName, int defaultValue = 0);
 

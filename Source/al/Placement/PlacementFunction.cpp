@@ -2,6 +2,11 @@
 
 namespace al {
 
+bool isPlaced(const ActorInitInfo& info)
+{
+    return info.mPlacementInfo->isValid();
+}
+
 #ifdef NON_MATCHING // idek
 bool tryGetArg(bool* out, const PlacementInfo& info, char* argName, int defaultValue)
 {

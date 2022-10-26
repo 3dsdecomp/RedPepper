@@ -3,3 +3,8 @@
 #ifdef NON_MATCHING
 SEAD_SINGLETON_DISPOSER_IMPL(Application)
 #endif
+
+Application* al::getApplication()
+{
+    return Application::instance();
+}

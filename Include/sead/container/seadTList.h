@@ -177,6 +177,11 @@ public:
         robustIterator begin() const { return mList.robustBegin(); }
         robustIterator end() const { return mList.robustEnd(); }
         const TList& mList;
+
+        RobustRange(const TList& list)
+            : mList(list)
+        {
+        }
     };
     RobustRange robustRange() const { return RobustRange(*this); }
 

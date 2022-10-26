@@ -3,13 +3,11 @@
 
 namespace al {
 
-#ifdef NON_MATCHING
 SceneObjHolder* getSceneObjHolder()
 {
 #pragma no_inline
-    return Application::instance()->getSceneObjHolder();
+    return al::getApplication()->getSceneObjHolder();
 }
-#endif
 
 void* SceneObjHolder::getObj(int id)
 {
@@ -21,6 +19,7 @@ void SceneObjHolder::setObj(void* obj, int id)
 {
     mObjs[id] = obj;
 }
+#endif
 
 void* getSceneObj(int id)
 {
@@ -31,6 +30,5 @@ void setSceneObj(void* obj, int id)
 {
     return getSceneObjHolder()->setObj(obj, id);
 }
-#endif
 
 } // namespace al
