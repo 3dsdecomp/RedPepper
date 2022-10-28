@@ -20,7 +20,7 @@ STUB(_ZN4sead9IDisposerD1Ev)
 STUB(_ZN4sead9IDisposerC1EPNS_4HeapENS0_14HeapNullOptionE)
 
 STUB(_ZN2al20findOrCreateResourceERKN4sead14SafeStringBaseIcEE)
-STUB(_ZN2al8Resource7getBymlERKN4sead14SafeStringBaseIcEE)
+STUB(_ZNK2al8Resource7getBymlERKN4sead14SafeStringBaseIcEE)
 
 STUB(_ZN15SceneObjFactory20createSceneObjHolderEv)
 

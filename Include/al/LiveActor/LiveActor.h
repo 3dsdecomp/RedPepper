@@ -1,6 +1,7 @@
 #pragma once
 
 #include "al/Audio/AudioKeeper.h"
+#include "al/Collision/Collider.h"
 #include "al/Effect/EffectKeeper.h"
 #include "al/LiveActor/ActorActionKeeper.h"
 #include "al/LiveActor/ActorInitInfo.h"
@@ -45,9 +46,10 @@ public:
     virtual void v22();
     virtual void v23();
 
-    inline const char* getName() { return mActorName; }
-    inline ActorPoseKeeperBase* getActorPoseKeeper() const { return mActorPoseKeeper; }
-    inline LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
+    const char* getName() { return mActorName; }
+    ActorPoseKeeperBase* getActorPoseKeeper() const { return mActorPoseKeeper; }
+    LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
+    Collider* getCollider() const { return mCollider; }
 
     void initPoseKeeper(ActorPoseKeeperBase* pPoseKeeper);
 
@@ -58,7 +60,7 @@ protected:
     ActorPoseKeeperBase* mActorPoseKeeper;
     class ActorExecuteInfo* mActorExecuteInfo;
     ActorActionKeeper* mActorActionKeeper;
-    class Collider* mCollider;
+    Collider* mCollider;
     class CollisionParts* mCollisionParts;
     class ModelKeeper* mModelKeeper;
     NerveKeeper* mNerveKeeper;

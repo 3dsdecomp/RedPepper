@@ -1,23 +1,27 @@
 #pragma once
 
+#include "al/Scene/ISceneObj.h"
+
 namespace al {
 
 class SceneObjHolder {
 public:
-    typedef void* (*CreateFunction)(int id);
+    typedef ISceneObj* (*CreateFunc)(int id);
 
-    SceneObjHolder(CreateFunction func, int size);
-    void setObj(void* obj, int id);
-    void* getObj(int id);
+    SceneObjHolder(CreateFunc func, int size);
+    void setObj(ISceneObj* obj, int id);
+    ISceneObj* getObj(int id);
+    ISceneObj* create(int id);
 
 private:
-    CreateFunction mCreateFunction;
-    void** mObjs;
+    CreateFunc mCreateFunc;
+    ISceneObj** mObjs;
     int mSize;
 };
 
 SceneObjHolder* getSceneObjHolder();
-void* getSceneObj(int id);
-void setSceneObj(void* obj, int id);
+ISceneObj* createSceneObj(int id);
+void setSceneObj(ISceneObj* obj, int id);
+ISceneObj* getSceneObj(int id);
 
 } // namespace al

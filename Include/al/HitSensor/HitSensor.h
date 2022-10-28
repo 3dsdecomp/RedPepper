@@ -33,10 +33,9 @@ class HitSensor {
     LiveActor* mHostActor;
 
 public:
-    inline LiveActor* getHost() { return mHostActor; }
+    const char* getName() { return mName; }
+    LiveActor* getHost() { return mHostActor; }
 };
-
-bool isSensorName(HitSensor* sensor, const char* name);
 
 bool isHitCylinderSensor(HitSensor*, HitSensor*, const sead::Vector3f&, float);
 

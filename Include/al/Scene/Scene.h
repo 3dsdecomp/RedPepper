@@ -41,7 +41,6 @@ public:
 
     void initActorFactory();
     void initSceneObjHolder();
-    // void initPlacement(al::Resource* stageFile, const ActorInitInfo& info, const char* infoIterName);
 };
 
 static_assert(sizeof(Scene) == 0x34, "");

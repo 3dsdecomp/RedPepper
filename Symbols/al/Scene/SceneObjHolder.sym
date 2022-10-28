@@ -1,5 +1,8 @@
 _ZN2al14SceneObjHolderC1EPFPviEi,001cb550,132,U
+_ZN2al14SceneObjHolder6createEi,001cb508,72,O
+_ZN2al14SceneObjHolder6setObjEPNS_9ISceneObjEi,001cb4ac,12,O
 _ZN2al14SceneObjHolder6getObjEi,00332884,12,O
 _ZN2al17getSceneObjHolderEv,00267234,16,O
+_ZN2al14createSceneObjEi,00276590,24,O
+_ZN2al11setSceneObjEPNS_9ISceneObjEi,001cb48c,32,O
 _ZN2al11getSceneObjEi,002775c0,24,O
-_ZN2al11setSceneObjEPvi,001cb48c,44,M

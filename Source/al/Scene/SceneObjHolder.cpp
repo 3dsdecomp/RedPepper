@@ -3,32 +3,45 @@
 
 namespace al {
 
+#pragma no_inline // probably belongs in another file
 SceneObjHolder* getSceneObjHolder()
 {
-#pragma no_inline
     return al::getApplication()->getSceneObjHolder();
 }
 
-void* SceneObjHolder::getObj(int id)
+ISceneObj* SceneObjHolder::getObj(int id)
 {
     return mObjs[id];
 }
 
-#ifdef NON_MATCHING
-void SceneObjHolder::setObj(void* obj, int id)
+void SceneObjHolder::setObj(ISceneObj* obj, int id)
 {
     mObjs[id] = obj;
 }
-#endif
 
-void* getSceneObj(int id)
+ISceneObj* SceneObjHolder::create(int id)
 {
-    return getSceneObjHolder()->getObj(id);
+    if (mObjs[id] == nullptr) {
+        ISceneObj* newObj = mCreateFunc(id);
+        mObjs[id] = newObj;
+        newObj->initSceneObj();
+    }
+    return mObjs[id];
 }
 
-void setSceneObj(void* obj, int id)
+ISceneObj* createSceneObj(int id)
+{
+    return getSceneObjHolder()->create(id);
+}
+
+void setSceneObj(ISceneObj* obj, int id)
 {
     return getSceneObjHolder()->setObj(obj, id);
+}
+
+ISceneObj* getSceneObj(int id)
+{
+    return getSceneObjHolder()->getObj(id);
 }
 
 } // namespace al
