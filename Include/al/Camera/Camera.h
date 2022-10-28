@@ -35,4 +35,6 @@ public:
     virtual void v7();
 };
 
+const sead::Vector3f* getCameraPos();
+
 } // namespace al

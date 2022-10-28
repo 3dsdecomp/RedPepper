@@ -13,10 +13,6 @@ class IUseAudioKeeper {
 
 public:
     virtual AudioKeeper* getAudioKeeper() const = 0;
-
-private:
-    virtual void v4();
-    virtual void v5();
 };
 
 } // namespace al

@@ -1,4 +1,5 @@
 #include "al/Placement/PlacementFunction.h"
+#include "al/Util/StringUtil.h"
 
 namespace al {
 
@@ -32,18 +33,36 @@ bool tryGetArg(float* out, const PlacementInfo& info, char* argName, int default
 }
 #endif
 
-static const char sObjectNameKey[] = "name";
+static const char split(sObjectNameKey)[] = "name";
 
 #ifdef NON_MATCHING // registers
 bool tryGetObjectName(const char** out, const al::ActorInitInfo& info)
 {
-    return info.mPlacementInfo->tryGetStringByKey(out, sObjectNameKey);
+    return al::getPlacementInfo(info).tryGetStringByKey(out, sObjectNameKey);
 }
 #endif
 
 bool tryGetObjectName(const char** out, const al::PlacementInfo& info)
 {
     return info.tryGetStringByKey(out, sObjectNameKey);
+}
+
+#ifdef NON_MATCHING // will match when tryGetObjectName matches
+bool isObjectName(const ActorInitInfo& info, const char* objectName)
+{
+    const char* name = nullptr;
+    if (tryGetObjectName(&name, info))
+        return isEqualString(name, objectName);
+    return false;
+}
+#endif
+
+bool isObjectName(const PlacementInfo& info, const char* objectName)
+{
+    const char* name = nullptr;
+    if (tryGetObjectName(&name, info))
+        return isEqualString(name, objectName);
+    return false;
 }
 
 } // namespace al

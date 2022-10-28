@@ -6,7 +6,7 @@ namespace al {
 LayoutActor::LayoutActor(const char* name)
     : mName(name)
     , mNerveKeeper(nullptr)
-    , mUnknown(nullptr)
+    , mAudioKeeper(nullptr)
     , mEffectKeeper(nullptr)
     , _20(nullptr)
     , _24(nullptr)
@@ -30,7 +30,7 @@ void LayoutActor::kill()
     mIsAlive = false;
 }
 
-void* LayoutActor::getUnknown() const { return mUnknown; }
+AudioKeeper* LayoutActor::getAudioKeeper() const { return mAudioKeeper; }
 EffectKeeper* LayoutActor::getEffectKeeper() const { return mEffectKeeper; }
 
 void LayoutActor::control() { }

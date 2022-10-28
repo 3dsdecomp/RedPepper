@@ -12,6 +12,8 @@ bool tryGetArg(float* out, const PlacementInfo& info, char* argName, int default
 
 bool tryGetObjectName(const char** out, const al::ActorInitInfo& info);
 bool tryGetObjectName(const char** out, const al::PlacementInfo& info);
+bool isObjectName(const ActorInitInfo& info, const char* objectName);
+bool isObjectName(const PlacementInfo& info, const char* objectName);
 
 } // namespace al
 

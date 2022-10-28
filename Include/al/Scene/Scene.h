@@ -1,8 +1,8 @@
 #pragma once
 
 #include "al/Audio/AudioKeeper.h"
+#include "al/Factory/ActorFactory.h"
 #include "al/Nerve/NerveExecutor.h"
-#include "al/Scene/CreatorClassNameTableHolder.h"
 
 namespace al {
 
@@ -11,7 +11,7 @@ class Scene : public NerveExecutor, public IUseAudioKeeper {
     class LiveActorKit* mLiveActorKit;
     class LayoutKit* mLayoutKit;
     class SceneObjHolder* mSceneObjHolder;
-    CreatorClassNameTableHolder* mCCNTHolder;
+    ActorFactory* mActorFactory;
     void* _20;
     void* _24;
     void* _28;
@@ -39,7 +39,7 @@ public:
     virtual void unk9() {}; // does draw/execute stuff
     virtual void unk10() {};
 
-    void initCreatorClassNameTableHolder();
+    void initActorFactory();
     void initSceneObjHolder();
     // void initPlacement(al::Resource* stageFile, const ActorInitInfo& info, const char* infoIterName);
 };

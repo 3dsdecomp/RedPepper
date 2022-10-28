@@ -1,4 +1,5 @@
 #include "al/LiveActor/LiveActor.h"
+#include "al/LiveActor/LiveActorFunction.h"
 #include "al/LiveActor/LiveActorKit.h"
 
 namespace al {
@@ -15,7 +16,7 @@ LiveActor::LiveActor(const char* name)
     , mNerveKeeper(nullptr)
     , mHitSensorKeeper(nullptr)
     , mEffectKeeper(nullptr)
-    , _38(nullptr)
+    , mAudioKeeper(nullptr)
     , mStageSwitchKeeper(nullptr)
     , _40(nullptr)
     , _44(nullptr)
@@ -39,13 +40,23 @@ void LiveActor::initAfterPlacement() { }
 void LiveActor::appear() { makeActorAppeared(); }
 void LiveActor::kill() { makeActorDead(); }
 
+void LiveActor::calcAnim()
+{
+    if (!mLiveActorFlag.isDead && (!mLiveActorFlag.isClipped || mLiveActorFlag.flag4)) {
+        if (mActorPoseKeeper)
+            alLiveActorFunction::calcAnimDirect(this);
+        if (getAudioKeeper())
+            getAudioKeeper()->update();
+    }
+}
+
 void LiveActor::attackSensor(HitSensor* me, HitSensor* other) { }
 bool LiveActor::receiveMsg(u32 msg, HitSensor* other, HitSensor* me) { return false; }
 
 void LiveActor::draw() { }
 
 EffectKeeper* LiveActor::getEffectKeeper() const { return mEffectKeeper; }
-void* LiveActor::getUnknown() const { return _38; }
+AudioKeeper* LiveActor::getAudioKeeper() const { return mAudioKeeper; }
 
 void LiveActor::initStageSwitchKeeper()
 {

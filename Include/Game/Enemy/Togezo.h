@@ -3,9 +3,9 @@
 #include "Game/Enemy/EnemyStateBlowDown.h"
 #include "Game/Enemy/WalkerStateChase.h"
 #include "Game/Enemy/WalkerStateWander.h"
-#include "Game/MapObj/MapObjActor.h"
+#include "al/MapObj/MapObjActor.h"
 
-class Togezo : public MapObjActor {
+class Togezo : public al::MapObjActor {
     WalkerStateWander* mWanderState;
     WalkerStateChase* mChaseState;
     EnemyStateBlowDown* mBlowDownState;

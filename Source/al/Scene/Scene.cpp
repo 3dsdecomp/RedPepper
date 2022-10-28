@@ -1,7 +1,6 @@
 #include "al/Scene/Scene.h"
 #include "Game/Scene/SceneObjFactory.h"
 #include "Game/System/Application.h"
-#include "al/Scene/CreatorClassNameTableHolder.h"
 #include "al/Scene/SceneObjHolder.h"
 
 namespace al {
@@ -13,7 +12,7 @@ Scene::Scene(const char* name)
     , mLiveActorKit(nullptr)
     , mLayoutKit(nullptr)
     , mSceneObjHolder(nullptr)
-    , mCCNTHolder(nullptr)
+    , mActorFactory(nullptr)
     , _20(nullptr)
     , _24(nullptr)
     , _28(nullptr)
@@ -54,9 +53,9 @@ AudioKeeper* Scene::getAudioKeeper() const
     return mAudioKeeper;
 }
 
-void Scene::initCreatorClassNameTableHolder()
+void Scene::initActorFactory()
 {
-    mCCNTHolder = new CreatorClassNameTableHolder();
+    mActorFactory = new ActorFactory();
 }
 
 void Scene::initSceneObjHolder()

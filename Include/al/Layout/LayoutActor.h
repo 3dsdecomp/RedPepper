@@ -1,5 +1,6 @@
 #pragma once
 
+#include "al/Audio/AudioKeeper.h"
 #include "al/Layout/LayoutInitInfo.h"
 #include "al/Nerve/Nerve.h"
 #include "al/Nerve/NerveKeeper.h"
@@ -7,11 +8,11 @@
 
 namespace al {
 
-class LayoutActor : public IUseNerve, public IUseUnknown, public IUseEffectKeeper {
+class LayoutActor : public IUseNerve, public IUseAudioKeeper, public IUseEffectKeeper {
 protected:
     sead::SafeString mName;
     NerveKeeper* mNerveKeeper;
-    void* mUnknown;
+    AudioKeeper* mAudioKeeper;
     EffectKeeper* mEffectKeeper;
     void* _20;
     void* _24;
@@ -26,7 +27,7 @@ public:
     virtual void kill();
     virtual void movement();
     virtual void calcAnim();
-    virtual void* getUnknown() const;
+    virtual AudioKeeper* getAudioKeeper() const;
     virtual EffectKeeper* getEffectKeeper() const;
     virtual void control();
     virtual void unk1();

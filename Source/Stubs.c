@@ -32,7 +32,6 @@ STUB(LMSi_AnalyzeMessageBinary)
 STUB(_ZN2al9LiveActor17makeActorAppearedEv)
 STUB(_ZN2al9LiveActor13makeActorDeadEv)
 STUB(_ZN2al9LiveActor8movementEv)
-STUB(_ZN2al9LiveActor8calcAnimEv)
 STUB(_ZN2al9LiveActor12startClippedEv)
 STUB(_ZN2al9LiveActor10endClippedEv)
 STUB(_ZNK2al9LiveActor10getBaseMtxEv)
@@ -153,5 +152,13 @@ STUB(_ZN4sead13ControllerMgr9sInstanceE)
 STUB(FUN_0024edd8)
 STUB(_ZN2al12isPadReleaseEii)
 STUB(_ZN2al9isPadHoldEii)
+
+STUB(_ZN2al12getCameraPosEv)
+STUB(_ZN2al18invalidateClippingEPNS_9LiveActorE)
+STUB(_ZN2al21initStageSwitchAppearEPNS_15IUseStageSwitchERKNS_13ActorInitInfoE)
+STUB(_ZN2al24trySyncStageSwitchAppearEPNS_9LiveActorE)
+STUB(_ZN2al9initActorEPNS_9LiveActorERKNS_13ActorInitInfoE)
+
+STUB(_ZN19alLiveActorFunction14calcAnimDirectEPN2al9LiveActorE)
 
 #undef STUB

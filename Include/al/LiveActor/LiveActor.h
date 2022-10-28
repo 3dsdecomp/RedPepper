@@ -1,5 +1,6 @@
 #pragma once
 
+#include "al/Audio/AudioKeeper.h"
 #include "al/Effect/EffectKeeper.h"
 #include "al/LiveActor/ActorActionKeeper.h"
 #include "al/LiveActor/ActorInitInfo.h"
@@ -14,14 +15,7 @@
 
 namespace al {
 
-class IUseUnknown {
-public:
-    virtual void v1() {};
-    virtual void v2() {};
-    virtual void* getUnknown() const = 0;
-};
-
-class LiveActor : public IUseNerve, public IUseEffectKeeper, public IUseUnknown, public IUseStageSwitch {
+class LiveActor : public IUseNerve, public IUseEffectKeeper, public IUseAudioKeeper, public IUseStageSwitch {
 public:
     LiveActor(const char* name);
 
@@ -42,7 +36,7 @@ public:
     virtual bool receiveMsg(u32 msg, HitSensor* other, HitSensor* me);
     virtual sead::Matrix34f* getBaseMtx() const;
     virtual EffectKeeper* getEffectKeeper() const;
-    virtual void* getUnknown() const;
+    virtual AudioKeeper* getAudioKeeper() const;
     virtual void gap2();
     virtual void initStageSwitchKeeper();
     virtual void control();
@@ -70,7 +64,7 @@ protected:
     NerveKeeper* mNerveKeeper;
     HitSensorKeeper* mHitSensorKeeper;
     EffectKeeper* mEffectKeeper;
-    void* _38;
+    AudioKeeper* mAudioKeeper;
     StageSwitchKeeper* mStageSwitchKeeper;
     void* _40;
     void* _44;
