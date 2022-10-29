@@ -2,6 +2,7 @@ _ZN2al9ByamlIterC1Ev,002910e8,16,O
 _ZN2al9ByamlIterC1EPKh,002905f0,80,O
 _ZNK2al9ByamlIter7isValidEv,00276aa0,16,O
 _ZNK2al9ByamlIter7getSizeEv,002910f8,44,O
+_ZNK2al9ByamlIter15isTypeContainerEv,0024fe70,40,O
 _ZNK2al9ByamlIter17getByamlDataByKeyEPNS_9ByamlDataEPKc,0028cab4,132,M
 _ZNK2al9ByamlIter15tryGetBoolByKeyEPbPKc,00290f60,80,M
 _ZNK2al9ByamlIter14tryGetIntByKeyEPiPKc,0027e068,60,m

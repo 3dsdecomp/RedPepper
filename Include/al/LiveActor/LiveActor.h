@@ -11,8 +11,8 @@
 #include "al/LiveActor/SubActorKeeper.h"
 #include "al/Nerve/Nerve.h"
 #include "al/Stage/StageSwitchKeeper.h"
-#include "sead/math/seadMatrix.h"
 #include "types.h"
+#include <sead/math/seadMatrix.h>
 
 namespace al {
 
@@ -38,7 +38,7 @@ public:
     virtual sead::Matrix34f* getBaseMtx() const;
     virtual EffectKeeper* getEffectKeeper() const;
     virtual AudioKeeper* getAudioKeeper() const;
-    virtual void gap2();
+    virtual StageSwitchKeeper* getStageSwitchKeeper() const;
     virtual void initStageSwitchKeeper();
     virtual void control();
     virtual void calcAndSetBaseMtx();
@@ -46,10 +46,10 @@ public:
     virtual void v22();
     virtual void v23();
 
-    const char* getName() { return mActorName; }
+    const char* getName() const { return mActorName; }
     ActorPoseKeeperBase* getActorPoseKeeper() const { return mActorPoseKeeper; }
-    LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
     Collider* getCollider() const { return mCollider; }
+    LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
 
     void initPoseKeeper(ActorPoseKeeperBase* pPoseKeeper);
 

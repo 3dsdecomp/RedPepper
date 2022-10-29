@@ -1,5 +1,5 @@
 __sti___10_Togezo_cpp,0037fec0,384,M
-_ZN6TogezoC2ERKN4sead14SafeStringBaseIcEE,0030b860,60,O
+_ZN6TogezoC1ERKN4sead14SafeStringBaseIcEE,0030b860,60,O
 _ZN6Togezo4initERKN2al13ActorInitInfoE,0030b60c,456,M
 _ZNK9NrvTogezo15TogezoNrvWander7executeEPN2al11NerveKeeperE,00349c28,80,O
 _ZNK9NrvTogezo13TogezoNrvTurn7executeEPN2al11NerveKeeperE,00349c80,180,M

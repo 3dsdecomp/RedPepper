@@ -35,7 +35,6 @@ STUB(_ZN2al9LiveActor8movementEv)
 STUB(_ZN2al9LiveActor12startClippedEv)
 STUB(_ZN2al9LiveActor10endClippedEv)
 STUB(_ZNK2al9LiveActor10getBaseMtxEv)
-STUB(_ZN2al9LiveActor4gap2Ev)
 STUB(_ZN2al9LiveActor17calcAndSetBaseMtxEv)
 STUB(_ZN2al9LiveActor14updateColliderEv)
 STUB(_ZN2al9LiveActor3v22Ev)
@@ -160,5 +159,14 @@ STUB(_ZN2al24trySyncStageSwitchAppearEPNS_9LiveActorE)
 STUB(_ZN2al9initActorEPNS_9LiveActorERKNS_13ActorInitInfoE)
 
 STUB(_ZN19alLiveActorFunction14calcAnimDirectEPN2al9LiveActorE)
+
+STUB(FUN_00270fc4)
+STUB(_ZN2al39initActorWithArchiveNameNoPlacementInfoEPNS_9LiveActorERKNS_13ActorInitInfoERKN4sead14SafeStringBaseIcEEPKc)
+STUB(FUN_0026c70c)
+STUB(_ZN2al20addVelocityToGravityEPNS_9LiveActorEf)
+STUB(_ZN2al20rotateQuatYDirDegreeEPNS_9LiveActorERKN4sead4QuatIfEEf)
+
+STUB(FUN_00277de0)
+STUB(_ZN11CoinRotater8movementEv)
 
 #undef STUB

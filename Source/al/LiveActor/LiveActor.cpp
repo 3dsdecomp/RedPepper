@@ -57,17 +57,12 @@ void LiveActor::draw() { }
 
 EffectKeeper* LiveActor::getEffectKeeper() const { return mEffectKeeper; }
 AudioKeeper* LiveActor::getAudioKeeper() const { return mAudioKeeper; }
+StageSwitchKeeper* LiveActor::getStageSwitchKeeper() const { return mStageSwitchKeeper; }
 
-void LiveActor::initStageSwitchKeeper()
-{
-    mStageSwitchKeeper = new StageSwitchKeeper();
-}
+void LiveActor::initStageSwitchKeeper() { mStageSwitchKeeper = new StageSwitchKeeper(); }
 
 void LiveActor::control() { }
 
-void LiveActor::initPoseKeeper(ActorPoseKeeperBase* pPoseKeeper)
-{
-    mActorPoseKeeper = pPoseKeeper;
-}
+void LiveActor::initPoseKeeper(ActorPoseKeeperBase* pPoseKeeper) { mActorPoseKeeper = pPoseKeeper; }
 
 } // namespace al

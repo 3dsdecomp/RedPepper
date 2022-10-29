@@ -129,6 +129,7 @@ void setTrans(LiveActor* actor, const sead::Vector3f& trans);
 void setRotate(LiveActor* actor, const sead::Vector3f& rotate);
 void setScale(LiveActor* actor, const sead::Vector3f& scale);
 void setVelocity(LiveActor* actor, const sead::Vector3f& velocity);
+void addVelocityToGravity(LiveActor* actor, float amount);
 void setFront(LiveActor* actor, const sead::Vector3f& front);
 void setQuat(LiveActor* actor, const sead::Quatf& quat);
 void setGravity(LiveActor* actor, const sead::Vector3f& gravity);

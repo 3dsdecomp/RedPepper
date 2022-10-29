@@ -65,6 +65,18 @@ bool isObjectName(const PlacementInfo& info, const char* objectName)
     return false;
 }
 
+static const char* sRailKey = "Rail";
+
+#ifdef NON_MATCHING // ???
+bool isExistRail(const ActorInitInfo& info)
+{
+    ByamlIter rail;
+    if (al::getPlacementInfo(info).tryGetIterByKey(&rail, sRailKey))
+        return rail.isTypeContainer();
+    return false;
+}
+#endif
+
 } // namespace al
 
 namespace alPlacementFunction {

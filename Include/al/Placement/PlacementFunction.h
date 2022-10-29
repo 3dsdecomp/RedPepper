@@ -15,6 +15,8 @@ bool tryGetObjectName(const char** out, const al::PlacementInfo& info);
 bool isObjectName(const ActorInitInfo& info, const char* objectName);
 bool isObjectName(const PlacementInfo& info, const char* objectName);
 
+bool isExistRail(const ActorInitInfo& info);
+
 } // namespace al
 
 namespace alPlacementFunction {

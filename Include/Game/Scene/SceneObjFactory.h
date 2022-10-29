@@ -7,3 +7,7 @@ namespace SceneObjFactory {
 al::SceneObjHolder* createSceneObjHolder();
 
 } // namespace SceneObjFactory
+
+enum SceneObjType {
+    SceneObjType_CoinRotater = 7
+};
