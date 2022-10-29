@@ -65,7 +65,7 @@ bool isObjectName(const PlacementInfo& info, const char* objectName)
     return false;
 }
 
-static const char* sRailKey = "Rail";
+static const char sRailKey[] = "Rail";
 
 #ifdef NON_MATCHING // ???
 bool isExistRail(const ActorInitInfo& info)
@@ -76,6 +76,13 @@ bool isExistRail(const ActorInitInfo& info)
     return false;
 }
 #endif
+
+bool tryGetRailIter(PlacementInfo* out, const PlacementInfo& info)
+{
+    if (info.tryGetIterByKey(out, sRailKey))
+        return out->isTypeContainer();
+    return false;
+}
 
 } // namespace al
 

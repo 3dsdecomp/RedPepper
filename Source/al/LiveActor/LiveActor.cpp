@@ -1,6 +1,8 @@
 #include "al/LiveActor/LiveActor.h"
+#include "al/LiveActor/ActorInitInfo.h"
 #include "al/LiveActor/LiveActorFunction.h"
 #include "al/LiveActor/LiveActorKit.h"
+#include "al/Rail/RailKeeper.h"
 
 namespace al {
 
@@ -18,7 +20,7 @@ LiveActor::LiveActor(const char* name)
     , mEffectKeeper(nullptr)
     , mAudioKeeper(nullptr)
     , mStageSwitchKeeper(nullptr)
-    , _40(nullptr)
+    , mRailKeeper(nullptr)
     , _44(nullptr)
     , mActorLightKeeper(nullptr)
     , _4C(nullptr)
@@ -64,5 +66,6 @@ void LiveActor::initStageSwitchKeeper() { mStageSwitchKeeper = new StageSwitchKe
 void LiveActor::control() { }
 
 void LiveActor::initPoseKeeper(ActorPoseKeeperBase* pPoseKeeper) { mActorPoseKeeper = pPoseKeeper; }
+void LiveActor::initRailKeeper(const ActorInitInfo& info) { mRailKeeper = al::tryCreateRailKeeper(al::getPlacementInfo(info)); }
 
 } // namespace al

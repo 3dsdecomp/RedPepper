@@ -16,6 +16,7 @@ bool isObjectName(const ActorInitInfo& info, const char* objectName);
 bool isObjectName(const PlacementInfo& info, const char* objectName);
 
 bool isExistRail(const ActorInitInfo& info);
+bool tryGetRailIter(PlacementInfo* out, const PlacementInfo& info);
 
 } // namespace al
 

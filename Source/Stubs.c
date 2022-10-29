@@ -169,4 +169,9 @@ STUB(_ZN2al20rotateQuatYDirDegreeEPNS_9LiveActorERKN4sead4QuatIfEEf)
 STUB(FUN_00277de0)
 STUB(_ZN11CoinRotater8movementEv)
 
+STUB(_ZN2al4Rail10calcPosDirEPN4sead7Vector3IfEES4_f)
+STUB(_ZNK2al4Rail15normalizeLengthEf)
+
+STUB(_ZN2al4Rail4initERKNS_9ByamlIterE)
+
 #undef STUB

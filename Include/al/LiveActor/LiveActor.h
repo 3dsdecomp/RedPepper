@@ -10,6 +10,7 @@
 #include "al/LiveActor/LiveActorFlag.h"
 #include "al/LiveActor/SubActorKeeper.h"
 #include "al/Nerve/Nerve.h"
+#include "al/Rail/RailKeeper.h"
 #include "al/Stage/StageSwitchKeeper.h"
 #include "types.h"
 #include <sead/math/seadMatrix.h>
@@ -49,9 +50,11 @@ public:
     const char* getName() const { return mActorName; }
     ActorPoseKeeperBase* getActorPoseKeeper() const { return mActorPoseKeeper; }
     Collider* getCollider() const { return mCollider; }
+    RailKeeper* getRailKeeper() const { return mRailKeeper; }
     LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
 
     void initPoseKeeper(ActorPoseKeeperBase* pPoseKeeper);
+    void initRailKeeper(const ActorInitInfo& info);
 
 private:
     const char* mActorName;
@@ -68,7 +71,7 @@ protected:
     EffectKeeper* mEffectKeeper;
     AudioKeeper* mAudioKeeper;
     StageSwitchKeeper* mStageSwitchKeeper;
-    void* _40;
+    RailKeeper* mRailKeeper;
     void* _44;
     class ActorLightKeeper* mActorLightKeeper;
     void* _4C;
