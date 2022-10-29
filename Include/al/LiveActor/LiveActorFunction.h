@@ -1,6 +1,7 @@
 #pragma once
 
 #include "al/LiveActor/LiveActor.h"
+#include "al/Nerve/NerveActionCtrl.h"
 #include <sead/prim/seadSafeString.h>
 
 namespace alLiveActorFunction {
@@ -14,11 +15,16 @@ namespace al {
 // ActorActionKeeper
 void startAction(LiveActor* actor, const char* actionName);
 bool isActionEnd(const LiveActor* actor);
+void startNerveAction(LiveActor* actor, const char* actionName);
 
 // Init
 void initActor(LiveActor* actor, const ActorInitInfo& info);
 void initActorWithArchiveName(LiveActor* actor, const ActorInitInfo& info, const sead::SafeString& archiveName, const char* subArchiveName = nullptr);
 void initActorWithArchiveNameNoPlacementInfo(LiveActor* actor, const ActorInitInfo& info, const sead::SafeString& archiveName, const char* subArchiveName = nullptr);
+
+// Nerve
+void initNerve(LiveActor* actor, const Nerve* nerve, int step = 0); // may be al::LiveActor::initNerve
+void initNerveAction(LiveActor* actor, const char* name, alNerveFunction::NerveActionCollector* collector, int maxNerveStates = 0);
 
 // StageSwitch
 void trySyncStageSwitchAppear(LiveActor* actor);

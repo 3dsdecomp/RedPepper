@@ -174,4 +174,6 @@ STUB(_ZNK2al4Rail15normalizeLengthEf)
 
 STUB(_ZN2al4Rail4initERKNS_9ByamlIterE)
 
+STUB(_ZN2al17ActorActionKeeper20tryStartActionNoAnimEPKc)
+
 #undef STUB

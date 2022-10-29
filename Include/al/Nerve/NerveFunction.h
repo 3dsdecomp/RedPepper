@@ -16,3 +16,9 @@ bool updateNerveState(IUseNerve* p); // returns if nerve state is dead
 bool updateNerveStateAndNextNerve(IUseNerve* p, const Nerve* nerve); // "
 
 } // namespace al
+
+namespace alNerveFunction {
+
+void setNerveAction(al::IUseNerve* p, const char* name);
+
+} // namespace al

@@ -13,7 +13,19 @@ NoteObj::NoteObj(const char* name)
     , _71(true)
     , _74(-1)
     , _78(sead::Vector3f::zero)
-    , _84(nullptr)
+    , mGenerator(nullptr)
+{
+    rp::createCoinRotater();
+}
+
+NoteObj::NoteObj(NoteObjGenerator* generator)
+    : MapObjActor("音符オブジェ")
+    , mStartQuat(sead::Quatf::unit)
+    , _70(false)
+    , _71(true)
+    , _74(-1)
+    , _78(sead::Vector3f::zero)
+    , mGenerator(generator)
 {
     rp::createCoinRotater();
 }

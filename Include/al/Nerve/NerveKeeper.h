@@ -7,6 +7,7 @@ namespace al {
 struct Nerve;
 class IUseNerve;
 class NerveStateCtrl;
+class NerveActionCtrl;
 
 class NerveKeeper {
     IUseNerve* mHost;
@@ -14,18 +15,21 @@ class NerveKeeper {
     const Nerve* mNerve;
     int mStep;
     NerveStateCtrl* mStateCtrl;
-    void* _14;
+    NerveActionCtrl* mActionCtrl;
 
 public:
     NerveKeeper(IUseNerve* host, const Nerve* nrv, int maxNerveStates = 0);
 
     const Nerve* getCurrentNerve();
+    void initNerveAction(NerveActionCtrl* p) { mActionCtrl = p; }
 
     void update();
     void setNerve(const Nerve* nerve);
-    NerveStateCtrl* getStateCtrl() { return mStateCtrl; }
+
     IUseNerve* getHost() { return mHost; }
     int getStep() { return mStep; }
+    NerveStateCtrl* getStateCtrl() { return mStateCtrl; }
+    NerveActionCtrl* getActionCtrl() { return mActionCtrl; }
 };
 
 class IUseNerve {

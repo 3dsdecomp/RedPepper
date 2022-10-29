@@ -8,7 +8,7 @@ NerveKeeper::NerveKeeper(IUseNerve* host, const Nerve* nrv, int maxNerveStates)
     : mEndNerve(nullptr)
     , mStep(0)
     , mStateCtrl(nullptr)
-    , _14(nullptr)
+    , mActionCtrl(nullptr)
 {
     mHost = host;
     mNerve = nrv;

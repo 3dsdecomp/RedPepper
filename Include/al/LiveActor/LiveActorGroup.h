@@ -14,6 +14,8 @@ public:
 
     virtual void registerActor(LiveActor* actor);
 
+    void makeActorDeadAll();
+
     template <typename T>
     __forceinline sead::PtrArray<T>& getArray() { return reinterpret_cast<sead::PtrArray<T>&>(mActors); }
 };

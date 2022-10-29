@@ -49,10 +49,12 @@ public:
 
     const char* getName() const { return mActorName; }
     ActorPoseKeeperBase* getActorPoseKeeper() const { return mActorPoseKeeper; }
+    ActorActionKeeper* getActorActionKeeper() const { return mActorActionKeeper; }
     Collider* getCollider() const { return mCollider; }
     RailKeeper* getRailKeeper() const { return mRailKeeper; }
     LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
 
+    void initNerveKeeper(NerveKeeper* nk) { mNerveKeeper = nk; }
     void initPoseKeeper(ActorPoseKeeperBase* pPoseKeeper);
     void initRailKeeper(const ActorInitInfo& info);
 
@@ -80,8 +82,6 @@ protected:
 private:
     LiveActorFlag mLiveActorFlag;
 };
-
-void initNerve(LiveActor* actor, const Nerve* nerve, int step = 0); // may be al::LiveActor::initNerve
 
 static_assert(sizeof(LiveActor) == 0x60, "");
 

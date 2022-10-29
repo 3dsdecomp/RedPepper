@@ -1,4 +1,5 @@
 #include "al/Nerve/NerveFunction.h"
+#include "al/Nerve/NerveActionCtrl.h"
 #include "al/Nerve/NerveStateCtrl.h"
 
 namespace al {
@@ -35,3 +36,13 @@ bool updateNerveStateAndNextNerve(IUseNerve* p, const Nerve* nerve)
 #endif
 
 } // namespace al
+
+namespace alNerveFunction {
+
+void setNerveAction(al::IUseNerve* p, const char* name)
+{
+    al::NerveKeeper* nk = p->getNerveKeeper();
+    nk->setNerve(nk->getActionCtrl()->findNerve(name));
+}
+
+} // namespace alNerveFunction

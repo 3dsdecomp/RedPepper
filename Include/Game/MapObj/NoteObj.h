@@ -1,6 +1,6 @@
 #pragma once
 
-#include "al/MapObj/MapObjActor.h"
+#include "Game/MapObj/NoteObjGenerator.h"
 
 class NoteObj : public al::MapObjActor {
     sead::Quatf mStartQuat;
@@ -8,10 +8,11 @@ class NoteObj : public al::MapObjActor {
     bool _71;
     int _74;
     sead::Vector3f _78;
-    void* _84;
+    NoteObjGenerator* mGenerator;
 
 public:
     NoteObj(const char* name);
+    NoteObj(NoteObjGenerator* generator);
 
     virtual void init(const al::ActorInitInfo& info);
     virtual void initAfterPlacement();

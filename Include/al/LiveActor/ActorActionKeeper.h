@@ -10,6 +10,7 @@ class ActorActionKeeper {
     ActionAnimCtrl* mActionAnimCtrl;
 
 public:
+    void tryStartActionNoAnim(const char* name);
 };
 
 } // namespace al
