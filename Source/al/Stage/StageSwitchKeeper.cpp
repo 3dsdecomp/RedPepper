@@ -3,7 +3,7 @@
 
 namespace al {
 
-#ifdef NON_MATCHING
+NON_MATCHING
 StageSwitchKeeper::StageSwitchKeeper()
     : mSwitches(nullptr)
     , mSwitchCount(0)
@@ -11,7 +11,6 @@ StageSwitchKeeper::StageSwitchKeeper()
     mSwitchCount = 5; // optimized away
     mSwitches = new StageSwitchAccesser[5];
 }
-#endif
 
 StageSwitchAccesser* StageSwitchKeeper::getStageSwitchAccesser(int type)
 {

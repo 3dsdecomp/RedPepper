@@ -5,11 +5,12 @@
 
 namespace al {
 
-bool isNerve(const IUseNerve* p, const Nerve* nerve);
 void setNerve(IUseNerve* p, const Nerve* nerve);
 
+bool isStep(IUseNerve* p, int step);
+bool isNerve(const IUseNerve* p, const Nerve* nerve);
 bool isFirstStep(const IUseNerve* p);
-bool isGreaterEqualStep(const IUseNerve* p, int t);
+bool isGreaterEqualStep(const IUseNerve* p, int step);
 
 void initNerveState(IUseNerve* p, NerveStateBase* state, const Nerve* stateNrv, const char* name);
 bool updateNerveState(IUseNerve* p); // returns if nerve state is dead

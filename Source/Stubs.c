@@ -178,6 +178,13 @@ STUB(_ZN2al17ActorActionKeeper20tryStartActionNoAnimEPKc)
 
 STUB(_ZN16NoteObjGenerator12exeDisappearEv)
 STUB(_ZN16NoteObjGenerator7exeMoveEv)
-STUB(_ZN16NoteObjGenerator7exeWaitEv)
+STUB(FUN_001d581c)
+
+STUB(_ZN2al11isOnSwitchAEPNS_15IUseStageSwitchE)
+STUB(_ZN2al9showModelEPNS_9LiveActorE)
+
+STUB(_ZN16WalkerStateChase8exeStartEv)
+STUB(_ZN7NoteObj18initAfterPlacementEv)
+STUB(_ZN7NoteObj10receiveMsgEjPN2al9HitSensorES2_)
 
 #undef STUB

@@ -7,7 +7,7 @@ namespace al {
 
 extern "C" void FUN_002911e8(sead::Heap** out, u32 heapSize, const char* name, u8, int); // creates FrameHeap(?)
 
-#ifdef NON_MATCHING // WIP
+NON_MATCHING // WIP
 void MemorySystem::createSceneResourceHeap(const char* stageName)
 {
     int heapSize;
@@ -31,6 +31,5 @@ void MemorySystem::createSceneResourceHeap(const char* stageName)
         heapSize = 8 * 1024 * 1024; // 8 MB
     FUN_002911e8(&mSceneResourceHeap, heapSize, "SceneHeapResource", 0, 1);
 }
-#endif
 
 } // namespace al

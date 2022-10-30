@@ -15,7 +15,7 @@ struct NameToType {
     }
 };
 
-#ifdef NON_MATCHING
+NON_MATCHING
 
 #define ALSENSORFUNCTION_ENTRY(TYPE) NameToType(#TYPE, al::SensorType_##TYPE),
 
@@ -56,6 +56,5 @@ al::SensorType findSensorTypeByName(const char* name)
     }
     return type;
 }
-#endif
 
 } // namespace alSensorFunction

@@ -3,13 +3,12 @@
 
 namespace rp {
 
-#ifdef NON_MATCHING // linker shenanigans
 #pragma no_inline
+NON_MATCHING // linker shenanigans
 PlayerActor* getPlayerActor()
 {
     return Application::instance()->mPlayerActor;
 }
-#endif
 
 const sead::Vector3f& getPlayerTrans()
 {

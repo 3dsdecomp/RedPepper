@@ -1,4 +1,5 @@
 #include "Game/Sequence/ProductSequence.h"
+#include "Game/Sequence/ProductStateStage.h"
 #include "al/Nerve/Nerve.h"
 #include "al/Nerve/NerveFunction.h"
 
@@ -41,11 +42,7 @@ ProductSequence::ProductSequence(const char* name)
 {
 }
 
-#ifdef NON_MATCHING // WIP, vtable needs this
-void ProductSequence::init()
-{
-}
-#endif
+NON_MATCHING void ProductSequence::init() {} // needed for vtable
 
 extern "C" bool FUN_0025ba7c(const char*);
 

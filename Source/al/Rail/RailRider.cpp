@@ -2,7 +2,7 @@
 
 namespace al {
 
-#ifdef NON_MATCHING // compiler completely skips _4 _10 (????????)
+NON_MATCHING // compiler completely skips _4 _10 (????????)
 RailRider::RailRider(Rail* rail)
     : mRail(rail)
     , mCurrentPos(sead::Vector3f::zero)
@@ -14,7 +14,6 @@ RailRider::RailRider(Rail* rail)
     _1C = mRail->normalizeLength(_1C);
     mRail->calcPosDir(&mCurrentPos, &mCurrentDir, _1C);
 }
-#endif
 
 void RailRider::moveToRailStart()
 {

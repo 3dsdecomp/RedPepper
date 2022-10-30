@@ -19,7 +19,7 @@ void LMS_SetMemFuncs(LMS_AllocFuncPtr alloc_ptr, LMS_FreeFuncPtr free_ptr)
     sFreeFuncPtr = free_ptr;
 }
 
-#ifdef NON_MATCHING
+NON_MATCHING
 s32 LMSi_SearchBlockByName(LMS_Binary* binary, const char* blockName)
 {
     u16 index = 0;
@@ -34,4 +34,3 @@ s32 LMSi_SearchBlockByName(LMS_Binary* binary, const char* blockName)
     }
     return -1;
 }
-#endif

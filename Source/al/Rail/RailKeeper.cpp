@@ -12,7 +12,7 @@ RailKeeper::RailKeeper(const PlacementInfo& info)
     mRailRider = new RailRider(mRail);
 }
 
-#ifdef NON_MATCHING // mov instructions swapped (dd4d8)
+NON_MATCHING // mov instructions swapped (dd4d8)
 RailKeeper* tryCreateRailKeeper(const PlacementInfo& info)
 {
     PlacementInfo railIter;
@@ -20,6 +20,5 @@ RailKeeper* tryCreateRailKeeper(const PlacementInfo& info)
         return new RailKeeper(railIter);
     return nullptr;
 }
-#endif
 
 } // namespace al

@@ -1,14 +1,13 @@
 #include "al/Nerve/NerveActionCtrl.h"
 #include "al/Util/StringUtil.h"
 
-#ifdef NON_MATCHING // instruction order (5)
+// instruction order (5)
 #pragma O3
-al::NerveAction::NerveAction()
+NON_MATCHING al::NerveAction::NerveAction()
     : mNextNode(nullptr)
 {
     alNerveFunction::NerveActionCollector::getCurrentCollector()->addNerve(this);
 }
-#endif
 
 namespace alNerveFunction {
 

@@ -49,8 +49,8 @@ int ByamlIter::getKeyIndex(const char* key) const
     return iter.findStringIndex(key);
 }
 
-#ifdef NON_MATCHING
 #pragma no_inline
+NON_MATCHING
 bool ByamlIter::getByamlDataByKey(ByamlData* out, const char* key) const
 {
     if (isTypeHash()) {
@@ -61,7 +61,7 @@ bool ByamlIter::getByamlDataByKey(ByamlData* out, const char* key) const
     return false;
 }
 
-// out is set before return storage, instead of after
+NON_MATCHING // out is set before return storage, instead of after
 bool ByamlIter::tryGetBoolByKey(bool* out, const char* key) const
 {
     ByamlData data;
@@ -70,7 +70,7 @@ bool ByamlIter::tryGetBoolByKey(bool* out, const char* key) const
         return tryConvertBool(out, &data);
     return false;
 }
-// "
+NON_MATCHING // "
 bool ByamlIter::tryGetIntByKey(int* out, const char* key) const
 {
     ByamlData data;
@@ -79,7 +79,7 @@ bool ByamlIter::tryGetIntByKey(int* out, const char* key) const
         return tryConvertInt(out, &data);
     return false;
 }
-// "
+NON_MATCHING // "
 bool ByamlIter::tryGetFloatByKey(float* out, const char* key) const
 {
     ByamlData data;
@@ -88,7 +88,6 @@ bool ByamlIter::tryGetFloatByKey(float* out, const char* key) const
         return tryConvertFloat(out, &data);
     return false;
 }
-#endif
 
 #pragma inline
 bool ByamlIter::tryConvertBool(bool* out, const ByamlData* data) const

@@ -5,7 +5,7 @@ namespace al {
 static const char* sStageDataByamlName = "StageData";
 static const char* sAllInfosKey = "AllInfos";
 
-#ifdef NON_MATCHING // SafeString construction is backwards, extra return path
+NON_MATCHING // SafeString construction is backwards, extra return path
 bool tryGetPlacementInfo(PlacementInfo* out, const Resource* stageArchive, const char* infoIterName)
 {
     if (stageArchive) {
@@ -20,6 +20,5 @@ bool tryGetPlacementInfo(PlacementInfo* out, const Resource* stageArchive, const
     }
     return false;
 }
-#endif
 
 } // namespace al

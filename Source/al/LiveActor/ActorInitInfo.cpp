@@ -23,11 +23,10 @@ void ActorInitInfo::initViewIdSelf(const PlacementInfo* placement, const ActorIn
     mViewId = alPlacementFunction::getClippingViewId(*placement);
 }
 
-#ifdef NON_MATCHING // registers used when copying from base info
+NON_MATCHING // registers used when copying from base info
 void initActorInitInfo(ActorInitInfo* info, const PlacementInfo* placement, const ActorInitInfo& baseInfo)
 {
     info->initViewIdSelf(placement, baseInfo);
 }
-#endif
 
 } // namespace al

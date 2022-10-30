@@ -7,7 +7,7 @@ namespace al {
 
 extern "C" const u32* FUN_0024edd8(int port);
 
-#ifdef NON_MATCHING // i really don't know
+NON_MATCHING // i really don't know
 bool isPadTrigger(int port, int mask)
 {
     const u32* trigMask = FUN_0024edd8(port);
@@ -17,7 +17,6 @@ bool isPadTrigger(int port, int mask)
     }
     return *trigMask & mask;
 }
-#endif
 
 #define _T_BUTTON(BUTTON)                                                   \
     bool isPadTrigger##BUTTON(int port)                                     \

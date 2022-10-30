@@ -2,7 +2,7 @@
 
 namespace al {
 
-#ifdef NON_MATCHING
+NON_MATCHING
 NerveStateCtrl::NerveStateCtrl(int capacity)
     : mCapacity(capacity)
     , mStateCount(0)
@@ -17,7 +17,6 @@ NerveStateCtrl::NerveStateCtrl(int capacity)
         state->mName = nullptr;
     }
 }
-#endif
 
 bool NerveStateCtrl::updateCurrentState()
 {

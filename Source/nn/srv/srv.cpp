@@ -10,7 +10,7 @@ namespace srv {
 
     } // namespace
 
-#ifdef NON_MATCHING
+NON_MATCHING
     Result GetServiceHandle(Handle* out, const char* service, s32 r2, u32 r3)
     {
         if (s_InitializeCount > 0)
@@ -20,7 +20,7 @@ namespace srv {
 
         return detail::Service::GetServiceHandle(out, service, r2, r3);
     }
-#endif
+
 
 } // namespace srv
 } // namespace nn

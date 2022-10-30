@@ -8,8 +8,8 @@ NERVE_DEF(WalkerStateChase, Start)
 
 } // namespace
 
-#ifdef NON_MATCHING
 #pragma O3
+NON_MATCHING
 WalkerStateChase::WalkerStateChase(al::LiveActor* host, sead::Vector3f* frontPtr, const WalkerStateParam* walkParam, const WalkerStateChaseParam* runParam, bool b)
     : ActorStateBase("ÉNÉäÉ{Å[í«Ç¢Ç©ÇØèÛë‘", host)
     , mFrontPtr(frontPtr)
@@ -22,8 +22,3 @@ WalkerStateChase::WalkerStateChase(al::LiveActor* host, sead::Vector3f* frontPtr
         mRunParam = &sDefaultParam;
     initNerve(&NrvWalkerStateChase::Start);
 }
-
-void WalkerStateChase::exeStart()
-{
-}
-#endif

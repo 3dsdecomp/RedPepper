@@ -22,5 +22,10 @@ public:
 };
 
 void initStageSwitchAppear(IUseStageSwitch* p, const ActorInitInfo& info);
+void initStageSwitchKill(IUseStageSwitch* p, const ActorInitInfo& info);
+void initStageSwitchA(IUseStageSwitch* p, const ActorInitInfo& info);
+void initStageSwitchB(IUseStageSwitch* p, const ActorInitInfo& info);
+
+bool isOnSwitchA(IUseStageSwitch* p);
 
 } // namespace al

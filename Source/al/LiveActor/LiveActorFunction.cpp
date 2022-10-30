@@ -11,7 +11,7 @@ void startNerveAction(LiveActor* actor, const char* actionName)
     alNerveFunction::setNerveAction(actor, actionName);
 }
 
-#ifdef NON_MATCHING // registers, too big for tail-reorder
+NON_MATCHING // registers, too big for tail-reorder
 void initNerveAction(LiveActor* actor, const char* name, alNerveFunction::NerveActionCollector* collector, int maxNerveStates)
 {
     NerveActionCtrl* nerveActionCtrl = new NerveActionCtrl(collector);
@@ -21,6 +21,5 @@ void initNerveAction(LiveActor* actor, const char* name, alNerveFunction::NerveA
     actor->getNerveKeeper()->initNerveAction(nerveActionCtrl);
     startNerveAction(actor, name);
 }
-#endif
 
 } // namespace al

@@ -32,7 +32,7 @@ void Scene::kill()
     mIsAlive = false;
 }
 
-#ifdef NON_MATCHING
+NON_MATCHING
 void Scene::movement()
 {
     if (mIsAlive) {
@@ -42,7 +42,6 @@ void Scene::movement()
             mAudioKeeper->update();
     }
 }
-#endif
 
 void Scene::control()
 {

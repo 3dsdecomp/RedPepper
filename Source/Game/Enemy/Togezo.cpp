@@ -32,7 +32,7 @@ Togezo::Togezo(const sead::SafeString& name)
 extern "C" void FUN_0027a1a0(al::LiveActor* actor, const char*); // inits al::Collider->_4
 extern "C" void FUN_0027cf20(al::LiveActor* actor, const al::ActorInitInfo& info, int);
 
-#ifdef NON_MATCHING // inline nop
+NON_MATCHING // inline nop
 void Togezo::init(const al::ActorInitInfo& info)
 {
     al::initActorWithArchiveName(this, info, "Togezo");
@@ -51,8 +51,6 @@ void Togezo::init(const al::ActorInitInfo& info)
 extern "C" bool FUN_00272a9c();
 extern "C" bool FUN_00259758(al::LiveActor*, const sead::Vector3f&, const WalkerStateParam*);
 
-#endif
-
 void Togezo::exeWander()
 {
     al::updateNerveState(this);
@@ -63,7 +61,7 @@ void Togezo::exeWander()
 extern "C" bool FUN_00262988(al::LiveActor*, sead::Vector3f* out, const sead::Vector3f&, float); // turn (?)
 extern "C" void FUN_00258774(Togezo*, const WalkerStateParam*);
 
-#ifdef NON_MATCHING // inline nops
+NON_MATCHING // inline nops
 void Togezo::exeTurn()
 {
     if (al::isFirstStep(this))
@@ -77,7 +75,8 @@ void Togezo::exeTurn()
         al::setNerve(this, &NrvTogezo::Search);
 }
 
-void Togezo::exeSearch() // inline nops
+NON_MATCHING // inline nops
+void Togezo::exeSearch()
 {
     if (al::isFirstStep(this))
         al::startAction(this, "Search");
@@ -90,7 +89,6 @@ void Togezo::exeSearch() // inline nops
             al::setNerve(this, &NrvTogezo::Chase);
     }
 }
-#endif
 
 extern "C" bool FUN_0026b6cc(WalkerStateWander*, const sead::Vector3f& trans);
 
@@ -100,7 +98,7 @@ void Togezo::exeChase()
         FUN_0026b6cc(mWanderState, al::getTrans(this));
 }
 
-#ifdef NON_MATCHING // inline nops
+NON_MATCHING // inline nops
 void Togezo::exeAttack()
 {
     if (al::isFirstStep(this)) {
@@ -110,7 +108,6 @@ void Togezo::exeAttack()
     if (al::isActionEnd(this))
         al::setNerve(this, &NrvTogezo::Wander);
 }
-#endif
 
 extern "C" void FUN_00279158(Togezo*, const EnemyStateBlowDown*);
 

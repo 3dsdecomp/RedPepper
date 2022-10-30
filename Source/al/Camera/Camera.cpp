@@ -5,7 +5,7 @@
 
 namespace al {
 
-#ifdef NON_MATCHING // vtable
+NON_MATCHING // vtable
 Camera::Camera(const char* name)
     : mName(name)
     , _8(sead::Vector3f::zero)
@@ -24,8 +24,6 @@ Camera::Camera(const char* name)
         *_44 = 0; // inlined constructor
     mRotatorParam = new CameraRotatorParam;
 }
-
-#endif
 
 void Camera::load(const al::ByamlIter* ticket)
 {
