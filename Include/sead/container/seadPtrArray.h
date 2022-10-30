@@ -83,8 +83,8 @@ protected:
     void pushBack(void* ptr)
     {
         // Simplest insert case, so this is implemented directly without using insert().
-        mPtrs[mPtrNum] = ptr;
-        ++mPtrNum;
+        mPtrs[mPtrNumMax] = ptr;
+        ++mPtrNumMax;
     }
 
     void pushFront(void* ptr) { insert(0, ptr); }

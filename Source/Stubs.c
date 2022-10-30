@@ -176,4 +176,8 @@ STUB(_ZN2al4Rail4initERKNS_9ByamlIterE)
 
 STUB(_ZN2al17ActorActionKeeper20tryStartActionNoAnimEPKc)
 
+STUB(_ZN16NoteObjGenerator12exeDisappearEv)
+STUB(_ZN16NoteObjGenerator7exeMoveEv)
+STUB(_ZN16NoteObjGenerator7exeWaitEv)
+
 #undef STUB

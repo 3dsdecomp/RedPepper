@@ -14,6 +14,7 @@ public:
 
     virtual void registerActor(LiveActor* actor);
 
+    void killAll();
     void makeActorDeadAll();
 
     template <typename T>

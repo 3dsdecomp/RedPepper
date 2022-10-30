@@ -17,4 +17,9 @@ class NoteObjGenerator : public al::MapObjActor {
 
 public:
     NoteObjGenerator(const sead::SafeString& name);
+
+    void exeWait();
+    void exeMove();
+    void exeDisappear();
+    void exeSuccess();
 };

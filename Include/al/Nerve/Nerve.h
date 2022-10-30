@@ -12,8 +12,8 @@ struct Nerve {
 };
 
 #define NERVE_DEF(CLASS, ACTION)                                   \
-    struct CLASS##Nrv##ACTION : public al::Nerve {                 \
-        virtual void execute(al::NerveKeeper* keeper) const        \
+    struct CLASS##Nrv##ACTION : public ::al::Nerve {               \
+        virtual void execute(::al::NerveKeeper* keeper) const      \
         {                                                          \
             static_cast<CLASS*>(keeper->getHost())->exe##ACTION(); \
         }                                                          \
@@ -21,12 +21,12 @@ struct Nerve {
     const split(CLASS##Nrv##ACTION) ACTION = CLASS##Nrv##ACTION();
 
 #define NERVE_DEF_END(CLASS, ACTION, ENDACTION)                       \
-    struct CLASS##Nrv##ACTION : public al::Nerve {                    \
-        virtual void execute(al::NerveKeeper* keeper) const           \
+    struct CLASS##Nrv##ACTION : public ::al::Nerve {                  \
+        virtual void execute(::al::NerveKeeper* keeper) const         \
         {                                                             \
             static_cast<CLASS*>(keeper->getHost())->exe##ACTION();    \
         }                                                             \
-        virtual void executeOnEnd(al::NerveKeeper* keeper) const      \
+        virtual void executeOnEnd(::al::NerveKeeper* keeper) const    \
         {                                                             \
             static_cast<CLASS*>(keeper->getHost())->exe##ENDACTION(); \
         }                                                             \

@@ -1,5 +1,19 @@
 #include "Game/MapObj/NoteObjGenerator.h"
 #include "Game/MapObj/NoteObj.h"
+#include "al/Nerve/Nerve.h"
+#include "al/Nerve/NerveActionCtrl.h"
+#include "al/Nerve/NerveFunction.h"
+
+static alNerveFunction::NerveActionCollector sCollector;
+
+namespace NrvNoteObjGenerator {
+
+NERVEACTION_DEF(NoteObjGenerator, Wait)
+NERVEACTION_DEF(NoteObjGenerator, Move)
+NERVEACTION_DEF(NoteObjGenerator, Disappear)
+NERVEACTION_DEF(NoteObjGenerator, Success)
+
+} // namesapce NrvNoteObjGenerator
 
 #pragma O3
 NoteObjGenerator::NoteObjGenerator(const sead::SafeString& name)
@@ -15,4 +29,10 @@ NoteObjGenerator::NoteObjGenerator(const sead::SafeString& name)
     , _80(nullptr)
     , _84(false)
 {
+}
+
+void NoteObjGenerator::exeSuccess()
+{
+    if (al::isGreaterEqualStep(this, 12))
+        kill();
 }

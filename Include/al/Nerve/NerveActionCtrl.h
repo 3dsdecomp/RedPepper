@@ -53,3 +53,27 @@ public:
 };
 
 } // namespace al
+
+#define NERVEACTION_DEF(CLASS, ACTION)                             \
+    struct CLASS##Nrv##ACTION : public ::al::NerveAction {         \
+        virtual void execute(::al::NerveKeeper* keeper) const      \
+        {                                                          \
+            static_cast<CLASS*>(keeper->getHost())->exe##ACTION(); \
+        }                                                          \
+        virtual const char* getName() const { return #ACTION; }    \
+    };                                                             \
+    const split(CLASS##Nrv##ACTION) ACTION = CLASS##Nrv##ACTION();
+
+#define NERVEACTION_DEF_END(CLASS, ACTION, ENDACTION)                 \
+    struct CLASS##Nrv##ACTION : public ::al::NerveAction {            \
+        virtual void execute(::al::NerveKeeper* keeper) const         \
+        {                                                             \
+            static_cast<CLASS*>(keeper->getHost())->exe##ACTION();    \
+        }                                                             \
+        virtual void executeOnEnd(::al::NerveKeeper* keeper) const    \
+        {                                                             \
+            static_cast<CLASS*>(keeper->getHost())->exe##ENDACTION(); \
+        }                                                             \
+        virtual const char* getName() const { return #ACTION; }       \
+    };                                                                \
+    const split(CLASS##Nrv##ACTION) ACTION = CLASS##Nrv##ACTION();
