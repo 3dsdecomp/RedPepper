@@ -184,7 +184,9 @@ STUB(_ZN2al11isOnSwitchAEPNS_15IUseStageSwitchE)
 STUB(_ZN2al9showModelEPNS_9LiveActorE)
 
 STUB(_ZN16WalkerStateChase8exeStartEv)
-STUB(_ZN7NoteObj18initAfterPlacementEv)
 STUB(_ZN7NoteObj10receiveMsgEjPN2al9HitSensorES2_)
+
+STUB(_ZN2al16SaveDataDirectorC1Eji)
+STUB(_ZN2al10FileLoaderC1Ei)
 
 #undef STUB

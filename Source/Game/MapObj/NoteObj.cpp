@@ -49,8 +49,11 @@ void NoteObj::init(const al::ActorInitInfo& info) // STUPID sead inlines
     makeActorDead();
 }
 
+void NoteObj::initAfterPlacement() { }
+
 NON_MATCHING // creates new path instead of conditional instructions
-void NoteObj::control()
+    void
+    NoteObj::control()
 {
     if (!_71)
         al::addVelocityToGravity(this, 0.5);

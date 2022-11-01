@@ -4,6 +4,7 @@
 
 namespace al {
 
+bool isStep(IUseNerve* p, int step) { return p->getNerveKeeper()->getStep() == step; }
 bool isNerve(const IUseNerve* p, const Nerve* nerve)
 {
     return p->getNerveKeeper()->getCurrentNerve() == nerve;
