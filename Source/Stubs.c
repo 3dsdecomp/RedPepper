@@ -189,4 +189,8 @@ STUB(_ZN7NoteObj10receiveMsgEjPN2al9HitSensorES2_)
 STUB(_ZN2al16SaveDataDirectorC1Eji)
 STUB(_ZN2al10FileLoaderC1Ei)
 
+STUB(_ZNK2al9AreaShape12calcLocalPosEPN4sead7Vector3IfEERKS3_)
+
+STUB(_ZN2al7AreaObj4initERKNS_12AreaInitInfoE)
+
 #undef STUB

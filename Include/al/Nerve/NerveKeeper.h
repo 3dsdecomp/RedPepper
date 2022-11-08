@@ -24,6 +24,7 @@ public:
     void initNerveAction(NerveActionCtrl* p) { mActionCtrl = p; }
 
     void update();
+    void tryChangeNerve();
     void setNerve(const Nerve* nerve);
 
     IUseNerve* getHost() { return mHost; }
