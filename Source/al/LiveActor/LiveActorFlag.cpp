@@ -5,7 +5,7 @@ namespace al {
 LiveActorFlag::LiveActorFlag()
     : isDead(true)
     , isClipped(false)
-    , flag3(true)
+    , isInvalidClipping(true)
     , flag4(false)
     , flag5(false)
     , isHideModel(false)

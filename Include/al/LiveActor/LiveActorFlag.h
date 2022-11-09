@@ -6,7 +6,7 @@ class LiveActor;
 struct LiveActorFlag {
     bool isDead;
     bool isClipped;
-    bool flag3;
+    bool isInvalidClipping;
     bool flag4;
     bool flag5;
     bool isHideModel;

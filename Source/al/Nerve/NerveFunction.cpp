@@ -17,6 +17,7 @@ void setNerve(IUseNerve* p, const Nerve* nerve)
 }
 
 bool isFirstStep(const IUseNerve* p) { return p->getNerveKeeper()->getStep() == 0; }
+bool isGreaterStep(const IUseNerve* p, int t) { return p->getNerveKeeper()->getStep() > t; }
 bool isGreaterEqualStep(const IUseNerve* p, int t) { return p->getNerveKeeper()->getStep() >= t; }
 
 bool updateNerveState(IUseNerve* p)

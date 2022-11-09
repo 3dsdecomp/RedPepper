@@ -14,11 +14,13 @@ namespace al {
 
 // ActorActionKeeper
 void startAction(LiveActor* actor, const char* actionName);
+bool tryStartAction(LiveActor* actor, const char* actionName);
 bool isActionEnd(const LiveActor* actor);
 void startNerveAction(LiveActor* actor, const char* actionName);
 
 // Init
 void initActor(LiveActor* actor, const ActorInitInfo& info);
+void initMapPartsActor(LiveActor* actor, const ActorInitInfo& info);
 void initActorWithArchiveName(LiveActor* actor, const ActorInitInfo& info, const sead::SafeString& archiveName, const char* subArchiveName = nullptr);
 void initActorWithArchiveNameNoPlacementInfo(LiveActor* actor, const ActorInitInfo& info, const sead::SafeString& archiveName, const char* subArchiveName = nullptr);
 
@@ -34,6 +36,11 @@ void trySyncStageSwitchAppear(LiveActor* actor);
 
 // Clipping
 void invalidateClipping(LiveActor* actor);
+void validateClipping(LiveActor* actor);
+
+// Collider
+void invalidateCollisionPartsBySystem(LiveActor* actor);
+void validateCollisionPartsBySystem(LiveActor* actor);
 
 // Math
 void rotateQuatXDirDegree(LiveActor* actor, const sead::Quatf& from, float degrees);

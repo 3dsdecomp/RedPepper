@@ -190,7 +190,18 @@ STUB(_ZN2al16SaveDataDirectorC1Eji)
 STUB(_ZN2al10FileLoaderC1Ei)
 
 STUB(_ZNK2al9AreaShape12calcLocalPosEPN4sead7Vector3IfEERKS3_)
-
 STUB(_ZN2al7AreaObj4initERKNS_12AreaInitInfoE)
+
+STUB(_ZN2al10tryGetArg0EPiRKNS_9ByamlIterE)
+STUB(_ZN2al17initMapPartsActorEPNS_9LiveActorERKNS_13ActorInitInfoE)
+STUB(_ZN2al14tryStartActionEPNS_9LiveActorEPKc)
+STUB(_ZN2al16validateClippingEPNS_9LiveActorE)
+STUB(_ZN2al13scaleVelocityEPNS_9LiveActorEf)
+STUB(FUN_00268df8)
+STUB(_ZN2al13resetPositionEPNS_9LiveActorE)
+STUB(_ZN2al15setVelocityZeroEPNS_9LiveActorE)
+STUB(_ZN2al32invalidateCollisionPartsBySystemEPNS_9LiveActorE)
+STUB(_ZN2al30validateCollisionPartsBySystemEPNS_9LiveActorE)
+STUB(_ZN2al9hideModelEPNS_9LiveActorE)
 
 #undef STUB
