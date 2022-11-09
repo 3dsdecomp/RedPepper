@@ -32,7 +32,7 @@ public:
     virtual void updatePoseRotate(const sead::Vector3f& rot) = 0;
     virtual void updatePoseQuat(const sead::Quatf& quat) = 0;
     virtual void updatePoseMtx(const sead::Matrix34f* mtx) = 0;
-    virtual void v1();
+    virtual void copyPose(const ActorPoseKeeperBase* from);
     virtual void calcBaseMtx(sead::Matrix34f* out) = 0;
 
     static const sead::Vector3f sDefaultGravity;
@@ -156,5 +156,7 @@ sead::Vector3f* getGravityPtr(LiveActor* actor);
 void updatePoseRotate(LiveActor* actor, const sead::Vector3f& rotate);
 void updatePoseQuat(LiveActor* actor, const sead::Quatf& quat);
 void updatePoseMtx(LiveActor* actor, const sead::Matrix34f* mtx);
+
+void copyPose(LiveActor* to, const LiveActor* from);
 
 } // namespace al

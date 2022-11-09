@@ -204,4 +204,6 @@ STUB(_ZN2al32invalidateCollisionPartsBySystemEPNS_9LiveActorE)
 STUB(_ZN2al30validateCollisionPartsBySystemEPNS_9LiveActorE)
 STUB(_ZN2al9hideModelEPNS_9LiveActorE)
 
+STUB(_ZN2al19ActorPoseKeeperBase8copyPoseEPKS0_)
+
 #undef STUB

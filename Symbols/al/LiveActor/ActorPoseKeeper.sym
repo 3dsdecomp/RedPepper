@@ -47,3 +47,5 @@ _ZN2al11getTransPtrEPNS_9LiveActorE,0027f3c4,12,O
 _ZN2al12getRotatePtrEPNS_9LiveActorE,0026e744,16,O
 _ZN2al14getVelocityPtrEPNS_9LiveActorE,00272dc0,16,O
 _ZN2al10getQuatPtrEPNS_9LiveActorE,0027f3b4,16,O
+_ZN2al13updatePoseMtxEPNS_9LiveActorEPKN4sead8Matrix34IfEE,0027011c,16,O
+_ZN2al8copyPoseEPNS_9LiveActorEPKS0_,00266248,20,O

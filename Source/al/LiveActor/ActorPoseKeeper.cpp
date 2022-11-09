@@ -151,4 +151,6 @@ void updatePoseRotate(LiveActor* actor, const sead::Vector3f& rotate) { actor->g
 void updatePoseQuat(LiveActor* actor, const sead::Quatf& quat) { actor->getActorPoseKeeper()->updatePoseQuat(quat); }
 void updatePoseMtx(LiveActor* actor, const sead::Matrix34f* mtx) { actor->getActorPoseKeeper()->updatePoseMtx(mtx); }
 
+void copyPose(LiveActor* to, const LiveActor* from) { to->getActorPoseKeeper()->copyPose(from->getActorPoseKeeper()); }
+
 } // namespace al
