@@ -23,7 +23,6 @@ int LMS_GetTextNum(LMS_MessageBinary* binary)
     return ((TextHeader*)binary->common.blocks[binary->textIndex].data)->numMessages;
 }
 
-NON_MATCHING // disgusting inline
 void LMS_CloseMessage(LMS_MessageBinary* binary)
 {
     if (binary->common.blocks)
