@@ -11,7 +11,7 @@ class BreakModel : public LiveActor {
     const char* mBreakActionName;
 
 public:
-    BreakModel(LiveActor* parent, const char* name, const char* modelArchiveName, const sead::Matrix34f* parentBaseMtx = nullptr, const char* breakActionName = nullptr);
+    BreakModel(LiveActor* parent, const char* name, const char* modelArchiveName, const sead::Matrix34f* parentBaseMtx = nullptr, const char* breakActionName = "Break");
 
     virtual void init(const ActorInitInfo& info);
     virtual void appear();
