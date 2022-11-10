@@ -214,4 +214,10 @@ STUB(_ZN2al13tryEmitEffectEPNS_16IUseEffectKeeperEPKc)
 STUB(_ZN2al10tryStartSeEPNS_15IUseAudioKeeperERKN4sead14SafeStringBaseIcEEi)
 STUB(_ZN4sead8Matrix34IfEC1ERKS1_)
 
+STUB(_ZN2al9tryGetArgEPfRKNS_9ByamlIterEPKc)
+STUB(_ZN2al9tryGetArgEPiRKNS_9ByamlIterEPKc)
+STUB(_ZN2al12moveSyncRailEPNS_9LiveActorEf)
+STUB(_ZN2al16moveSyncRailLoopEPNS_9LiveActorEf)
+STUB(_ZN2al16moveSyncRailTurnEPNS_9LiveActorEf)
+
 #undef STUB

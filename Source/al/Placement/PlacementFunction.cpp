@@ -8,33 +8,10 @@ bool isPlaced(const ActorInitInfo& info)
     return info.mPlacementInfo->isValid();
 }
 
-NON_MATCHING // idek
-bool tryGetArg(bool* out, const PlacementInfo& info, char* argName, int defaultValue)
-{
-    int value = defaultValue;
-
-    if (info.isValid() && info.tryGetIntByKey(&value, argName) && value != -1) {
-        *out = value != 0;
-        return true;
-    }
-    return false;
-}
-
-// registers
-bool tryGetArg(float* out, const PlacementInfo& info, char* argName, int defaultValue)
-{
-    int value = defaultValue;
-
-    if (info.isValid() && info.tryGetIntByKey(&value, argName) && value != -1) {
-        *out = value;
-        return true;
-    }
-    return false;
-}
-
 static const char split(sObjectNameKey)[] = "name";
 
-NON_MATCHING // registers
+NON_MATCHING
+// registers
 bool tryGetObjectName(const char** out, const al::ActorInitInfo& info)
 {
     return al::getPlacementInfo(info).tryGetStringByKey(out, sObjectNameKey);

@@ -7,8 +7,9 @@ namespace al {
 
 bool isPlaced(const ActorInitInfo& info);
 
-bool tryGetArg(bool* out, const PlacementInfo& info, char* argName, int defaultValue = 0);
-bool tryGetArg(float* out, const PlacementInfo& info, char* argName, int defaultValue = 0);
+bool tryGetArg(bool* out, const PlacementInfo& info, const char* argName);
+bool tryGetArg(float* out, const PlacementInfo& info, const char* argName);
+bool tryGetArg(int* out, const PlacementInfo& info, const char* argName);
 
 bool tryGetArg0(int* out, const PlacementInfo& info);
 

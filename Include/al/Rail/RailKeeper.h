@@ -14,6 +14,8 @@ public:
     RailKeeper(const PlacementInfo& info);
     Rail* getRail() { return mRail; }
     RailRider* getRailRider() { return mRailRider; }
+
+    bool isExistRail() const;
 };
 
 RailKeeper* tryCreateRailKeeper(const PlacementInfo& info);
