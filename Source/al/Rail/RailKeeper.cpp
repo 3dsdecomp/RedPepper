@@ -12,9 +12,9 @@ RailKeeper::RailKeeper(const PlacementInfo& info)
     mRailRider = new RailRider(mRail);
 }
 
-NON_MATCHING // mov instructions swapped (dd4d8)
-    RailKeeper*
-    tryCreateRailKeeper(const PlacementInfo& info)
+NON_MATCHING
+// mov instructions swapped (dd4d8)
+RailKeeper* tryCreateRailKeeper(const PlacementInfo& info)
 {
     PlacementInfo railIter;
     if (tryGetRailIter(&railIter, info))

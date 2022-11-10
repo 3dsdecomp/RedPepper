@@ -8,7 +8,7 @@ ActorPoseKeeperBase::ActorPoseKeeperBase()
 {
 }
 
-const sead::Vector3f ActorPoseKeeperBase::sDefaultGravity(0, -1, 0);
+const sead::Vector3f split(al::ActorPoseKeeperBase::sDefaultGravity)(0, -1, 0);
 
 NON_MATCHING
 const sead::Vector3f& ActorPoseKeeperBase::getRotate() const
