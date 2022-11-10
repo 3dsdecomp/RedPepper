@@ -1,0 +1,6 @@
+_ZN2al9EffectObjC1ERKN4sead14SafeStringBaseIcEE,0031b56c,52,M
+_ZN2al9EffectObj4initERKNS_13ActorInitInfoE,0031b3ac,164,m
+_ZN2al9EffectObj17makeActorAppearedEv,0031b378,52,O
+_ZN2al9EffectObj4killEv,0031b4f8,40,O
+_ZNK2al9EffectObj10getBaseMtxEv,00375b38,8,O
+_ZN2al17EffectObjFunction18initActorEffectObjEPNS_9EffectObjERKNS_13ActorInitInfoEPKc,0031b45c,144,m

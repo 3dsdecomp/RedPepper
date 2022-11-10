@@ -153,6 +153,8 @@ sead::Vector3f* getFrontPtr(LiveActor* actor);
 sead::Quatf* getQuatPtr(LiveActor* actor);
 sead::Vector3f* getGravityPtr(LiveActor* actor);
 
+void makeMtxSRT(sead::Matrix34f* out, const LiveActor* actor);
+
 void updatePoseRotate(LiveActor* actor, const sead::Vector3f& rotate);
 void updatePoseQuat(LiveActor* actor, const sead::Quatf& quat);
 void updatePoseMtx(LiveActor* actor, const sead::Matrix34f* mtx);

@@ -5,8 +5,7 @@
 #include "sead/math/seadMatrix.h"
 #endif
 
-namespace sead
-{
+namespace sead {
 template <typename T>
 inline Matrix22<T>::Matrix22(T a00, T a01, T a10, T a11)
 {
@@ -236,7 +235,7 @@ inline void Matrix33<T>::toQuat(Quat<T>& q) const
 
 template <typename T>
 inline Matrix34<T>::Matrix34(T a00, T a01, T a02, T a03, T a10, T a11, T a12, T a13, T a20, T a21,
-                             T a22, T a23)
+    T a22, T a23)
 {
     this->m[0][0] = a00;
     this->m[0][1] = a01;
@@ -524,7 +523,7 @@ inline void Matrix34<T>::setTranslation(T x, T y, T z)
 
 template <typename T>
 inline Matrix44<T>::Matrix44(T a00, T a01, T a02, T a03, T a10, T a11, T a12, T a13, T a20, T a21,
-                             T a22, T a23, T a30, T a31, T a32, T a33)
+    T a22, T a23, T a30, T a31, T a32, T a33)
 {
     this->m[0][0] = a00;
     this->m[0][1] = a01;
@@ -692,4 +691,4 @@ inline void Matrix44<T>::setRow(s32 row, const Vec4& v)
     Matrix44CalcCommon<T>::setRow(*this, row, v);
 }
 
-}  // namespace sead
+} // namespace sead

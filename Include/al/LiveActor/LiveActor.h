@@ -36,7 +36,7 @@ public:
     virtual void endClipped();
     virtual void attackSensor(HitSensor* me, HitSensor* other);
     virtual bool receiveMsg(u32 msg, HitSensor* other, HitSensor* me);
-    virtual sead::Matrix34f* getBaseMtx() const;
+    virtual const sead::Matrix34f* getBaseMtx() const;
     virtual EffectKeeper* getEffectKeeper() const;
     virtual AudioKeeper* getAudioKeeper() const;
     virtual StageSwitchKeeper* getStageSwitchKeeper() const;
