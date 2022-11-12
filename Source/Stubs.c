@@ -220,4 +220,6 @@ STUB(_ZN2al12moveSyncRailEPNS_9LiveActorEf)
 STUB(_ZN2al16moveSyncRailLoopEPNS_9LiveActorEf)
 STUB(_ZN2al16moveSyncRailTurnEPNS_9LiveActorEf)
 
+STUB(_ZN2al4Rail23calcNearestRailPosCoordERKN4sead7Vector3IfEEf)
+
 #undef STUB

@@ -41,6 +41,9 @@ public:
 
     void initActorFactory();
     void initSceneObjHolder();
+
+    bool isAlive() const { return mIsAlive; }
+    ActorFactory* getActorFactory() const { return mActorFactory; }
 };
 
 static_assert(sizeof(Scene) == 0x34, "");

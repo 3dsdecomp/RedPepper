@@ -1,12 +1,14 @@
 #pragma once
 
+#include "al/Factory/Factory.h"
 #include "al/LiveActor/LiveActor.h"
 #include "al/Resource/Resource.h"
 #include "al/System/Byaml/ByamlIter.h"
 
 namespace al {
 
-typedef LiveActor* (*CreateActorFuncPtr)(const char* objectName);
+typedef CreateFuncPtr<LiveActor>::Type CreateActorFuncPtr;
+typedef NameToCreator<CreateActorFuncPtr> NameToActorCreator;
 
 class ActorFactory {
     Resource* mArchive;

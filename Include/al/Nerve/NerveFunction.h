@@ -10,6 +10,7 @@ void setNerve(IUseNerve* p, const Nerve* nerve);
 bool isStep(IUseNerve* p, int step);
 bool isNerve(const IUseNerve* p, const Nerve* nerve);
 bool isFirstStep(const IUseNerve* p);
+bool isLessStep(const IUseNerve* p, int step);
 bool isGreaterStep(const IUseNerve* p, int step);
 bool isGreaterEqualStep(const IUseNerve* p, int step);
 

@@ -24,9 +24,17 @@ void initMapPartsActor(LiveActor* actor, const ActorInitInfo& info);
 void initActorWithArchiveName(LiveActor* actor, const ActorInitInfo& info, const sead::SafeString& archiveName, const char* subArchiveName = nullptr);
 void initActorWithArchiveNameNoPlacementInfo(LiveActor* actor, const ActorInitInfo& info, const sead::SafeString& archiveName, const char* subArchiveName = nullptr);
 
+void initCreateActorNoPlacementInfo(LiveActor* actor, const ActorInitInfo& actorInitInfo);
+void initCreateActorWithPlacementInfo(LiveActor* actor, const ActorInitInfo& actorInitInfo);
+
+// ActorPoseKeeper
+void initActorSRTAndPoseTRSV(LiveActor* actor, const ActorInitInfo& info);
+
 // ModelKeeper
 void showModel(LiveActor* actor);
 void hideModel(LiveActor* actor);
+
+void calcJointPos(sead::Vector3f* out, const LiveActor* actor, const char* jointName);
 
 // EffectKeeper
 void initActorEffectKeeper(LiveActor* actor, const ActorInitInfo& info, const char*);

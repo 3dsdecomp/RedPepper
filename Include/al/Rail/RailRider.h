@@ -9,13 +9,16 @@ class RailRider {
     sead::Vector3f mCurrentPos;
     sead::Vector3f mCurrentDir;
     float _1C;
-    float _20;
+    float mSpeed;
     bool _24;
 
 public:
     RailRider(Rail* rail);
 
     void moveToRailStart();
+    void moveToNearestRail(const sead::Vector3f& r1);
+
+    void setSpeed(float speed) { mSpeed = speed; }
 
     const sead::Vector3f& getCurrentPos() { return mCurrentPos; }
     const sead::Vector3f& getCurrentDir() { return mCurrentDir; }

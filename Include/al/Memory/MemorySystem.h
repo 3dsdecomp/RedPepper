@@ -15,4 +15,15 @@ public:
     void createSceneResourceHeap(const char* stageName);
 };
 
+void createSceneHeap(const char* stageName);
+void createCourseSelectHeap();
+sead::Heap* getCourseSelectHeap();
+
+class SceneHeapSetter {
+    sead::Heap* mHeaps[2];
+
+public:
+    SceneHeapSetter();
+};
+
 } // namespace al
