@@ -17,6 +17,11 @@ void startAction(LiveActor* actor, const char* actionName);
 bool tryStartAction(LiveActor* actor, const char* actionName);
 bool isActionEnd(const LiveActor* actor);
 void startNerveAction(LiveActor* actor, const char* actionName);
+bool tryStartSklAnimIfExist(LiveActor* actor, const char* animName);
+bool tryStartMtsAnimIfExist(LiveActor* actor, const char* animName);
+bool tryStartMtpAnimIfExist(LiveActor* actor, const char* animName);
+bool tryStartMclAnimIfExist(LiveActor* actor, const char* animName);
+bool tryStartVisAnimIfExist(LiveActor* actor, const char* animName);
 
 // Init
 void initActor(LiveActor* actor, const ActorInitInfo& info);
@@ -39,7 +44,7 @@ void calcJointPos(sead::Vector3f* out, const LiveActor* actor, const char* joint
 // EffectKeeper
 void initActorEffectKeeper(LiveActor* actor, const ActorInitInfo& info, const char*);
 
-// Nerve
+// NerveKeeper
 void initNerve(LiveActor* actor, const Nerve* nerve, int step = 0); // may be al::LiveActor::initNerve
 void initNerveAction(LiveActor* actor, const char* name, alNerveFunction::NerveActionCollector* collector, int maxNerveStates = 0);
 

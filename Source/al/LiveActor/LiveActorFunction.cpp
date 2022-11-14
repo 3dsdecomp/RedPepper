@@ -3,6 +3,21 @@
 
 namespace al {
 
+// ActorActionKeeper
+
+NON_MATCHING
+// register swap, maybe inlined
+bool tryStartMclAnimIfExist(LiveActor* actor, const char* animName)
+{
+    AnimPlayerSimple* animPlayer = actor->getModelKeeper()->getModel()->getMclAnimPlayer();
+    if (animPlayer && animPlayer->isAnimExist(animName)) {
+        actor->getModelKeeper()->getModel()->getMclAnimPlayer()->startAnim(animName);
+        return true;
+    }
+    return false;
+}
+
+// NerveKeeper
 #pragma no_inline
 void startNerveAction(LiveActor* actor, const char* actionName)
 {
@@ -11,7 +26,8 @@ void startNerveAction(LiveActor* actor, const char* actionName)
     alNerveFunction::setNerveAction(actor, actionName);
 }
 
-NON_MATCHING // registers, too big for tail-reorder
+NON_MATCHING
+// registers, too big for tail-reorder
 void initNerveAction(LiveActor* actor, const char* name, alNerveFunction::NerveActionCollector* collector, int maxNerveStates)
 {
     NerveActionCtrl* nerveActionCtrl = new NerveActionCtrl(collector);

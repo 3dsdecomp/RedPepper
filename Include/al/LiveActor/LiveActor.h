@@ -9,6 +9,7 @@
 #include "al/LiveActor/HitSensorKeeper.h"
 #include "al/LiveActor/LiveActorFlag.h"
 #include "al/LiveActor/SubActorKeeper.h"
+#include "al/Model/ModelKeeper.h"
 #include "al/Nerve/Nerve.h"
 #include "al/Rail/RailKeeper.h"
 #include "al/Stage/StageSwitchKeeper.h"
@@ -51,6 +52,7 @@ public:
     ActorPoseKeeperBase* getActorPoseKeeper() const { return mActorPoseKeeper; }
     ActorActionKeeper* getActorActionKeeper() const { return mActorActionKeeper; }
     Collider* getCollider() const { return mCollider; }
+    ModelKeeper* getModelKeeper() const { return mModelKeeper; }
     RailKeeper* getRailKeeper() const { return mRailKeeper; }
     LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
 
@@ -67,7 +69,7 @@ protected:
     ActorActionKeeper* mActorActionKeeper;
     Collider* mCollider;
     class CollisionParts* mCollisionParts;
-    class ModelKeeper* mModelKeeper;
+    ModelKeeper* mModelKeeper;
     NerveKeeper* mNerveKeeper;
     HitSensorKeeper* mHitSensorKeeper;
     EffectKeeper* mEffectKeeper;

@@ -3,32 +3,42 @@
 
 namespace al {
 
+bool tryGetStringArg(const char** out, const PlacementInfo& info, const char* argName)
+{
+    const char* arg = "";
+    if (info.tryGetStringByKey(&arg, argName)) {
+        if (!isEqualString("-", arg)) {
+            *out = arg;
+            return true;
+        }
+        return false; // this is required to match
+    }
+    return false;
+}
+
+bool tryGetStringArg(const char** out, const ActorInitInfo& info, const char* argName)
+{
+    return tryGetStringArg(out, getPlacementInfo(info), argName);
+}
+
 bool isPlaced(const ActorInitInfo& info)
 {
     return info.mPlacementInfo->isValid();
 }
 
-static const char split(sObjectNameKey)[] = "name";
-
-NON_MATCHING
-// registers
 bool tryGetObjectName(const char** out, const al::ActorInitInfo& info)
 {
-    return al::getPlacementInfo(info).tryGetStringByKey(out, sObjectNameKey);
+    return tryGetObjectName(out, getPlacementInfo(info));
 }
 
 bool tryGetObjectName(const char** out, const al::PlacementInfo& info)
 {
-    return info.tryGetStringByKey(out, sObjectNameKey);
+    return info.tryGetStringByKey(out, "name");
 }
 
-NON_MATCHING // will match when tryGetObjectName matches
 bool isObjectName(const ActorInitInfo& info, const char* objectName)
 {
-    const char* name = nullptr;
-    if (tryGetObjectName(&name, info))
-        return isEqualString(name, objectName);
-    return false;
+    return isObjectName(getPlacementInfo(info), objectName);
 }
 
 bool isObjectName(const PlacementInfo& info, const char* objectName)
@@ -39,20 +49,15 @@ bool isObjectName(const PlacementInfo& info, const char* objectName)
     return false;
 }
 
-static const char sRailKey[] = "Rail";
-
-NON_MATCHING // ???
 bool isExistRail(const ActorInitInfo& info)
 {
-    ByamlIter rail;
-    if (al::getPlacementInfo(info).tryGetIterByKey(&rail, sRailKey))
-        return rail.isTypeContainer();
-    return false;
+    PlacementInfo rail;
+    return tryGetRailIter(&rail, getPlacementInfo(info));
 }
 
 bool tryGetRailIter(PlacementInfo* out, const PlacementInfo& info)
 {
-    if (info.tryGetIterByKey(out, sRailKey))
+    if (info.tryGetIterByKey(out, "Rail"))
         return out->isTypeContainer();
     return false;
 }

@@ -222,4 +222,7 @@ STUB(_ZN2al16moveSyncRailTurnEPNS_9LiveActorEf)
 
 STUB(_ZN2al4Rail23calcNearestRailPosCoordERKN4sead7Vector3IfEEf)
 
+STUB(_ZN2al16AnimPlayerSimple9startAnimEPKc)
+STUB(_ZNK2al16AnimPlayerSimple11isAnimExistEPKc)
+
 #undef STUB
