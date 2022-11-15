@@ -1,1 +1,7 @@
 _ZN2al12ActorFactoryC1Ev,0026902c,192,M
+_ZN2al19createActorFunctionI6TogezoEEPNS_9LiveActorEPKc,0039842c,52,O,t
+_ZN2al19createActorFunctionI7NoteObjEEPNS_9LiveActorEPKc,0039865c,40,O,t
+_ZN2al19createActorFunctionI16NoteObjGeneratorEEPNS_9LiveActorEPKc,003975c4,52,O,t
+_ZN2al19createActorFunctionINS_12FallMapPartsEEEPNS_9LiveActorEPKc,0039674c,52,O,t
+_ZN2al19createActorFunctionINS_3SkyEEEPNS_9LiveActorEPKc,00397e64,40,O,t
+_ZN2al19createActorFunctionINS_9EffectObjEEEPNS_9LiveActorEPKc,00398a74,52,O,t

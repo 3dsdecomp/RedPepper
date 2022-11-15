@@ -53,6 +53,7 @@ public:
     ActorActionKeeper* getActorActionKeeper() const { return mActorActionKeeper; }
     Collider* getCollider() const { return mCollider; }
     ModelKeeper* getModelKeeper() const { return mModelKeeper; }
+    HitSensorKeeper* getHitSensorKeeper() const { return mHitSensorKeeper; }
     RailKeeper* getRailKeeper() const { return mRailKeeper; }
     LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
 

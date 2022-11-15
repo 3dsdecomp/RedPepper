@@ -8,10 +8,9 @@ namespace sead {
 
 template <typename T>
 class SafeStringBase {
-    virtual void dummy() {};
-    virtual void dummy1() {};
 
 public:
+    virtual ~SafeStringBase() { }
     virtual void assureTerminationImpl_() const {};
 
     SafeStringBase()

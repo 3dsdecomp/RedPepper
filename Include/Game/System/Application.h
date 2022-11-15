@@ -11,7 +11,8 @@ class Application {
     SEAD_SINGLETON_DISPOSER(Application)
 
 public:
-    u8 unk[0x8];
+    void* _10;
+    class GameFramework* mGameFramework;
     al::SystemKit* mSystemKit;
     u8 unk2[0x34];
     al::SceneObjHolder* mSceneObjHolder;

@@ -7,20 +7,13 @@ namespace alSensorFunction {
 struct NameToType {
     const char* name;
     al::SensorType type;
-
-    inline NameToType(const char* pName, al::SensorType pType)
-        : name(pName)
-        , type(pType)
-    {
-    }
 };
 
 NON_MATCHING
 
-#define ALSENSORFUNCTION_ENTRY(TYPE) NameToType(#TYPE, al::SensorType_##TYPE),
+#define ALSENSORFUNCTION_ENTRY(TYPE) {#TYPE, al::SensorType_##TYPE},
 
-// is somehow directly initialized, this shouldn't have a sti
-const NameToType sNameToTypeLookupTable[] = {
+const NameToType split(sNameToTypeLookupTable)[] = {
 ALSENSORFUNCTION_ENTRY(Eye)
 ALSENSORFUNCTION_ENTRY(Player)
 ALSENSORFUNCTION_ENTRY(Npc)

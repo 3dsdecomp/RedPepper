@@ -3,7 +3,7 @@
 
 namespace al {
 
-// ActorActionKeeper
+// ModelKeeper
 
 NON_MATCHING
 // register swap, maybe inlined

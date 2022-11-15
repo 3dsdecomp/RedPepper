@@ -6,7 +6,7 @@
 
 namespace al {
 
-NON_MATCHING
+#pragma O3
 LiveActor::LiveActor(const char* name)
     : mActorName(name)
     , mActorPoseKeeper(nullptr)
@@ -25,9 +25,8 @@ LiveActor::LiveActor(const char* name)
     , mActorLightKeeper(nullptr)
     , _4C(nullptr)
     , mSubActorKeeper(nullptr)
-    , mLiveActorFlag(LiveActorFlag())
 {
-    al::getLiveActorKit()->getAllActors()->registerActor(this);
+    getLiveActorKit()->getAllActors()->registerActor(this);
 }
 
 NerveKeeper* LiveActor::getNerveKeeper() const

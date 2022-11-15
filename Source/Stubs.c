@@ -225,4 +225,12 @@ STUB(_ZN2al4Rail23calcNearestRailPosCoordERKN4sead7Vector3IfEEf)
 STUB(_ZN2al16AnimPlayerSimple9startAnimEPKc)
 STUB(_ZNK2al16AnimPlayerSimple11isAnimExistEPKc)
 
+STUB(_ZN2al10isCollidedEPKNS_9LiveActorE)
+STUB(_ZN2al13isSensorEnemyEPKNS_9HitSensorE)
+STUB(_ZN2al14isSensorMapObjEPKNS_9HitSensorE)
+STUB(_ZN2al14isSensorPlayerEPKNS_9HitSensorE)
+STUB(_ZN2al21startHitReactionBreakEPKNS_9LiveActorE)
+STUB(_ZN2al21startHitReactionDeathEPKNS_9LiveActorE)
+STUB(_ZN8FireBall12attackSensorEPN2al9HitSensorES2_)
+
 #undef STUB

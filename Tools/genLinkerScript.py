@@ -34,6 +34,8 @@ def genLDScript():
             matching_data += "\t{\n"
             if len(sym) == 5 and sym[4] == "gdef":
                 matching_data += "\t\t* (:gdef:" + sym[0] + ")\n"
+            elif len(sym) == 5 and sym[4] == "t":
+                matching_data += "\t\t* (t." + sym[0] + ")\n"
             else:
                 matching_data += "\t\t* (i." + sym[0] + ")\n"
             matching_data += "\t}\n"

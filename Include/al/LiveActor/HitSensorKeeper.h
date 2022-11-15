@@ -14,6 +14,8 @@ public:
     void invalidateBySystem();
 
     void update();
+
+    HitSensor* getSensor(const char* name) const;
 };
 
 } // namespace al
