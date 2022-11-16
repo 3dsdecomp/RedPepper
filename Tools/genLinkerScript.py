@@ -51,7 +51,7 @@ def genLDScript():
 
     with open('Data/Linker.ld', 'r') as template:
         with open(f'{getBuildPath()}/Linker.ld', 'w') as out:
-            out.write(template.read().replace("$$$", matching_data).replace("§§§", const_data))
+            out.write(template.read().replace("$$$", matching_data).replace("&&&", const_data))
             
 def main():
     genLDScript()

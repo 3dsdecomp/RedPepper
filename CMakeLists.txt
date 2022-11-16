@@ -29,6 +29,9 @@ endmacro()
 
 if (WIN32)
     set_compilers()
+    set(CMAKE_C_COMPILER_WORKS TRUE)
+    set(CMAKE_CXX_COMPILER_WORKS TRUE)
+    set(CMAKE_ASM_COMPILER_WORKS TRUE)
 endif()
 
 project(RedPepper C CXX ASM)
