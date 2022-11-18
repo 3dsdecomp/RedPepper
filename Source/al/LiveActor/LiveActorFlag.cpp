@@ -1,3 +1,4 @@
+#include "al/LiveActor/LiveActorFlag.h"
 #include "al/LiveActor/LiveActor.h"
 
 namespace al {
@@ -13,6 +14,11 @@ LiveActorFlag::LiveActorFlag()
     , flag8(false)
     , flag9(false)
 {
+}
+
+bool isAlive(const LiveActor* actor)
+{
+    return !actor->getLiveActorFlag().isDead;
 }
 
 void offCollide(LiveActor* actor)

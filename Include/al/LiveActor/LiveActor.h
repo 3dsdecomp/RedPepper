@@ -56,6 +56,7 @@ public:
     HitSensorKeeper* getHitSensorKeeper() const { return mHitSensorKeeper; }
     RailKeeper* getRailKeeper() const { return mRailKeeper; }
     LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
+    const LiveActorFlag& getLiveActorFlag() const { return mLiveActorFlag; }
 
     void initNerveKeeper(NerveKeeper* nk) { mNerveKeeper = nk; }
     void initPoseKeeper(ActorPoseKeeperBase* pPoseKeeper);
