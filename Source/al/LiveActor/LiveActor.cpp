@@ -63,6 +63,7 @@ void LiveActor::initStageSwitchKeeper() { mStageSwitchKeeper = new StageSwitchKe
 
 void LiveActor::control() { }
 
+void LiveActor::initNerveKeeper(NerveKeeper* nk) { mNerveKeeper = nk; }
 void LiveActor::initPoseKeeper(ActorPoseKeeperBase* pPoseKeeper) { mActorPoseKeeper = pPoseKeeper; }
 void LiveActor::initRailKeeper(const ActorInitInfo& info) { mRailKeeper = al::tryCreateRailKeeper(al::getPlacementInfo(info)); }
 

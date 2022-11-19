@@ -16,9 +16,9 @@ NERVE_DEF(Togezo, BlowDown);
 
 } // namespace NrvTogezo
 
-static WalkerStateParam sTogezoWalkerStateParam(4.0, 0.98, 0.85, 250.0, 700.0, 180.0, 70.0, 150.0);
-static WalkerStateWanderParam sTogezoWalkerStateWanderParam(30, 90, 0.7, 4.0, 10.0, "Walk", "Wait");
-static WalkerStateChaseParam sTogezoWalkerStateChaseParam(false, true, 1.3, 30.0, 150.0, 3.0, 20.0, "Run", "Wait");
+static WalkerStateParam split(sTogezoWalkerStateParam)(4.0, 0.98, 0.85, 250.0, 700.0, 180.0, 70.0, 150.0);
+static WalkerStateWanderParam split(sTogezoWalkerStateWanderParam)(30, 90, 0.7, 4.0, 10.0, "Walk", "Wait");
+static WalkerStateChaseParam split(sTogezoWalkerStateChaseParam)(false, true, 1.3, 30.0, 150.0, 3.0, 20.0, "Run", "Wait");
 
 #pragma O3
 Togezo::Togezo(const sead::SafeString& name)
@@ -33,7 +33,8 @@ extern "C" void FUN_0027a1a0(al::LiveActor* actor, const char*); // inits al::Co
 extern "C" void FUN_0027cf20(al::LiveActor* actor, const al::ActorInitInfo& info, int);
 
 NON_MATCHING // inline nop
-void Togezo::init(const al::ActorInitInfo& info)
+    void
+    Togezo::init(const al::ActorInitInfo& info)
 {
     al::initActorWithArchiveName(this, info, "Togezo");
     FUN_0027a1a0(this, "à⁄ìÆêßå¿");
@@ -62,7 +63,8 @@ extern "C" bool FUN_00262988(al::LiveActor*, sead::Vector3f* out, const sead::Ve
 extern "C" void FUN_00258774(Togezo*, const WalkerStateParam*);
 
 NON_MATCHING // inline nops
-void Togezo::exeTurn()
+    void
+    Togezo::exeTurn()
 {
     if (al::isFirstStep(this))
         al::startAction(this, "Turn");
@@ -76,7 +78,8 @@ void Togezo::exeTurn()
 }
 
 NON_MATCHING // inline nops
-void Togezo::exeSearch()
+    void
+    Togezo::exeSearch()
 {
     if (al::isFirstStep(this))
         al::startAction(this, "Search");
@@ -99,7 +102,8 @@ void Togezo::exeChase()
 }
 
 NON_MATCHING // inline nops
-void Togezo::exeAttack()
+    void
+    Togezo::exeAttack()
 {
     if (al::isFirstStep(this)) {
         al::startAction(this, "AttackSuccess");

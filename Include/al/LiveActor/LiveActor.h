@@ -58,7 +58,7 @@ public:
     LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
     const LiveActorFlag& getLiveActorFlag() const { return mLiveActorFlag; }
 
-    void initNerveKeeper(NerveKeeper* nk) { mNerveKeeper = nk; }
+    void initNerveKeeper(NerveKeeper* nk);
     void initPoseKeeper(ActorPoseKeeperBase* pPoseKeeper);
     void initRailKeeper(const ActorInitInfo& info);
 

@@ -39,7 +39,6 @@ STUB(_ZN2al9LiveActor17calcAndSetBaseMtxEv)
 STUB(_ZN2al9LiveActor14updateColliderEv)
 STUB(_ZN2al9LiveActor3v22Ev)
 STUB(_ZN2al9LiveActor3v23Ev)
-STUB(_ZN2al9initNerveEPNS_9LiveActorEPKNS_5NerveEi)
 
 STUB(_ZN2al24initActorWithArchiveNameEPNS_9LiveActorERKNS_13ActorInitInfoERKN4sead14SafeStringBaseIcEEPKc)
 

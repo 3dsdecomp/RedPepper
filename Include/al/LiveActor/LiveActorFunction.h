@@ -12,15 +12,6 @@ void calcAnimDirect(al::LiveActor* actor);
 
 namespace al {
 
-// Init
-void initActor(LiveActor* actor, const ActorInitInfo& info);
-void initMapPartsActor(LiveActor* actor, const ActorInitInfo& info);
-void initActorWithArchiveName(LiveActor* actor, const ActorInitInfo& info, const sead::SafeString& archiveName, const char* subArchiveName = nullptr);
-void initActorWithArchiveNameNoPlacementInfo(LiveActor* actor, const ActorInitInfo& info, const sead::SafeString& archiveName, const char* subArchiveName = nullptr);
-
-void initCreateActorNoPlacementInfo(LiveActor* actor, const ActorInitInfo& actorInitInfo);
-void initCreateActorWithPlacementInfo(LiveActor* actor, const ActorInitInfo& actorInitInfo);
-
 // ActorPoseKeeper
 void initActorSRTAndPoseTRSV(LiveActor* actor, const ActorInitInfo& info);
 
@@ -46,7 +37,7 @@ void hideModel(LiveActor* actor);
 void calcJointPos(sead::Vector3f* out, const LiveActor* actor, const char* jointName);
 
 // NerveKeeper
-void initNerve(LiveActor* actor, const Nerve* nerve, int step = 0); // may be al::LiveActor::initNerve
+void initNerve(LiveActor* actor, const Nerve* nerve, int maxNerveStates = 0); // may be al::LiveActor::initNerve
 void initNerveAction(LiveActor* actor, const char* name, alNerveFunction::NerveActionCollector* collector, int maxNerveStates = 0);
 
 // HitSensorKeeper

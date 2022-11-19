@@ -11,17 +11,17 @@ class NerveStateCtrl {
         const char* mName;
     };
 
+    int mCapacity;
+    int mStateCount;
+    State* mStates;
+    State* mCurrentState;
+
 public:
     NerveStateCtrl(int capacity);
 
     bool updateCurrentState();
     void startState(const Nerve* nerve);
     void tryEndCurrentState();
-
-    int mCapacity;
-    int mStateCount;
-    State* mStates;
-    State* mCurrentState;
 };
 
 } // namespace al

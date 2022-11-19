@@ -27,6 +27,13 @@ void startNerveAction(LiveActor* actor, const char* actionName)
 }
 
 NON_MATCHING
+// registers
+void initNerve(LiveActor* actor, const Nerve* nerve, int maxNerveStates)
+{
+    actor->initNerveKeeper(new NerveKeeper(actor, nerve, maxNerveStates));
+}
+
+NON_MATCHING
 // registers, too big for tail-reorder
 void initNerveAction(LiveActor* actor, const char* name, alNerveFunction::NerveActionCollector* collector, int maxNerveStates)
 {

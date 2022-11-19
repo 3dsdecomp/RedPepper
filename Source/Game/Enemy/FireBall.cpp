@@ -12,6 +12,7 @@ NERVE_DEF(FireBall, Shot)
 
 } // namespace NrvFireBall
 
+#pragma O3
 FireBall::FireBall(const sead::SafeString& name)
     : MapObjActor(name)
 {
