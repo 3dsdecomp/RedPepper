@@ -2,6 +2,7 @@
 
 #include "al/Audio/AudioKeeper.h"
 #include "al/Collision/Collider.h"
+#include "al/Collision/CollisionParts.h"
 #include "al/Effect/EffectKeeper.h"
 #include "al/LiveActor/ActorActionKeeper.h"
 #include "al/LiveActor/ActorInitInfo.h"
@@ -15,6 +16,9 @@
 #include "al/Stage/StageSwitchKeeper.h"
 #include "types.h"
 #include <sead/math/seadMatrix.h>
+
+class alActorPoseFunction;
+class alLiveActorFunction;
 
 namespace al {
 
@@ -70,7 +74,7 @@ protected:
     class ActorExecuteInfo* mActorExecuteInfo;
     ActorActionKeeper* mActorActionKeeper;
     Collider* mCollider;
-    class CollisionParts* mCollisionParts;
+    CollisionParts* mCollisionParts;
     ModelKeeper* mModelKeeper;
     NerveKeeper* mNerveKeeper;
     HitSensorKeeper* mHitSensorKeeper;
@@ -78,13 +82,16 @@ protected:
     AudioKeeper* mAudioKeeper;
     StageSwitchKeeper* mStageSwitchKeeper;
     RailKeeper* mRailKeeper;
-    void* _44;
+    class ShadowKeeper* mShadowKeeper;
     class ActorLightKeeper* mActorLightKeeper;
     void* _4C;
     SubActorKeeper* mSubActorKeeper;
 
 private:
     LiveActorFlag mLiveActorFlag;
+
+    friend class ::alActorPoseFunction;
+    friend class ::alLiveActorFunction;
 };
 
 static_assert(sizeof(LiveActor) == 0x60, "");

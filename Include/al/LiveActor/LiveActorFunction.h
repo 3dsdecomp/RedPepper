@@ -4,11 +4,10 @@
 #include "al/Nerve/NerveActionCtrl.h"
 #include <sead/prim/seadSafeString.h>
 
-namespace alLiveActorFunction {
-
-void calcAnimDirect(al::LiveActor* actor);
-
-} // namespace alLiveActorFunction
+class alLiveActorFunction {
+public:
+    static void calcAnimDirect(al::LiveActor* actor);
+};
 
 namespace al {
 
@@ -25,6 +24,8 @@ bool tryStartMtsAnimIfExist(LiveActor* actor, const char* animName);
 bool tryStartMtpAnimIfExist(LiveActor* actor, const char* animName);
 bool tryStartMclAnimIfExist(LiveActor* actor, const char* animName);
 bool tryStartVisAnimIfExist(LiveActor* actor, const char* animName);
+
+void setBaseMtxAndCalcAnim(LiveActor* actor, const sead::Matrix34f&, const sead::Vector3f&);
 
 // CollisionParts
 void invalidateCollisionPartsBySystem(LiveActor* actor);

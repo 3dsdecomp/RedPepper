@@ -12,7 +12,7 @@ struct LiveActorFlag {
     bool isHideModel;
     bool isOffCollide;
     bool flag8;
-    bool flag9;
+    bool isValidMaterialCode;
 
     LiveActorFlag();
 };

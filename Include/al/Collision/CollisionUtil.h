@@ -4,6 +4,8 @@
 
 namespace al {
 
+void syncCollisionMtx(LiveActor* actor, const sead::Matrix34f*);
+
 bool isCollided(const LiveActor* actor);
 bool isCollidedGround(const LiveActor* actor);
 

@@ -33,12 +33,15 @@ public:
     virtual void unk1();
     virtual void unk2();
 
-    void initNerve(const Nerve* nerve, int step);
+    void initNerve(const Nerve* nerve, int maxNerveStates = 0);
 };
 
 void initLayoutActor(LayoutActor* layoutActor, const LayoutInitInfo& info, const char* archiveName, const char*);
 
 void startAction(LayoutActor* actor, const sead::SafeString& actionName);
+bool isActionEnd(const LayoutActor* actor);
+void setActionFrameRate(LayoutActor* actor, float rate);
+float getActionFrameMax(const LayoutActor* actor);
 
 void setPaneString(LayoutActor* actor, const char* paneName, const char16* text);
 void hidePane(LayoutActor* actor, const char* paneName);

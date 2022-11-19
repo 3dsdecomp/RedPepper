@@ -1,5 +1,25 @@
 #include "al/LiveActor/LiveActorFunction.h"
+#include "al/Collision/CollisionUtil.h"
+#include "al/LiveActor/ActorPoseFunction.h"
+#include "al/LiveActor/SubActorFunction.h"
+#include "al/Math/MtxUtil.h"
 #include "al/Nerve/NerveFunction.h"
+
+void alLiveActorFunction::calcAnimDirect(al::LiveActor* actor)
+{
+    sead::Matrix34f baseMtx;
+    actor->mActorPoseKeeper->calcBaseMtx(&baseMtx); /* alActorPoseFunction::calcBaseMtx */
+    if (actor->mModelKeeper)
+        al::setBaseMtxAndCalcAnim(actor, baseMtx, actor->mActorPoseKeeper->getScale() /* al::getScale */);
+    if (actor->mCollisionParts) {
+        al::preScaleMtx(&baseMtx, actor->mActorPoseKeeper->getScale() /* al::getScale */);
+        al::syncCollisionMtx(actor, &baseMtx);
+    }
+    if (actor->getEffectKeeper())
+        actor->getEffectKeeper()->update();
+    if (actor->mSubActorKeeper)
+        alSubActorFunction::tryCalcAnim(actor->mSubActorKeeper);
+}
 
 namespace al {
 

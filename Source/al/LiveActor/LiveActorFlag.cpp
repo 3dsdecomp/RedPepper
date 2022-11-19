@@ -12,7 +12,7 @@ LiveActorFlag::LiveActorFlag()
     , isHideModel(false)
     , isOffCollide(true)
     , flag8(false)
-    , flag9(false)
+    , isValidMaterialCode(false)
 {
 }
 
