@@ -5,6 +5,6 @@
 namespace rp {
 
 PlayerActor* getPlayerActor();
-const sead::Vector3f& getPlayerTrans();
+const sead::Vector3f& getPlayerPos();
 
 } // namespace rp

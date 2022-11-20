@@ -32,9 +32,9 @@ Togezo::Togezo(const sead::SafeString& name)
 extern "C" void FUN_0027a1a0(al::LiveActor* actor, const char*); // inits al::Collider->_4
 extern "C" void FUN_0027cf20(al::LiveActor* actor, const al::ActorInitInfo& info, int);
 
-NON_MATCHING // inline nop
-    void
-    Togezo::init(const al::ActorInitInfo& info)
+NON_MATCHING
+// inline nop
+void Togezo::init(const al::ActorInitInfo& info)
 {
     al::initActorWithArchiveName(this, info, "Togezo");
     FUN_0027a1a0(this, "à⁄ìÆêßå¿");
@@ -73,18 +73,18 @@ NON_MATCHING // inline nops
         al::setNerve(this, &NrvTogezo::Wander);
         return;
     }
-    if (FUN_00262988(this, al::getFrontPtr(this), rp::getPlayerTrans(), 6.0))
+    if (FUN_00262988(this, al::getFrontPtr(this), rp::getPlayerPos(), 6.0))
         al::setNerve(this, &NrvTogezo::Search);
 }
 
-NON_MATCHING // inline nops
-    void
-    Togezo::exeSearch()
+NON_MATCHING
+// inline nops
+void Togezo::exeSearch()
 {
     if (al::isFirstStep(this))
         al::startAction(this, "Search");
     FUN_00258774(this, &sTogezoWalkerStateParam);
-    FUN_00262988(this, al::getFrontPtr(this), rp::getPlayerTrans(), 6.0);
+    FUN_00262988(this, al::getFrontPtr(this), rp::getPlayerPos(), 6.0);
     if (al::isActionEnd(this)) {
         if (FUN_00272a9c())
             al::setNerve(this, &NrvTogezo::Wander);

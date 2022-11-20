@@ -240,4 +240,8 @@ STUB(_ZN2al15initLayoutActorEPNS_11LayoutActorERKNS_14LayoutInitInfoEPKcS6_)
 STUB(_ZN2al17getActionFrameMaxEPKNS_11LayoutActorE)
 STUB(_ZN2al18setActionFrameRateEPNS_11LayoutActorEf)
 
+STUB(_ZN2al18SwitchAreaDirector4unk1Ev)
+STUB(_ZN2al17SwitchOnAreaGroup6updateERKN4sead7Vector3IfEE)
+STUB(_ZN2al21SwitchKeepOnAreaGroup6updateERKN4sead7Vector3IfEE)
+
 #undef STUB
