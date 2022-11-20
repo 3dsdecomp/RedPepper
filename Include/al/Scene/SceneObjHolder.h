@@ -5,18 +5,20 @@
 namespace al {
 
 class SceneObjHolder {
-public:
     typedef ISceneObj* (*CreateFunc)(int id);
 
+    CreateFunc mCreateFunc;
+    ISceneObj** mObjs;
+    int mSize;
+
+public:
     SceneObjHolder(CreateFunc func, int size);
+
     void setObj(ISceneObj* obj, int id);
     ISceneObj* getObj(int id);
     ISceneObj* create(int id);
 
-private:
-    CreateFunc mCreateFunc;
-    ISceneObj** mObjs;
-    int mSize;
+    void initAfterPlacementSceneObj(const ActorInitInfo& info);
 };
 
 SceneObjHolder* getSceneObjHolder();

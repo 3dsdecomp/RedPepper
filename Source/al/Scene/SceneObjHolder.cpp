@@ -29,6 +29,13 @@ ISceneObj* SceneObjHolder::create(int id)
     return mObjs[id];
 }
 
+void SceneObjHolder::initAfterPlacementSceneObj(const ActorInitInfo& info)
+{
+    for (int i = 0; i < mSize; i++)
+        if (mObjs[i])
+            mObjs[i]->initAfterPlacementSceneObj(info);
+}
+
 ISceneObj* createSceneObj(int id)
 {
     return getSceneObjHolder()->create(id);

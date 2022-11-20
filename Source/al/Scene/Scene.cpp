@@ -64,4 +64,10 @@ void Scene::initSceneObjHolder()
     Application::instance()->setSceneObjHolder(holder);
 }
 
+void Scene::endInit(const ActorInitInfo& info)
+{
+    if (mSceneObjHolder)
+        mSceneObjHolder->initAfterPlacementSceneObj(info);
+}
+
 } // namespace al

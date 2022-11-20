@@ -2,15 +2,17 @@
 
 #include "al/Audio/AudioKeeper.h"
 #include "al/Factory/ActorFactory.h"
+#include "al/LiveActor/LiveActorKit.h"
 #include "al/Nerve/NerveExecutor.h"
+#include "al/Scene/SceneObjHolder.h"
 
 namespace al {
 
 class Scene : public NerveExecutor, public IUseAudioKeeper {
     AudioKeeper* mAudioKeeper;
-    class LiveActorKit* mLiveActorKit;
+    LiveActorKit* mLiveActorKit;
     class LayoutKit* mLayoutKit;
-    class SceneObjHolder* mSceneObjHolder;
+    SceneObjHolder* mSceneObjHolder;
     ActorFactory* mActorFactory;
     void* _20;
     void* _24;
@@ -41,6 +43,8 @@ public:
 
     void initActorFactory();
     void initSceneObjHolder();
+
+    void endInit(const ActorInitInfo& info);
 
     bool isAlive() const { return mIsAlive; }
     ActorFactory* getActorFactory() const { return mActorFactory; }
