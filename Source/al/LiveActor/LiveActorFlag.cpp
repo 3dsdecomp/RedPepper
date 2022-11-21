@@ -16,14 +16,4 @@ LiveActorFlag::LiveActorFlag()
 {
 }
 
-bool isAlive(const LiveActor* actor)
-{
-    return !actor->getLiveActorFlag().isDead;
-}
-
-void offCollide(LiveActor* actor)
-{
-    actor->getLiveActorFlag().isOffCollide = true;
-}
-
 } // namespace al

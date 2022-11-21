@@ -1,6 +1,7 @@
 #include "al/LiveActor/LiveActorFunction.h"
 #include "al/Collision/CollisionUtil.h"
 #include "al/LiveActor/ActorPoseFunction.h"
+#include "al/LiveActor/LiveActorKit.h"
 #include "al/LiveActor/SubActorFunction.h"
 #include "al/Math/MtxUtil.h"
 #include "al/Nerve/NerveFunction.h"
@@ -22,6 +23,28 @@ void alLiveActorFunction::calcAnimDirect(al::LiveActor* actor)
 }
 
 namespace al {
+
+// ??
+bool isClipped(const LiveActor* actor) { return actor->getLiveActorFlag().isClipped; }
+bool isInvalidClipping(const LiveActor* actor) { return actor->getLiveActorFlag().isInvalidClipping; }
+bool isAlive(const LiveActor* actor) { return !actor->getLiveActorFlag().isDead; }
+
+void offCollide(LiveActor* actor) { actor->getLiveActorFlag().isOffCollide = true; }
+
+void invalidateClipping(LiveActor* actor)
+{
+    if (isClipped(actor))
+        actor->endClipped();
+
+    if (!isInvalidClipping(actor))
+        getLiveActorKit()->getClippingDirector()->getClippingActorHolder()->invalidateClipping(actor);
+}
+
+void validateClipping(LiveActor* actor)
+{
+    if (isInvalidClipping(actor))
+        getLiveActorKit()->getClippingDirector()->getClippingActorHolder()->validateClipping(actor);
+}
 
 // ModelKeeper
 

@@ -1,5 +1,6 @@
 #include "al/Npc/Sky.h"
 #include "al/Camera/Camera.h"
+#include "al/LiveActor/ActorInitUtil.h"
 #include "al/LiveActor/LiveActorFunction.h"
 #include "al/Stage/StageSwitchKeeper.h"
 

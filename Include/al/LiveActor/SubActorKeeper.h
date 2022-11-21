@@ -19,9 +19,9 @@ class SubActorKeeper {
     LiveActor* const mParent;
     sead::PtrArray<Entry> mSubActors;
 
-public:
     SubActorKeeper(al::LiveActor* actor, const al::ActorInitInfo& info, const char*, int);
 
+public:
     static SubActorKeeper* tryCreate(al::LiveActor* actor, const al::ActorInitInfo& info, const char*, int);
 
     friend class ::alSubActorFunction;

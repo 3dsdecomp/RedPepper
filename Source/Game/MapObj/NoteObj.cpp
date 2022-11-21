@@ -1,5 +1,6 @@
 #include "Game/MapObj/NoteObj.h"
 #include "Game/MapObj/CoinRotater.h"
+#include "al/LiveActor/ActorInitUtil.h"
 #include "al/LiveActor/ActorPoseKeeper.h"
 #include "al/LiveActor/LiveActorFunction.h"
 #include "al/Placement/PlacementFunction.h"

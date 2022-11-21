@@ -1,4 +1,5 @@
 #include "al/MapObj/FallMapParts.h"
+#include "al/LiveActor/ActorInitUtil.h"
 #include "al/LiveActor/LiveActorFunction.h"
 #include "al/LiveActor/SensorMsg.h"
 #include "al/Nerve/NerveFunction.h"

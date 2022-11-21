@@ -27,6 +27,17 @@ bool tryStartVisAnimIfExist(LiveActor* actor, const char* animName);
 
 void setBaseMtxAndCalcAnim(LiveActor* actor, const sead::Matrix34f&, const sead::Vector3f&);
 
+// ??
+
+bool isClipped(const LiveActor* actor);
+bool isInvalidClipping(const LiveActor* actor);
+bool isAlive(const LiveActor* actor);
+
+void offCollide(LiveActor* actor);
+
+void invalidateClipping(LiveActor* actor);
+void validateClipping(LiveActor* actor);
+
 // CollisionParts
 void invalidateCollisionPartsBySystem(LiveActor* actor);
 void validateCollisionPartsBySystem(LiveActor* actor);
@@ -49,10 +60,6 @@ void initActorEffectKeeper(LiveActor* actor, const ActorInitInfo& info, const ch
 
 // StageSwitchKeeper
 void trySyncStageSwitchAppear(LiveActor* actor);
-
-// Clipping
-void invalidateClipping(LiveActor* actor);
-void validateClipping(LiveActor* actor);
 
 // Math
 void rotateQuatXDirDegree(LiveActor* actor, const sead::Quatf& from, float degrees);

@@ -62,6 +62,23 @@ bool tryGetRailIter(PlacementInfo* out, const PlacementInfo& info)
     return false;
 }
 
+bool getLinksInfoByIndex(PlacementInfo* out, const ActorInitInfo& info, int index)
+{
+    ByamlIter links;
+    if (getPlacementInfo(info).tryGetIterByKey(&links, "GenerateChildren"))
+        return links.tryGetIterByIndex(out, index);
+    return false;
+}
+
+const char* getLinksActorObjectName(const ActorInitInfo& info, int index)
+{
+    PlacementInfo placementInfo;
+    getLinksInfoByIndex(&placementInfo, info, index);
+    const char* objectName = nullptr;
+    tryGetObjectName(&objectName, placementInfo);
+    return objectName;
+}
+
 } // namespace al
 
 namespace alPlacementFunction {

@@ -1,6 +1,7 @@
 #include "Game/Enemy/FireBall.h"
 #include "al/Collision/CollisionUtil.h"
 #include "al/LiveActor/ActorActionKeeper.h"
+#include "al/LiveActor/ActorInitUtil.h"
 #include "al/LiveActor/HitSensorFunction.h"
 #include "al/LiveActor/LiveActorFunction.h"
 #include "al/LiveActor/SensorMsg.h"

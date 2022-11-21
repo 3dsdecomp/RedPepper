@@ -22,6 +22,9 @@ bool isObjectName(const PlacementInfo& info, const char* objectName);
 bool isExistRail(const ActorInitInfo& info);
 bool tryGetRailIter(PlacementInfo* out, const PlacementInfo& info);
 
+bool getLinksInfoByIndex(PlacementInfo* out, const ActorInitInfo& info, int index);
+const char* getLinksActorObjectName(const ActorInitInfo& info, int index);
+
 } // namespace al
 
 namespace alPlacementFunction {

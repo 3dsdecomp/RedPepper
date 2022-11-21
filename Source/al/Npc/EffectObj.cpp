@@ -1,5 +1,6 @@
 #include "al/Npc/EffectObj.h"
 #include "al/File/FileFunction.h"
+#include "al/LiveActor/ActorInitUtil.h"
 #include "al/LiveActor/LiveActorFunction.h"
 #include "al/Placement/PlacementFunction.h"
 #include "al/Se/SeFunction.h"

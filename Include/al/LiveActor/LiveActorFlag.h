@@ -17,7 +17,4 @@ struct LiveActorFlag {
     LiveActorFlag();
 };
 
-bool isAlive(const LiveActor* actor);
-void offCollide(LiveActor* actor);
-
 } // namespace al

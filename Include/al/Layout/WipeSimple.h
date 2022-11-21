@@ -8,7 +8,7 @@ class WipeSimple : public al::LayoutActor {
     int _30;
 
 public:
-    WipeSimple(const char* name, const char* archive, const LayoutInitInfo& info, const char* subArchive);
+    WipeSimple(const char* name, const char* archive, const LayoutInitInfo& info, const char* suffix = nullptr);
 
     virtual void appear();
 

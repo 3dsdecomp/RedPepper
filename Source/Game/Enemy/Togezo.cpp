@@ -1,5 +1,6 @@
 #include "Game/Enemy/Togezo.h"
 #include "Game/Player/PlayerFunction.h"
+#include "al/LiveActor/ActorInitUtil.h"
 #include "al/LiveActor/ActorPoseKeeper.h"
 #include "al/LiveActor/LiveActorFunction.h"
 #include "al/Nerve/NerveFunction.h"

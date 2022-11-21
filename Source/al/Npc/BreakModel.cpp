@@ -1,4 +1,5 @@
 #include "al/Npc/BreakModel.h"
+#include "al/LiveActor/ActorInitUtil.h"
 #include "al/LiveActor/LiveActorFunction.h"
 #include "al/Nerve/NerveFunction.h"
 

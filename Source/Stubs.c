@@ -40,8 +40,6 @@ STUB(_ZN2al9LiveActor14updateColliderEv)
 STUB(_ZN2al9LiveActor3v22Ev)
 STUB(_ZN2al9LiveActor3v23Ev)
 
-STUB(_ZN2al24initActorWithArchiveNameEPNS_9LiveActorERKNS_13ActorInitInfoERKN4sead14SafeStringBaseIcEEPKc)
-
 STUB(_ZTVN10__cxxabiv117__class_type_infoE) // why
 STUB(_ZTVN10__cxxabiv120__si_class_type_infoE)
 
@@ -152,10 +150,8 @@ STUB(_ZN2al12isPadReleaseEii)
 STUB(_ZN2al9isPadHoldEii)
 
 STUB(_ZN2al12getCameraPosEv)
-STUB(_ZN2al18invalidateClippingEPNS_9LiveActorE)
 STUB(_ZN2al21initStageSwitchAppearEPNS_15IUseStageSwitchERKNS_13ActorInitInfoE)
 STUB(_ZN2al24trySyncStageSwitchAppearEPNS_9LiveActorE)
-STUB(_ZN2al9initActorEPNS_9LiveActorERKNS_13ActorInitInfoE)
 
 STUB(FUN_00270fc4)
 STUB(_ZN2al39initActorWithArchiveNameNoPlacementInfoEPNS_9LiveActorERKNS_13ActorInitInfoERKN4sead14SafeStringBaseIcEEPKc)
@@ -192,7 +188,6 @@ STUB(_ZN2al7AreaObj4initERKNS_12AreaInitInfoE)
 STUB(_ZN2al10tryGetArg0EPiRKNS_9ByamlIterE)
 STUB(_ZN2al17initMapPartsActorEPNS_9LiveActorERKNS_13ActorInitInfoE)
 STUB(_ZN2al14tryStartActionEPNS_9LiveActorEPKc)
-STUB(_ZN2al16validateClippingEPNS_9LiveActorE)
 STUB(_ZN2al13scaleVelocityEPNS_9LiveActorEf)
 STUB(FUN_00268df8)
 STUB(_ZN2al13resetPositionEPNS_9LiveActorE)
@@ -243,5 +238,10 @@ STUB(_ZN2al18setActionFrameRateEPNS_11LayoutActorEf)
 STUB(_ZN2al18SwitchAreaDirector4unk1Ev)
 STUB(_ZN2al17SwitchOnAreaGroup6updateERKN4sead7Vector3IfEE)
 STUB(_ZN2al21SwitchKeepOnAreaGroup6updateERKN4sead7Vector3IfEE)
+
+STUB(_ZN2al19ClippingActorHolder16validateClippingEPNS_9LiveActorE)
+STUB(_ZN2al19ClippingActorHolder18invalidateClippingEPNS_9LiveActorE)
+STUB(_ZN2al14SensorHitGroupC1EiPKc)
+STUB(_ZN2al20registerExecutorUserEPNS_12IUseExecutorEPKc)
 
 #undef STUB

@@ -12,11 +12,11 @@ namespace NrvWipeSimple {
 } // namespace NrvWipeSimple
 
 #pragma O3
-WipeSimple::WipeSimple(const char* name, const char* archive, const LayoutInitInfo& info, const char* subArchive)
+WipeSimple::WipeSimple(const char* name, const char* archive, const LayoutInitInfo& info, const char* suffix)
     : LayoutActor(name)
     , _30(-1)
 {
-    initLayoutActor(this, info, archive, subArchive);
+    initLayoutActor(this, info, archive, suffix);
     initNerve(&NrvWipeSimple::Close);
 }
 
