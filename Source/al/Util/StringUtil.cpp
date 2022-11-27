@@ -1,6 +1,17 @@
 #include "al/Util/StringUtil.h"
+#include <cstring>
 
 namespace al {
+
+NON_MATCHING
+// addne swapped
+const char* getBaseName(const char* name)
+{
+    const char* baseName = std::strrchr(name, '/');
+    if (baseName)
+        return baseName + 1;
+    return name;
+}
 
 bool isEqualString(const char* s1, const char* s2)
 {
