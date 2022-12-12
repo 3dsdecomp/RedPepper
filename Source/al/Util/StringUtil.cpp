@@ -1,4 +1,5 @@
 #include "al/Util/StringUtil.h"
+#include <cstdio>
 #include <cstring>
 
 namespace al {
@@ -8,9 +9,18 @@ NON_MATCHING
 const char* getBaseName(const char* name)
 {
     const char* baseName = std::strrchr(name, '/');
-    if (baseName)
-        return baseName + 1;
-    return name;
+    return baseName ? baseName + 1 : name;
+}
+
+const char* createStringIfInStack(const char* str)
+{
+    if (isInStack(str)) {
+        std::size_t size = std::strlen(str) + 1;
+        char* newString = new char[size];
+        std::snprintf(newString, size, "%s", str);
+        return newString;
+    }
+    return str;
 }
 
 bool isEqualString(const char* s1, const char* s2)

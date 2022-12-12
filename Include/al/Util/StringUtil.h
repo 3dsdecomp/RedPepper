@@ -20,7 +20,10 @@ public:
     }
 };
 
+
 const char* getBaseName(const char* name);
+const char* createStringIfInStack(const char* str);
 bool isEqualString(const char* s1, const char* s2);
+bool isInStack(const void* ptr);
 
 } // namespace al

@@ -1,0 +1,5 @@
+_sputc,00289e98,16,O,gdef
+_snputc,0010a470,24,O,gdef
+_printf_char_common,00289ebc,60,m,gdef
+_printf_input_char,00289ea8,20,O,gdef
+__2snprintf,0026e7c0,88,M,gdef

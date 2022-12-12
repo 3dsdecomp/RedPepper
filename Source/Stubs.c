@@ -243,5 +243,6 @@ STUB(_ZN2al19ClippingActorHolder16validateClippingEPNS_9LiveActorE)
 STUB(_ZN2al19ClippingActorHolder18invalidateClippingEPNS_9LiveActorE)
 STUB(_ZN2al14SensorHitGroupC1EiPKc)
 STUB(_ZN2al20registerExecutorUserEPNS_12IUseExecutorEPKc)
+STUB(_ZN2al9isInStackEPKv)
 
 #undef STUB
