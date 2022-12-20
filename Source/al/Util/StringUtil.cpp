@@ -4,12 +4,10 @@
 
 namespace al {
 
-NON_MATCHING
-// addne swapped
 const char* getBaseName(const char* name)
 {
     const char* baseName = std::strrchr(name, '/');
-    return baseName ? baseName + 1 : name;
+    return !baseName ? name : baseName + 1;
 }
 
 const char* createStringIfInStack(const char* str)
