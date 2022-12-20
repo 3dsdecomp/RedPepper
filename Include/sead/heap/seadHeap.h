@@ -39,8 +39,8 @@ public:
     virtual size_t adjust() = 0;
     virtual void* tryAlloc(size_t size, s32 alignment) = 0;
     virtual void free(void* ptr) = 0;
-    virtual void* resizeFront(void*, size_t) = 0;
-    virtual void* resizeBack(void*, size_t) = 0;
+    // virtual void* resizeFront(void*, size_t) = 0;
+    // virtual void* resizeBack(void*, size_t) = 0;
     virtual void* tryRealloc(void* ptr, size_t size, s32 alignment);
     virtual void freeAll() = 0;
     virtual uintptr_t getStartAddress() const = 0;

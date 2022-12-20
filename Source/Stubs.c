@@ -245,4 +245,6 @@ STUB(_ZN2al14SensorHitGroupC1EiPKc)
 STUB(_ZN2al20registerExecutorUserEPNS_12IUseExecutorEPKc)
 STUB(_ZN2al9isInStackEPKv)
 
+STUB(_ZN4sead7ExpHeap6createEjRKNS_14SafeStringBaseIcEEPNS_4HeapENS5_13HeapDirectionEb)
+
 #undef STUB

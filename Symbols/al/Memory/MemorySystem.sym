@@ -1,1 +1,8 @@
+_ZN2al12MemorySystem18createSequenceHeapEv,001c0e78,84,O
 _ZN2al12MemorySystem23createSceneResourceHeapEPKc,0024f344,320,M
+_ZN2al12MemorySystem19freeAllSequenceHeapEv,001c0ecc,16,O
+_ZN2al16getStationedHeapEv,0029329c,20,O
+_ZN2al15getSequenceHeapEv,001cd698,20,O
+_ZN2al20getSceneResourceHeapEv,00257fe4,20,O
+_ZN2al19getCourseSelectHeapEv,00251c70,20,O
+_ZN2al26isCreatedSceneResourceHeapEv,001e576c,28,O

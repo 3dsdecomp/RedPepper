@@ -1,13 +1,20 @@
 #include "al/Memory/MemorySystem.h"
 #include "al/Resource/Resource.h"
 #include "al/System/Byaml/ByamlIter.h"
+#include "al/System/SystemKit.h"
 #include "al/Util/StringUtil.h"
 
 namespace al {
 
-extern "C" void FUN_002911e8(sead::Heap** out, u32 heapSize, const char* name, u8, int); // creates FrameHeap(?)
+void MemorySystem::createSequenceHeap()
+{
+    mSequenceHeap = sead::ExpHeap::create(0, "SequenceHeap", nullptr, sead::ExpHeap::cHeapDirection_Forward, false);
+}
 
-NON_MATCHING // WIP
+extern "C" void FUN_002911e8(sead::FrameHeap** out, u32 heapSize, const char* name, u8, int); // creates FrameHeap(?)
+
+NON_MATCHING
+// WIP
 void MemorySystem::createSceneResourceHeap(const char* stageName)
 {
     int heapSize;
@@ -31,5 +38,14 @@ void MemorySystem::createSceneResourceHeap(const char* stageName)
         heapSize = 8 * 1024 * 1024; // 8 MB
     FUN_002911e8(&mSceneResourceHeap, heapSize, "SceneHeapResource", 0, 1);
 }
+
+void MemorySystem::freeAllSequenceHeap() { mSequenceHeap->freeAll(); }
+
+sead::ExpHeap* getStationedHeap() { return alProjectInterface::getSystemKit()->getMemorySystem()->getStationedHeap(); }
+sead::ExpHeap* getSequenceHeap() { return alProjectInterface::getSystemKit()->getMemorySystem()->getSequenceHeap(); }
+sead::FrameHeap* getSceneResourceHeap() { return alProjectInterface::getSystemKit()->getMemorySystem()->getSceneResourceHeap(); }
+sead::FrameHeap* getCourseSelectHeap() { return alProjectInterface::getSystemKit()->getMemorySystem()->getCourseSelectHeap(); }
+
+bool isCreatedSceneResourceHeap() { return getSceneResourceHeap() != nullptr; }
 
 } // namespace al
