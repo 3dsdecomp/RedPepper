@@ -4,8 +4,6 @@
 
 namespace al {
 
-NON_MATCHING
-// addne swapped
 const char* getBaseName(const char* name)
 {
     const char* baseName = std::strrchr(name, '/');
