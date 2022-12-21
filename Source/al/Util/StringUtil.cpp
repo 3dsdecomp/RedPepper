@@ -33,4 +33,16 @@ bool isEqualString(const char* s1, const char* s2)
     return false;
 }
 
+char *removeExtensionString(char *res, size_t size, const char *str)
+{
+    std::snprintf(res, size, "%s", str);
+    char *token1 = std::strrchr(res, '.');
+    char *token2 = std::strrchr(res, '/');
+    if ( token2 > token1 || ++token2 == token1 || !token1)
+        return token2;
+    token2 = 0;
+    *token1 = 0;
+    return token2;
+}
+
 } // namespace al
