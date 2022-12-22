@@ -8,13 +8,14 @@ namespace al {
 extern "C" const u32* FUN_0024edd8();
 
 #pragma O3
-bool isPadTrigger(int port, int mask) { // likely a fakematch
+bool isPadTrigger(int port, int mask)
+{ // likely a fakematch
     int masktemp = mask;
     int porttemp = port;
     const u32* maskPtr = FUN_0024edd8();
 
-    if(!maskPtr) {
-        sead::Controller *controller = sead::ControllerMgr::instance()->getController(porttemp);
+    if (!maskPtr) {
+        sead::Controller* controller = sead::ControllerMgr::instance()->getController(porttemp);
         maskPtr = controller ? controller->getTrigMaskPtr() : 0;
     }
     return *maskPtr & masktemp;
