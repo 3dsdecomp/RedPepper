@@ -67,12 +67,7 @@ public:
 
     DelegateThread* getFramework() const;
 
-    Controller* getController(int port)
-    {
-        if (port < mControllers.size())
-            return mControllers[port];
-        return nullptr;
-    }
+    Controller* getController(int port) { return mControllers[port]; }
 
     OffsetList<ControlDevice> mDevices;
 

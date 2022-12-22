@@ -5,17 +5,19 @@
 
 namespace al {
 
-extern "C" const u32* FUN_0024edd8(int port);
+extern "C" const u32* FUN_0024edd8();
 
-NON_MATCHING // i really don't know
-bool isPadTrigger(int port, int mask)
-{
-    const u32* trigMask = FUN_0024edd8(port);
-    if (trigMask == nullptr) {
-        sead::Controller* controller = sead::ControllerMgr::instance()->getController(port);
-        trigMask = controller == nullptr ? nullptr : controller->getTrigMaskPtr();
+#pragma O3
+bool isPadTrigger(int port, int mask) { // likely a fakematch
+    int masktemp = mask;
+    int porttemp = port;
+    const u32* maskPtr = FUN_0024edd8();
+
+    if(!maskPtr) {
+        sead::Controller *controller = sead::ControllerMgr::instance()->getController(porttemp);
+        maskPtr = controller ? controller->getTrigMaskPtr() : 0;
     }
-    return *trigMask & mask;
+    return *maskPtr & masktemp;
 }
 
 #define _T_BUTTON(BUTTON)                                                   \
