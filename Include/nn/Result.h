@@ -171,12 +171,13 @@ public:
     {
     }
 
-    bool Succeeded() { return mValue >= 0; }
-    bool Failed() { return mValue < 0; }
-    Level GetLevel() { return (Level)((mValue >> 27) & 0x1F); }
-    Summary GetSummary() { return (Summary)((mValue >> 21) & 0x3F); }
-    ModuleType GetModuleType() { return (ModuleType)((mValue >> 10) & 0xFF); }
-    int GetDescription() { return (mValue & 0x3FF); }
+    bool Succeeded() const { return mValue >= 0; }
+    bool Failed() const { return mValue < 0; }
+    Level GetLevel() const { return (Level)((mValue >> 27) & 0x1F); }
+    Summary GetSummary() const { return (Summary)((mValue >> 21) & 0x3F); }
+    ModuleType GetModuleType() const { return (ModuleType)((mValue >> 10) & 0xFF); }
+    int GetDescription() const { return (mValue & 0x3FF); }
+    bool IsValid() const { return mValue >= 0x80000000; }
 
     inline operator bool() { return Succeeded(); }
 };

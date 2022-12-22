@@ -1,5 +1,5 @@
-#include <nn/srv/detail/Service.h>
-#include <nn/srv/srv.h>
+#include <nn/srv/detail/srv_Service.h>
+#include <nn/srv/srv_Api.h>
 
 namespace nn {
 namespace srv {
@@ -10,7 +10,7 @@ namespace srv {
 
     } // namespace
 
-NON_MATCHING
+    NON_MATCHING
     Result GetServiceHandle(Handle* out, const char* service, s32 r2, u32 r3)
     {
         if (s_InitializeCount > 0)
@@ -20,7 +20,6 @@ NON_MATCHING
 
         return detail::Service::GetServiceHandle(out, service, r2, r3);
     }
-
 
 } // namespace srv
 } // namespace nn

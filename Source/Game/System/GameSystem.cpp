@@ -1,7 +1,7 @@
 #include "Game/System/GameSystem.h"
 #include "Game/System/Application.h"
 #include "Game/System/ApplicationFunction.h"
-#include <nn/cfg/CTR/cfg.h>
+#include <nn/cfg/CTR/cfg_Api.h>
 #include <sead/heap/seadHeapMgr.h>
 
 #pragma O3

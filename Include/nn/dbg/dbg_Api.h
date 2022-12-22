@@ -1,6 +1,6 @@
 #pragma once
 
-#include <nn/dbg/types.h>
+#include <nn/dbg/dbg_Types.h>
 
 namespace nn {
 namespace dbg {

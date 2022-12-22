@@ -1,5 +1,5 @@
-#include <nn/dbg/dbg.h>
-#include <nn/svc/svc.h>
+#include <nn/dbg/dbg_Api.h>
+#include <nn/svc/svc_Api.h>
 
 namespace nn {
 namespace dbg {
