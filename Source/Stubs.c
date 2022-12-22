@@ -247,4 +247,7 @@ STUB(_ZN2al9isInStackEPKv)
 
 STUB(_ZN4sead7ExpHeap6createEjRKNS_14SafeStringBaseIcEEPNS_4HeapENS5_13HeapDirectionEb)
 
+STUB(_ZN2al22trySyncStageSwitchKillEPNS_9LiveActorE)
+STUB(_ZN2al19initStageSwitchKillEPNS_15IUseStageSwitchERKNS_13ActorInitInfoE)
+
 #undef STUB

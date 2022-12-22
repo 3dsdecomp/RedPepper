@@ -60,6 +60,7 @@ void initActorEffectKeeper(LiveActor* actor, const ActorInitInfo& info, const ch
 
 // StageSwitchKeeper
 void trySyncStageSwitchAppear(LiveActor* actor);
+void trySyncStageSwitchKill(LiveActor* actor);
 
 // Math
 void rotateQuatXDirDegree(LiveActor* actor, const sead::Quatf& from, float degrees);

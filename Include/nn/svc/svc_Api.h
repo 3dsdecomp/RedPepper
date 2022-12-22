@@ -1,10 +1,10 @@
 #pragma once
 
-#include "nn/Handle.h"
-#include "nn/Result.h"
-#include "nn/dbg/types.h"
-#include "nn/os/types.h"
 #include "types.h"
+#include <nn/Handle.h>
+#include <nn/Result.h>
+#include <nn/dbg/dbg_Types.h>
+#include <nn/os/os_Types.h>
 
 namespace nn {
 namespace svc {

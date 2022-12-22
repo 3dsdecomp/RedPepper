@@ -1,5 +1,4 @@
----
 BasedOnStyle: WebKit
 QualifierAlignment: Left
 Standard: c++03
-...
+

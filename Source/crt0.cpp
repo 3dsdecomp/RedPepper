@@ -1,4 +1,4 @@
-#include <nn/svc/svc.h>
+#include <nn/svc/svc_Api.h>
 
 extern "C" void nninitRegion();
 extern "C" void nninitLocale();
