@@ -33,6 +33,11 @@ bool isEqualString(const char* s1, const char* s2)
     return false;
 }
 
+bool isEqualSubString(const char* str, const char* substr)
+{
+    return std::strstr(str, substr) != nullptr;
+}
+
 char* removeExtensionString(char* res, size_t size, const char* str)
 {
     std::snprintf(res, size, "%s", str);
