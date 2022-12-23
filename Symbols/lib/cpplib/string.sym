@@ -1,2 +1,3 @@
 strrchr,0024fec8,36,O,gdef
 strlen,00292158,96,O,gdef
+strcmp,0028aa60,184,O,gdef

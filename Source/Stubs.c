@@ -8,7 +8,6 @@ STUB(_ZdlPv)
 STUB(__cxa_pure_virtual)
 
 STUB(_ZN16alByamlLocalUtil11verifiByamlEPKh)
-STUB(_ZNK2al20ByamlStringTableIter15findStringIndexEPKc)
 STUB(_ZN2al13ByamlHashIter12getDataByKeyEPNS_9ByamlDataEi)
 STUB(_ZNK2al9ByamlIter10isExistKeyEPKc)
 STUB(_ZNK2al9ByamlIter17tryGetIterByIndexEPS0_i)

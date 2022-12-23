@@ -1,17 +1,19 @@
 #pragma once
 
+#include "al/System/Byaml/ByamlData.h"
 #include "types.h"
 
 namespace al {
 
 class ByamlStringTableIter {
-    union Header {
-        u32 mSize;
-        u8 mType;
+    struct Header {
+        const ByamlDataType type : 8;
+        const u32 stringAmount : 24;
     };
 
     union {
         const u8* mData;
+        uintptr_t mDataPtr;
         const Header* mHeader;
     };
 
@@ -21,10 +23,9 @@ public:
     {
     }
 
-    const u8* getAddressTable() const { return mData + 4; }
-    u32 getSize() const { return mHeader->mSize >> 8; } // get last 3 bytes
+    const u32* getAddressTable() const { return reinterpret_cast<u32*>(mDataPtr + sizeof(mDataPtr)); }
 
-    u32 findStringIndex(const char* string) const;
+    int findStringIndex(const char* str) const;
 };
 
 } // namespace al
