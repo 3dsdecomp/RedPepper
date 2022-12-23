@@ -17,6 +17,9 @@ def getRankName(rank: str):
             return "Undecompiled"
     return '?'
 
+def clear_line():
+    print(' ' * shutil.get_terminal_size((80, 20)).columns, end='\r')
+
 def check_file(subdir: str, file: str):
     filepath = os.path.join(subdir, file)
     syms = read_sym_file(filepath)
@@ -26,13 +29,15 @@ def check_file(subdir: str, file: str):
         if (decomp_symbol is None):
             newsyms.append((sym[0], sym[1], 'U', sym[3], sym[4]))
             if (sym[2] != 'U'):
+                clear_line()
                 print(sym[0] + ' ' + getRankName(sym[2]) + ' -> ' + getRankName('U'))
         else:
-            print(' ' * shutil.get_terminal_size((80, 20)).columns, end='\r')
+            clear_line()
             print("Checking " + sym[0], end='\r')
             rank = rank_symbol(sym, decomp_symbol)
             newsyms.append((sym[0], sym[1], rank, sym[3], sym[4]))
             if (sym[2] != rank):
+                clear_line()
                 print(sym[0] + ' ' + getRankName(sym[2]) + ' -> ' + getRankName(rank))
     with open(filepath, 'w') as f:
         for sym in newsyms:
@@ -60,7 +65,7 @@ def main():
     if len(sys.argv) == 2:
         checkdir = 'Symbols/' + sys.argv[1]
     print('Checking ' + checkdir + '/')
-    
+
     sym_files = []
     for subdir, dirs, files in os.walk(checkdir):
         for file in files:
@@ -89,7 +94,7 @@ def main():
     for thread in threads:
         thread.join()
 
-    print(' ' * shutil.get_terminal_size((80, 20)).columns, end='\r')
+    clear_line()
     print(f"{int(time.time() - start)}s elapsed")
 
 
