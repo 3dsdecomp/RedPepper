@@ -75,6 +75,8 @@ def main():
     
     file_num = len(sym_files)
     batch_size = int(file_num / multiprocessing.cpu_count())
+    if batch_size < 2:
+        batch_size = 2
     batches = []
     cur_batch = []
     j = 0
@@ -85,6 +87,8 @@ def main():
             j = 0
         cur_batch.append(sym_files[i])
         j += 1
+    if j != 0:
+        batches.append(cur_batch)
 
     threads = []
     for batch in batches:
