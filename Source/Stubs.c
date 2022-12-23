@@ -193,7 +193,6 @@ STUB(_ZN2al13resetPositionEPNS_9LiveActorE)
 STUB(_ZN2al15setVelocityZeroEPNS_9LiveActorE)
 STUB(_ZN2al32invalidateCollisionPartsBySystemEPNS_9LiveActorE)
 STUB(_ZN2al30validateCollisionPartsBySystemEPNS_9LiveActorE)
-STUB(_ZN2al9hideModelEPNS_9LiveActorE)
 
 STUB(_ZN2al19ActorPoseKeeperBase8copyPoseEPKS0_)
 
@@ -248,5 +247,11 @@ STUB(_ZN4sead7ExpHeap6createEjRKNS_14SafeStringBaseIcEEPNS_4HeapENS5_13HeapDirec
 
 STUB(_ZN2al22trySyncStageSwitchKillEPNS_9LiveActorE)
 STUB(_ZN2al19initStageSwitchKillEPNS_15IUseStageSwitchERKNS_13ActorInitInfoE)
+
+STUB(_ZN2al14getJointMtxPtrEPNS_11ModelKeeperEPKc)
+
+STUB(_ZN21alActorSystemFunction22removeFromExecutorDrawEPN2al9LiveActorE)
+STUB(_ZN2al10hideShadowEPNS_9LiveActorE)
+STUB(_ZN2al11ModelKeeper4hideEv)
 
 #undef STUB

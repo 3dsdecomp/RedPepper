@@ -10,6 +10,7 @@ class ModelKeeper {
 
 public:
     alModelCtr* getModel() const { return mModel; }
+    void hide();
 };
 
 const sead::Matrix34f* getJointMtxPtr(ModelKeeper* keeper, const char* jointName);

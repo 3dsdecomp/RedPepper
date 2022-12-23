@@ -161,4 +161,8 @@ void updatePoseMtx(LiveActor* actor, const sead::Matrix34f* mtx);
 
 void copyPose(LiveActor* to, const LiveActor* from);
 
+void calcSideDir(sead::Vector3f* out, const LiveActor* actor);
+void calcUpDir(sead::Vector3f* out, const LiveActor* actor);
+void calcFrontDir(sead::Vector3f* out, const LiveActor* actor);
+
 } // namespace al

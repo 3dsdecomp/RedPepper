@@ -59,6 +59,7 @@ public:
     ModelKeeper* getModelKeeper() const { return mModelKeeper; }
     HitSensorKeeper* getHitSensorKeeper() const { return mHitSensorKeeper; }
     RailKeeper* getRailKeeper() const { return mRailKeeper; }
+    class ShadowKeeper* getShadowKeeper() const { return mShadowKeeper; }
     LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
     const LiveActorFlag& getLiveActorFlag() const { return mLiveActorFlag; }
 

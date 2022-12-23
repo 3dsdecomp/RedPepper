@@ -49,3 +49,6 @@ _ZN2al14getVelocityPtrEPNS_9LiveActorE,00272dc0,16,O
 _ZN2al10getQuatPtrEPNS_9LiveActorE,0027f3b4,16,O
 _ZN2al13updatePoseMtxEPNS_9LiveActorEPKN4sead8Matrix34IfEE,0027011c,16,O
 _ZN2al8copyPoseEPNS_9LiveActorEPKS0_,00266248,20,O
+_ZN2al11calcSideDirEPN4sead7Vector3IfEEPKNS_9LiveActorE,0027d0e0,64,O
+_ZN2al9calcUpDirEPN4sead7Vector3IfEEPKNS_9LiveActorE,0027d0a0,64,O
+_ZN2al12calcFrontDirEPN4sead7Vector3IfEEPKNS_9LiveActorE,00278660,64,O

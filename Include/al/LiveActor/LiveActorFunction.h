@@ -31,6 +31,7 @@ void setBaseMtxAndCalcAnim(LiveActor* actor, const sead::Matrix34f&, const sead:
 
 bool isClipped(const LiveActor* actor);
 bool isInvalidClipping(const LiveActor* actor);
+bool isDead(const LiveActor* actor);
 bool isAlive(const LiveActor* actor);
 
 void offCollide(LiveActor* actor);
@@ -45,7 +46,10 @@ void validateCollisionPartsBySystem(LiveActor* actor);
 // ModelKeeper
 void showModel(LiveActor* actor);
 void hideModel(LiveActor* actor);
+void showShadow(LiveActor* actor);
+void hideShadow(LiveActor* actor);
 
+const sead::Matrix34f* getJointMtxPtr(const LiveActor* actor, const char* jointName);
 void calcJointPos(sead::Vector3f* out, const LiveActor* actor, const char* jointName);
 
 // NerveKeeper

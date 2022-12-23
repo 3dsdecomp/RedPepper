@@ -1,9 +1,11 @@
 #include "al/LiveActor/LiveActorFunction.h"
 #include "al/Collision/CollisionUtil.h"
+#include "al/Execute/ExecuteTableHolder.h"
 #include "al/LiveActor/ActorPoseFunction.h"
 #include "al/LiveActor/LiveActorKit.h"
 #include "al/LiveActor/SubActorFunction.h"
 #include "al/Math/MtxUtil.h"
+#include "al/Model/ModelKeeper.h"
 #include "al/Nerve/NerveFunction.h"
 
 void alLiveActorFunction::calcAnimDirect(al::LiveActor* actor)
@@ -27,6 +29,7 @@ namespace al {
 // ??
 bool isClipped(const LiveActor* actor) { return actor->getLiveActorFlag().isClipped; }
 bool isInvalidClipping(const LiveActor* actor) { return actor->getLiveActorFlag().isInvalidClipping; }
+bool isDead(const LiveActor* actor) { return actor->getLiveActorFlag().isDead; }
 bool isAlive(const LiveActor* actor) { return !actor->getLiveActorFlag().isDead; }
 
 void offCollide(LiveActor* actor) { actor->getLiveActorFlag().isOffCollide = true; }
@@ -49,6 +52,20 @@ void validateClipping(LiveActor* actor)
 // ModelKeeper
 
 NON_MATCHING
+// optimization is too smart
+void hideModel(LiveActor* actor)
+{
+    if (isAlive(actor) && !isClipped(actor)) {
+        if (actor->getModelKeeper())
+            actor->getModelKeeper()->hide();
+        if (actor->getShadowKeeper())
+            hideShadow(actor);
+        alActorSystemFunction::removeFromExecutorDraw(actor);
+    }
+    actor->getLiveActorFlag().isHideModel = true;
+}
+
+NON_MATCHING
 // register swap, maybe inlined
 bool tryStartMclAnimIfExist(LiveActor* actor, const char* animName)
 {
@@ -58,6 +75,16 @@ bool tryStartMclAnimIfExist(LiveActor* actor, const char* animName)
         return true;
     }
     return false;
+}
+
+NON_MATCHING
+// ldr for getting ModelKeeper is optimized
+void calcJointPos(sead::Vector3f* out, const LiveActor* actor, const char* jointName)
+{
+    const sead::Matrix34f* jointMtx = getJointMtxPtr(actor->getModelKeeper(), jointName);
+    out->x = jointMtx->m[0][3];
+    out->y = jointMtx->m[1][3];
+    out->z = jointMtx->m[2][3];
 }
 
 // NerveKeeper

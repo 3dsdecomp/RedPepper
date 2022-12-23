@@ -153,4 +153,31 @@ void updatePoseMtx(LiveActor* actor, const sead::Matrix34f* mtx) { actor->getAct
 
 void copyPose(LiveActor* to, const LiveActor* from) { to->getActorPoseKeeper()->copyPose(from->getActorPoseKeeper()); }
 
+void calcSideDir(sead::Vector3f* out, const LiveActor* actor)
+{
+    sead::Matrix34f baseMtx;
+    actor->getActorPoseKeeper()->calcBaseMtx(&baseMtx);
+    out->x = baseMtx.m[0][0];
+    out->y = baseMtx.m[1][0];
+    out->z = baseMtx.m[2][0];
+}
+
+void calcUpDir(sead::Vector3f* out, const LiveActor* actor)
+{
+    sead::Matrix34f baseMtx;
+    actor->getActorPoseKeeper()->calcBaseMtx(&baseMtx);
+    out->x = baseMtx.m[0][1];
+    out->y = baseMtx.m[1][1];
+    out->z = baseMtx.m[2][1];
+}
+
+void calcFrontDir(sead::Vector3f* out, const LiveActor* actor)
+{
+    sead::Matrix34f baseMtx;
+    actor->getActorPoseKeeper()->calcBaseMtx(&baseMtx);
+    out->x = baseMtx.m[0][2];
+    out->y = baseMtx.m[1][2];
+    out->z = baseMtx.m[2][2];
+}
+
 } // namespace al
