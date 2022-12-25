@@ -28,9 +28,9 @@ void FireBall::init(const al::ActorInitInfo& info)
 
 bool FireBall::receiveMsg(u32 msg, al::HitSensor* other, al::HitSensor* me)
 {
-    if (al::isMsg9(msg) || al::isMsg12(msg) || al::isMsg40(msg) || al::isMsg16(msg)) {
+    if (al::isMsg9(msg) || al::isMsgPlayerStatueTouch(msg) || al::isMsgKickStoneAttack(msg) || al::isMsgPlayerInvincibleAttack(msg)) {
         kill();
-        if (al::isMsg16(msg))
+        if (al::isMsgPlayerInvincibleAttack(msg))
             return false;
         else
             return true;
