@@ -1,22 +1,22 @@
 #include "LMS/LMS_Impl.h"
 
-LMS_AllocFuncPtr sAllocFuncPtr;
-LMS_FreeFuncPtr sFreeFuncPtr;
+LMS_AllocFuncPtr LMSi_sAllocFuncPtr;
+LMS_FreeFuncPtr LMSi_sFreeFuncPtr;
 
 void* LMSi_Malloc(u32 size)
 {
-    return sAllocFuncPtr(size);
+    return LMSi_sAllocFuncPtr(size);
 }
 
 void LMSi_Free(void* ptr)
 {
-    sFreeFuncPtr(ptr);
+    LMSi_sFreeFuncPtr(ptr);
 }
 
 void LMS_SetMemFuncs(LMS_AllocFuncPtr alloc_ptr, LMS_FreeFuncPtr free_ptr)
 {
-    sAllocFuncPtr = alloc_ptr;
-    sFreeFuncPtr = free_ptr;
+    LMSi_sAllocFuncPtr = alloc_ptr;
+    LMSi_sFreeFuncPtr = free_ptr;
 }
 
 NON_MATCHING

@@ -56,7 +56,13 @@ def get_symbol(symbol: str):
     return None
 
 def rank_symbol(sym, decomp_sym):
-    out = str(subprocess.check_output(f"\"{sys.executable}\" Tools/asm-differ/diff.py --format json {sym[1] - 0x00100000} {decomp_sym[0] - 0x00100000} {sym[3]} {decomp_sym[1]}", shell=True))
+    sym_size = int(sym[3])
+    decomp_size = int(decomp_sym[1])
+
+    if decomp_size == 0:
+        decomp_size = sym_size
+
+    out = str(subprocess.check_output(f"\"{sys.executable}\" Tools/asm-differ/diff.py --format json {sym[1] - 0x00100000} {decomp_sym[0] - 0x00100000} {str(sym_size)} {str(decomp_size)}", shell=True))
 
     rank = 'O'
     if "diff_change" in out:
@@ -83,7 +89,14 @@ def main() -> None:
     if (decomp_symbol is None):
         fail("Couldn't find decomp symbol")
 
-    subprocess.run(f"\"{sys.executable}\" Tools/asm-differ/diff.py {symbol[1] - 0x00100000} {decomp_symbol[0] - 0x00100000} {symbol[3]} {decomp_symbol[1]}", shell=True)
+    sym_size = int(symbol[3])
+    decomp_size = int(decomp_symbol[1])
+
+    if decomp_size == 0:
+        print("Warning: decomp symbol size is 0. using original size instead")
+        decomp_size = sym_size
+
+    subprocess.run(f"\"{sys.executable}\" Tools/asm-differ/diff.py {symbol[1] - 0x00100000} {decomp_symbol[0] - 0x00100000} {str(sym_size)} {str(decomp_size)}", shell=True)
 
 if __name__ == "__main__":
     main()
