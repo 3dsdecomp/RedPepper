@@ -6,7 +6,7 @@ namespace math {
 
         // clang-format off
 
-    __asm void VEC3SubAsm(VEC3* out, const VEC3* v1, const VEC3* v2)
+    __asm void __attribute__((section("i._ZN2nn4math5ARMv610VEC3SubAsmEPNS0_4VEC3EPKS2_S5_"))) VEC3SubAsm(VEC3* out, const VEC3* v1, const VEC3* v2)
     {
         vldmia r1, {s0, s1, s2}
         vldmia r2, {s3, s4, s5}
@@ -17,7 +17,7 @@ namespace math {
         bx lr
     }
 
-    __asm void VEC3MulAsm(VEC3* out, const VEC3* v1, float f)
+    __asm void __attribute__((section("i._ZN2nn4math5ARMv610VEC3MulAsmEPNS0_4VEC3EPKS2_f"))) VEC3MulAsm(VEC3* out, const VEC3* v1, float f)
     {
         vldmia r1, {s1, s2, s3}
         vmul.f32 s4, s1, s0

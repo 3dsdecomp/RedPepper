@@ -14,5 +14,7 @@ namespace fs {
             } // namespace detail
         } // namespace MPCore
     } // namespace CTR
+
+    void ForceDisableLatencyEmulation();
 } // namespace fs
 } // namespace nn

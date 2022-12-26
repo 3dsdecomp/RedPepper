@@ -9,9 +9,16 @@ namespace fs {
                     Handle g_FileServerHandle;
                 } // namespace
 
+                static bool s_Something = true;
                 static bool s_IsLatencyEmulationEnable = false;
             } // namespace detail
         } // namespace MPCore
     } // namespace CTR
+
+    void ForceDisableLatencyEmulation()
+    {
+        CTR::MPCore::detail::s_IsLatencyEmulationEnable = false;
+    }
+
 } // namespace fs
 } // namespace nn
