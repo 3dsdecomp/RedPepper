@@ -11,8 +11,9 @@ struct NameToType {
 
 NON_MATCHING
 
-#define ALSENSORFUNCTION_ENTRY(TYPE) {#TYPE, al::SensorType_##TYPE},
+#define ALSENSORFUNCTION_ENTRY(TYPE) { #TYPE, al::SensorType_##TYPE },
 
+// clang-format off
 const NameToType split(sNameToTypeLookupTable)[] = {
 ALSENSORFUNCTION_ENTRY(Eye)
 ALSENSORFUNCTION_ENTRY(Player)
@@ -32,6 +33,7 @@ ALSENSORFUNCTION_ENTRY(KickKoura)
 ALSENSORFUNCTION_ENTRY(PlayerFireBall)
 ALSENSORFUNCTION_ENTRY(WooGanSandBody)
 };
+// clang-format on
 
 #undef ALSENSORFUNCTION_ENTRY
 

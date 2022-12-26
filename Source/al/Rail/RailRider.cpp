@@ -1,4 +1,5 @@
 #include "al/Rail/RailRider.h"
+#include "al/Math/MathUtil.h"
 
 namespace al {
 
@@ -9,7 +10,7 @@ RailRider::RailRider(Rail* rail)
     , mCurrentDir(sead::Vector3f::zero)
     , _1C(0.0)
     , mSpeed(0.0)
-    , _24(true)
+    , mIsLoop(true)
 {
     _1C = mRail->normalizeLength(_1C);
     mRail->calcPosDir(&mCurrentPos, &mCurrentDir, _1C);
@@ -27,6 +28,17 @@ void RailRider::moveToNearestRail(const sead::Vector3f& r1)
     _1C = mRail->calcNearestRailPosCoord(r1, 20.0f);
     _1C = mRail->normalizeLength(_1C);
     mRail->calcPosDir(&mCurrentPos, &mCurrentDir, _1C);
+}
+
+#pragma O3
+bool RailRider::isReachedGoal() const
+{
+    if (!mRail->isClosed() && al::isNearZero(_1C))
+        return true;
+    if (!mRail->isClosed() && isNearZero(_1C - mRail->getTotalLength()))
+        return true;
+
+    return false;
 }
 
 } // namespace al

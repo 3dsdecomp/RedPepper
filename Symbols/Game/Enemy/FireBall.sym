@@ -2,5 +2,5 @@ __sti___12_FireBall_cpp,00380d6c,16,O
 _ZN8FireBallC1ERKN4sead14SafeStringBaseIcEE,00314fe4,40,O
 _ZNK11NrvFireBall15FireBallNrvShot7executeEPN2al11NerveKeeperE,0034cd58,140,M
 _ZN8FireBall4initERKN2al13ActorInitInfoE,00314ee4,104,O
-_ZN8FireBall12attackSensorEPN2al9HitSensorES2_,00314e40,164,U
+_ZN8FireBall12attackSensorEPN2al9HitSensorES2_,00314e40,164,O
 _ZN8FireBall10receiveMsgEjPN2al9HitSensorES2_,00314dcc,116,O

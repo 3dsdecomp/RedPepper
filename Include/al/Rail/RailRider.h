@@ -10,7 +10,7 @@ class RailRider {
     sead::Vector3f mCurrentDir;
     float _1C;
     float mSpeed;
-    bool _24;
+    bool mIsLoop;
 
 public:
     RailRider(Rail* rail);
@@ -18,10 +18,13 @@ public:
     void moveToRailStart();
     void moveToNearestRail(const sead::Vector3f& r1);
 
+    bool isReachedGoal() const;
+
     void setSpeed(float speed) { mSpeed = speed; }
 
-    const sead::Vector3f& getCurrentPos() { return mCurrentPos; }
-    const sead::Vector3f& getCurrentDir() { return mCurrentDir; }
+    const sead::Vector3f& getCurrentPos() const { return mCurrentPos; }
+    const sead::Vector3f& getCurrentDir() const { return mCurrentDir; }
+    bool isLoop() const { return mIsLoop; }
 };
 
 } // namespace al

@@ -84,7 +84,7 @@ STUB(nninitSetup)
 STUB(_ZN2nn3srv6detail7Service16GetServiceHandleEPNS_6HandleEPKcij)
 
 STUB(FUN_0010073c)
-STUB(FUN_00101414)
+STUB(_ZN2nn3ndm16SuspendSchedulerEb)
 STUB(_ZN11Application3runEv)
 STUB(_ZN11Application4initEv)
 STUB(_ZN19ApplicationFunction10initializeEv)
@@ -221,7 +221,6 @@ STUB(_ZN2al14isSensorMapObjEPKNS_9HitSensorE)
 STUB(_ZN2al14isSensorPlayerEPKNS_9HitSensorE)
 STUB(_ZN2al21startHitReactionBreakEPKNS_9LiveActorE)
 STUB(_ZN2al21startHitReactionDeathEPKNS_9LiveActorE)
-STUB(_ZN8FireBall12attackSensorEPN2al9HitSensorES2_)
 
 STUB(_ZN2al11preScaleMtxEPN4sead8Matrix34IfEERKNS0_7Vector3IfEE)
 STUB(_ZN2al12EffectKeeper6updateEv)
@@ -253,5 +252,15 @@ STUB(_ZN2al14getJointMtxPtrEPNS_11ModelKeeperEPKc)
 STUB(_ZN21alActorSystemFunction22removeFromExecutorDrawEPN2al9LiveActorE)
 STUB(_ZN2al10hideShadowEPNS_9LiveActorE)
 STUB(_ZN2al11ModelKeeper4hideEv)
+
+STUB(FUN_0027b51c)
+STUB(FUN_0027ee34)
+STUB(_ZN2al10tryGetArg0EPfRKNS_13ActorInitInfoE)
+
+STUB(FUN_0027b704)
+STUB(FUN_0027b768)
+STUB(FUN_002cd428)
+STUB(FUN_00240e08)
+STUB(_ZNK2al4Rail14getTotalLengthEv)
 
 #undef STUB

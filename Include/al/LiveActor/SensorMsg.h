@@ -23,6 +23,7 @@ enum SensorMsg {
     SensorMsg_KickKouraReflect = 36,
     SensorMsg_KickKouraBreak = 37,
     SensorMsg_KickStoneAttack = 40,
+    SensorMsg_41 = 41,
     SensorMsg_EnemyAttack = 45,
     SensorMsg_GororiAttack = 46,
     SensorMsg_GororiBigAttack = 47,
@@ -56,6 +57,7 @@ AL_LIVEACTOR_SENSORMSG(34)
 AL_LIVEACTOR_SENSORMSG(KickKouraReflect)
 AL_LIVEACTOR_SENSORMSG(KickKouraBreak)
 AL_LIVEACTOR_SENSORMSG(KickStoneAttack)
+AL_LIVEACTOR_SENSORMSG(41)
 AL_LIVEACTOR_SENSORMSG(EnemyAttack)
 AL_LIVEACTOR_SENSORMSG(GororiAttack)
 AL_LIVEACTOR_SENSORMSG(GororiBigAttack)

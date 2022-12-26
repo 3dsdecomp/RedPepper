@@ -94,8 +94,8 @@ inline bool QuatCalcCommon<T>::makeVectorRotation(Base& q, const Vec3& from, con
 {
     // Based on The Shortest Arc Quaternion from Game Programming Gems 1
     Vec3 cross;
-    Vector3CalcCommon<T>::cross(cross, from, to);
-    const T dot = Vector3CalcCommon<T>::dot(from, to) + 1;
+    Vector3CalcCtr<T>::cross(cross, from, to);
+    const T dot = Vector3CalcCtr<T>::dot(from, to) + 1;
 
     if (dot <= MathCalcCommon<T>::epsilon()) {
         makeUnit(q);

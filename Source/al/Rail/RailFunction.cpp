@@ -11,6 +11,21 @@ void setSyncRailToStart(LiveActor* actor)
     setTrans(actor, actor->getRailKeeper()->getRailRider()->getCurrentPos());
 }
 
+const sead::Vector3f& getRailDir(const LiveActor* actor)
+{
+    return actor->getRailKeeper()->getRailRider()->getCurrentDir();
+}
+
+bool isRailReachedGoal(const LiveActor* actor)
+{
+    return actor->getRailKeeper()->getRailRider()->isReachedGoal();
+}
+
+bool isLoopRail(const LiveActor* actor)
+{
+    return actor->getRailKeeper()->getRailRider()->isLoop();
+}
+
 bool isExistRail(const LiveActor* actor)
 {
     if (actor->getRailKeeper())

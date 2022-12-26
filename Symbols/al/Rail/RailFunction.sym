@@ -1,2 +1,5 @@
 _ZN2al18setSyncRailToStartEPNS_9LiveActorE,0027b60c,44,m
+_ZN2al10getRailDirEPKNS_9LiveActorE,0027c140,16,O
+_ZN2al17isRailReachedGoalEPKNS_9LiveActorE,0033760c,12,O
+_ZN2al10isLoopRailEPKNS_9LiveActorE,0027c150,16,O
 _ZN2al11isExistRailEPKNS_9LiveActorE,00270f94,20,O

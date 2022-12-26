@@ -2,7 +2,7 @@
 
 #include "sead/basis/seadTypes.h"
 #include "sead/math/seadMathPolicies.h"
-#include "sead/math/seadVectorCalcCommon.h"
+#include "sead/math/seadVectorCalcCtr.h"
 #include <math.h>
 
 namespace sead {
@@ -20,7 +20,7 @@ struct Vector2 : public Policies<T>::Vec2Base {
     friend Vector2 operator+(const Vector2& a, const Vector2& b)
     {
         Vector2 o;
-        Vector2CalcCommon<T>::add(o, a, b);
+        Vector2CalcCtr<T>::add(o, a, b);
         return o;
     }
 
@@ -29,7 +29,7 @@ struct Vector2 : public Policies<T>::Vec2Base {
     friend Vector2 operator-(const Vector2& a, const Vector2& b)
     {
         Vector2 o;
-        Vector2CalcCommon<T>::sub(o, a, b);
+        Vector2CalcCtr<T>::sub(o, a, b);
         return o;
     }
 
@@ -79,7 +79,7 @@ struct Vector3 : public Policies<T>::Vec3Base {
     friend Vector3 operator+(const Vector3& a, const Vector3& b)
     {
         Vector3 o;
-        Vector3CalcCommon<T>::add(o, a, b);
+        Vector3CalcCtr<T>::add(o, a, b);
         return o;
     }
 
@@ -87,7 +87,7 @@ struct Vector3 : public Policies<T>::Vec3Base {
     friend Vector3 operator-(const Vector3& a, const Vector3& b)
     {
         Vector3 o;
-        Vector3CalcCommon<T>::sub(o, a, b);
+        Vector3CalcCtr<T>::sub(o, a, b);
         return o;
     }
 
@@ -97,7 +97,7 @@ struct Vector3 : public Policies<T>::Vec3Base {
     friend Vector3 operator*(const Vector3& a, T t)
     {
         Vector3 o;
-        Vector3CalcCommon<T>::multScalar(o, a, t);
+        Vector3CalcCtr<T>::multScalar(o, a, t);
         return o;
     }
     friend Vector3 operator*(T t, const Vector3& a) { return operator*(a, t); }

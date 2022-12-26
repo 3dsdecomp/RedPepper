@@ -3,6 +3,8 @@
 namespace nn {
 namespace svc {
 
+    // clang-format off
+
     __asm nn::Result __attribute__((section("i._ZN2nn3svc13ControlMemoryEPjjjjjj"))) ControlMemory(u32* addr, u32 addr0, u32 addr1, u32 size, u32 op, u32 perms)
     {
         push {r0, r4}
@@ -160,6 +162,8 @@ namespace svc {
         svc 0x3c
         bx lr
     }
+
+    // clang-format on
 
 } // namespace svc
 } // namespace nn

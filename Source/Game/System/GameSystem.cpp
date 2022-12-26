@@ -2,6 +2,7 @@
 #include "Game/System/Application.h"
 #include "Game/System/ApplicationFunction.h"
 #include <nn/cfg/CTR/cfg_Api.h>
+#include <nn/ndm/ndm_Api.h>
 #include <sead/heap/seadHeapMgr.h>
 
 #pragma O3
@@ -22,13 +23,12 @@ GameSystem::GameSystem()
 {
 }
 
-extern "C" void FUN_00101414(int);
-extern "C" void FUN_0010073c();
+extern "C" void FUN_0010073c(); // nn::fs::?
 
 #pragma O3
 extern "C" void nnMain()
 {
-    FUN_00101414(1);
+    nn::ndm::SuspendScheduler(true);
     nn::cfg::CTR::Initialize();
     FUN_0010073c();
     ApplicationFunction::initialize();

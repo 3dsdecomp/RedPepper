@@ -4,7 +4,7 @@
 
 namespace sead {
 template <typename T>
-class Vector2CalcCommon {
+class Vector2CalcCtr {
 public:
     typedef typename Policies<T>::Vec2Base Base;
 
@@ -17,7 +17,7 @@ public:
 };
 
 template <typename T>
-class Vector3CalcCommon {
+class Vector3CalcCtr {
 public:
     typedef typename Policies<T>::Vec3Base Base;
     typedef typename Policies<T>::Mtx33Base Mtx33;
@@ -42,7 +42,7 @@ public:
 };
 
 template <typename T>
-class Vector4CalcCommon {
+class Vector4CalcCtr {
 public:
     typedef typename Policies<T>::Vec4Base Base;
 
@@ -54,5 +54,5 @@ public:
 } // namespace sead
 
 #define SEAD_MATH_VECTOR_CALC_COMMON_H_
-#include "sead/math/seadVectorCalcCommon.hpp"
+#include "sead/math/seadVectorCalcCtr.hpp"
 #undef SEAD_MATH_VECTOR_CALC_COMMON_H_

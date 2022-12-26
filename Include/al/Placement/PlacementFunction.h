@@ -11,6 +11,7 @@ bool tryGetArg(bool* out, const PlacementInfo& info, const char* argName);
 bool tryGetArg(float* out, const PlacementInfo& info, const char* argName);
 bool tryGetArg(int* out, const PlacementInfo& info, const char* argName);
 bool tryGetArg0(int* out, const PlacementInfo& info);
+bool tryGetArg0(float* out, const ActorInitInfo& info);
 bool tryGetStringArg(const char** out, const ActorInitInfo& info, const char* argName);
 bool tryGetStringArg(const char** out, const PlacementInfo& info, const char* argName);
 

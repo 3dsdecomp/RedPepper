@@ -1,3 +1,4 @@
 _ZN2al9RailRiderC1EPNS_4RailE,001ec128,116,M
 _ZN2al9RailRider15moveToRailStartEv,001ec0f4,52,O
 _ZN2al9RailRider17moveToNearestRailERKN4sead7Vector3IfEE,00242a44,60,O
+_ZNK2al9RailRider13isReachedGoalEv,00337618,128,O

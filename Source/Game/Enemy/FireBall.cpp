@@ -26,6 +26,14 @@ void FireBall::init(const al::ActorInitInfo& info)
     makeActorDead();
 }
 
+void FireBall::attackSensor(al::HitSensor* me, al::HitSensor* other)
+{ // 💀 ?
+    if ((!al::isSensorPlayer(other) || !al::sendMsgEnemyAttack(other, me)) && ((((!al::isSensorEnemy(other) || !al::isGreaterEqualStep((IUseNerve*)this, 10)) && (!al::isSensorMapObj(other))) || !al::sendMsg50(other, me))))
+        return;
+
+    kill();
+}
+
 bool FireBall::receiveMsg(u32 msg, al::HitSensor* other, al::HitSensor* me)
 {
     if (al::isMsg9(msg) || al::isMsgPlayerStatueTouch(msg) || al::isMsgKickStoneAttack(msg) || al::isMsgPlayerInvincibleAttack(msg)) {
