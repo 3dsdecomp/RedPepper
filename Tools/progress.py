@@ -63,7 +63,7 @@ def main():
             f.write(json.dumps(out))
 
 
-    bytes_ok_str = "{:.4f}% ({} KB/{} KB)".format((bytes_ok / code_bin_size) * 100, int(bytes_ok / 1024), int(code_bin_size / 1024))
+    bytes_ok_str = "{:.4f}% ({:,} bytes/{:,} bytes)".format((bytes_ok / code_bin_size) * 100, int(bytes_ok), int(code_bin_size))
 
     print_type("Total Functions", str(syms_total), Fore.RESET);
     print_type("Matching", str(syms_ok), Fore.GREEN);
