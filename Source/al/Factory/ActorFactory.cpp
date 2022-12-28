@@ -15,6 +15,7 @@ ActorFactory::ActorFactory()
 } // namespace al
 
 #include "Game/Enemy/Togezo.h"
+#include "Game/MapObj/TrickHintPanel.h"
 #include "Game/MapObj/NoteObj.h"
 #include "Game/MapObj/NoteObjGenerator.h"
 #include "al/MapObj/FallMapParts.h"
@@ -209,7 +210,7 @@ const NameToActorCreator split(sActorFactoryEntries)[] = {
     { "Trampoline", nullptr },
     { "TransparentWall", nullptr },
     { "TreeA", nullptr },
-    { "TrickHintPanel", nullptr },
+    { "TrickHintPanel", createActorFunction<TrickHintPanel> },
     { "Trilift", nullptr },
     { "UpperBlock", nullptr },
     { "WarpLift", nullptr },
