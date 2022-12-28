@@ -18,6 +18,7 @@ public:
 
     bool calcLocalPos(sead::Vector3f* out, const sead::Vector3f& trans) const;
     void setBaseMtxPtr(const sead::Matrix34f* baseMtxPtr) { mBaseMtxPtr = baseMtxPtr; }
+    void setScale(const sead::Vector3f& scale);
 };
 
 } // namespace al
