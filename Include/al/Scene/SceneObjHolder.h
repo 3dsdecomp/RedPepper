@@ -14,16 +14,18 @@ class SceneObjHolder {
 public:
     SceneObjHolder(CreateFunc func, int size);
 
-    void setObj(ISceneObj* obj, int id);
-    ISceneObj* getObj(int id);
     ISceneObj* create(int id);
+    ISceneObj* getObj(int id) const;
+    bool isExist(int id) const;
+    void setObj(ISceneObj* obj, int id);
 
     void initAfterPlacementSceneObj(const ActorInitInfo& info);
 };
 
 SceneObjHolder* getSceneObjHolder();
 ISceneObj* createSceneObj(int id);
-void setSceneObj(ISceneObj* obj, int id);
 ISceneObj* getSceneObj(int id);
+bool isExistSceneObj(int id);
+void setSceneObj(ISceneObj* obj, int id);
 
 } // namespace al
