@@ -9,9 +9,14 @@ SceneObjHolder* getSceneObjHolder()
     return al::getApplication()->getSceneObjHolder();
 }
 
-ISceneObj* SceneObjHolder::getObj(int id)
+ISceneObj* SceneObjHolder::getObj(int id) const
 {
     return mObjs[id];
+}
+
+bool SceneObjHolder::isExist(int id) const
+{
+    return mObjs[id] != nullptr;
 }
 
 void SceneObjHolder::setObj(ISceneObj* obj, int id)
@@ -41,14 +46,19 @@ ISceneObj* createSceneObj(int id)
     return getSceneObjHolder()->create(id);
 }
 
-void setSceneObj(ISceneObj* obj, int id)
-{
-    return getSceneObjHolder()->setObj(obj, id);
-}
-
 ISceneObj* getSceneObj(int id)
 {
     return getSceneObjHolder()->getObj(id);
+}
+
+bool isExistSceneObj(int id)
+{
+    return getSceneObjHolder()->isExist(id);
+}
+
+void setSceneObj(ISceneObj* obj, int id)
+{
+    return getSceneObjHolder()->setObj(obj, id);
 }
 
 } // namespace al

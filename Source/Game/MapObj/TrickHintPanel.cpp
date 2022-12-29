@@ -51,6 +51,7 @@ bool TrickHintPanel::receiveMsg(u32 msg, al::HitSensor* other, al::HitSensor* me
     return false;
 }
 
+
 void TrickHintPanel::exenrv1(){
 
 }
@@ -59,6 +60,8 @@ extern "C" int FUN_0026A9B8(u32);
 extern "C" int FUN_0026AA60(u32);
 extern "C" int FUN_002786F4();
 
+NON_MATCHING
+// inline nops
 void TrickHintPanel::exenrv2(){
     if(!unk1)
     {
