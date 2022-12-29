@@ -9,4 +9,10 @@ AreaShape::AreaShape()
 {
 }
 
+/* TODO: Move this to header */
+void AreaShape::setScale(const sead::Vector3f& scale)
+{ 
+    mScale = scale; 
+}
+
 } // namespace al

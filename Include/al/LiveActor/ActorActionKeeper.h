@@ -18,5 +18,6 @@ void startHitReaction(const LiveActor* actor, const char* name);
 void startHitReactionBreak(const LiveActor* actor);
 void startHitReactionDeath(const LiveActor* actor);
 void startHitReactionPressDown(const LiveActor* actor);
+void startHitReactionStart(const LiveActor* actor);
 
 } // namespace al
