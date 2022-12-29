@@ -17,8 +17,8 @@ NERVE_DEF(TrickHintPanel, nrv4);
 #pragma O3
 TrickHintPanel::TrickHintPanel(const sead::SafeString& name)
     : MapObjActor(name),
-    unk0(0),
-    unk1(0)
+    _96(0),
+    _100(false)
 {
 }
 
@@ -28,7 +28,7 @@ void TrickHintPanel::init(const al::ActorInitInfo& info)
 {
     al::initActor(this, info);
     al::initNerve(this, &NrvTrickHintPanel::nrv1, 0);
-    unk0 = FUN_002278CC(this, "");
+    _96 = FUN_002278CC(this, "");
     makeActorAppeared();
 }
 
@@ -63,13 +63,13 @@ extern "C" int FUN_002786F4();
 NON_MATCHING
 // inline nops
 void TrickHintPanel::exenrv2(){
-    if(!unk1)
+    if(!_100)
     {
         al::startHitReactionStart(this);
-        unk1 = 1;
+        _100 = true;
     }
     al::startHitReaction(this, "オン"); // "オン" -> On
-    FUN_0026A9B8(unk0);
+    FUN_0026A9B8(_96);
     al::invalidateClipping(this);
     al::setNerve(this, &NrvTrickHintPanel::nrv3);
 }
@@ -82,7 +82,7 @@ void TrickHintPanel::exenrv3(){
 
 void TrickHintPanel::exenrv4(){
     if(FUN_002786F4()){
-        FUN_0026AA60(unk0);
+        FUN_0026AA60(_96);
         al::validateClipping(this);
         al::setNerve(this, &NrvTrickHintPanel::nrv1);
     }

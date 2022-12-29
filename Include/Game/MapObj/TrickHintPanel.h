@@ -3,8 +3,8 @@
 #include "al/MapObj/MapObjActor.h"
 
 class TrickHintPanel : public al::MapObjActor {
-    u32 unk0;
-    u8 unk1;
+    u32 _96;
+    bool _100;
 public:
     TrickHintPanel(const sead::SafeString& name);
 
