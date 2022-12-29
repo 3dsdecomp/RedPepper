@@ -16,9 +16,9 @@ NERVE_DEF(TrickHintPanel, nrv4);
 
 #pragma O3
 TrickHintPanel::TrickHintPanel(const sead::SafeString& name)
-    : MapObjActor(name),
-    _96(0),
-    _100(false)
+    : MapObjActor(name)
+    , _96(0)
+    , _100(false)
 {
 }
 
@@ -34,16 +34,13 @@ void TrickHintPanel::init(const al::ActorInitInfo& info)
 
 bool TrickHintPanel::receiveMsg(u32 msg, al::HitSensor* other, al::HitSensor* me)
 {
-    if(al::isMsgFloorTouch(msg))
-    {
-        if(al::isNerve(this, &NrvTrickHintPanel::nrv1))
-        {
+    if (al::isMsgFloorTouch(msg)) {
+        if (al::isNerve(this, &NrvTrickHintPanel::nrv1)) {
             al::setNerve(this, &NrvTrickHintPanel::nrv2);
             return true;
         }
 
-        if(al::isNerve(this, &NrvTrickHintPanel::nrv3))
-        {
+        if (al::isNerve(this, &NrvTrickHintPanel::nrv3)) {
             al::setNerve(this, &NrvTrickHintPanel::nrv3);
             return true;
         }
@@ -51,9 +48,8 @@ bool TrickHintPanel::receiveMsg(u32 msg, al::HitSensor* other, al::HitSensor* me
     return false;
 }
 
-
-void TrickHintPanel::exenrv1(){
-
+void TrickHintPanel::exenrv1()
+{
 }
 
 extern "C" int FUN_0026A9B8(u32);
@@ -62,26 +58,28 @@ extern "C" int FUN_002786F4();
 
 NON_MATCHING
 // inline nops
-void TrickHintPanel::exenrv2(){
-    if(!_100)
-    {
+void TrickHintPanel::exenrv2()
+{
+    if (!_100) {
         al::startHitReactionStart(this);
         _100 = true;
     }
-    al::startHitReaction(this, "ã‚ªãƒ³"); // "ã‚ªãƒ³" -> On
+    al::startHitReaction(this, "ƒIƒ“"); // "ƒIƒ“" -> On
     FUN_0026A9B8(_96);
     al::invalidateClipping(this);
     al::setNerve(this, &NrvTrickHintPanel::nrv3);
 }
 
-void TrickHintPanel::exenrv3(){
-    if(!FUN_002786F4() || al::isGreaterStep(this, 20)){
+void TrickHintPanel::exenrv3()
+{
+    if (!FUN_002786F4() || al::isGreaterStep(this, 20)) {
         al::setNerve(this, &NrvTrickHintPanel::nrv4);
     }
 }
 
-void TrickHintPanel::exenrv4(){
-    if(FUN_002786F4()){
+void TrickHintPanel::exenrv4()
+{
+    if (FUN_002786F4()) {
         FUN_0026AA60(_96);
         al::validateClipping(this);
         al::setNerve(this, &NrvTrickHintPanel::nrv1);
