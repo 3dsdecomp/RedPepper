@@ -7,10 +7,11 @@
 
 namespace NrvAquariumSwimDebris {
 
-NERVE_DEF(AquariumSwimDebris, nrv1);
+NERVE_DEF(AquariumSwimDebris, Appear);
 
 } // namespace NrvAquariumSwimDebris
 
+#pragma O3
 AquariumSwimDebris::AquariumSwimDebris(const sead::SafeString& name)
     : MapObjActor(name)
 {
@@ -19,12 +20,12 @@ AquariumSwimDebris::AquariumSwimDebris(const sead::SafeString& name)
 void AquariumSwimDebris::init(const al::ActorInitInfo& info)
 {
     al::initActorWithArchiveName(this, info, "AquariumSwimDebris", NULL);
-    al::initNerve(this, &NrvAquariumSwimDebris::nrv1, 1);
+    al::initNerve(this, &NrvAquariumSwimDebris::Appear, 1);
     al::initStageSwitchAppear(this, info);
     al::trySyncStageSwitchAppear(this);
 }
 
-void AquariumSwimDebris::exenrv1()
+void AquariumSwimDebris::exeAppear()
 {
     if(al::isFirstStep(this)){
         al::startHitReaction(this, "èoåª");
