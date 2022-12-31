@@ -38,4 +38,4 @@ AL_LIVEACTOR_SENSORMSG(58)
 
 #undef AL_LIVEACTOR_SENSORMSG
 
-} // namepsace al
+} // namespace al
