@@ -30,6 +30,11 @@ public:
     void setBuffer(s32 ptrNumMax, void* buf);
     void allocBuffer(s32 ptrNumMax, Heap* heap, s32 alignment = sizeof(void*));
     bool tryAllocBuffer(s32 ptrNumMax, Heap* heap, s32 alignment = sizeof(void*));
+    void allocBufferInline(s32 ptrNumMax)
+    {
+        mPtrNum = ptrNumMax;
+        mPtrs = new void*[ptrNumMax];
+    }
     void freeBuffer();
     bool isBufferReady() const { return mPtrs != nullptr; }
 
@@ -192,7 +197,7 @@ protected:
 template <typename T>
 class PtrArray : public PtrArrayImpl {
 public:
-    PtrArray();
+    PtrArray() { }
     PtrArray(s32 ptrNumMax, T** buf)
         : PtrArrayImpl(ptrNumMax, buf)
     {

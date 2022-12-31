@@ -270,4 +270,17 @@ STUB(FUN_0026AA60)
 STUB(FUN_002786F4)
 STUB(_ZN2al16startHitReactionEPKNS_9LiveActorEPKc)
 
+STUB(_ZN2al20ExecuteRequestKeeperC1Ej)
+STUB(_ZN2al22ExecuteTableHolderDraw4initEPKcPKNS_12ExecuteOrderEi)
+STUB(_ZN2al24ExecuteTableHolderUpdate4initEPKNS_12ExecuteOrderEi)
+STUB(_ZN2al22ExecuteTableHolderDraw23createExecutorListTableEv)
+STUB(_ZN2al24ExecuteTableHolderUpdate23createExecutorListTableEv)
+STUB(FUN_001cc9b0)
+STUB(_ZN2al11FogDirector7endInitEv)
+STUB(_ZN2al12EffectSystem10startSceneEv)
+STUB(_ZN2al16ClippingDirector7endInitEv)
+STUB(_ZN2al17CollisionDirector7endInitEv)
+STUB(FUN_001e8a64)
+STUB(FUN_00240350)
+
 #undef STUB

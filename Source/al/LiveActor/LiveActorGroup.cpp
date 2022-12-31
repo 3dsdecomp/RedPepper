@@ -2,6 +2,13 @@
 
 namespace al {
 
+NON_MATCHING // stupid
+LiveActorGroup::LiveActorGroup(const char* name, int bufSize)
+    : mName(name)
+{
+    mActors.allocBufferInline(bufSize);
+}
+
 void LiveActorGroup::registerActor(LiveActor* actor)
 {
     mActors.pushBack(actor);

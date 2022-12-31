@@ -5,7 +5,7 @@
 namespace al {
 
 template <typename T, typename F>
-class FunctorV0M : public al::FunctorBase {
+class FunctorV0M : public FunctorBase {
     T mParent;
     F mFuncPtr;
 

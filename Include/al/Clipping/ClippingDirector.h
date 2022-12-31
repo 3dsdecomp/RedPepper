@@ -16,6 +16,7 @@ public:
 
     virtual void execute();
 
+    void endInit();
     ClippingActorHolder* getClippingActorHolder() { return mClippingActorHolder; }
 };
 
