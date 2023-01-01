@@ -190,7 +190,6 @@ STUB(_ZN2al14tryStartActionEPNS_9LiveActorEPKc)
 STUB(_ZN2al13scaleVelocityEPNS_9LiveActorEf)
 STUB(FUN_00268df8)
 STUB(_ZN2al13resetPositionEPNS_9LiveActorE)
-STUB(_ZN2al15setVelocityZeroEPNS_9LiveActorE)
 STUB(_ZN2al32invalidateCollisionPartsBySystemEPNS_9LiveActorE)
 STUB(_ZN2al30validateCollisionPartsBySystemEPNS_9LiveActorE)
 
