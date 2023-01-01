@@ -127,6 +127,13 @@ void setTrans(LiveActor* actor, const sead::Vector3f& trans) { *actor->getActorP
 void setRotate(LiveActor* actor, const sead::Vector3f& rotate) { *actor->getActorPoseKeeper()->getRotatePtr() = rotate; }
 void setScale(LiveActor* actor, const sead::Vector3f& scale) { *actor->getActorPoseKeeper()->getScalePtr() = scale; }
 void setVelocity(LiveActor* actor, const sead::Vector3f& velocity) { *actor->getActorPoseKeeper()->getVelocityPtr() = velocity; }
+void setVelocityZero(LiveActor* actor) {
+    float zero = 0;
+    sead::Vector3f* velocity = actor->getActorPoseKeeper()->getVelocityPtr();
+    velocity->x = zero;
+    velocity->y = zero;
+    velocity->z = zero;
+}
 void setFront(LiveActor* actor, const sead::Vector3f& front) { *actor->getActorPoseKeeper()->getFrontPtr() = front; }
 void setQuat(LiveActor* actor, const sead::Quatf& quat) { *actor->getActorPoseKeeper()->getQuatPtr() = quat; }
 void setGravity(LiveActor* actor, const sead::Vector3f& gravity) { *actor->getActorPoseKeeper()->getGravityPtr() = gravity; }

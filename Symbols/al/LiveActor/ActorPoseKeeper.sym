@@ -36,6 +36,7 @@ _ZN2al8setTransEPNS_9LiveActorERKN4sead7Vector3IfEE,0027f394,32,O
 _ZN2al9setRotateEPNS_9LiveActorERKN4sead7Vector3IfEE,00270e44,36,M
 _ZN2al8setScaleEPNS_9LiveActorERKN4sead7Vector3IfEE,0026e778,52,O
 _ZN2al11setVelocityEPNS_9LiveActorERKN4sead7Vector3IfEE,0027a1d8,36,M
+_ZN2al15setVelocityZeroEPNS_9LiveActorE,0027a000,52,O
 _ZN2al7setQuatEPNS_9LiveActorERKN4sead4QuatIfEE,00274318,36,m
 _ZN2al8getTransEPKNS_9LiveActorE,0028028c,12,O
 _ZN2al9getRotateEPKNS_9LiveActorE,0026e734,16,O

@@ -11,6 +11,15 @@ void alSubActorFunction::trySyncAlive(al::SubActorKeeper* p)
     }
 }
 
+void alSubActorFunction::trySyncDead(al::SubActorKeeper* p)
+{
+    for (int i = 0; i < p->mSubActors.capacity(); i++) {
+        al::SubActorKeeper::Entry* subActor = p->mSubActors.unsafeAt(i);
+        if (subActor->_8 & 1)
+            subActor->actor->makeActorDead();
+    }
+}
+
 #pragma O3
 NON_MATCHING
 // nops
