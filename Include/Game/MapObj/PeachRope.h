@@ -7,4 +7,5 @@ public:
     PeachRope(const sead::SafeString& name);
 
     virtual void init(const al::ActorInitInfo& info);
+    virtual void kill();
 };

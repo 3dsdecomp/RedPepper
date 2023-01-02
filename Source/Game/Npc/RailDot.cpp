@@ -5,7 +5,7 @@
 
 namespace NrvRailDot {
 
-NERVE_DEF(RailDot, Appear);
+NERVE_DEF(RailDot, Wait);
 
 } // namespace NrvRailDot
 
@@ -18,10 +18,10 @@ RailDot::RailDot(const sead::SafeString& name)
 void RailDot::init(const al::ActorInitInfo& info)
 {
     al::initActorWithArchiveName(this, info, "RailDot");
-    al::initNerve(this, &NrvRailDot::Appear, 0);
+    al::initNerve(this, &NrvRailDot::Wait);
     makeActorAppeared();
 }
 
-void RailDot::exeAppear()
+void RailDot::exeWait()
 {
 }

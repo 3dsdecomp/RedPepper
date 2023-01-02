@@ -5,7 +5,7 @@
 
 namespace NrvFlowerPot {
 
-NERVE_DEF(FlowerPot, Appear);
+NERVE_DEF(FlowerPot, Wait);
 
 } // namespace NrvFlowerPot
 
@@ -18,10 +18,10 @@ FlowerPot::FlowerPot(const sead::SafeString& name)
 void FlowerPot::init(const al::ActorInitInfo& info)
 {
     al::initActorWithArchiveName(this, info, "FlowerPot");
-    al::initNerve(this, &NrvFlowerPot::Appear, 0);
+    al::initNerve(this, &NrvFlowerPot::Wait);
     makeActorAppeared();
 }
 
-void FlowerPot::exeAppear()
+void FlowerPot::exeWait()
 {
 }

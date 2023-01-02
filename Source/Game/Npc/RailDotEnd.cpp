@@ -5,7 +5,7 @@
 
 namespace NrvRailDotEnd {
 
-NERVE_DEF(RailDotEnd, Appear);
+NERVE_DEF(RailDotEnd, Wait);
 
 } // namespace NrvRailDotEnd
 
@@ -18,10 +18,10 @@ RailDotEnd::RailDotEnd(const sead::SafeString& name)
 void RailDotEnd::init(const al::ActorInitInfo& info)
 {
     al::initActorWithArchiveName(this, info, "RailDotEnd");
-    al::initNerve(this, &NrvRailDotEnd::Appear, 0);
+    al::initNerve(this, &NrvRailDotEnd::Wait);
     makeActorAppeared();
 }
 
-void RailDotEnd::exeAppear()
+void RailDotEnd::exeWait()
 {
 }

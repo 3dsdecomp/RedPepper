@@ -13,6 +13,7 @@
 #include "al/Model/ModelKeeper.h"
 #include "al/Nerve/Nerve.h"
 #include "al/Rail/RailKeeper.h"
+#include "al/Shadow/ShadowKeeper.h"
 #include "al/Stage/StageSwitchKeeper.h"
 #include "types.h"
 #include <sead/math/seadMatrix.h>
@@ -59,7 +60,7 @@ public:
     ModelKeeper* getModelKeeper() const { return mModelKeeper; }
     HitSensorKeeper* getHitSensorKeeper() const { return mHitSensorKeeper; }
     RailKeeper* getRailKeeper() const { return mRailKeeper; }
-    class ShadowKeeper* getShadowKeeper() const { return mShadowKeeper; }
+    ShadowKeeper* getShadowKeeper() const { return mShadowKeeper; }
     LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
     const LiveActorFlag& getLiveActorFlag() const { return mLiveActorFlag; }
 
@@ -83,7 +84,7 @@ protected:
     AudioKeeper* mAudioKeeper;
     StageSwitchKeeper* mStageSwitchKeeper;
     RailKeeper* mRailKeeper;
-    class ShadowKeeper* mShadowKeeper;
+    ShadowKeeper* mShadowKeeper;
     class ActorLightKeeper* mActorLightKeeper;
     void* _4C;
     SubActorKeeper* mSubActorKeeper;

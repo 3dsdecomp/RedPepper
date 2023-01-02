@@ -1,4 +1,4 @@
 __sti___11_RailDot_cpp,0038093c,16,O
 _ZN7RailDotC1ERKN4sead14SafeStringBaseIcEE,003134c8,40,O
 _ZN7RailDot4initERKN2al13ActorInitInfoE,00313464,100,O
-_ZNK10NrvRailDot16RailDotNrvAppear7executeEPN2al11NerveKeeperE,0034c4e8,4,O
+_ZNK10NrvRailDot14RailDotNrvWait7executeEPN2al11NerveKeeperE,0034c4e8,4,O

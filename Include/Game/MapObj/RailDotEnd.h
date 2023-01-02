@@ -7,6 +7,6 @@ public:
     RailDotEnd(const sead::SafeString& name);
 
     virtual void init(const al::ActorInitInfo& info);
-    
-    void exeAppear();
+
+    void exeWait();
 };
