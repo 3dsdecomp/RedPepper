@@ -286,6 +286,22 @@ protected:
     s32 mOffset;
 };
 
+template <typename T>
+class OffsetListNode {
+    T mValue;
+    ListNode mNode;
+
+public:
+    OffsetListNode(T value)
+        : mValue(value)
+    {
+    }
+
+    static size_t getListNodeOffset() { return offsetof(OffsetListNode, mNode); }
+
+    operator T*() { return &mValue; }
+};
+
 } // namespace sead
 
 #endif // SEAD_OFFSET_LIST_H_

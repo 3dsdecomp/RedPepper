@@ -279,4 +279,9 @@ STUB(_ZN2al17CollisionDirector7endInitEv)
 STUB(FUN_001e8a64)
 STUB(FUN_00240350)
 
+STUB(_ZN14PlayerInitFunc12getModelInfoEv)
+STUB(_ZN14PlayerInitFunc11getAnimInfoEv)
+STUB(_ZN14PlayerInitFunc12FUN_00260620Ev)
+STUB(_ZN19PlayerAnimFrameCtrlC1Ev)
+
 #undef STUB

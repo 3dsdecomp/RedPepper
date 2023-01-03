@@ -77,12 +77,6 @@ public:                                                                         
         return typeInfo == clsTypeInfo;                                                          \
     }                                                                                            \
                                                                                                  \
-    virtual bool checkDerivedRuntimeTypeInfo(const sead::RuntimeTypeInfo::Interface* typeInfo)   \
-        const                                                                                    \
-    {                                                                                            \
-        return checkDerivedRuntimeTypeInfoStatic(typeInfo);                                      \
-    }                                                                                            \
-                                                                                                 \
     virtual const sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo() const                   \
     {                                                                                            \
         return getRuntimeTypeInfoStatic();                                                       \
@@ -108,12 +102,6 @@ public:                                                                         
             return true;                                                                         \
                                                                                                  \
         return BASE::checkDerivedRuntimeTypeInfoStatic(typeInfo);                                \
-    }                                                                                            \
-                                                                                                 \
-    virtual bool checkDerivedRuntimeTypeInfo(const sead::RuntimeTypeInfo::Interface* typeInfo)   \
-        const                                                                                    \
-    {                                                                                            \
-        return checkDerivedRuntimeTypeInfoStatic(typeInfo);                                      \
     }                                                                                            \
                                                                                                  \
     virtual const sead::RuntimeTypeInfo::Interface* getRuntimeTypeInfo() const                   \

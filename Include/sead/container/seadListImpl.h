@@ -12,6 +12,12 @@ public:
     ListNode* prev() const { return mPrev; }
     bool isLinked() const { return mNext || mPrev; }
 
+    ListNode()
+        : mPrev(nullptr)
+        , mNext(nullptr)
+    {
+    }
+
 private:
     friend class ListImpl;
 
@@ -26,7 +32,7 @@ private:
 
 class ListImpl {
 public:
-    __attribute__((always_inline)) ListImpl()
+    inline ListImpl()
         : mStartEnd()
         , mCount(0)
     {
