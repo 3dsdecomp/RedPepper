@@ -64,8 +64,9 @@ public:
     LiveActorFlag& getLiveActorFlag() { return mLiveActorFlag; }
     const LiveActorFlag& getLiveActorFlag() const { return mLiveActorFlag; }
 
-    void initNerveKeeper(NerveKeeper* nk);
     void initPoseKeeper(ActorPoseKeeperBase* pPoseKeeper);
+    void initCollider(float radius, float yOffset, u32);
+    void initNerveKeeper(NerveKeeper* nk);
     void initRailKeeper(const ActorInitInfo& info);
 
 private:

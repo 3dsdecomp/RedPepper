@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Game/Player/PlayerActionGraph.h"
 #include "Game/Player/PlayerAnimator.h"
 #include "Game/Player/PlayerProperty.h"
 
@@ -22,7 +23,7 @@ class Player {
     void* _3C;
     void* _40;
     void* _44;
-    void* _48;
+    PlayerActionGraph* mActionGraph;
     void* _4C;
     void* _50;
     void* _54;

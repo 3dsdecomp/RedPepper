@@ -8,4 +8,7 @@ class PlayerActionNode {
     sead::ListImpl mList;
 
 public:
+    PlayerAction* getAction() const { return mAction; }
+
+    virtual ~PlayerActionNode();
 };

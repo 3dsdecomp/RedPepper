@@ -71,4 +71,6 @@ void rotateQuatXDirDegree(LiveActor* actor, const sead::Quatf& from, float degre
 void rotateQuatYDirDegree(LiveActor* actor, const sead::Quatf& from, float degrees);
 void rotateQuatZDirDegree(LiveActor* actor, const sead::Quatf& from, float degrees);
 
+void calcQuatSide(sead::Vector3f* out, const LiveActor* from);
+
 } // namespace al
