@@ -1,1 +1,5 @@
 _ZN2al12isSensorNameEPNS_9HitSensorEPKc,0027dc38,8,O
+_ZN2al14isSensorPlayerEPKNS_9HitSensorE,0027b100,24,m
+_ZN2al13isSensorEnemyEPKNS_9HitSensorE,0027a508,48,m
+_ZN2al19isSensorEnemyAttackEPKNS_9HitSensorE,0027a4d8,20,m
+_ZN2al14isSensorMapObjEPKNS_9HitSensorE,00270628,20,m

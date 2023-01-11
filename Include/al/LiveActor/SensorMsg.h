@@ -31,6 +31,7 @@ enum SensorMsg {
     SensorMsg_50 = 50,
     SensorMsg_51 = 51,
     SensorMsg_52 = 52,
+    SensorMsg_53 = 53,
     SensorMsg_55 = 55, // something with the KoopaLast door
     SensorMsg_58 = 58 // something with the KoopaLast door
 };
@@ -65,6 +66,7 @@ AL_LIVEACTOR_SENSORMSG(49)
 AL_LIVEACTOR_SENSORMSG(50)
 AL_LIVEACTOR_SENSORMSG(51)
 AL_LIVEACTOR_SENSORMSG(52)
+AL_LIVEACTOR_SENSORMSG(53)
 AL_LIVEACTOR_SENSORMSG(55)
 AL_LIVEACTOR_SENSORMSG(58)
 

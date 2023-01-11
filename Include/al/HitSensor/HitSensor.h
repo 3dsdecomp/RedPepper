@@ -48,9 +48,12 @@ class HitSensor {
 public:
     const char* getName() { return mName; }
     LiveActor* getHost() { return mHostActor; }
+    SensorType getType() const { return mSensorType; }
 
     friend class HitSensorKeeper;
 };
+
+static_assert(sizeof(HitSensor) == 0x40, "");
 
 bool isHitCylinderSensor(HitSensor*, HitSensor*, const sead::Vector3f&, float);
 

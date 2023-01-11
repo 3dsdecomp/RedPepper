@@ -215,9 +215,6 @@ STUB(_ZN2al16AnimPlayerSimple9startAnimEPKc)
 STUB(_ZNK2al16AnimPlayerSimple11isAnimExistEPKc)
 
 STUB(_ZN2al10isCollidedEPKNS_9LiveActorE)
-STUB(_ZN2al13isSensorEnemyEPKNS_9HitSensorE)
-STUB(_ZN2al14isSensorMapObjEPKNS_9HitSensorE)
-STUB(_ZN2al14isSensorPlayerEPKNS_9HitSensorE)
 
 STUB(_ZN2al11preScaleMtxEPN4sead8Matrix34IfEERKNS0_7Vector3IfEE)
 STUB(_ZN2al12EffectKeeper6updateEv)
@@ -283,5 +280,8 @@ STUB(_ZN14PlayerInitFunc12getModelInfoEv)
 STUB(_ZN14PlayerInitFunc11getAnimInfoEv)
 STUB(_ZN14PlayerInitFunc12FUN_00260620Ev)
 STUB(_ZN19PlayerAnimFrameCtrlC1Ev)
+
+STUB(_ZN2rp28requestHitReactionToAttackerEjPKN2al9HitSensorES3_)
+STUB(_ZN2al27isSensorPlayerOrEnemyAttackEPKNS_9HitSensorE)
 
 #undef STUB
