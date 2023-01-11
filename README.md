@@ -1,6 +1,6 @@
 # RedPepper
 
-This is a decompilation of the EU version of Super Mario 3D Land.
+This is a decompilation of the EU version of Super Mario 3D Land. (note that retail JP, KO, TW, and US versions are nearly identical)
 
 ## Progress
 
