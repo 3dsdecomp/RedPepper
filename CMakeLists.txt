@@ -55,6 +55,7 @@ target_link_options(RedPepper PUBLIC
     --cpu=MPCore --entry=__ctr_start --startup=__ctr_start --library_type=standardlib
     --ref_cpp_init --scanlib --legacyalign
     --tailreorder --no_remove --datacompressor=off --arm_only
+    --inline 
     --verbose --mangled --symbols --paged
     --scatter=${CMAKE_CURRENT_BINARY_DIR}/Linker.ld
     )

@@ -1,5 +1,9 @@
 #define STUB(SYMBOL) \
-    extern __attribute__((section("stubs"))) void SYMBOL() { }
+    extern __attribute__((section("stubs"))) void SYMBOL() { \
+        __nop(); \
+        __nop(); \
+        __nop(); \
+    }
 
 STUB(_ZnajRKSt9nothrow_t)
 STUB(_ZnwjRKSt9nothrow_t)
