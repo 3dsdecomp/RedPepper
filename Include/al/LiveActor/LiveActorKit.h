@@ -35,6 +35,7 @@ public:
     void endInit();
 
     ClippingDirector* getClippingDirector() const { return mClippingDirector; }
+    ExecuteDirector* getExecuteDirector() const { return mExecuteDirector; }
     LiveActorGroup* getAllActors() const { return mAllActors; }
 };
 
