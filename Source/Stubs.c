@@ -1,9 +1,10 @@
-#define STUB(SYMBOL) \
-    extern __attribute__((section("stubs"))) void SYMBOL() { \
-        __nop(); \
-        __nop(); \
-        __nop(); \
-    }
+#define STUB(SYMBOL)                                       \
+    extern __attribute__((section("stubs"))) void SYMBOL() \
+    {                                                      \
+        __nop();                                           \
+        __nop();                                           \
+        __nop();                                           \
+    } // filled with nops so linker doesnt nop out bl calls to stub functions
 
 STUB(_ZnajRKSt9nothrow_t)
 STUB(_ZnwjRKSt9nothrow_t)

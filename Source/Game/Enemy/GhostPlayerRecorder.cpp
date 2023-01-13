@@ -24,4 +24,5 @@ void GhostPlayerRecorder::create(int numFrames)
     mNumFrames = numFrames;
 }
 
+NON_MATCHING
 void GhostPlayerRecorder::initSceneObj() { }

@@ -1,5 +1,6 @@
 #include "al/LiveActor/HitSensorKeeper.h"
 #include "al/LiveActor/LiveActor.h"
+#include "al/LiveActor/LiveActorFunction.h"
 
 namespace al {
 
@@ -10,7 +11,7 @@ void HitSensorKeeper::attackSensor()
     for (int i = 0; i < mSensors.capacity(); i++) {
         HitSensor* sensor = mSensors.unsafeAt(i);
         for (int j = 0; j < sensor->mSensorCount; j++)
-            if (!sensor->mSensors[j]->getHost()->getLiveActorFlag().isDead)
+            if (!al::isDead(sensor->mSensors[j]->getHost()))
                 sensor->mSensors[j]->getHost()->attackSensor(sensor, sensor->mSensors[j]);
     }
 }
