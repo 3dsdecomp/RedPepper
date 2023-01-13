@@ -3,6 +3,7 @@
 #include "al/Execute/ExecuteRequestKeeper.h"
 #include "al/Execute/ExecuteTableHolderDraw.h"
 #include "al/Execute/ExecuteTableHolderUpdate.h"
+#include "al/Functor/FunctorBase.h"
 
 namespace al {
 
@@ -26,6 +27,9 @@ public:
 
     void init();
     void createExecutorListTable();
+    void registerUser(al::IUseExecutor* p, const char* str);
+    void registerFunctor(const al::FunctorBase& base, const char* str);
+    void registerFunctorDraw(const al::FunctorBase& base, const char* str);
 
     friend class LayoutKit;
 };

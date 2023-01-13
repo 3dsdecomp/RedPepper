@@ -70,4 +70,24 @@ void ExecuteDirector::createExecutorListTable()
         mDrawTables[i]->createExecutorListTable();
 }
 
+void ExecuteDirector::registerUser(al::IUseExecutor* p, const char* str)
+{
+    mUpdateTable->tryRegisterUser(p, str);
+    for(int i = 0; i < mDrawTableAmount; i++)
+        mDrawTables[i]->tryRegisterUser(p, str);
+}
+
+void ExecuteDirector::registerFunctor(const al::FunctorBase& base, const char* str)
+{
+    mUpdateTable->tryRegisterFunctor(base, str);
+    for(int i = 0; i < mDrawTableAmount; i++)
+        mDrawTables[i]->tryRegisterFunctor(base, str);
+}
+
+void ExecuteDirector::registerFunctorDraw(const al::FunctorBase& base, const char* str)
+{
+    for(int i = 0; i < mDrawTableAmount; i++)
+        mDrawTables[i]->tryRegisterFunctor(base, str);
+}
+
 } // namespace al
