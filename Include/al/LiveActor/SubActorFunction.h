@@ -8,6 +8,7 @@ public:
     static void trySyncDead(al::SubActorKeeper* p);
 
     static void trySyncClippingStart(al::SubActorKeeper* p);
+    static void trySyncClippingEnd(al::SubActorKeeper* p);
 
     static void tryCalcAnim(al::SubActorKeeper* p);
 };
