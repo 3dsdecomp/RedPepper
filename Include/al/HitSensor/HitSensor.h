@@ -27,6 +27,7 @@ enum SensorType {
 };
 
 class LiveActor;
+class SensorHitGroup;
 class HitSensor {
     const char* mName;
     SensorType mSensorType;
@@ -37,7 +38,7 @@ class HitSensor {
     u16 mMaxSensorCount;
     u16 mSensorCount;
     HitSensor** mSensors;
-    int _20;
+    SensorHitGroup* mSensorHitGroup;
     bool mIsValidBySystem;
     bool mIsValid;
     LiveActor* mHostActor;
@@ -49,6 +50,10 @@ public:
     const char* getName() { return mName; }
     LiveActor* getHost() { return mHostActor; }
     SensorType getType() const { return mSensorType; }
+    void validate();
+    void invalidate();
+    void validateBySystem();
+    void invalidateBySystem();
 
     friend class HitSensorKeeper;
 };
