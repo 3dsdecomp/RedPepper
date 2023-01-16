@@ -293,4 +293,7 @@ STUB(_ZN2al22ExecuteTableHolderDraw15tryRegisterUserEPNS_12IUseExecutorEPKc)
 STUB(_ZN2al24ExecuteTableHolderUpdate18tryRegisterFunctorERKNS_11FunctorBaseEPKc)
 STUB(_ZN2al22ExecuteTableHolderDraw18tryRegisterFunctorERKNS_11FunctorBaseEPKc)
 
+STUB(_ZN2al14SensorHitGroup3addEPNS_9HitSensorE)
+STUB(_ZN2al14SensorHitGroup6removeEPNS_9HitSensorE)
+
 #undef STUB
