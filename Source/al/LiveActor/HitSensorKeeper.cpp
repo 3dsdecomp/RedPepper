@@ -1,6 +1,7 @@
 #include "al/LiveActor/HitSensorKeeper.h"
 #include "al/LiveActor/LiveActor.h"
 #include "al/LiveActor/LiveActorFunction.h"
+#include "al/Util/StringUtil.h"
 
 namespace al {
 
@@ -42,6 +43,19 @@ void HitSensorKeeper::invalidateBySystem()
     for (int i = 0; i < mSensors.size(); i++) {
         mSensors.unsafeAt(i)->invalidateBySystem();
     }
+}
+
+#pragma O3
+HitSensor* HitSensorKeeper::getSensor(const char* name) const
+{
+    if (mSensors.size() == 1)
+        return mSensors.unsafeAt(0);
+    
+    for (int i = 0; i < mSensors.size(); i++) {
+        if (al::isEqualString(mSensors.unsafeAt(i)->getName(), name))
+            return mSensors.unsafeAt(i);
+    }
+    return nullptr;
 }
 
 } // namespace al
