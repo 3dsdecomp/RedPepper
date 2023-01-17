@@ -8,7 +8,7 @@ NON_MATCHING
 // stores host actor instead of getting it again
 void HitSensorKeeper::attackSensor()
 {
-    for (int i = 0; i < mSensors.capacity(); i++) {
+    for (int i = 0; i < mSensors.size(); i++) {
         HitSensor* sensor = mSensors.unsafeAt(i);
         for (int j = 0; j < sensor->mSensorCount; j++)
             if (!al::isDead(sensor->mSensors[j]->getHost()))

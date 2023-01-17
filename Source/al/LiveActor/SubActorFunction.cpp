@@ -4,7 +4,7 @@
 
 void alSubActorFunction::trySyncAlive(al::SubActorKeeper* p)
 {
-    for (int i = 0; i < p->mSubActors.capacity(); i++) {
+    for (int i = 0; i < p->mSubActors.size(); i++) {
         al::SubActorKeeper::Entry* subActor = p->mSubActors.unsafeAt(i);
         if (subActor->_8 & 1)
             subActor->actor->makeActorAppeared();
@@ -13,7 +13,7 @@ void alSubActorFunction::trySyncAlive(al::SubActorKeeper* p)
 
 void alSubActorFunction::trySyncDead(al::SubActorKeeper* p)
 {
-    for (int i = 0; i < p->mSubActors.capacity(); i++) {
+    for (int i = 0; i < p->mSubActors.size(); i++) {
         al::SubActorKeeper::Entry* subActor = p->mSubActors.unsafeAt(i);
         if (subActor->_8 & 1)
             subActor->actor->makeActorDead();
@@ -23,7 +23,7 @@ void alSubActorFunction::trySyncDead(al::SubActorKeeper* p)
 #pragma O3
 void alSubActorFunction::trySyncClippingStart(al::SubActorKeeper* p)
 {
-    for (int i = 0; i < p->mSubActors.capacity(); i++) {
+    for (int i = 0; i < p->mSubActors.size(); i++) {
         al::SubActorKeeper::Entry* subActor = p->mSubActors.unsafeAt(i);
         if (subActor->_8 & 2 && al::isAlive(subActor->actor) && !al::isClipped(subActor->actor))
             subActor->actor->startClipped();
@@ -32,7 +32,7 @@ void alSubActorFunction::trySyncClippingStart(al::SubActorKeeper* p)
 
 void alSubActorFunction::trySyncClippingEnd(al::SubActorKeeper* p)
 {
-    for (int i = 0; i < p->mSubActors.capacity(); i++) {
+    for (int i = 0; i < p->mSubActors.size(); i++) {
         al::SubActorKeeper::Entry* subActor = p->mSubActors.unsafeAt(i);
         if (subActor->_8 & 2 && al::isAlive(subActor->actor) && al::isClipped(subActor->actor))
             subActor->actor->endClipped();
@@ -41,7 +41,7 @@ void alSubActorFunction::trySyncClippingEnd(al::SubActorKeeper* p)
 
 void alSubActorFunction::tryCalcAnim(al::SubActorKeeper* p)
 {
-    for (int i = 0; i < p->mSubActors.capacity(); i++) {
+    for (int i = 0; i < p->mSubActors.size(); i++) {
         al::SubActorKeeper::Entry* subActor = p->mSubActors.unsafeAt(i);
         if (subActor->_8 & 8 && al::isAlive(subActor->actor))
             subActor->actor->calcAnim();

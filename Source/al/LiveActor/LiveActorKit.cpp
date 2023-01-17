@@ -44,7 +44,7 @@ void LiveActorKit::endInit()
     mFogDirector->endInit();
     mClippingDirector->endInit();
     sead::PtrArray<LiveActor> actors = mAllActors->getArray<LiveActor>();
-    for (int i = 0; i < actors.capacity(); i++)
+    for (int i = 0; i < actors.size(); i++)
         actors[i]->initAfterPlacement();
 }
 

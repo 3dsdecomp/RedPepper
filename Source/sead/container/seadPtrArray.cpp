@@ -2,7 +2,7 @@
 
 namespace sead {
 
-#pragma O3
+#pragma O3 // weird
 void PtrArrayImpl::setBuffer(s32 ptrNumMax, void* buf)
 {
     if (ptrNumMax <= 0) {
@@ -16,8 +16,8 @@ void PtrArrayImpl::setBuffer(s32 ptrNumMax, void* buf)
     }
 
     mPtrs = static_cast<void**>(buf);
-    mPtrNum = 0;
-    mPtrNumMax = ptrNumMax;
+    mPtrNumMax = 0;
+    mPtrNum = ptrNumMax;
 }
 
 } // namespace sead

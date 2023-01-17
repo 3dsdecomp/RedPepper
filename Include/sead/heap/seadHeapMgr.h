@@ -17,7 +17,7 @@ public:
     static bool isContainedInAnyHeap(const void* ptr);
 
     static HeapMgr* instance() { return sInstancePtr; }
-    static s32 getRootHeapNum() { return sRootHeaps.size(); }
+    static s32 getRootHeapNum() { return sRootHeaps.capacity(); }
     static Heap* getRootHeap(int index) { return sRootHeaps[index]; }
 
     // TODO: these should be private

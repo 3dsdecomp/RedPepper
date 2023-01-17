@@ -16,13 +16,13 @@ void LiveActorGroup::registerActor(LiveActor* actor)
 
 void LiveActorGroup::killAll()
 {
-    for (int i = 0; i < mActors.capacity(); i++)
+    for (int i = 0; i < mActors.size(); i++)
         mActors.unsafeAt(i)->kill();
 }
 
 void LiveActorGroup::makeActorDeadAll()
 {
-    for (int i = 0; i < mActors.capacity(); i++)
+    for (int i = 0; i < mActors.size(); i++)
         mActors.unsafeAt(i)->makeActorDead();
 }
 

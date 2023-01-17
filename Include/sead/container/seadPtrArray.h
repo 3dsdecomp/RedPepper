@@ -72,7 +72,7 @@ protected:
 
     void* at(s32 idx) const
     {
-        if (u32(mPtrNum) <= u32(idx)) {
+        if (u32(mPtrNumMax) <= u32(idx)) {
             SEAD_ASSERT_MSG(false, "index exceeded [%d/%d]", idx, mPtrNum);
             return nullptr;
         }
@@ -88,8 +88,8 @@ protected:
     void pushBack(void* ptr)
     {
         // Simplest insert case, so this is implemented directly without using insert().
-        mPtrs[mPtrNumMax] = ptr;
-        ++mPtrNumMax;
+        mPtrs[mPtrNum] = ptr;
+        ++mPtrNum;
     }
 
     void pushFront(void* ptr) { insert(0, ptr); }
@@ -189,8 +189,8 @@ protected:
         return -1;
     }
 
-    s32 mPtrNum;
     s32 mPtrNumMax;
+    s32 mPtrNum;
     void** mPtrs;
 };
 
