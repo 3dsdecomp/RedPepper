@@ -14,14 +14,14 @@ class Random;
 class PtrArrayImpl {
 public:
     PtrArrayImpl()
-        : mPtrNum(0)
-        , mPtrNumMax(0)
+        : mPtrNumMax(0)
+        , mPtrNum(0)
         , mPtrs(nullptr)
     {
     }
     PtrArrayImpl(s32 ptrNumMax, void* buf)
-        : mPtrNum(0)
-        , mPtrNumMax(0)
+        : mPtrNumMax(0)
+        , mPtrNum(0)
         , mPtrs(nullptr)
     {
         setBuffer(ptrNumMax, buf);
