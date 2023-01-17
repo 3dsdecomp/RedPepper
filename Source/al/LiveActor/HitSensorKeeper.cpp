@@ -16,4 +16,32 @@ void HitSensorKeeper::attackSensor()
     }
 }
 
+void HitSensorKeeper::validate()
+{
+    for (int i = 0; i < mSensors.size(); i++) {
+        mSensors.unsafeAt(i)->validate();
+    }
+}
+
+void HitSensorKeeper::invalidate()
+{
+    for (int i = 0; i < mSensors.size(); i++) {
+        mSensors.unsafeAt(i)->invalidate();
+    }
+}
+
+void HitSensorKeeper::validateBySystem()
+{
+    for (int i = 0; i < mSensors.size(); i++) {
+        mSensors.unsafeAt(i)->validateBySystem();
+    }
+}
+
+void HitSensorKeeper::invalidateBySystem()
+{
+    for (int i = 0; i < mSensors.size(); i++) {
+        mSensors.unsafeAt(i)->invalidateBySystem();
+    }
+}
+
 } // namespace al

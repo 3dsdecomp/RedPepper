@@ -10,6 +10,8 @@ class HitSensorKeeper {
 
 public:
     void attackSensor();
+    void validate();
+    void invalidate();
     void validateBySystem();
     void invalidateBySystem();
 

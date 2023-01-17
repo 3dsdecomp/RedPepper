@@ -10,6 +10,7 @@ class SensorHitGroup {
 
 public:
     SensorHitGroup(int, const char* name /* unused */);
+
     void add(HitSensor* sensor);
     void remove(HitSensor* sensor);
 };
