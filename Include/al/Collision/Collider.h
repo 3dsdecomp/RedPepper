@@ -10,6 +10,8 @@ class Collider {
 
 public:
     float getGroundDistance() { return mGroundDistance; }
+
+    void onInvalidate();
 };
 
 } // namespace al

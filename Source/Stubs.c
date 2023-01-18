@@ -294,5 +294,7 @@ STUB(_ZN2al24ExecuteTableHolderUpdate18tryRegisterFunctorERKNS_11FunctorBaseEPKc
 STUB(_ZN2al22ExecuteTableHolderDraw18tryRegisterFunctorERKNS_11FunctorBaseEPKc)
 
 STUB(_ZN2al14SensorHitGroup6removeEPNS_9HitSensorE)
+STUB(_ZN2al8Collider12onInvalidateEv)
+STUB(_ZN4sead7MemUtil11copyOverlapEPvPKvj)
 
 #undef STUB

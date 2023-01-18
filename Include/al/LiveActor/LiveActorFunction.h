@@ -34,6 +34,7 @@ bool isInvalidClipping(const LiveActor* actor);
 bool isDead(const LiveActor* actor);
 bool isAlive(const LiveActor* actor);
 
+void onCollide(LiveActor* actor);
 void offCollide(LiveActor* actor);
 
 void invalidateClipping(LiveActor* actor);
@@ -58,6 +59,7 @@ void initNerveAction(LiveActor* actor, const char* name, alNerveFunction::NerveA
 
 // HitSensorKeeper
 HitSensor* getHitSensor(const LiveActor* actor, const char* name);
+float getSensorRadius(const LiveActor* actor, const char* sensorName);
 
 // EffectKeeper
 void initActorEffectKeeper(LiveActor* actor, const ActorInitInfo& info, const char*);

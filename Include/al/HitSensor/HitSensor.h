@@ -30,11 +30,11 @@ class LiveActor;
 class SensorHitGroup;
 class HitSensor {
     const char* mName;
-    SensorType mSensorType;
+    u32 mSensorType;
     u32 _8;
     u32 _C;
     float _10;
-    float _14;
+    float mSensorRadius;
     u16 mMaxSensorCount;
     u16 mSensorCount;
     HitSensor** mSensors;
@@ -49,7 +49,8 @@ class HitSensor {
 public:
     const char* getName() { return mName; }
     LiveActor* getHost() { return mHostActor; }
-    SensorType getType() const { return mSensorType; }
+    u32 getType() const { return mSensorType; }
+    float getRadius() const { return mSensorRadius; }
     void validate();
     void invalidate();
     void validateBySystem();

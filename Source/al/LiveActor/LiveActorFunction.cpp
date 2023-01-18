@@ -32,6 +32,13 @@ bool isInvalidClipping(const LiveActor* actor) { return actor->getLiveActorFlag(
 bool isDead(const LiveActor* actor) { return actor->getLiveActorFlag().isDead; }
 bool isAlive(const LiveActor* actor) { return !actor->getLiveActorFlag().isDead; }
 
+void onCollide(LiveActor* actor)
+{
+    Collider* collider = actor->getCollider();
+    actor->getLiveActorFlag().isOffCollide = false;
+    if (collider)
+        collider->onInvalidate();
+}
 void offCollide(LiveActor* actor) { actor->getLiveActorFlag().isOffCollide = true; }
 
 void invalidateClipping(LiveActor* actor)
@@ -85,6 +92,18 @@ void calcJointPos(sead::Vector3f* out, const LiveActor* actor, const char* joint
     out->x = jointMtx->m[0][3];
     out->y = jointMtx->m[1][3];
     out->z = jointMtx->m[2][3];
+}
+
+// HitSensorKeeper
+
+HitSensor* getHitSensor(const LiveActor* actor, const char* name)
+{
+    return actor->getHitSensorKeeper()->getSensor(name);
+}
+
+float getSensorRadius(const LiveActor* actor, const char* sensorName)
+{
+    return getHitSensor(actor, sensorName)->getRadius();
 }
 
 // NerveKeeper
