@@ -16,12 +16,12 @@ void PlayerTrigger::set(PlayerTrigger::ECollisionTrigger trigger)
     mCollisionTrigger |= 1 << trigger;
 }
 
-bool PlayerTrigger::isOn(PlayerTrigger::ESensorTrigger trigger)
+bool PlayerTrigger::isOn(PlayerTrigger::ESensorTrigger trigger) const
 {
     return (mSensorTrigger & (1 << trigger)) != 0;
 }
 
-bool PlayerTrigger::isOn(PlayerTrigger::ECollisionTrigger trigger)
+bool PlayerTrigger::isOn(PlayerTrigger::ECollisionTrigger trigger) const
 {
     return (mCollisionTrigger & (1 << trigger)) != 0;
 }

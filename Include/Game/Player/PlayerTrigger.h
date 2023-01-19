@@ -16,8 +16,8 @@ public:
     PlayerTrigger();
     void set(PlayerTrigger::ESensorTrigger trigger);
     void set(PlayerTrigger::ECollisionTrigger trigger);
-    bool isOn(PlayerTrigger::ESensorTrigger trigger);
-    bool isOn(PlayerTrigger::ECollisionTrigger trigger);
+    bool isOn(PlayerTrigger::ESensorTrigger trigger) const;
+    bool isOn(PlayerTrigger::ECollisionTrigger trigger) const;
     void clearSensorTrigger();
     void clearCollisionTrigger();
 };
