@@ -1,4 +1,4 @@
-_ZN13PlayerTriggerC2Ev,00143794,16,O
+_ZN13PlayerTriggerC1Ev,00143794,16,O
 _ZN13PlayerTrigger3setENS_14ESensorTriggerE,0026ebe8,20,O
 _ZN13PlayerTrigger3setENS_17ECollisionTriggerE,0026e7ac,20,O
 _ZNK13PlayerTrigger4isOnENS_14ESensorTriggerE,0026ea60,20,O

@@ -24,6 +24,19 @@ namespace svc {
         bx lr
     }
 
+    __asm void __attribute__((section("i._ZN2nn3svc12CreateThreadEPNS_6HandleEPFvjEjjii"))) CreateThread(nn::Handle* handle, void (*func)(u32), u32 arg, u32* stackTop, s32 prio, s32 processorId)
+    {
+        push {r0, r4}
+        ldr r0, [sp, #8]
+        ldr r4, [sp, #0xc]
+        svc 0x8
+        ldr r2, [sp]
+        str r1, [r2]
+        add sp, sp, #4
+        pop {r4}
+        bx lr
+    }
+
     __asm void __attribute__((section("i._ZN2nn3svc11SleepThreadEy"))) SleepThread(u64 nanos)
     {
         svc 0xa
