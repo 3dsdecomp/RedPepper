@@ -42,4 +42,7 @@ public:
 void initLiveActorKit(LiveActorKit* kit);
 LiveActorKit* getLiveActorKit();
 
+void executeDraw(const LiveActorKit* kit, const char*);
+void executeDrawList(const LiveActorKit* kit, const char*, const char*);
+
 } // namespace al

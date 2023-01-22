@@ -41,8 +41,11 @@ public:
     virtual void unk9() {}; // does draw/execute stuff
     virtual void unk10() {};
 
+    void initCameraDirector();
     void initActorFactory();
     void initSceneObjHolder();
+    void initLiveActorKit();
+    void initLayoutKit();
 
     void endInit(const ActorInitInfo& info);
 
