@@ -1,5 +1,6 @@
 _ZN2al11getBaseNameEPKc,00272634,32,O
 _ZN2al21createStringIfInStackEPKc,002504a8,76,O
 _ZN2al13isEqualStringEPKcS1_,00292308,56,O
+_ZN2al13isEqualStringERKN4sead14SafeStringBaseIcEES4_,0028e3bc,112,M
 _ZN2al16isEqualSubStringEPKcS1_,0027044c,20,O
 _ZN2al21removeExtensionStringEPcjPKc,0024e424,88,O

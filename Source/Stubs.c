@@ -297,4 +297,6 @@ STUB(_ZN2al14SensorHitGroup6removeEPNS_9HitSensorE)
 STUB(_ZN2al8Collider12onInvalidateEv)
 STUB(_ZN4sead7MemUtil11copyOverlapEPvPKvj)
 
+STUB(_ZN2al19StageResourceKeeper19initAndLoadResourceEPKciPN4sead4HeapE)
+
 #undef STUB

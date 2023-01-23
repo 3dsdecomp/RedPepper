@@ -23,6 +23,7 @@ public:
 const char* getBaseName(const char* name);
 const char* createStringIfInStack(const char* str);
 bool isEqualString(const char* s1, const char* s2);
+bool isEqualString(const sead::SafeString& s1, const sead::SafeString& s2);
 bool isEqualSubString(const char* str, const char* substr);
 bool isInStack(const void* ptr);
 

@@ -14,7 +14,7 @@ Scene::Scene(const char* name)
     , mSceneObjHolder(nullptr)
     , mActorFactory(nullptr)
     , _20(nullptr)
-    , _24(nullptr)
+    , mResourceKeeper(nullptr)
     , _28(nullptr)
     , _2C(nullptr)
     , mIsAlive(false)
@@ -50,6 +50,13 @@ void Scene::control()
 AudioKeeper* Scene::getAudioKeeper() const
 {
     return mAudioKeeper;
+}
+
+NON_MATCHING
+void Scene::initAndLoadStageResource(const char* stageName, int scenario, sead::Heap* heap)
+{
+    mResourceKeeper = new StageResourceKeeper;
+    mResourceKeeper->initAndLoadResource(stageName, scenario, heap);
 }
 
 void Scene::initActorFactory()
