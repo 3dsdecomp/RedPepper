@@ -6,7 +6,6 @@
 
 namespace al {
 
-#pragma O3
 Sky::Sky(const char* name)
     : MapObjActor(name)
     , mCameraTransPtr(nullptr)

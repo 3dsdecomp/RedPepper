@@ -1,6 +1,5 @@
 #include "Game/Enemy/GhostPlayerRecorder.h"
 
-#pragma O3
 GhostPlayerRecorder::GhostPlayerRecorder()
     : mFrames(nullptr)
     , mGhostPlayer(nullptr)
@@ -13,7 +12,6 @@ GhostPlayerRecorder::GhostPlayerRecorder()
 {
 }
 
-#pragma O3
 void GhostPlayerRecorder::create(int numFrames)
 {
     if (mFrames)

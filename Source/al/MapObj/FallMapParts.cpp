@@ -19,7 +19,6 @@ namespace NrvFallMapParts {
 } // namespace NrvFallMapParts
 
 NON_MATCHING // float
-#pragma O3
 FallMapParts::FallMapParts(const sead::SafeString& name)
     : MapObjActor(name)
     , mStartTrans(sead::Vector3f::zero)

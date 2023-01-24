@@ -2,7 +2,6 @@
 
 namespace al {
 
-#pragma O3
 const ByamlHashPair* ByamlHashIter::findPair(int keyIdx) const
 {
     const ByamlHashPair* table = getPairTable();

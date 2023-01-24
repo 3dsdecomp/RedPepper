@@ -2,7 +2,6 @@
 
 namespace al {
 
-#pragma O3
 CameraParamVision::CameraParamVision()
 {
     mNearClipDistance = -1.0;

@@ -12,7 +12,6 @@ namespace NrvBreakModel {
 
 } // namespace NrvBreakModel
 
-#pragma O3
 BreakModel::BreakModel(LiveActor* parent, const char* name, const char* modelArchiveName, const sead::Matrix34f* parentBaseMtx, const char* breakActionName)
     : LiveActor(name)
     , mParent(parent)

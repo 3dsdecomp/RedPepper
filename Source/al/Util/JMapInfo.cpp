@@ -1,6 +1,5 @@
 #include "al/Util/JMapInfo.h"
 
-#pragma O3
 JMapInfo::JMapInfo()
     : mData(nullptr)
     , mName("Undifined")

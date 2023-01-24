@@ -2,7 +2,7 @@
 
 namespace sead {
 
-#pragma O3 // weird
+// weird
 void PtrArrayImpl::setBuffer(s32 ptrNumMax, void* buf)
 {
     if (ptrNumMax <= 0) {
@@ -22,7 +22,6 @@ void PtrArrayImpl::setBuffer(s32 ptrNumMax, void* buf)
 
 NON_MATCHING
 // ip garbage
-#pragma O3
 void PtrArrayImpl::erase(s32 pos, s32 count)
 {
     if (pos < 0) {

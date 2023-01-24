@@ -7,7 +7,6 @@ namespace al {
 
 extern "C" const u32* FUN_0024edd8();
 
-#pragma O3
 bool isPadTrigger(int port, int mask)
 { // likely a fakematch
     int masktemp = mask;

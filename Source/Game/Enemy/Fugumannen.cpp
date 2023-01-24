@@ -17,7 +17,6 @@ NERVE_DEF(Fugumannen, BlowDown)
 
 } // namespace NrvFugumannen
 
-#pragma O3
 Fugumannen::Fugumannen(const sead::SafeString& name)
     : MapObjActor(name)
     , mRailMoveSpeed(10.0)

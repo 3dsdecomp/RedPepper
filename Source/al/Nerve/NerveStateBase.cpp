@@ -2,7 +2,6 @@
 
 namespace al {
 
-#pragma O3
 NerveStateBase::NerveStateBase(const char* name)
     : NerveExecutor(name)
     , mIsDead(true)

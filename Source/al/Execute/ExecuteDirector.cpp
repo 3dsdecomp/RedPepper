@@ -6,7 +6,6 @@
 
 namespace al {
 
-#pragma O3
 ExecuteDirector::ExecuteDirector(int p)
     : _0(p)
     , mUpdateTable(nullptr)
@@ -73,20 +72,20 @@ void ExecuteDirector::createExecutorListTable()
 void ExecuteDirector::registerUser(al::IUseExecutor* p, const char* str)
 {
     mUpdateTable->tryRegisterUser(p, str);
-    for(int i = 0; i < mDrawTableAmount; i++)
+    for (int i = 0; i < mDrawTableAmount; i++)
         mDrawTables[i]->tryRegisterUser(p, str);
 }
 
 void ExecuteDirector::registerFunctor(const al::FunctorBase& base, const char* str)
 {
     mUpdateTable->tryRegisterFunctor(base, str);
-    for(int i = 0; i < mDrawTableAmount; i++)
+    for (int i = 0; i < mDrawTableAmount; i++)
         mDrawTables[i]->tryRegisterFunctor(base, str);
 }
 
 void ExecuteDirector::registerFunctorDraw(const al::FunctorBase& base, const char* str)
 {
-    for(int i = 0; i < mDrawTableAmount; i++)
+    for (int i = 0; i < mDrawTableAmount; i++)
         mDrawTables[i]->tryRegisterFunctor(base, str);
 }
 

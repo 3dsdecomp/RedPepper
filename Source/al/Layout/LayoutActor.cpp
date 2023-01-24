@@ -2,7 +2,6 @@
 
 namespace al {
 
-#pragma O3
 LayoutActor::LayoutActor(const char* name)
     : mName(name)
     , mNerveKeeper(nullptr)

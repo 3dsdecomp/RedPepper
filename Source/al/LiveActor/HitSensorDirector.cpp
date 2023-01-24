@@ -3,7 +3,6 @@
 
 namespace al {
 
-#pragma O3
 HitSensorDirector::HitSensorDirector()
     : mPlayerHitGroup(nullptr)
     , mRideHitGroup(nullptr)

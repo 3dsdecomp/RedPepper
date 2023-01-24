@@ -9,7 +9,6 @@ NERVE_DEF(RailDot, Wait);
 
 } // namespace NrvRailDot
 
-#pragma O3
 RailDot::RailDot(const sead::SafeString& name)
     : MapObjActor(name)
 {

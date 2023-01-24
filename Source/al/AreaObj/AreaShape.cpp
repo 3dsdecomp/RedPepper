@@ -2,7 +2,6 @@
 
 namespace al {
 
-#pragma O3
 AreaShape::AreaShape()
     : mBaseMtxPtr(nullptr)
     , mScale(sead::Vector3f(1, 1, 1))
@@ -11,8 +10,8 @@ AreaShape::AreaShape()
 
 /* TODO: Move this to header */
 void AreaShape::setScale(const sead::Vector3f& scale)
-{ 
-    mScale = scale; 
+{
+    mScale = scale;
 }
 
 } // namespace al

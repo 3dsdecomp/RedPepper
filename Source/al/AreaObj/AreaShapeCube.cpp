@@ -2,7 +2,6 @@
 
 namespace al {
 
-#pragma O3
 AreaShapeCube::AreaShapeCube(bool isCubeBase)
     : mIsCubeBase(isCubeBase)
 {

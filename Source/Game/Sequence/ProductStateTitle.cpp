@@ -7,7 +7,6 @@ NERVE_DEF(ProductStateTitle, Load)
 
 } // namespace NrvProductStateTitle
 
-#pragma O3
 ProductStateTitle::ProductStateTitle(ProductSequence* host, ProductStageStartParam* startParam, const al::LayoutInitInfo& info)
     : HostStateBase(host, "製品シーケンスのタイトルステート")
     , mStartParam(startParam)

@@ -14,7 +14,6 @@ NERVE_DEF(TrickHintPanel, Off);
 
 } // namespace NrvTrickHintPanel
 
-#pragma O3
 TrickHintPanel::TrickHintPanel(const sead::SafeString& name)
     : MapObjActor(name)
     , _96(0)

@@ -2,7 +2,6 @@
 #include "al/Util/StringUtil.h"
 
 // instruction order (5)
-#pragma O3
 NON_MATCHING al::NerveAction::NerveAction()
     : mNextNode(nullptr)
 {

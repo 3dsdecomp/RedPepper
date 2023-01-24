@@ -11,7 +11,6 @@ namespace NrvRailMoveMovement {
 } // namespace NrvRailMoveMovement
 
 NON_MATCHING // string
-#pragma O3
 RailMoveMovement::RailMoveMovement(LiveActor* host, const ActorInitInfo& info, const char* speedParamName, const char* moveTypeParamName)
     : HostStateBase(host, "ƒŒ[ƒ‹ˆÚ“®‹““®")
     , mSpeed(10)

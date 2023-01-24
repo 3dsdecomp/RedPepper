@@ -2,7 +2,6 @@
 
 namespace al {
 
-#pragma O3
 StageSwitchAccesser::StageSwitchAccesser()
     : mId(-1)
     , mType(0)

@@ -6,7 +6,6 @@
 
 namespace al {
 
-#pragma O3
 LiveActor::LiveActor(const char* name)
     : mActorName(name)
     , mActorPoseKeeper(nullptr)

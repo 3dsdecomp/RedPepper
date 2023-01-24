@@ -3,7 +3,6 @@
 
 namespace al {
 
-#pragma O3
 SwitchAreaDirector::SwitchAreaDirector()
     : LiveActor("スイッチエリアディレクター")
     , mSwitchOnAreaGroup(nullptr)

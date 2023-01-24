@@ -8,7 +8,6 @@ NERVE_DEF(WalkerStateChase, Start)
 
 } // namespace
 
-#pragma O3
 NON_MATCHING
 WalkerStateChase::WalkerStateChase(al::LiveActor* host, sead::Vector3f* frontPtr, const WalkerStateParam* walkParam, const WalkerStateChaseParam* runParam, bool b)
     : ActorStateBase("ƒNƒŠƒ{[’Ç‚¢‚©‚¯ó‘Ô", host)

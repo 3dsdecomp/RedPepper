@@ -14,7 +14,6 @@ NERVE_DEF(GhostPlayer, Nrv5);
 
 } // namespace NrvGhostPlayer
 
-#pragma O3
 GhostPlayer::GhostPlayer(const sead::SafeString& name)
     : MapObjActor(name)
     , _64(false)

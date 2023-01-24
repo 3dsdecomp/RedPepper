@@ -11,7 +11,6 @@ NERVE_DEF(AquariumSwimDebris, Appear);
 
 } // namespace NrvAquariumSwimDebris
 
-#pragma O3
 AquariumSwimDebris::AquariumSwimDebris(const sead::SafeString& name)
     : MapObjActor(name)
 {

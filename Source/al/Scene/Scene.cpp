@@ -5,7 +5,6 @@
 
 namespace al {
 
-#pragma O3
 Scene::Scene(const char* name)
     : NerveExecutor(name)
     , mAudioKeeper(nullptr)

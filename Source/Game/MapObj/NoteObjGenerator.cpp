@@ -17,7 +17,6 @@ NERVEACTION_DEF(NoteObjGenerator, Success)
 
 } // namespace NrvNoteObjGenerator
 
-#pragma O3
 NoteObjGenerator::NoteObjGenerator(const sead::SafeString& name)
     : MapObjActor(name)
     , mNoteObjGroup(nullptr)

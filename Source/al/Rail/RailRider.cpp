@@ -30,7 +30,6 @@ void RailRider::moveToNearestRail(const sead::Vector3f& r1)
     mRail->calcPosDir(&mCurrentPos, &mCurrentDir, _1C);
 }
 
-#pragma O3
 bool RailRider::isReachedGoal() const
 {
     if (!mRail->isClosed() && al::isNearZero(_1C))

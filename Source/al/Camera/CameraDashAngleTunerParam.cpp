@@ -2,7 +2,6 @@
 
 namespace al {
 
-#pragma O3
 CameraDashAngleTunerParam::CameraDashAngleTunerParam()
     : mAddAngleMax(15)
     , mZoomOutOffsetMax(200)

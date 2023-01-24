@@ -4,7 +4,6 @@
 
 namespace al {
 
-#pragma O3
 ActorInitInfo::ActorInitInfo()
     : mPlacementInfo(nullptr)
     , _4(nullptr)

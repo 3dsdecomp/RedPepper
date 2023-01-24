@@ -9,7 +9,6 @@ NERVE_DEF(FlowerPot, Wait);
 
 } // namespace NrvFlowerPot
 
-#pragma O3
 FlowerPot::FlowerPot(const sead::SafeString& name)
     : MapObjActor(name)
 {

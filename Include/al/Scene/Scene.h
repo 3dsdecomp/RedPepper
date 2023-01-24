@@ -44,6 +44,7 @@ public:
     virtual void unk10() {};
 
     void initAndLoadStageResource(const char* stageName, int scenario, sead::Heap* heap);
+    void initSceneAudio(const char* stageName, int scenario, int, const sead::SafeString&, const char* userName);
     void initCameraDirector();
     void initActorFactory();
     void initSceneObjHolder();

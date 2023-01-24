@@ -4,7 +4,6 @@
 
 namespace al {
 
-#pragma O3
 LiveActorKit::LiveActorKit(int groupBufSize)
     : mAllActorsBufferSize(groupBufSize)
     , mExecuteDirector(nullptr)

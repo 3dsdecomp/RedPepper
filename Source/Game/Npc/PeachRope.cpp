@@ -3,7 +3,6 @@
 #include "al/LiveActor/ActorInitUtil.h"
 #include "al/LiveActor/LiveActorFunction.h"
 
-#pragma O3
 PeachRope::PeachRope(const sead::SafeString& name)
     : MapObjActor(name)
 {

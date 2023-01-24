@@ -4,7 +4,6 @@
 
 namespace al {
 
-#pragma O3
 NerveExecutor::NerveExecutor(const char* name)
     : mNerveKeeper(nullptr)
 {

@@ -17,7 +17,6 @@ NERVE_DEF(ProductSequence, Unk1)
 
 } // namespace NrvProductSequence
 
-#pragma O3
 ProductSequence::ProductSequence(const char* name)
     : Sequence(name)
     , mStageStartParam(nullptr)
@@ -42,7 +41,7 @@ ProductSequence::ProductSequence(const char* name)
 {
 }
 
-NON_MATCHING void ProductSequence::init() {} // needed for vtable
+NON_MATCHING void ProductSequence::init() { } // needed for vtable
 
 extern "C" bool FUN_0025ba7c(const char*);
 

@@ -5,6 +5,6 @@ _ZNK2al9ByamlIter11isTypeArrayEv,0024c85c,36,O
 _ZNK2al9ByamlIter7getSizeEv,002910f8,44,O
 _ZNK2al9ByamlIter15isTypeContainerEv,0024fe70,40,O
 _ZNK2al9ByamlIter17getByamlDataByKeyEPNS_9ByamlDataEPKc,0028cab4,132,M
-_ZNK2al9ByamlIter15tryGetBoolByKeyEPbPKc,00290f60,80,M
-_ZNK2al9ByamlIter14tryGetIntByKeyEPiPKc,0027e068,60,m
-_ZNK2al9ByamlIter16tryGetFloatByKeyEPfPKc,00278c30,60,m
+_ZNK2al9ByamlIter15tryGetBoolByKeyEPbPKc,00290f60,80,O
+_ZNK2al9ByamlIter14tryGetIntByKeyEPiPKc,0027e068,60,O
+_ZNK2al9ByamlIter16tryGetFloatByKeyEPfPKc,00278c30,60,O

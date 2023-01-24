@@ -4,13 +4,11 @@
 #include "al/Placement/PlacementFunction.h"
 #include "al/Stage/StageSwitchKeeper.h"
 
-#pragma O3
 TransparentWall::TransparentWall(const sead::SafeString& name)
     : MapObjActor(name)
 {
 }
 
-#pragma O3 // nop
 void TransparentWall::init(const al::ActorInitInfo& info)
 {
     if (al::isObjectName(info, "TransparentWallMoveLimit"))

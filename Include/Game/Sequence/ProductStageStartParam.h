@@ -26,4 +26,6 @@ public:
     virtual void* getUnk2();
     virtual void* getUnk3();
     virtual void* getUnk4();
+
+    const char* getDemoStageName() const;
 };

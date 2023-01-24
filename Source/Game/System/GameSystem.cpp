@@ -6,7 +6,6 @@
 #include <nn/ndm/ndm_Api.h>
 #include <sead/heap/seadHeapMgr.h>
 
-#pragma O3
 GameSystem::GameSystem()
     : NerveExecutor("ゲームシステム")
     , mCurrentSequence(nullptr)
@@ -24,7 +23,6 @@ GameSystem::GameSystem()
 {
 }
 
-#pragma O3
 extern "C" void nnMain()
 {
     nn::ndm::SuspendScheduler(true);

@@ -63,7 +63,7 @@ target_link_options(RedPepper PUBLIC
 target_compile_options(RedPepper PUBLIC $<$<COMPILE_LANGUAGE:CXX>:
     --apcs=//interwork --cpu=MPCore --fpmode=fast --cpp --arm --force_new_nothrow
     --signed_chars --multibyte-chars --locale=japanese --no_vfe # workaround, vfe should be enabled
-    --no_rtti_data --no_rtti --no_exceptions -Otime --data-reorder --split_sections --forceinline
+    --no_rtti_data --no_rtti --no_exceptions -O3 -Otime --data-reorder --split_sections --forceinline
     >)
 
 target_compile_options(RedPepper PUBLIC $<$<COMPILE_LANGUAGE:C>:

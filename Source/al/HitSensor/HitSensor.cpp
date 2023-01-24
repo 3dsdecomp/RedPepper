@@ -1,15 +1,13 @@
 #include "al/HitSensor/HitSensor.h"
 #include "al/HitSensor/SensorHitGroup.h"
 
-namespace al
-{
+namespace al {
 
-#pragma O3
 void HitSensor::validate()
 {
-    if(!mIsValid) {
+    if (!mIsValid) {
         mIsValid = true;
-        if(mMaxSensorCount && mIsValidBySystem)
+        if (mMaxSensorCount && mIsValidBySystem)
             mSensorHitGroup->add(this);
     }
     mSensorCount = 0;
@@ -17,19 +15,19 @@ void HitSensor::validate()
 
 void HitSensor::invalidate()
 {
-    if(mIsValid) {
+    if (mIsValid) {
         mIsValid = false;
-        if(mMaxSensorCount && mIsValidBySystem)
+        if (mMaxSensorCount && mIsValidBySystem)
             mSensorHitGroup->remove(this);
     }
     mSensorCount = 0;
 }
 
-void HitSensor::validateBySystem() 
+void HitSensor::validateBySystem()
 {
-    if(mIsValidBySystem) 
+    if (mIsValidBySystem)
         return;
-    if(mMaxSensorCount && mIsValid)
+    if (mMaxSensorCount && mIsValid)
         mSensorHitGroup->add(this);
     mIsValidBySystem = true;
     mSensorCount = 0;
@@ -37,9 +35,9 @@ void HitSensor::validateBySystem()
 
 void HitSensor::invalidateBySystem()
 {
-    if(!mIsValidBySystem)
+    if (!mIsValidBySystem)
         return;
-    if(mMaxSensorCount && mIsValid)
+    if (mMaxSensorCount && mIsValid)
         mSensorHitGroup->remove(this);
     mIsValidBySystem = false;
     mSensorCount = 0;

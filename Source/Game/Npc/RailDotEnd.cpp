@@ -9,7 +9,6 @@ NERVE_DEF(RailDotEnd, Wait);
 
 } // namespace NrvRailDotEnd
 
-#pragma O3
 RailDotEnd::RailDotEnd(const sead::SafeString& name)
     : MapObjActor(name)
 {

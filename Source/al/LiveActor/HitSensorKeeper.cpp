@@ -45,12 +45,11 @@ void HitSensorKeeper::invalidateBySystem()
     }
 }
 
-#pragma O3
 HitSensor* HitSensorKeeper::getSensor(const char* name) const
 {
     if (mSensors.size() == 1)
         return mSensors.unsafeAt(0);
-    
+
     for (int i = 0; i < mSensors.size(); i++) {
         if (al::isEqualString(mSensors.unsafeAt(i)->getName(), name))
             return mSensors.unsafeAt(i);

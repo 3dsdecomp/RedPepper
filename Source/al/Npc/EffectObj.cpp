@@ -15,8 +15,6 @@ EffectObj::EffectObj(const sead::SafeString& name)
 {
 }
 
-NON_MATCHING
-// same problem as initActorEffectObj
 void EffectObj::init(const ActorInitInfo& info)
 {
     const char* objectName = nullptr;
@@ -45,13 +43,9 @@ void EffectObj::control()
     tryStartSe(this, "Wait", 2);
 }
 
-#pragma inline
-NON_MATCHING
-// nop missing (O3), does unnecessary move for isExistArchive arg
 void EffectObjFunction::initActorEffectObj(EffectObj* actor, const ActorInitInfo& info, const char* objectName)
 {
-    StringTmp<128> path = StringTmp<128>("ObjectData/%s.szs", objectName);
-    if (isExistArchive(path))
+    if (isExistArchive(StringTmp<128>("ObjectData/%s.szs", objectName)))
         initActor(actor, info);
     else
         initActorWithArchiveName(actor, info, "EffectObj");

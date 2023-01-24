@@ -20,7 +20,6 @@ void alSubActorFunction::trySyncDead(al::SubActorKeeper* p)
     }
 }
 
-#pragma O3
 void alSubActorFunction::trySyncClippingStart(al::SubActorKeeper* p)
 {
     for (int i = 0; i < p->mSubActors.size(); i++) {
