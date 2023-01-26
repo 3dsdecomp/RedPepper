@@ -299,4 +299,6 @@ STUB(_ZN4sead7MemUtil11copyOverlapEPvPKvj)
 
 STUB(_ZN2al19StageResourceKeeper19initAndLoadResourceEPKciPN4sead4HeapE)
 
+STUB(_ZN2al25listenStageSwitchOnAppearEPNS_15IUseStageSwitchERKNS_11FunctorBaseES4_)
+
 #undef STUB

@@ -3,6 +3,7 @@
 namespace al {
 
 NON_MATCHING
+#pragma O2
 NerveStateCtrl::NerveStateCtrl(int capacity)
     : mCapacity(capacity)
     , mStateCount(0)

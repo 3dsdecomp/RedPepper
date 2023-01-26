@@ -1,5 +1,6 @@
 #pragma once
 
+#include "al/Functor/FunctorBase.h"
 #include "al/LiveActor/ActorInitInfo.h"
 #include "al/Stage/StageSwitchAccesser.h"
 
@@ -27,5 +28,7 @@ void initStageSwitchA(IUseStageSwitch* p, const ActorInitInfo& info);
 void initStageSwitchB(IUseStageSwitch* p, const ActorInitInfo& info);
 
 bool isOnSwitchA(IUseStageSwitch* p);
+
+bool listenStageSwitchOnAppear(IUseStageSwitch* p, const FunctorBase& onFunctor, const FunctorBase& offFunctor);
 
 } // namespace al

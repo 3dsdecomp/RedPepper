@@ -1,0 +1,9 @@
+.constdata__ZTV10AppearStep,003c4178
+.constdata__ZTVN13NrvAppearStep19AppearStepNrvAppearE,003bcdbc
+.constdata__ZTVN13NrvAppearStep17AppearStepNrvWaitE,003bcdcc
+.constdata__ZTVN13NrvAppearStep22AppearStepNrvDisappearE,003bcddc
+.constdata__ZTVN13NrvAppearStep16AppearStepNrvEndE,003bcdec
+i.AppearStepNrvAppear,003f2514
+i.AppearStepNrvWait,003f2518
+i.AppearStepNrvDisappear,003f251c
+i.AppearStepNrvEnd,003f2520
