@@ -14,6 +14,7 @@ void registerExecutorFunctorDraw(const FunctorBase& base, const char* name);
 
 namespace alActorSystemFunction {
 
+void addToExecutorMovement(al::LiveActor* actor);
 void removeFromExecutorDraw(al::LiveActor* actor);
 
 } // alActorSystemFunction

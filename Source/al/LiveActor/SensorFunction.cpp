@@ -52,4 +52,9 @@ al::SensorType findSensorTypeByName(const char* name)
     return type;
 }
 
+void updateHitSensorsAll(al::LiveActor* actor)
+{
+    actor->getHitSensorKeeper()->update();
+}
+
 } // namespace alSensorFunction

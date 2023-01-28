@@ -4,3 +4,4 @@ _ZN2al15HitSensorKeeper8validateEv,001cceac,56,O
 _ZN2al15HitSensorKeeper10invalidateEv,001ccdb0,56,O
 _ZN2al15HitSensorKeeper16validateBySystemEv,0024b900,56,O
 _ZN2al15HitSensorKeeper18invalidateBySystemEv,0024ae08,56,O
+_ZN2al15HitSensorKeeper6updateEv,0025873c,56,O

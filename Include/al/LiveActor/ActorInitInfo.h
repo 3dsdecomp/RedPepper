@@ -20,6 +20,8 @@ public:
     void initViewIdHost(const PlacementInfo* placement, const ActorInitInfo& hostInfo);
     void initViewIdSelf(const PlacementInfo* placement, const ActorInitInfo& hostInfo);
 
+    void initNew(const PlacementInfo* placement, const ActorInitInfo& baseInfo);
+
     friend const PlacementInfo& getPlacementInfo(const ActorInitInfo& info);
 };
 

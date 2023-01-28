@@ -5,6 +5,7 @@
 #include "al/Collision/CollisionParts.h"
 #include "al/Effect/EffectKeeper.h"
 #include "al/LiveActor/ActorActionKeeper.h"
+#include "al/LiveActor/ActorExecuteInfo.h"
 #include "al/LiveActor/ActorInitInfo.h"
 #include "al/LiveActor/ActorPoseKeeper.h"
 #include "al/LiveActor/HitSensorKeeper.h"
@@ -55,6 +56,7 @@ public:
 
     const char* getName() const { return mActorName; }
     ActorPoseKeeperBase* getActorPoseKeeper() const { return mActorPoseKeeper; }
+    ActorExecuteInfo* getActorExecuteInfo() const { return mActorExecuteInfo; }
     ActorActionKeeper* getActorActionKeeper() const { return mActorActionKeeper; }
     Collider* getCollider() const { return mCollider; }
     ModelKeeper* getModelKeeper() const { return mModelKeeper; }
@@ -74,7 +76,7 @@ private:
 
 protected:
     ActorPoseKeeperBase* mActorPoseKeeper;
-    class ActorExecuteInfo* mActorExecuteInfo;
+    ActorExecuteInfo* mActorExecuteInfo;
     ActorActionKeeper* mActorActionKeeper;
     Collider* mCollider;
     CollisionParts* mCollisionParts;

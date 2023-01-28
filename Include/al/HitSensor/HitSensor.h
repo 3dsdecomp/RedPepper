@@ -55,6 +55,7 @@ public:
     void invalidate();
     void validateBySystem();
     void invalidateBySystem();
+    void update();
 
     friend class HitSensorKeeper;
 };

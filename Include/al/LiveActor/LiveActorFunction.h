@@ -36,6 +36,7 @@ bool isAlive(const LiveActor* actor);
 
 void onCollide(LiveActor* actor);
 void offCollide(LiveActor* actor);
+void onDrawClipping(LiveActor* actor);
 
 void invalidateClipping(LiveActor* actor);
 void validateClipping(LiveActor* actor);

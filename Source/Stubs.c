@@ -300,5 +300,10 @@ STUB(_ZN4sead7MemUtil11copyOverlapEPvPKvj)
 STUB(_ZN2al19StageResourceKeeper19initAndLoadResourceEPKciPN4sead4HeapE)
 
 STUB(_ZN2al25listenStageSwitchOnAppearEPNS_15IUseStageSwitchERKNS_11FunctorBaseES4_)
+STUB(_ZN2al20ExecuteRequestKeeper7requestEPNS_9LiveActorEi)
+STUB(_ZN2al9HitSensor6updateEv)
+
+STUB(_ZN2al13ActorInitInfo7initNewEPKNS_9ByamlIterERKS0_)
+STUB(_ZNK2al12ActorFactory10getCreatorEPKc)
 
 #undef STUB

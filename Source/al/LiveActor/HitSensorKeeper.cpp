@@ -57,4 +57,10 @@ HitSensor* HitSensorKeeper::getSensor(const char* name) const
     return nullptr;
 }
 
+void HitSensorKeeper::update()
+{
+    for (int i = 0; i < mSensors.size(); i++)
+        mSensors.unsafeAt(i)->update();
+}
+
 } // namespace al

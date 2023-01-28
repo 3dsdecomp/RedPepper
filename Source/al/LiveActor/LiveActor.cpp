@@ -41,7 +41,7 @@ void LiveActor::kill() { makeActorDead(); }
 
 void LiveActor::calcAnim()
 {
-    if (!mLiveActorFlag.isDead && (!mLiveActorFlag.isClipped || mLiveActorFlag.flag4)) {
+    if (!mLiveActorFlag.isDead && (!mLiveActorFlag.isClipped || mLiveActorFlag.isDrawClipping)) {
         if (mActorPoseKeeper)
             alLiveActorFunction::calcAnimDirect(this);
         if (getAudioKeeper())

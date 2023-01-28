@@ -3,6 +3,7 @@
 #include "al/Execute/ExecuteTableHolder.h"
 #include "al/LiveActor/ActorPoseFunction.h"
 #include "al/LiveActor/LiveActorKit.h"
+#include "al/LiveActor/SensorFunction.h"
 #include "al/LiveActor/SubActorFunction.h"
 #include "al/Math/MtxUtil.h"
 #include "al/Model/ModelKeeper.h"
@@ -40,6 +41,17 @@ void onCollide(LiveActor* actor)
         collider->onInvalidate();
 }
 void offCollide(LiveActor* actor) { actor->getLiveActorFlag().isOffCollide = true; }
+void onDrawClipping(LiveActor* actor)
+{
+    actor->getLiveActorFlag().isDrawClipping = true;
+    if (!isClipped(actor)) {
+        alActorSystemFunction::addToExecutorMovement(actor);
+        if (actor->getHitSensorKeeper()) {
+            actor->getHitSensorKeeper()->validateBySystem();
+            alSensorFunction::updateHitSensorsAll(actor);
+        }
+    }
+}
 
 void invalidateClipping(LiveActor* actor)
 {

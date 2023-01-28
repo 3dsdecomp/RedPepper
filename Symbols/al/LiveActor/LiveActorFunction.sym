@@ -1,6 +1,7 @@
 _ZN19alLiveActorFunction14calcAnimDirectEPN2al9LiveActorE,0026d0e4,192,O
 _ZN2al9onCollideEPNS_9LiveActorE,0027af08,32,O
 _ZN2al10offCollideEPNS_9LiveActorE,0027b510,12,O
+_ZN2al14onDrawClippingEPNS_9LiveActorE,0027a15c,68,m
 _ZN2al7isAliveEPKNS_9LiveActorE,00264150,20,O
 _ZN2al18invalidateClippingEPNS_9LiveActorE,0028065c,76,O
 _ZN2al16validateClippingEPNS_9LiveActorE,0026d668,48,O
