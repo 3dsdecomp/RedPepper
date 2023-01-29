@@ -1,6 +1,6 @@
 [submodule "Tools/asm-differ"]
 	path = Tools/asm-differ
-	url = https://github.com/fruityloops1/asm-differ
+	url = https://github.com/3dsdecomp/asm-differ
 [submodule "Library/RedPepper-Headers"]
 	path = Library/RedPepper-Headers
 	url = https://github.com/3dsdecomp/RedPepper-Headers
