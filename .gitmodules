@@ -4,3 +4,6 @@
 [submodule "Library/RedPepper-Headers"]
 	path = Library/RedPepper-Headers
 	url = https://github.com/3dsdecomp/RedPepper-Headers
+[submodule "Library/LibMessageStudio"]
+	path = Library/LibMessageStudio
+	url = https://github.com/3dsdecomp/LibMessageStudio

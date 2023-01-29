@@ -7,15 +7,13 @@ if(NOT DEFINED ENV{ARMCC_PATH})
     message(FATAL_ERROR "please set ARMCC_PATH")
 endif()
 
-if(NOT DEFINED ENV{DEVKITARM})
-    message(FATAL_ERROR "please set DEVKITARM")
-endif()
-
 find_program(ARM_ASM NAMES armasm.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH)
 find_program(ARM_AR NAMES armar.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH)
 find_program(ARM_CC NAMES armcc.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH)
 find_program(ARM_LINK NAMES armlink.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH)
 # find_program(ARM_FROMELF NAMES fromelf.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH) # not important
+
+add_subdirectory(Library/LibMessageStudio)
 
 macro (set_compilers)
     set(CMAKE_CXX_COMPILER_ID ARMCC)
@@ -51,6 +49,8 @@ file(GLOB_RECURSE cxxsourcefiles "Source/*.cpp")
 
 add_executable(RedPepper ${csourcefiles} ${cxxsourcefiles})
 
+target_link_libraries(RedPepper PUBLIC LibMessageStudio)
+
 target_link_options(RedPepper PUBLIC
     --cpu=MPCore --entry=__ctr_start --startup=__ctr_start --library_type=standardlib
     --ref_cpp_init --scanlib --legacyalign
@@ -74,4 +74,4 @@ target_compile_options(RedPepper PUBLIC $<$<COMPILE_LANGUAGE:C>:
 
 target_compile_definitions(RedPepper PUBLIC NON_MATCHING=)
 
-target_include_directories(RedPepper PUBLIC ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(RedPepper PUBLIC ${CMAKE_SOURCE_DIR}/Include)

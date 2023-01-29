@@ -1,4 +1,4 @@
-LMS_InitMessage,00110b24,164,O
-LMS_GetTextNum,00110a00,28,O
-LMS_CloseMessage,00110e50,32,O
+LMS_InitMessage,00110b24,164,U
+LMS_GetTextNum,00110a00,28,U
+LMS_CloseMessage,00110e50,32,U
 LMS_GetTextByLabel,001109ac,84,U
