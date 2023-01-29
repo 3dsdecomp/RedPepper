@@ -13,6 +13,7 @@ find_program(ARM_CC NAMES armcc.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAU
 find_program(ARM_LINK NAMES armlink.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH)
 # find_program(ARM_FROMELF NAMES fromelf.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH) # not important
 
+add_subdirectory(Library/nnsdk)
 add_subdirectory(Library/LibMessageStudio)
 
 macro (set_compilers)
@@ -49,7 +50,10 @@ file(GLOB_RECURSE cxxsourcefiles "Source/*.cpp")
 
 add_executable(RedPepper ${csourcefiles} ${cxxsourcefiles})
 
-target_link_libraries(RedPepper PUBLIC LibMessageStudio)
+target_link_libraries(RedPepper PUBLIC 
+                                nnsdk
+                                LibMessageStudio
+                                )
 
 target_link_options(RedPepper PUBLIC
     --cpu=MPCore --entry=__ctr_start --startup=__ctr_start --library_type=standardlib

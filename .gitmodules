@@ -7,3 +7,6 @@
 [submodule "Library/LibMessageStudio"]
 	path = Library/LibMessageStudio
 	url = https://github.com/3dsdecomp/LibMessageStudio
+[submodule "Library/nnsdk"]
+	path = Library/nnsdk
+	url = https://github.com/3dsdecomp/nnsdk
