@@ -1,4 +1,4 @@
-#include "Game/Enemy/GhostPlayerRecorder.h"
+#include "Game/Player/GhostPlayerRecorder.h"
 
 GhostPlayerRecorder::GhostPlayerRecorder()
     : mFrames(nullptr)

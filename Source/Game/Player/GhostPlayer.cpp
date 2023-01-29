@@ -1,5 +1,5 @@
-#include "Game/Enemy/GhostPlayer.h"
-#include "Game/Enemy/GhostPlayerRecorder.h"
+#include "Game/Player/GhostPlayer.h"
+#include "Game/Player/GhostPlayerRecorder.h"
 #include "Game/Scene/SceneObjFactory.h"
 #include "Game/Util/SensorMsg.h"
 #include "al/LiveActor/ActorActionKeeper.h"

@@ -6,12 +6,12 @@ void Sequence::init() { }
 void Sequence::unk1()
 {
     if (mCurrentScene)
-        mCurrentScene->unk1();
+        mCurrentScene->drawMain();
 }
 void Sequence::unk2()
 {
     if (mCurrentScene)
-        mCurrentScene->unk2();
+        mCurrentScene->drawSub();
 }
 void Sequence::unk3()
 {
