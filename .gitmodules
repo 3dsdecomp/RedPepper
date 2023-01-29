@@ -10,3 +10,6 @@
 [submodule "Library/nnsdk"]
 	path = Library/nnsdk
 	url = https://github.com/3dsdecomp/nnsdk
+[submodule "Library/sead"]
+	path = Library/sead
+	url = https://github.com/3dsdecomp/sead

@@ -14,6 +14,7 @@ find_program(ARM_LINK NAMES armlink.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_D
 # find_program(ARM_FROMELF NAMES fromelf.exe PATHS $ENV{ARMCC_PATH}/bin REQUIRED NO_DEFAULT_PATH) # not important
 
 add_subdirectory(Library/nnsdk)
+add_subdirectory(Library/sead)
 add_subdirectory(Library/LibMessageStudio)
 
 macro (set_compilers)
@@ -52,6 +53,7 @@ add_executable(RedPepper ${csourcefiles} ${cxxsourcefiles})
 
 target_link_libraries(RedPepper PUBLIC 
                                 nnsdk
+                                sead
                                 LibMessageStudio
                                 )
 
