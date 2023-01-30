@@ -3,6 +3,15 @@ from diff import *
 from colorama import Fore
 import json
 
+import datetime
+from git import Repo
+import io
+import matplotlib
+import matplotlib.pyplot as plt
+import matplotlib.ticker
+import numpy as np
+import sys
+
 def get_matching_bytes(orig: str, other: str):
     matching = 0
     with open(orig, 'rb') as orig_file:
@@ -75,12 +84,42 @@ def main():
     write_type('NonMatching', "Non-matching", str(syms_ok + syms_major + syms_minor), "yellow");
     write_type('Code', "code.bin", bytes_ok_str, "informational");
 
+    x_values = [datetime.datetime.now()]
+    y_values = [(bytes_ok / code_bin_size) * 100]
+
+    np.seterr(all="ignore")
+    repo = Repo(".")
+    for commit in repo.iter_commits():
+        file = None
+        try:
+            file = commit.tree / 'Data' / 'Code.json'
+        except:
+            break
+        with io.BytesIO(file.data_stream.read()) as f:
+            x_values.append(datetime.datetime.fromtimestamp(commit.committed_date))
+            y_values.append(float(json.loads(f.read().decode('utf-8'))['message'].split('%')[0]))
+
+    fig,ax = plt.subplots()
+
+    dates = matplotlib.dates.date2num(x_values)
+    ax.set_title("Progress")
+    ax.xaxis.set_major_formatter(matplotlib.dates.ConciseDateFormatter(ax.xaxis.get_major_locator()))
+    ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter())
+    ax.plot_date(dates, y_values, '-')
+
+    plt.savefig('Data/Progress.png')
+
     if addrs_changed:
         print("Rewriting Unnamed.sym, do not interrupt", end='\r')
         with open('Symbols/Unnamed.sym', 'w') as f:
             for addr in addrs:
                 addr_str = "{:08x}".format(addr)
                 f.write("FUN_" + addr_str + "," + addr_str + ",4,U\n")
+
+    if 'show' in sys.argv:
+        import mplcursors
+        mplcursors.cursor(ax, hover=True)
+        plt.show()
 
 
 if __name__ == "__main__":

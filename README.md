@@ -8,6 +8,8 @@ This is a decompilation of the EU version of Super Mario 3D Land. (note that ret
 
 <img src ="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/fruityloops1/RedPepper/master/Data/OK.json&style=flat-square"/> <img src ="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/fruityloops1/RedPepper/master/Data/NonMatching.json&style=flat-square"/>
 
+![Progress](Data/Progress.png)
+
 Visit [the Wiki](https://al.littun.co/decomp) for instructions on how to build and contribute to this project.
 
 ## Links
