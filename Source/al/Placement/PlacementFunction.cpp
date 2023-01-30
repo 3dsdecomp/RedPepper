@@ -49,6 +49,36 @@ bool isObjectName(const PlacementInfo& info, const char* objectName)
     return false;
 }
 
+int calcLinkChildNum(const ActorInitInfo& info)
+{
+    ByamlIter children;
+    if (getPlacementInfo(info).tryGetIterByKey(&children, "GenerateChildren"))
+        return children.getSize();
+    return 0;
+}
+
+NON_MATCHING
+// 4 bytes less on stack ?
+bool tryGetTrans(sead::Vector3f* out, const ActorInitInfo& info)
+{
+    if (tryGetTrans(out, getPlacementInfo(info)))
+        return true;
+    return false;
+}
+
+bool tryGetTrans(sead::Vector3f* out, const PlacementInfo& info)
+{
+    sead::Vector3f trans;
+    bool valid = info.isValid() && info.tryGetFloatByKey(&trans.x, "pos_x") && info.tryGetFloatByKey(&trans.y, "pos_y") && info.tryGetFloatByKey(&trans.z, "pos_z");
+    if (!valid)
+        return valid;
+
+    out->x = trans.x;
+    out->y = trans.y;
+    out->z = trans.z;
+    return true;
+}
+
 bool isExistRail(const ActorInitInfo& info)
 {
     PlacementInfo rail;

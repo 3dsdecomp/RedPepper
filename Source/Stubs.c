@@ -306,4 +306,7 @@ STUB(_ZN2al9HitSensor6updateEv)
 STUB(_ZN2al13ActorInitInfo7initNewEPKNS_9ByamlIterERKS0_)
 STUB(_ZNK2al12ActorFactory10getCreatorEPKc)
 
+STUB(_ZN2al10tryGetQuatEPN4sead4QuatIfEERKNS_9ByamlIterE)
+STUB(_ZN2al10tryGetArg3EPiRKNS_13ActorInitInfoE)
+
 #undef STUB

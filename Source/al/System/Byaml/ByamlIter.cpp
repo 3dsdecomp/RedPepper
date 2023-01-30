@@ -11,6 +11,12 @@ ByamlIter::ByamlIter()
 {
 }
 
+ByamlIter::ByamlIter(const ByamlIter& other)
+    : mData(other.mData)
+    , mRootNode(other.mRootNode)
+{
+}
+
 ByamlIter::ByamlIter(const u8* data)
     : mData(data)
     , mRootNode(nullptr)

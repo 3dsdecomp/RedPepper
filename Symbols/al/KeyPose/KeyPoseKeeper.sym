@@ -1,0 +1,7 @@
+_ZN2al13KeyPoseKeeperC1Ev,001c5d10,36,O
+_ZN2al13KeyPoseKeeper4initERKNS_13ActorInitInfoE,001c5b08,200,M
+_ZNK2al13KeyPoseKeeper17getCurrentKeyPoseEv,00249618,20,O
+_ZNK2al13KeyPoseKeeper14getNextKeyPoseEv,0024b0e8,68,O
+_ZN2al18getCurrentKeyTransEPKNS_13KeyPoseKeeperE,001db294,16,M
+_ZN2al15getNextKeyTransEPKNS_13KeyPoseKeeperE,0026935c,16,m
+_ZN2al23getNextKeyPlacementInfoEPKNS_13KeyPoseKeeperE,00255668,16,m
