@@ -15,13 +15,11 @@ Camera::Camera(const char* name)
     , mInterpoleFrame(30)
     , mVisionParam(nullptr)
     , mDashAngleTunerParam(nullptr)
-    , _44(nullptr)
+    , mUnknownParam(nullptr)
     , mRotatorParam(nullptr)
 {
     mDashAngleTunerParam = new CameraDashAngleTunerParam;
-    _44 = new u8;
-    if (_44)
-        *_44 = 0; // inlined constructor
+    mUnknownParam = new CameraUnknownParam;
     mRotatorParam = new CameraRotatorParam;
 }
 

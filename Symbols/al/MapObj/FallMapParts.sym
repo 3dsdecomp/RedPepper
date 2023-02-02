@@ -1,5 +1,5 @@
 __sti___16_FallMapParts_cpp,00384f8c,64,m
-_ZN2al12FallMapPartsC1ERKN4sead14SafeStringBaseIcEE,00137068,76,M
+_ZN2al12FallMapPartsC1ERKN4sead14SafeStringBaseIcEE,00137068,76,O
 _ZN2al12FallMapParts4initERKNS_13ActorInitInfoE,00136ff0,116,M
 _ZN2al12FallMapParts10receiveMsgEjPNS_9HitSensorES2_,00136f64,128,O
 _ZNK2al15NrvFallMapParts21FallMapPartsNrvAppear7executeEPNS_11NerveKeeperE,00357b10,92,O

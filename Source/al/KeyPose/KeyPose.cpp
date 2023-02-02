@@ -5,8 +5,6 @@
 
 namespace al {
 
-NON_MATCHING
-// copy
 KeyPose::KeyPose()
     : mQuat(sead::Quatf::unit)
     , mTrans(sead::Vector3f::zero)

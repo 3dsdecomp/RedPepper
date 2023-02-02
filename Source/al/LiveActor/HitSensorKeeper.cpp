@@ -6,14 +6,16 @@
 namespace al {
 
 NON_MATCHING
-// stores host actor instead of getting it again
+// r5 <-> r6
 void HitSensorKeeper::attackSensor()
 {
     for (int i = 0; i < mSensors.size(); i++) {
         HitSensor* sensor = mSensors.unsafeAt(i);
-        for (int j = 0; j < sensor->mSensorCount; j++)
-            if (!al::isDead(sensor->mSensors[j]->getHost()))
-                sensor->mSensors[j]->getHost()->attackSensor(sensor, sensor->mSensors[j]);
+        for (int j = 0; j < sensor->mSensorCount; j++) {
+            HitSensor* attacked = sensor->mSensors[j];
+            if (!al::isDead(attacked->getHost()))
+                attacked->getHost()->attackSensor(sensor, attacked);
+        }
     }
 }
 

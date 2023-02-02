@@ -10,28 +10,20 @@ ActorPoseKeeperBase::ActorPoseKeeperBase()
 
 const sead::Vector3f split(al::ActorPoseKeeperBase::sDefaultGravity)(0, -1, 0);
 
-NON_MATCHING
-const sead::Vector3f& ActorPoseKeeperBase::getRotate() const
-{
-    return sead::Vector3f::zero;
-}
+const sead::Vector3f& ActorPoseKeeperBase::getRotate() const { return sead::Vector3f::zero; }
 const sead::Vector3f& ActorPoseKeeperBase::getScale() const { return sead::Vector3f::ones; }
 const sead::Vector3f& ActorPoseKeeperBase::getVelocity() const { return sead::Vector3f::zero; }
 const sead::Vector3f& ActorPoseKeeperBase::getFront() const { return sead::Vector3f::ez; }
 const sead::Quatf& ActorPoseKeeperBase::getQuat() const { return sead::Quatf::unit; }
 const sead::Vector3f& ActorPoseKeeperBase::getGravity() const { return sDefaultGravity; }
 
-sead::Vector3f* ActorPoseKeeperBase::getRotatePtr()
-{
-    return nullptr;
-}
+sead::Vector3f* ActorPoseKeeperBase::getRotatePtr() { return nullptr; }
 sead::Vector3f* ActorPoseKeeperBase::getScalePtr() { return nullptr; }
 sead::Vector3f* ActorPoseKeeperBase::getVelocityPtr() { return nullptr; }
 sead::Vector3f* ActorPoseKeeperBase::getFrontPtr() { return nullptr; }
 sead::Quatf* ActorPoseKeeperBase::getQuatPtr() { return nullptr; }
 sead::Vector3f* ActorPoseKeeperBase::getGravityPtr() { return nullptr; }
 
-NON_MATCHING
 #pragma no_inline
 ActorPoseKeeperTFSV::ActorPoseKeeperTFSV()
     : ActorPoseKeeperBase()
@@ -41,17 +33,13 @@ ActorPoseKeeperTFSV::ActorPoseKeeperTFSV()
 {
 }
 
-const sead::Vector3f& ActorPoseKeeperTFSV::getScale() const
-{
-    return mScale;
-}
+const sead::Vector3f& ActorPoseKeeperTFSV::getScale() const { return mScale; }
 const sead::Vector3f& ActorPoseKeeperTFSV::getVelocity() const { return mVelocity; }
 const sead::Vector3f& ActorPoseKeeperTFSV::getFront() const { return mFront; }
 sead::Vector3f* ActorPoseKeeperTFSV::getScalePtr() { return &mScale; }
 sead::Vector3f* ActorPoseKeeperTFSV::getVelocityPtr() { return &mVelocity; }
 sead::Vector3f* ActorPoseKeeperTFSV::getFrontPtr() { return &mFront; }
 
-NON_MATCHING
 #pragma no_inline
 ActorPoseKeeperTFGSV::ActorPoseKeeperTFGSV()
     : ActorPoseKeeperTFSV()
@@ -59,13 +47,9 @@ ActorPoseKeeperTFGSV::ActorPoseKeeperTFGSV()
 {
 }
 
-const sead::Vector3f& ActorPoseKeeperTFGSV::getGravity() const
-{
-    return mGravity;
-}
+const sead::Vector3f& ActorPoseKeeperTFGSV::getGravity() const { return mGravity; }
 sead::Vector3f* ActorPoseKeeperTFGSV::getGravityPtr() { return &mGravity; }
 
-NON_MATCHING
 #pragma no_inline
 ActorPoseKeeperTQSV::ActorPoseKeeperTQSV()
     : ActorPoseKeeperBase()
@@ -75,17 +59,13 @@ ActorPoseKeeperTQSV::ActorPoseKeeperTQSV()
 {
 }
 
-const sead::Vector3f& ActorPoseKeeperTQSV::getScale() const
-{
-    return mScale;
-}
+const sead::Vector3f& ActorPoseKeeperTQSV::getScale() const { return mScale; }
 const sead::Vector3f& ActorPoseKeeperTQSV::getVelocity() const { return mVelocity; }
 const sead::Quatf& ActorPoseKeeperTQSV::getQuat() const { return mQuat; }
 sead::Vector3f* ActorPoseKeeperTQSV::getScalePtr() { return &mScale; }
 sead::Vector3f* ActorPoseKeeperTQSV::getVelocityPtr() { return &mVelocity; }
 sead::Quatf* ActorPoseKeeperTQSV::getQuatPtr() { return &mQuat; }
 
-NON_MATCHING
 #pragma no_inline
 ActorPoseKeeperTRSV::ActorPoseKeeperTRSV()
     : ActorPoseKeeperBase()
@@ -95,28 +75,12 @@ ActorPoseKeeperTRSV::ActorPoseKeeperTRSV()
 {
 }
 
-void initActorPoseTFSV(LiveActor* actor)
-{
-    actor->initPoseKeeper(new ActorPoseKeeperTFSV());
-}
-NON_MATCHING
-void initActorPoseTFGSV(LiveActor* actor)
-{
-    actor->initPoseKeeper(new ActorPoseKeeperTFGSV());
-}
-void initActorPoseTQSV(LiveActor* actor)
-{
-    actor->initPoseKeeper(new ActorPoseKeeperTQSV());
-}
-void initActorPoseTRSV(LiveActor* actor)
-{
-    actor->initPoseKeeper(new ActorPoseKeeperTRSV());
-}
+void initActorPoseTFSV(LiveActor* actor) { actor->initPoseKeeper(new ActorPoseKeeperTFSV()); }
+void initActorPoseTFGSV(LiveActor* actor) { actor->initPoseKeeper(new ActorPoseKeeperTFGSV()); }
+void initActorPoseTQSV(LiveActor* actor) { actor->initPoseKeeper(new ActorPoseKeeperTQSV()); }
+void initActorPoseTRSV(LiveActor* actor) { actor->initPoseKeeper(new ActorPoseKeeperTRSV()); }
 
-const sead::Vector3f& ActorPoseKeeperTRSV::getRotate() const
-{
-    return mRotate;
-}
+const sead::Vector3f& ActorPoseKeeperTRSV::getRotate() const { return mRotate; }
 const sead::Vector3f& ActorPoseKeeperTRSV::getScale() const { return mScale; }
 const sead::Vector3f& ActorPoseKeeperTRSV::getVelocity() const { return mVelocity; }
 sead::Vector3f* ActorPoseKeeperTRSV::getRotatePtr() { return &mRotate; }
@@ -127,7 +91,8 @@ void setTrans(LiveActor* actor, const sead::Vector3f& trans) { *actor->getActorP
 void setRotate(LiveActor* actor, const sead::Vector3f& rotate) { *actor->getActorPoseKeeper()->getRotatePtr() = rotate; }
 void setScale(LiveActor* actor, const sead::Vector3f& scale) { *actor->getActorPoseKeeper()->getScalePtr() = scale; }
 void setVelocity(LiveActor* actor, const sead::Vector3f& velocity) { *actor->getActorPoseKeeper()->getVelocityPtr() = velocity; }
-void setVelocityZero(LiveActor* actor) {
+void setVelocityZero(LiveActor* actor)
+{
     float zero = 0;
     sead::Vector3f* velocity = actor->getActorPoseKeeper()->getVelocityPtr();
     velocity->x = zero;

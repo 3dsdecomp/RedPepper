@@ -1,1 +1,5 @@
 i.al::ActorPoseKeeperBase::sDefaultGravity,00424f2c
+.constdata__ZTVN2al19ActorPoseKeeperTFSVE,003d6df4
+.constdata__ZTVN2al20ActorPoseKeeperTFGSVE,003d6f78
+.constdata__ZTVN2al19ActorPoseKeeperTQSVE,003d6e40
+.constdata__ZTVN2al19ActorPoseKeeperTRSVE,003d6e8c

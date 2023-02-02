@@ -2,6 +2,7 @@
 #include "al/LiveActor/LiveActorKit.h"
 
 namespace al {
+
 void registerExecutorUser(IUseExecutor* p, const char* name)
 {
     al::getLiveActorKit()->getExecuteDirector()->registerUser(p, name);
