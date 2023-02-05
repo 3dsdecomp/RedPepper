@@ -41,6 +41,7 @@ CourseList::Course::Course(const al::ByamlIter* course)
 
 #pragma push
 #pragma no_inline
+NON_MATCHING
 bool CourseList::Course::isCourseTypeStage(CourseType type)
 {
     return type <= 4;
@@ -100,6 +101,7 @@ CourseList::CourseList()
     init(al::findOrCreateResource("ObjectData/GameSystemDataTable"));
 }
 
+NON_MATCHING
 void CourseList::init(const al::Resource* gameSystemDataTable)
 {
     mCourseList = new List(al::ByamlIter(gameSystemDataTable->getByml("CourseList")));
