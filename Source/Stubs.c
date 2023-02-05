@@ -309,6 +309,6 @@ STUB(_ZNK2al12ActorFactory10getCreatorEPKc)
 STUB(_ZN2al10tryGetQuatEPN4sead4QuatIfEERKNS_9ByamlIterE)
 STUB(_ZN2al10tryGetArg3EPiRKNS_13ActorInitInfoE)
 
-STUB(_ZN10CourseList4initEPKN2al8ResourceE)
+STUB(_ZNK11Application11getRootTaskEv)
 
 #undef STUB

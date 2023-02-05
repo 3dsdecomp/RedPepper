@@ -1,1 +1,5 @@
+_ZN10CourseList5WorldC1EPKN2al9ByamlIterE,00325b44,700,M
+_ZN10CourseList6Course17isCourseTypeStageENS0_10CourseTypeE,0025bd18,16,m
 _ZN10CourseListC1Ev,0016a2b4,104,O
+_ZN10CourseList4initEPKN2al8ResourceE,0016a11c,396,m
+_ZN2rp13getCourseListEv,002645ac,24,O
