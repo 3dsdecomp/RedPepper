@@ -19,6 +19,26 @@ NerveStateCtrl::NerveStateCtrl(int capacity)
     }
 }
 
+NerveStateCtrl::State* NerveStateCtrl::findStateInfo(const Nerve* nerve)
+{
+    for (int i = 0; i < mStateCount; i++) {
+        State* state = &mStates[i];
+
+        if (state->mHostStateNerve == nerve)
+            return state;
+    }
+
+    return nullptr;
+}
+
+void NerveStateCtrl::startState(const Nerve* nerve)
+{
+    mCurrentState = findStateInfo(nerve);
+
+    if (mCurrentState)
+        mCurrentState->mState->appear();
+}
+
 bool NerveStateCtrl::updateCurrentState()
 {
     if (mCurrentState)
@@ -26,33 +46,19 @@ bool NerveStateCtrl::updateCurrentState()
     return false;
 }
 
-void NerveStateCtrl::startState(const Nerve* nerve)
-{ // horrible
-    State* curState;
-    int i = 0;
-
-    if (mStateCount > 0)
-        while (i < mStateCount) {
-            curState = &mStates[i];
-            if (curState->mHostStateNerve == nerve)
-                goto found;
-            i++;
-        }
-    curState = nullptr;
-found:
-    mCurrentState = curState;
-    if (curState == nullptr)
-        return;
-
-    curState->mState->appear();
-}
-
 void NerveStateCtrl::tryEndCurrentState()
 {
-    if (mCurrentState != nullptr && !mCurrentState->mState->isDead()) {
+    if (!isCurrentStateEnd()) {
         mCurrentState->mState->kill();
         mCurrentState = nullptr;
     }
+}
+
+bool NerveStateCtrl::isCurrentStateEnd() const
+{
+    if (mCurrentState)
+        return mCurrentState->mState->isDead();
+    return true;
 }
 
 } // namespace al
