@@ -17,9 +17,12 @@ NerveKeeper::NerveKeeper(IUseNerve* host, const Nerve* nrv, int maxNerveStates)
         mStateCtrl = new NerveStateCtrl(maxNerveStates);
 }
 
-NON_MATCHING const Nerve* NerveKeeper::getCurrentNerve()
+const Nerve* NerveKeeper::getCurrentNerve() const
 {
-    return mNerve == nullptr ? mEndNerve : mNerve;
+    if (mNerve)
+        return mNerve;
+    else
+        return mEndNerve;
 }
 
 NON_MATCHING void NerveKeeper::update()
