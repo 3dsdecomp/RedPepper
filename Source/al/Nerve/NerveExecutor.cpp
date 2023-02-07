@@ -1,5 +1,3 @@
-#pragma Otime
-
 #include "al/Nerve/NerveExecutor.h"
 
 namespace al {
