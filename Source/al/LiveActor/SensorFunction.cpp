@@ -37,6 +37,7 @@ ALSENSORFUNCTION_ENTRY(WooGanSandBody)
 
 #undef ALSENSORFUNCTION_ENTRY
 
+NON_MATCHING
 al::SensorType findSensorTypeByName(const char* name)
 {
     int size = sizeof(sNameToTypeLookupTable) / sizeof(sNameToTypeLookupTable[0]);

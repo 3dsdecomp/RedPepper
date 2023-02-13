@@ -76,8 +76,6 @@ bool Fugumannen::receiveMsg(u32 msg, al::HitSensor* other, al::HitSensor* me)
 
 extern "C" void FUN_00240e08(al::LiveActor*, const sead::Vector3f&, float);
 
-NON_MATCHING
-// no inline
 void Fugumannen::exeMove()
 {
     al::moveSyncRailTurn(this, mRailMoveSpeed);
@@ -89,8 +87,6 @@ void Fugumannen::exeMove()
         al::setNerve(this, &NrvFugumannen::Move2);
 }
 
-NON_MATCHING
-// vector copy isn't optimized to ldm/stm for xy
 void Fugumannen::exeMove2()
 {
     sead::Vector3f railDir = al::getRailDir(this);

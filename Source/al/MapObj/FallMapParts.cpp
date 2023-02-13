@@ -96,8 +96,6 @@ void FallMapParts::exeFall()
         setNerve(this, &NrvFallMapParts::End);
 }
 
-NON_MATCHING
-// inline nops
 void FallMapParts::exeEnd()
 {
     if (isFirstStep(this)) {

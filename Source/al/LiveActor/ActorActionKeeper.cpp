@@ -2,8 +2,11 @@
 
 namespace al {
 
-#define AL_LIVEACTOR_REACTION(TYPE, NAME)                         \
-    void startHitReaction##TYPE(const LiveActor* actor) { startHitReaction(actor, NAME); }                                                        
+#define AL_LIVEACTOR_REACTION(TYPE, NAME)               \
+    void startHitReaction##TYPE(const LiveActor* actor) \
+    {                                                   \
+        startHitReaction(actor, NAME);                  \
+    }
 
 AL_LIVEACTOR_REACTION(Appear, "èoåª")
 AL_LIVEACTOR_REACTION(Disappear, "è¡ñ≈")
