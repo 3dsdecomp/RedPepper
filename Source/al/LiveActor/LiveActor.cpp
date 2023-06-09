@@ -1,5 +1,5 @@
-#include "al/LiveActor/LiveActor.h"
 #include "al/LiveActor/ActorInitInfo.h"
+#include "al/LiveActor/LiveActor.h"
 #include "al/LiveActor/LiveActorFunction.h"
 #include "al/LiveActor/LiveActorKit.h"
 #include "al/Rail/RailKeeper.h"
@@ -21,7 +21,7 @@ LiveActor::LiveActor(const char* name)
     , mStageSwitchKeeper(nullptr)
     , mRailKeeper(nullptr)
     , mShadowKeeper(nullptr)
-    , mActorLightKeeper(nullptr)
+    , mActorLightCtrl(nullptr)
     , _4C(nullptr)
     , mSubActorKeeper(nullptr)
 {

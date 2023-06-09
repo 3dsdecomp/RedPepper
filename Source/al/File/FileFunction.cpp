@@ -15,4 +15,9 @@ void makeLocalizedArchivePath(sead::BufferedSafeString* out, const sead::SafeStr
     out->format("LocalizedData/%s/%s", al::getLanguage(), archive.cstr());
 }
 
+void makeStageDataArchivePath(sead::BufferedSafeString* out, const char* stageName, int scenario, const char* type)
+{
+    out->format("StageData/%s%s%d", stageName, type, scenario);
+}
+
 } // namespace al
