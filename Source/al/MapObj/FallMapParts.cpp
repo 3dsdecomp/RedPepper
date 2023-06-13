@@ -1,7 +1,7 @@
-#include "al/MapObj/FallMapParts.h"
 #include "al/LiveActor/ActorInitUtil.h"
 #include "al/LiveActor/LiveActorFunction.h"
 #include "al/LiveActor/SensorMsg.h"
+#include "al/MapObj/FallMapParts.h"
 #include "al/Nerve/NerveFunction.h"
 #include "al/Nerve/NerveKeeper.h"
 #include "al/Placement/PlacementFunction.h"
@@ -46,7 +46,7 @@ bool FallMapParts::receiveMsg(u32 msg, HitSensor* other, HitSensor* me)
         setNerve(this, &NrvFallMapParts::End);
         return true;
     }
-    if (isMsgFloorTouch(msg) && isNerve(this, &NrvFallMapParts::Wait)) {
+    if (isMsgPlayerFloorTouch(msg) && isNerve(this, &NrvFallMapParts::Wait)) {
         setNerve(this, &NrvFallMapParts::FallSign);
         invalidateClipping(this);
         return true;

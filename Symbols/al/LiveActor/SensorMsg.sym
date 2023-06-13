@@ -10,7 +10,7 @@ _ZN2al15isMsgPlayerKickEj,00277d64,16,O
 _ZN2al26isMsgPlayerBoomerangAttackEj,0027a6c4,16,O
 _ZN2al27isMsgPlayerBoomerangReflectEj,0027dbb8,16,O
 _ZN2al25isMsgPlayerBoomerangBreakEj,00278720,16,O
-_ZN2al15isMsgFloorTouchEj,00273318,16,O
+_ZN2al21isMsgPlayerFloorTouchEj,00273318,16,O
 _ZN2al26isMsgPlayerInvincibleTouchEj,0027dc50,16,O
 _ZN2al21isMsgKickKouraReflectEj,002620b4,16,O
 _ZN2al19isMsgKickKouraBreakEj,00277c88,16,O

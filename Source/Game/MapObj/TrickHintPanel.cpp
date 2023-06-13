@@ -33,7 +33,7 @@ void TrickHintPanel::init(const al::ActorInitInfo& info)
 
 bool TrickHintPanel::receiveMsg(u32 msg, al::HitSensor* other, al::HitSensor* me)
 {
-    if (al::isMsgFloorTouch(msg)) {
+    if (al::isMsgPlayerFloorTouch(msg)) {
         if (al::isNerve(this, &NrvTrickHintPanel::Wait)) {
             al::setNerve(this, &NrvTrickHintPanel::On);
             return true;

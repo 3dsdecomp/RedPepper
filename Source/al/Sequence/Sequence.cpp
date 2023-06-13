@@ -6,17 +6,17 @@ void Sequence::init() { }
 void Sequence::unk1()
 {
     if (mCurrentScene)
-        mCurrentScene->drawMain();
+        mCurrentScene->drawMainTop();
 }
 void Sequence::unk2()
 {
     if (mCurrentScene)
-        mCurrentScene->drawSub();
+        mCurrentScene->drawSubTop();
 }
 void Sequence::unk3()
 {
     if (mCurrentScene)
-        mCurrentScene->unk3();
+        mCurrentScene->drawMainBottom();
 }
 bool Sequence::isDisposable() const { return true; }
 bool Sequence::unk4() { return false; }
