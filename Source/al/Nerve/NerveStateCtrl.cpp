@@ -2,15 +2,13 @@
 
 namespace al {
 
-NON_MATCHING
-#pragma O2
 NerveStateCtrl::NerveStateCtrl(int capacity)
     : mCapacity(capacity)
     , mStateCount(0)
     , mStates(nullptr)
     , mCurrentState(nullptr)
 {
-    mStates = new State[capacity];
+    mStates = new State[mCapacity];
     for (int i = 0; i < mCapacity; i++) {
         State* state = &mStates[i];
         state->mState = nullptr;
