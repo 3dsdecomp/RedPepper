@@ -15,9 +15,9 @@ ActorFactory::ActorFactory()
 } // namespace al
 
 #include "Game/Enemy/Togezo.h"
-#include "Game/MapObj/TrickHintPanel.h"
 #include "Game/MapObj/NoteObj.h"
 #include "Game/MapObj/NoteObjGenerator.h"
+#include "Game/MapObj/TrickHintPanel.h"
 #include "al/MapObj/FallMapParts.h"
 #include "al/Npc/EffectObj.h"
 #include "al/Npc/Sky.h"

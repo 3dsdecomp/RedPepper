@@ -37,7 +37,7 @@ void ExecuteDirector::init()
     mUpdateTable = new ExecuteTableHolderUpdate;
     mUpdateTable->init(&sUpdateExecuteOrder, 58);
     mDrawTableAmount = 10;
-    mDrawTables = new ExecuteTableHolderDraw*[10];
+    mDrawTables = new ExecuteTableHolderDraw*[mDrawTableAmount];
 
     for (int i = 0; i < mDrawTableAmount; i++) {
         ExecuteTableHolderDraw* newDrawTable = new ExecuteTableHolderDraw;

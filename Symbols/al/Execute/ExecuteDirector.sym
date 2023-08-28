@@ -1,5 +1,5 @@
 _ZN2al15ExecuteDirectorC1Ei,001ccd40,32,O
-_ZN2al15ExecuteDirector4initEv,001cca94,684,m
+_ZN2al15ExecuteDirector4initEv,001cca94,684,O
 _ZN2al15ExecuteDirector23createExecutorListTableEv,001cca1c,64,O
 _ZN2al15ExecuteDirector12registerUserEPNS_12IUseExecutorEPKc,001cc7c0,80,O
 _ZN2al15ExecuteDirector15registerFunctorERKNS_11FunctorBaseEPKc,001cc960,80,O
